@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A05558521BF9CE2D0036E954 /* HPPYRightMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A05558511BF9CE2D0036E954 /* HPPYRightMenuTableViewController.m */; };
+		A05558551BF9D8A30036E954 /* HPPYMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A05558541BF9D8A30036E954 /* HPPYMenuTableViewCell.m */; };
 		A0D184FE1BF9CC0E0000B1F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D184FD1BF9CC0E0000B1F9 /* main.m */; };
 		A0D185011BF9CC0E0000B1F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D185001BF9CC0E0000B1F9 /* AppDelegate.m */; };
-		A0D185041BF9CC0E0000B1F9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D185031BF9CC0E0000B1F9 /* ViewController.m */; };
+		A0D185041BF9CC0E0000B1F9 /* HPPYTaskContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D185031BF9CC0E0000B1F9 /* HPPYTaskContainerViewController.m */; };
 		A0D185071BF9CC0E0000B1F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0D185051BF9CC0E0000B1F9 /* Main.storyboard */; };
 		A0D185091BF9CC0E0000B1F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0D185081BF9CC0E0000B1F9 /* Assets.xcassets */; };
 		A0D1850C1BF9CC0E0000B1F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0D1850A1BF9CC0E0000B1F9 /* LaunchScreen.storyboard */; };
@@ -37,12 +39,16 @@
 
 /* Begin PBXFileReference section */
 		867A161B6F9B16C9161B4089 /* Pods-Happy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Happy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Happy/Pods-Happy.debug.xcconfig"; sourceTree = "<group>"; };
+		A05558501BF9CE2D0036E954 /* HPPYRightMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYRightMenuTableViewController.h; sourceTree = "<group>"; };
+		A05558511BF9CE2D0036E954 /* HPPYRightMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYRightMenuTableViewController.m; sourceTree = "<group>"; };
+		A05558531BF9D8A30036E954 /* HPPYMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYMenuTableViewCell.h; sourceTree = "<group>"; };
+		A05558541BF9D8A30036E954 /* HPPYMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYMenuTableViewCell.m; sourceTree = "<group>"; };
 		A0D184F91BF9CC0E0000B1F9 /* Happy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Happy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D184FD1BF9CC0E0000B1F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A0D184FF1BF9CC0E0000B1F9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A0D185001BF9CC0E0000B1F9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A0D185021BF9CC0E0000B1F9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A0D185031BF9CC0E0000B1F9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A0D185021BF9CC0E0000B1F9 /* HPPYTaskContainerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HPPYTaskContainerViewController.h; sourceTree = "<group>"; };
+		A0D185031BF9CC0E0000B1F9 /* HPPYTaskContainerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HPPYTaskContainerViewController.m; sourceTree = "<group>"; };
 		A0D185061BF9CC0E0000B1F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A0D185081BF9CC0E0000B1F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0D1850B1BF9CC0E0000B1F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -127,8 +133,12 @@
 			children = (
 				A0D184FF1BF9CC0E0000B1F9 /* AppDelegate.h */,
 				A0D185001BF9CC0E0000B1F9 /* AppDelegate.m */,
-				A0D185021BF9CC0E0000B1F9 /* ViewController.h */,
-				A0D185031BF9CC0E0000B1F9 /* ViewController.m */,
+				A05558501BF9CE2D0036E954 /* HPPYRightMenuTableViewController.h */,
+				A05558511BF9CE2D0036E954 /* HPPYRightMenuTableViewController.m */,
+				A05558531BF9D8A30036E954 /* HPPYMenuTableViewCell.h */,
+				A05558541BF9D8A30036E954 /* HPPYMenuTableViewCell.m */,
+				A0D185021BF9CC0E0000B1F9 /* HPPYTaskContainerViewController.h */,
+				A0D185031BF9CC0E0000B1F9 /* HPPYTaskContainerViewController.m */,
 				A0D185051BF9CC0E0000B1F9 /* Main.storyboard */,
 				A0D185081BF9CC0E0000B1F9 /* Assets.xcassets */,
 				A0D1850A1BF9CC0E0000B1F9 /* LaunchScreen.storyboard */,
@@ -345,9 +355,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0D185041BF9CC0E0000B1F9 /* ViewController.m in Sources */,
+				A05558521BF9CE2D0036E954 /* HPPYRightMenuTableViewController.m in Sources */,
+				A0D185041BF9CC0E0000B1F9 /* HPPYTaskContainerViewController.m in Sources */,
 				A0D185011BF9CC0E0000B1F9 /* AppDelegate.m in Sources */,
 				A0D184FE1BF9CC0E0000B1F9 /* main.m in Sources */,
+				A05558551BF9D8A30036E954 /* HPPYMenuTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

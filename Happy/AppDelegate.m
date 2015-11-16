@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "HPPYRightMenuTableViewController.h"
+#import <iOS-Slide-Menu/SlideNavigationController.h>
 
 @interface AppDelegate ()
 
@@ -16,8 +18,22 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    // Set up slide menu
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    HPPYRightMenuTableViewController *rightMenuViewController = [storyboard instantiateViewControllerWithIdentifier:@"rightMenu"];
+    [SlideNavigationController sharedInstance].rightMenu = rightMenuViewController;
+    [self setUpMenuButton];
+    
     return YES;
+}
+
+- (void)setUpMenuButton {
+    UIButton *button  = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+    [button setImage:[UIImage imageNamed:@"menuBurger"] forState:UIControlStateNormal];
+    [button addTarget:[SlideNavigationController sharedInstance] action:@selector(toggleRightMenu) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    [SlideNavigationController sharedInstance].rightBarButtonItem = rightBarButtonItem;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
