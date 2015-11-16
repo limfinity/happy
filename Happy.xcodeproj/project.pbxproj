@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A04A09431BF9EE9D005F385B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A04A09411BF9EE9D005F385B /* Localizable.strings */; };
+		A04A09471BF9F05C005F385B /* HPPYStaticTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04A09461BF9F05C005F385B /* HPPYStaticTextViewController.m */; };
+		A04A094B1BFA0259005F385B /* contact.md in Sources */ = {isa = PBXBuildFile; fileRef = A04A094D1BFA0259005F385B /* contact.md */; };
+		A04A09501BFA14CB005F385B /* contact.md in Resources */ = {isa = PBXBuildFile; fileRef = A04A094D1BFA0259005F385B /* contact.md */; };
 		A05558521BF9CE2D0036E954 /* HPPYRightMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A05558511BF9CE2D0036E954 /* HPPYRightMenuTableViewController.m */; };
 		A05558551BF9D8A30036E954 /* HPPYMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A05558541BF9D8A30036E954 /* HPPYMenuTableViewCell.m */; };
 		A05558571BF9E12E0036E954 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A05558561BF9E12E0036E954 /* Settings.bundle */; };
@@ -45,6 +48,10 @@
 		A04A09401BF9ED9E005F385B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		A04A09421BF9EE9D005F385B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A04A09441BF9EEA2005F385B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A04A09451BF9F05C005F385B /* HPPYStaticTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYStaticTextViewController.h; sourceTree = "<group>"; };
+		A04A09461BF9F05C005F385B /* HPPYStaticTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYStaticTextViewController.m; sourceTree = "<group>"; };
+		A04A094C1BFA0259005F385B /* Base */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = Base; path = Base.lproj/contact.md; sourceTree = "<group>"; };
+		A04A094F1BFA0567005F385B /* de */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = de; path = de.lproj/contact.md; sourceTree = "<group>"; };
 		A05558501BF9CE2D0036E954 /* HPPYRightMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYRightMenuTableViewController.h; sourceTree = "<group>"; };
 		A05558511BF9CE2D0036E954 /* HPPYRightMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYRightMenuTableViewController.m; sourceTree = "<group>"; };
 		A05558531BF9D8A30036E954 /* HPPYMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYMenuTableViewCell.h; sourceTree = "<group>"; };
@@ -113,6 +120,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A04A094A1BFA0246005F385B /* Static */ = {
+			isa = PBXGroup;
+			children = (
+				A04A094D1BFA0259005F385B /* contact.md */,
+			);
+			name = Static;
+			sourceTree = "<group>";
+		};
 		A0D184F01BF9CC0E0000B1F9 = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +161,8 @@
 				A05558541BF9D8A30036E954 /* HPPYMenuTableViewCell.m */,
 				A0D185021BF9CC0E0000B1F9 /* HPPYTaskContainerViewController.h */,
 				A0D185031BF9CC0E0000B1F9 /* HPPYTaskContainerViewController.m */,
+				A04A09451BF9F05C005F385B /* HPPYStaticTextViewController.h */,
+				A04A09461BF9F05C005F385B /* HPPYStaticTextViewController.m */,
 				A0D185051BF9CC0E0000B1F9 /* Main.storyboard */,
 				A0D185081BF9CC0E0000B1F9 /* Assets.xcassets */,
 				A0D1850A1BF9CC0E0000B1F9 /* LaunchScreen.storyboard */,
@@ -157,6 +174,7 @@
 		A0D184FC1BF9CC0E0000B1F9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A04A094A1BFA0246005F385B /* Static */,
 				A04A09411BF9EE9D005F385B /* Localizable.strings */,
 				A05558561BF9E12E0036E954 /* Settings.bundle */,
 				A0D1850D1BF9CC0E0000B1F9 /* Info.plist */,
@@ -271,6 +289,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = A0D184F01BF9CC0E0000B1F9;
 			productRefGroup = A0D184FA1BF9CC0E0000B1F9 /* Products */;
@@ -289,6 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A04A09501BFA14CB005F385B /* contact.md in Resources */,
 				A04A09431BF9EE9D005F385B /* Localizable.strings in Resources */,
 				A05558571BF9E12E0036E954 /* Settings.bundle in Resources */,
 				A0D1850C1BF9CC0E0000B1F9 /* LaunchScreen.storyboard in Resources */,
@@ -367,7 +387,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A05558521BF9CE2D0036E954 /* HPPYRightMenuTableViewController.m in Sources */,
+				A04A094B1BFA0259005F385B /* contact.md in Sources */,
 				A0D185041BF9CC0E0000B1F9 /* HPPYTaskContainerViewController.m in Sources */,
+				A04A09471BF9F05C005F385B /* HPPYStaticTextViewController.m in Sources */,
 				A0D185011BF9CC0E0000B1F9 /* AppDelegate.m in Sources */,
 				A0D184FE1BF9CC0E0000B1F9 /* main.m in Sources */,
 				A05558551BF9D8A30036E954 /* HPPYMenuTableViewCell.m in Sources */,
@@ -413,6 +435,15 @@
 				A04A09441BF9EEA2005F385B /* de */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		A04A094D1BFA0259005F385B /* contact.md */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A04A094C1BFA0259005F385B /* Base */,
+				A04A094F1BFA0567005F385B /* de */,
+			);
+			name = contact.md;
 			sourceTree = "<group>";
 		};
 		A0D185051BF9CC0E0000B1F9 /* Main.storyboard */ = {

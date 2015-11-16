@@ -6,6 +6,7 @@
 target 'Happy' do
 
 pod 'iOS-Slide-Menu'
+pod 'TSMarkdownParser'
 
 end
 

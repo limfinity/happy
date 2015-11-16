@@ -8,8 +8,13 @@
 
 #import "HPPYRightMenuTableViewController.h"
 #import "HPPYMenuTableViewCell.h"
+#import "HPPYTaskContainerViewController.h"
+#import "HPPYStaticTextViewController.h"
+#import <iOS-Slide-Menu/SlideNavigationController.h>
 
-@interface HPPYRightMenuTableViewController ()
+@interface HPPYRightMenuTableViewController () {
+    NSArray *_menu;
+}
 
 @end
 
@@ -18,11 +23,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self initializeMenu];
+}
+
+- (void)initializeMenu {
+    _menu = @[
+              @{
+                  @"id":@"home",
+                  @"title":@"Home",
+                  @"subTitle":@"Home is where your heart is.",
+                  @"viewController":@"TaskContainerViewController"
+                  },
+              @{
+                  @"id":@"contact",
+                  @"title":@"Contact",
+                  @"subTitle":@"Get in touch with us.",
+                  @"viewController":@"StaticTextViewController"
+                  },
+              @{
+                  @"id":@"imprint",
+                  @"title":@"Imprint",
+                  @"subTitle":@"All that legal stuff.",
+                  @"viewController":@"StaticTextViewController"
+                  }
+              ];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,16 +54,17 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-
+// MARK: TableView
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
     return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 1;
+    if (section == 0) {
+        return 1;
+    }
+
+    return _menu.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -49,9 +74,9 @@
     }
     
     HPPYMenuTableViewCell *cell = (HPPYMenuTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"menu" forIndexPath:indexPath];
-    
-    cell.titleLabel.text = NSLocalizedString(@"Home", nil);
-    cell.subTitleLabel.text = NSLocalizedString(@"Home is where your heart is.", nil);
+    NSDictionary *menuRowDict = _menu[indexPath.row];
+    cell.titleLabel.text = NSLocalizedString(menuRowDict[@"title"], nil);
+    cell.subTitleLabel.text = NSLocalizedString(menuRowDict[@"subTitle"], nil);
     
     return cell;
 }
@@ -61,6 +86,29 @@
         return 110;
     } else {
         return 60;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        return;
+    }
+    
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    NSDictionary *menuRowDict = _menu[indexPath.row];
+    NSString *identifier = menuRowDict[@"viewController"];
+    
+    if ([identifier isEqualToString:@"StaticTextViewController"]) {
+        HPPYStaticTextViewController *vc = (HPPYStaticTextViewController *)[mainStoryboard instantiateViewControllerWithIdentifier:identifier];
+        vc.title = menuRowDict[@"title"];
+        vc.identifier = menuRowDict[@"id"];
+        [SlideNavigationController sharedInstance].avoidSwitchingToSameClassViewController = NO;
+        [[SlideNavigationController sharedInstance] popAllAndSwitchToViewController:vc withCompletion:nil];
+    } else {
+        HPPYTaskContainerViewController *vc = (HPPYTaskContainerViewController *)[mainStoryboard instantiateViewControllerWithIdentifier:identifier];
+        vc.title = menuRowDict[@"title"];
+        [SlideNavigationController sharedInstance].avoidSwitchingToSameClassViewController = YES;
+        [[SlideNavigationController sharedInstance] popAllAndSwitchToViewController:vc withCompletion:nil];
     }
 }
 

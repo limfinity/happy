@@ -6,36 +6,36 @@
 	<string>Root</string>
 	<key>PreferenceSpecifiers</key>
 	<array>
-        <dict>
-            <key>Type</key>
-            <string>PSGroupSpecifier</string>
-            <key>Title</key>
-            <string>Versions</string>
-        </dict>
-        <dict>
-            <key>Type</key>
-            <string>PSTitleValueSpecifier</string>
-            <key>DefaultValue</key>
-            <string>n/a</string>
-            <key>Title</key>
-            <string>Happy Version</string>
-            <key>Key</key>
-            <string>happyVersion</string>
-        </dict>
-        <dict>
-            <key>Type</key>
-            <string>PSGroupSpecifier</string>
-            <key>Title</key>
-            <string>Acknowledgements</string>
-        </dict>
-        <dict>
-            <key>Type</key>
-            <string>PSChildPaneSpecifier</string>
-            <key>Title</key>
-            <string>Acknowledgements</string>
-            <key>File</key>
-            <string>Acknowledgements</string>
-        </dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Versions</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>DefaultValue</key>
+			<string>n/a</string>
+			<key>Title</key>
+			<string>Happy Version</string>
+			<key>Key</key>
+			<string>hppyVersion</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Acknowledgements</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+			<key>Title</key>
+			<string>Acknowledgements</string>
+			<key>File</key>
+			<string>Acknowledgements</string>
+		</dict>
 	</array>
 </dict>
 </plist>

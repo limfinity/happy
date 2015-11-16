@@ -9,7 +9,7 @@
         <!--♡-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HPPYTaskContainerViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TaskContainerViewController" id="BYZ-38-t0r" customClass="HPPYTaskContainerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -22,6 +22,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="♡" id="UsI-4l-0DV"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <segue destination="Ac5-co-DvU" kind="show" identifier="segue0" id="0iT-5F-DzT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -30,7 +33,7 @@
         <!--Right Menu Table View Controller-->
         <scene sceneID="WE9-AE-AHI">
             <objects>
-                <tableViewController storyboardIdentifier="rightMenu" id="alm-Zd-3Ps" customClass="HPPYRightMenuTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="RightMenuViewController" id="alm-Zd-3Ps" customClass="HPPYRightMenuTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="4NA-BE-wOs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -103,6 +106,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v0d-8D-4xs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="110" y="-418"/>
+        </scene>
+        <!--Static Text View Controller-->
+        <scene sceneID="C6A-vG-y0m">
+            <objects>
+                <viewController storyboardIdentifier="StaticTextViewController" id="Ac5-co-DvU" customClass="HPPYStaticTextViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Qd-Bc-JmD"/>
+                        <viewControllerLayoutGuide type="bottom" id="JfB-Ew-2dv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tzE-aG-OrD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eD2-Em-vQM">
+                                <rect key="frame" x="16" y="0.0" width="288" height="568"/>
+                                <animations/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" address="YES"/>
+                            </textView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eD2-Em-vQM" firstAttribute="top" secondItem="tzE-aG-OrD" secondAttribute="topMargin" id="D04-hw-rTW"/>
+                            <constraint firstItem="eD2-Em-vQM" firstAttribute="top" secondItem="0Qd-Bc-JmD" secondAttribute="bottom" id="IyL-oJ-a4Y"/>
+                            <constraint firstItem="JfB-Ew-2dv" firstAttribute="top" secondItem="eD2-Em-vQM" secondAttribute="bottom" id="bSF-lo-Qo2"/>
+                            <constraint firstItem="eD2-Em-vQM" firstAttribute="leading" secondItem="tzE-aG-OrD" secondAttribute="leadingMargin" id="huU-BC-H5u"/>
+                            <constraint firstItem="eD2-Em-vQM" firstAttribute="trailing" secondItem="tzE-aG-OrD" secondAttribute="trailingMargin" id="iUB-qh-TpM"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="IyL-oJ-a4Y"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="textView" destination="eD2-Em-vQM" id="P7M-ZC-tcT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IsU-v5-QLz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="555" y="-418"/>
         </scene>
         <!--Slide Navigation Controller-->
         <scene sceneID="uTd-eB-dE6">

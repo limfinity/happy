@@ -1,10 +1,13 @@
 PODS:
   - iOS-Slide-Menu (1.5)
+  - TSMarkdownParser (1.0.18)
 
 DEPENDENCIES:
   - iOS-Slide-Menu
+  - TSMarkdownParser
 
 SPEC CHECKSUMS:
   iOS-Slide-Menu: 40b0cbd8916c42afc755f0869793cd09e7a32102
+  TSMarkdownParser: 7c710ad556a8c2335574770017a9c817c4c53615
 
 COCOAPODS: 0.39.0

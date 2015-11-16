@@ -21,7 +21,7 @@
     
     // Set up slide menu
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    HPPYRightMenuTableViewController *rightMenuViewController = [storyboard instantiateViewControllerWithIdentifier:@"rightMenu"];
+    HPPYRightMenuTableViewController *rightMenuViewController = [storyboard instantiateViewControllerWithIdentifier:@"RightMenuViewController"];
     [SlideNavigationController sharedInstance].rightMenu = rightMenuViewController;
     [self setUpMenuButton];
     
@@ -41,7 +41,7 @@
 
 - (void)updateVersion {
     NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
-    [[NSUserDefaults standardUserDefaults] setObject:version forKey:@"happyVersion"];
+    [[NSUserDefaults standardUserDefaults] setObject:version forKey:@"hppyVersion"];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
