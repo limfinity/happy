@@ -15,6 +15,7 @@
 		A0D1850C1BF9CC0E0000B1F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0D1850A1BF9CC0E0000B1F9 /* LaunchScreen.storyboard */; };
 		A0D185171BF9CC0E0000B1F9 /* HappyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D185161BF9CC0E0000B1F9 /* HappyTests.m */; };
 		A0D185221BF9CC0F0000B1F9 /* HappyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D185211BF9CC0F0000B1F9 /* HappyUITests.m */; };
+		FFC158F9AC2BFC5FFFF2A6F6 /* libPods-Happy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB57B20CF21F172247699B93 /* libPods-Happy.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		867A161B6F9B16C9161B4089 /* Pods-Happy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Happy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Happy/Pods-Happy.debug.xcconfig"; sourceTree = "<group>"; };
 		A0D184F91BF9CC0E0000B1F9 /* Happy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Happy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D184FD1BF9CC0E0000B1F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A0D184FF1BF9CC0E0000B1F9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +53,8 @@
 		A0D1851D1BF9CC0E0000B1F9 /* HappyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HappyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D185211BF9CC0F0000B1F9 /* HappyUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HappyUITests.m; sourceTree = "<group>"; };
 		A0D185231BF9CC0F0000B1F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB57B20CF21F172247699B93 /* libPods-Happy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Happy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F21E2FE5279E430BE94BDD7C /* Pods-Happy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Happy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Happy/Pods-Happy.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFC158F9AC2BFC5FFFF2A6F6 /* libPods-Happy.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E45DEC50A5D65D5D4DC32EA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				867A161B6F9B16C9161B4089 /* Pods-Happy.debug.xcconfig */,
+				F21E2FE5279E430BE94BDD7C /* Pods-Happy.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9E7E096EBBD9F68D60A7EAFB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EB57B20CF21F172247699B93 /* libPods-Happy.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A0D184F01BF9CC0E0000B1F9 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +107,8 @@
 				A0D185151BF9CC0E0000B1F9 /* HappyTests */,
 				A0D185201BF9CC0F0000B1F9 /* HappyUITests */,
 				A0D184FA1BF9CC0E0000B1F9 /* Products */,
+				1E45DEC50A5D65D5D4DC32EA /* Pods */,
+				9E7E096EBBD9F68D60A7EAFB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,9 +171,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A0D185261BF9CC0F0000B1F9 /* Build configuration list for PBXNativeTarget "Happy" */;
 			buildPhases = (
+				0098295607486C4EB936E423 /* Check Pods Manifest.lock */,
 				A0D184F51BF9CC0E0000B1F9 /* Sources */,
 				A0D184F61BF9CC0E0000B1F9 /* Frameworks */,
 				A0D184F71BF9CC0E0000B1F9 /* Resources */,
+				4ABB4319E582BBD10B35BD50 /* Embed Pods Frameworks */,
+				C97ACA09EFC158C4CF78A403 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -264,6 +291,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0098295607486C4EB936E423 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4ABB4319E582BBD10B35BD50 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Happy/Pods-Happy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C97ACA09EFC158C4CF78A403 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Happy/Pods-Happy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A0D184F51BF9CC0E0000B1F9 /* Sources */ = {
@@ -409,6 +484,7 @@
 		};
 		A0D185271BF9CC0F0000B1F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 867A161B6F9B16C9161B4089 /* Pods-Happy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Happy/Info.plist;
@@ -420,6 +496,7 @@
 		};
 		A0D185281BF9CC0F0000B1F9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F21E2FE5279E430BE94BDD7C /* Pods-Happy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Happy/Info.plist;
@@ -496,6 +573,7 @@
 				A0D185281BF9CC0F0000B1F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A0D185291BF9CC0F0000B1F9 /* Build configuration list for PBXNativeTarget "HappyTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +582,7 @@
 				A0D1852B1BF9CC0F0000B1F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A0D1852C1BF9CC0F0000B1F9 /* Build configuration list for PBXNativeTarget "HappyUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +591,7 @@
 				A0D1852E1BF9CC0F0000B1F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
