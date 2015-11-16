@@ -25,6 +25,9 @@
     [SlideNavigationController sharedInstance].rightMenu = rightMenuViewController;
     [self setUpMenuButton];
     
+    // Update version in settings
+    [self updateVersion];
+    
     return YES;
 }
 
@@ -34,6 +37,11 @@
     [button addTarget:[SlideNavigationController sharedInstance] action:@selector(toggleRightMenu) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     [SlideNavigationController sharedInstance].rightBarButtonItem = rightBarButtonItem;
+}
+
+- (void)updateVersion {
+    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    [[NSUserDefaults standardUserDefaults] setObject:version forKey:@"happyVersion"];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

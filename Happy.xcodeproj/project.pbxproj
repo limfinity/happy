@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A05558521BF9CE2D0036E954 /* HPPYRightMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A05558511BF9CE2D0036E954 /* HPPYRightMenuTableViewController.m */; };
 		A05558551BF9D8A30036E954 /* HPPYMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A05558541BF9D8A30036E954 /* HPPYMenuTableViewCell.m */; };
+		A05558571BF9E12E0036E954 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A05558561BF9E12E0036E954 /* Settings.bundle */; };
 		A0D184FE1BF9CC0E0000B1F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D184FD1BF9CC0E0000B1F9 /* main.m */; };
 		A0D185011BF9CC0E0000B1F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D185001BF9CC0E0000B1F9 /* AppDelegate.m */; };
 		A0D185041BF9CC0E0000B1F9 /* HPPYTaskContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D185031BF9CC0E0000B1F9 /* HPPYTaskContainerViewController.m */; };
@@ -43,6 +44,7 @@
 		A05558511BF9CE2D0036E954 /* HPPYRightMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYRightMenuTableViewController.m; sourceTree = "<group>"; };
 		A05558531BF9D8A30036E954 /* HPPYMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYMenuTableViewCell.h; sourceTree = "<group>"; };
 		A05558541BF9D8A30036E954 /* HPPYMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYMenuTableViewCell.m; sourceTree = "<group>"; };
+		A05558561BF9E12E0036E954 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		A0D184F91BF9CC0E0000B1F9 /* Happy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Happy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D184FD1BF9CC0E0000B1F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A0D184FF1BF9CC0E0000B1F9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -142,7 +144,6 @@
 				A0D185051BF9CC0E0000B1F9 /* Main.storyboard */,
 				A0D185081BF9CC0E0000B1F9 /* Assets.xcassets */,
 				A0D1850A1BF9CC0E0000B1F9 /* LaunchScreen.storyboard */,
-				A0D1850D1BF9CC0E0000B1F9 /* Info.plist */,
 				A0D184FC1BF9CC0E0000B1F9 /* Supporting Files */,
 			);
 			path = Happy;
@@ -151,6 +152,8 @@
 		A0D184FC1BF9CC0E0000B1F9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A05558561BF9E12E0036E954 /* Settings.bundle */,
+				A0D1850D1BF9CC0E0000B1F9 /* Info.plist */,
 				A0D184FD1BF9CC0E0000B1F9 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -280,6 +283,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A05558571BF9E12E0036E954 /* Settings.bundle in Resources */,
 				A0D1850C1BF9CC0E0000B1F9 /* LaunchScreen.storyboard in Resources */,
 				A0D185091BF9CC0E0000B1F9 /* Assets.xcassets in Resources */,
 				A0D185071BF9CC0E0000B1F9 /* Main.storyboard in Resources */,
