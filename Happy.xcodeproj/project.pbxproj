@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A04A09431BF9EE9D005F385B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A04A09411BF9EE9D005F385B /* Localizable.strings */; };
 		A05558521BF9CE2D0036E954 /* HPPYRightMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A05558511BF9CE2D0036E954 /* HPPYRightMenuTableViewController.m */; };
 		A05558551BF9D8A30036E954 /* HPPYMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A05558541BF9D8A30036E954 /* HPPYMenuTableViewCell.m */; };
 		A05558571BF9E12E0036E954 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A05558561BF9E12E0036E954 /* Settings.bundle */; };
@@ -40,6 +41,10 @@
 
 /* Begin PBXFileReference section */
 		867A161B6F9B16C9161B4089 /* Pods-Happy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Happy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Happy/Pods-Happy.debug.xcconfig"; sourceTree = "<group>"; };
+		A04A093F1BF9ED9E005F385B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		A04A09401BF9ED9E005F385B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		A04A09421BF9EE9D005F385B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A04A09441BF9EEA2005F385B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A05558501BF9CE2D0036E954 /* HPPYRightMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYRightMenuTableViewController.h; sourceTree = "<group>"; };
 		A05558511BF9CE2D0036E954 /* HPPYRightMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYRightMenuTableViewController.m; sourceTree = "<group>"; };
 		A05558531BF9D8A30036E954 /* HPPYMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYMenuTableViewCell.h; sourceTree = "<group>"; };
@@ -152,6 +157,7 @@
 		A0D184FC1BF9CC0E0000B1F9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A04A09411BF9EE9D005F385B /* Localizable.strings */,
 				A05558561BF9E12E0036E954 /* Settings.bundle */,
 				A0D1850D1BF9CC0E0000B1F9 /* Info.plist */,
 				A0D184FD1BF9CC0E0000B1F9 /* main.m */,
@@ -283,6 +289,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A04A09431BF9EE9D005F385B /* Localizable.strings in Resources */,
 				A05558571BF9E12E0036E954 /* Settings.bundle in Resources */,
 				A0D1850C1BF9CC0E0000B1F9 /* LaunchScreen.storyboard in Resources */,
 				A0D185091BF9CC0E0000B1F9 /* Assets.xcassets in Resources */,
@@ -399,10 +406,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		A04A09411BF9EE9D005F385B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A04A09421BF9EE9D005F385B /* Base */,
+				A04A09441BF9EEA2005F385B /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		A0D185051BF9CC0E0000B1F9 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A0D185061BF9CC0E0000B1F9 /* Base */,
+				A04A093F1BF9ED9E005F385B /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -411,6 +428,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				A0D1850B1BF9CC0E0000B1F9 /* Base */,
+				A04A09401BF9ED9E005F385B /* de */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -454,7 +472,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -491,7 +509,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

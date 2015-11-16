@@ -50,8 +50,8 @@
     
     HPPYMenuTableViewCell *cell = (HPPYMenuTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"menu" forIndexPath:indexPath];
     
-    cell.titleLabel.text = @"Home";
-    cell.subTitleLabel.text = @"Home is where your heart is.";
+    cell.titleLabel.text = NSLocalizedString(@"Home", nil);
+    cell.subTitleLabel.text = NSLocalizedString(@"Home is where your heart is.", nil);
     
     return cell;
 }
