@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <array>
+        <dict>
+            <key>identifier</key>
+            <string>a1rufffw</string>
+            <key>title</key>
+            <string>Test Aufgabe</string>
+            <key>titlePersonalized</key>
+            <string>Test Aufgabe für %@</string>
+            <key>body</key>
+            <string>Langer text kommt hier gratis.
+                Mit Umbrüchen
+                
+                Leerzeilen
+                
+                
+                und emoticons 🤓</string>
+            <key>estimatedTime</key>
+            <integer>500</integer>
+            <key>category</key>
+            <integer>1</integer>
+        </dict>
+        <dict>
+            <key>identifier</key>
+            <string>a1rufffw</string>
+            <key>title</key>
+            <string>Test Aufgabe 2 zum mehr Testen</string>
+            <key>titlePersonalized</key>
+            <string>Test Aufgabe für %@</string>
+            <key>body</key>
+            <string>Langer text kommt hier free.
+                Mit Umbrüchen
+                
+                Leerzeilen
+                
+                
+                und emoticons 🤓</string>
+            <key>estimatedTime</key>
+            <integer>500</integer>
+            <key>category</key>
+            <integer>1</integer>
+        </dict>
+    </array>
+</plist>

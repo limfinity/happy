@@ -1,4 +1,7 @@
 
+/* Class = "UIButton"; normalTitle = "Skip"; ObjectID = "7U3-1Z-0h2"; */
+"7U3-1Z-0h2.normalTitle" = "Überspringen";
+
 /* Class = "UILabel"; text = "Label"; ObjectID = "LWa-Cl-hMI"; */
 "LWa-Cl-hMI.text" = "Label";
 
@@ -7,3 +10,6 @@
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "Xkv-ue-HSe"; */
 "Xkv-ue-HSe.text" = "Label";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "eD2-Em-vQM"; */
+"eD2-Em-vQM.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
