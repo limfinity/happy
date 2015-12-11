@@ -10,6 +10,7 @@
 
 @interface HPPYTaskController () {
     NSArray *_tasks;
+    HPPYTask *_currenTask;
 }
 
 @end
@@ -29,16 +30,23 @@
 
 - (HPPYTask *)currentTask {
     HPPYTask *task;
-    task = _tasks[0];
+    
+    if (_currenTask) {
+        task = _currenTask;
+    } else {
+        task = [_tasks firstObject];
+    }
     
     return task;
 }
 
 - (HPPYTask *)nextTask:(HPPYTask *)previousTask {
     HPPYTask *task;
+    
     int index = (int)[_tasks indexOfObject:previousTask] + 1;
     index = index < _tasks.count ? index : 0;
     task = _tasks[index];
+    _currenTask = task;
     
     return task;
 }
@@ -84,7 +92,7 @@
         // Remove old file if it already exists
         if ([ fileManager fileExistsAtPath:path]) {
             if (![fileManager removeItemAtPath:path error:&error]) {
-                NSLog(@"Error removing remove old file %@: %@", fileName, error.description);
+                NSLog(@"Error removing old file %@: %@", fileName, error.description);
                 return nil;
             }
         }

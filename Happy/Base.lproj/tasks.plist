@@ -6,17 +6,17 @@
 		<key>identifier</key>
 		<string>a1rufffw</string>
 		<key>title</key>
-		<string>Test Aufgabe</string>
+		<string>Test excercise</string>
 		<key>titlePersonalized</key>
-		<string>Test Aufgabe für %@</string>
+		<string>Test excercise for %@</string>
 		<key>body</key>
-		<string>Langer text kommt hier gratis.
-Mit Umbrüchen
-
-Leerzeilen
-
-
-        und emoticons 🤓</string>
+		<string>Long text with
+            
+            
+            line breaks is here free
+            
+            of charge. Also in the game Emoticons!🤓
+        </string>
 		<key>estimatedTime</key>
 		<integer>500</integer>
 		<key>category</key>
@@ -26,17 +26,17 @@ Leerzeilen
 		<key>identifier</key>
 		<string>a1rufffw</string>
 		<key>title</key>
-		<string>Test Aufgabe 2 zum mehr Testen</string>
+		<string>Test excercise two</string>
 		<key>titlePersonalized</key>
-		<string>Test Aufgabe für %@</string>
+		<string>Test excercise two for %@</string>
 		<key>body</key>
-		<string>Langer text kommt hier free.
-Mit Umbrüchen
-
-Leerzeilen
-
-
-        und emoticons 🤓</string>
+        <string>Long text with
+            
+            
+            line breaks is here free
+            same same but different
+            
+            of charge. Also in the game Emoticons!🤓</string>
 		<key>estimatedTime</key>
 		<integer>500</integer>
 		<key>category</key>

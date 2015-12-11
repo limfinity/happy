@@ -18,6 +18,7 @@
 		A05C6CB21C1307FB00D1EF1A /* tasks.plist in Resources */ = {isa = PBXBuildFile; fileRef = A05C6CB41C1307FB00D1EF1A /* tasks.plist */; };
 		A05C6CB81C13309E00D1EF1A /* HPPYTaskCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A05C6CB71C13309E00D1EF1A /* HPPYTaskCardViewController.m */; };
 		A079FFFF1C13063700B387CC /* HPPYTaskController.m in Sources */ = {isa = PBXBuildFile; fileRef = A079FFFE1C13063700B387CC /* HPPYTaskController.m */; };
+		A0A0FE1F1C1AF1890008225E /* HPPYTaskDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A0FE1E1C1AF1890008225E /* HPPYTaskDetailViewController.m */; };
 		A0D184FE1BF9CC0E0000B1F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D184FD1BF9CC0E0000B1F9 /* main.m */; };
 		A0D185011BF9CC0E0000B1F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D185001BF9CC0E0000B1F9 /* AppDelegate.m */; };
 		A0D185041BF9CC0E0000B1F9 /* HPPYTaskContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D185031BF9CC0E0000B1F9 /* HPPYTaskContainerViewController.m */; };
@@ -69,6 +70,8 @@
 		A05C6CBA1C1334A100D1EF1A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		A079FFFD1C13063700B387CC /* HPPYTaskController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYTaskController.h; sourceTree = "<group>"; };
 		A079FFFE1C13063700B387CC /* HPPYTaskController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYTaskController.m; sourceTree = "<group>"; };
+		A0A0FE1D1C1AF1890008225E /* HPPYTaskDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYTaskDetailViewController.h; sourceTree = "<group>"; };
+		A0A0FE1E1C1AF1890008225E /* HPPYTaskDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYTaskDetailViewController.m; sourceTree = "<group>"; };
 		A0D184F91BF9CC0E0000B1F9 /* Happy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Happy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D184FD1BF9CC0E0000B1F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A0D184FF1BF9CC0E0000B1F9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -173,6 +176,8 @@
 				A079FFFE1C13063700B387CC /* HPPYTaskController.m */,
 				A05C6CB61C13309E00D1EF1A /* HPPYTaskCardViewController.h */,
 				A05C6CB71C13309E00D1EF1A /* HPPYTaskCardViewController.m */,
+				A0A0FE1D1C1AF1890008225E /* HPPYTaskDetailViewController.h */,
+				A0A0FE1E1C1AF1890008225E /* HPPYTaskDetailViewController.m */,
 				A05558501BF9CE2D0036E954 /* HPPYRightMenuTableViewController.h */,
 				A05558511BF9CE2D0036E954 /* HPPYRightMenuTableViewController.m */,
 				A05558531BF9D8A30036E954 /* HPPYMenuTableViewCell.h */,
@@ -410,6 +415,7 @@
 				A00E9ADB1BFDF45C00C94ABA /* HPPYTask.m in Sources */,
 				A079FFFF1C13063700B387CC /* HPPYTaskController.m in Sources */,
 				A04A094B1BFA0259005F385B /* contact.md in Sources */,
+				A0A0FE1F1C1AF1890008225E /* HPPYTaskDetailViewController.m in Sources */,
 				A0D185041BF9CC0E0000B1F9 /* HPPYTaskContainerViewController.m in Sources */,
 				A04A09471BF9F05C005F385B /* HPPYStaticTextViewController.m in Sources */,
 				A0D185011BF9CC0E0000B1F9 /* AppDelegate.m in Sources */,

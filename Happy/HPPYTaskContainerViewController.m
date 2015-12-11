@@ -11,11 +11,13 @@
 #import "HPPYTaskController.h"
 #import "HPPYTaskCardViewController.h"
 
-@interface HPPYTaskContainerViewController () <SlideNavigationControllerDelegate>
+@interface HPPYTaskContainerViewController () <SlideNavigationControllerDelegate> {
+    HPPYTaskController *_taskController;
+}
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
-@property (strong, nonatomic) HPPYTaskController *taskController;
 @property (weak, nonatomic) IBOutlet UIView *taskCardView;
+@property (weak, nonatomic) HPPYTaskCardViewController *taskCardViewController;
 
 @end
 
@@ -27,14 +29,15 @@
 
 - (HPPYTaskController *)taskController {
     if (!_taskController) {
-        self.taskController = [HPPYTaskController new];
+        _taskController = [HPPYTaskController new];
     }
     return _taskController;
 }
 
 // MARK: Tasks
 - (IBAction)skipTask:(id)sender {
-    [self.taskController nextTask:[self.taskController currentTask]];
+    [[self taskController] nextTask:[[self taskController] currentTask]];
+    [self.taskCardViewController setTask:[[self taskController] currentTask]];
     // TODO: update card
 }
 
@@ -50,10 +53,11 @@
 
 // MARK: Storyboard
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSLog(@"%@", segue.identifier);
     if ([segue.identifier isEqualToString:@"ShowTaskCard"]) {
         HPPYTaskCardViewController *vc = segue.destinationViewController;
-        self.taskController = self.taskController;
-        vc.task = [_taskController currentTask];
+        self.taskCardViewController = vc;
+        [vc setTask:[[self taskController] currentTask]];
     }
 }
 
