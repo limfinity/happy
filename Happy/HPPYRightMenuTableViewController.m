@@ -45,6 +45,12 @@
                   @"title":@"Imprint",
                   @"subTitle":@"All that legal stuff.",
                   @"viewController":@"StaticTextViewController"
+                  },
+              @{
+                  @"id":@"settings",
+                  @"title":@"Settings",
+                  @"subTitle":@"Your very custom Happy App.",
+                  @"viewController":@"SettingsViewController"
                   }
               ];
 }
@@ -100,13 +106,12 @@
     
     if ([identifier isEqualToString:@"StaticTextViewController"]) {
         HPPYStaticTextViewController *vc = (HPPYStaticTextViewController *)[mainStoryboard instantiateViewControllerWithIdentifier:identifier];
-        vc.title = menuRowDict[@"title"];
+        vc.title = NSLocalizedString(menuRowDict[@"title"], nil);
         vc.identifier = menuRowDict[@"id"];
         [SlideNavigationController sharedInstance].avoidSwitchingToSameClassViewController = NO;
         [[SlideNavigationController sharedInstance] popAllAndSwitchToViewController:vc withCompletion:nil];
     } else {
-        HPPYTaskContainerViewController *vc = (HPPYTaskContainerViewController *)[mainStoryboard instantiateViewControllerWithIdentifier:identifier];
-        vc.title = menuRowDict[@"title"];
+        UIViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:identifier];
         [SlideNavigationController sharedInstance].avoidSwitchingToSameClassViewController = YES;
         [[SlideNavigationController sharedInstance] popAllAndSwitchToViewController:vc withCompletion:nil];
     }

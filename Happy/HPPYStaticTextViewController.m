@@ -21,14 +21,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    NSAttributedString *markdown = [[TSMarkdownParser standardParser] attributedStringFromMarkdown:[self getLicenseTextFromCocoapods]];
+    NSAttributedString *markdown = [[TSMarkdownParser standardParser] attributedStringFromMarkdown:[self getTextFromFile]];
     [self.textView setAttributedText:markdown];    
 }
 
--(NSString *)getLicenseTextFromCocoapods {
+-(NSString *)getTextFromFile {
     NSString *result;
     NSString *path = [[NSBundle mainBundle] pathForResource:self.identifier ofType:@"md"];
-    NSLog(@"%@", path);
     NSError *error;
     NSString *content = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
     if (error) {
@@ -40,13 +39,14 @@
     return result;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
 // MARK: SlideNavigationControllerDelegate
 -(BOOL)slideNavigationControllerShouldDisplayRightMenu {
     return YES;
+}
+
+// MARK: App lifecycle
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
 }
 
 @end
