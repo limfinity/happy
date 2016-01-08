@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A00E9ADB1BFDF45C00C94ABA /* HPPYTask.m in Sources */ = {isa = PBXBuildFile; fileRef = A00E9ADA1BFDF45C00C94ABA /* HPPYTask.m */; };
+		A01369341C1DD6EE00F69C31 /* HPPYSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A01369331C1DD6EE00F69C31 /* HPPYSettingsTableViewController.m */; };
 		A04A09431BF9EE9D005F385B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A04A09411BF9EE9D005F385B /* Localizable.strings */; };
 		A04A09471BF9F05C005F385B /* HPPYStaticTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04A09461BF9F05C005F385B /* HPPYStaticTextViewController.m */; };
 		A04A094B1BFA0259005F385B /* contact.md in Sources */ = {isa = PBXBuildFile; fileRef = A04A094D1BFA0259005F385B /* contact.md */; };
@@ -15,9 +16,13 @@
 		A05558521BF9CE2D0036E954 /* HPPYRightMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A05558511BF9CE2D0036E954 /* HPPYRightMenuTableViewController.m */; };
 		A05558551BF9D8A30036E954 /* HPPYMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A05558541BF9D8A30036E954 /* HPPYMenuTableViewCell.m */; };
 		A05558571BF9E12E0036E954 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A05558561BF9E12E0036E954 /* Settings.bundle */; };
+		A058D40B1C24236A00361186 /* HPPYTextInputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A058D40A1C24236A00361186 /* HPPYTextInputTableViewCell.m */; };
 		A05C6CB21C1307FB00D1EF1A /* tasks.plist in Resources */ = {isa = PBXBuildFile; fileRef = A05C6CB41C1307FB00D1EF1A /* tasks.plist */; };
 		A05C6CB81C13309E00D1EF1A /* HPPYTaskCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A05C6CB71C13309E00D1EF1A /* HPPYTaskCardViewController.m */; };
 		A079FFFF1C13063700B387CC /* HPPYTaskController.m in Sources */ = {isa = PBXBuildFile; fileRef = A079FFFE1C13063700B387CC /* HPPYTaskController.m */; };
+		A098FC481C3FF2DD0007EBEF /* HPPYHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A098FC471C3FF2DD0007EBEF /* HPPYHeaderTableViewCell.m */; };
+		A098FC4B1C4000840007EBEF /* HPPYReminderTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A098FC4A1C4000840007EBEF /* HPPYReminderTableViewController.m */; };
+		A098FC4E1C401BFC0007EBEF /* HPPYReminderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A098FC4D1C401BFC0007EBEF /* HPPYReminderTableViewCell.m */; };
 		A0A0FE1F1C1AF1890008225E /* HPPYTaskDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A0FE1E1C1AF1890008225E /* HPPYTaskDetailViewController.m */; };
 		A0D184FE1BF9CC0E0000B1F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D184FD1BF9CC0E0000B1F9 /* main.m */; };
 		A0D185011BF9CC0E0000B1F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D185001BF9CC0E0000B1F9 /* AppDelegate.m */; };
@@ -51,6 +56,8 @@
 		867A161B6F9B16C9161B4089 /* Pods-Happy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Happy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Happy/Pods-Happy.debug.xcconfig"; sourceTree = "<group>"; };
 		A00E9AD91BFDF45C00C94ABA /* HPPYTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYTask.h; sourceTree = "<group>"; };
 		A00E9ADA1BFDF45C00C94ABA /* HPPYTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYTask.m; sourceTree = "<group>"; };
+		A01369321C1DD6EE00F69C31 /* HPPYSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYSettingsTableViewController.h; sourceTree = "<group>"; };
+		A01369331C1DD6EE00F69C31 /* HPPYSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYSettingsTableViewController.m; sourceTree = "<group>"; };
 		A04A09401BF9ED9E005F385B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		A04A09421BF9EE9D005F385B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A04A09441BF9EEA2005F385B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -63,6 +70,8 @@
 		A05558531BF9D8A30036E954 /* HPPYMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYMenuTableViewCell.h; sourceTree = "<group>"; };
 		A05558541BF9D8A30036E954 /* HPPYMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYMenuTableViewCell.m; sourceTree = "<group>"; };
 		A05558561BF9E12E0036E954 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		A058D4091C24236A00361186 /* HPPYTextInputTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYTextInputTableViewCell.h; sourceTree = "<group>"; };
+		A058D40A1C24236A00361186 /* HPPYTextInputTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYTextInputTableViewCell.m; sourceTree = "<group>"; };
 		A05C6CB31C1307FB00D1EF1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/tasks.plist; sourceTree = "<group>"; };
 		A05C6CB51C1307FD00D1EF1A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = de; path = de.lproj/tasks.plist; sourceTree = "<group>"; };
 		A05C6CB61C13309E00D1EF1A /* HPPYTaskCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYTaskCardViewController.h; sourceTree = "<group>"; };
@@ -70,6 +79,12 @@
 		A05C6CBA1C1334A100D1EF1A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		A079FFFD1C13063700B387CC /* HPPYTaskController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYTaskController.h; sourceTree = "<group>"; };
 		A079FFFE1C13063700B387CC /* HPPYTaskController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYTaskController.m; sourceTree = "<group>"; };
+		A098FC461C3FF2DD0007EBEF /* HPPYHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYHeaderTableViewCell.h; sourceTree = "<group>"; };
+		A098FC471C3FF2DD0007EBEF /* HPPYHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYHeaderTableViewCell.m; sourceTree = "<group>"; };
+		A098FC491C4000840007EBEF /* HPPYReminderTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYReminderTableViewController.h; sourceTree = "<group>"; };
+		A098FC4A1C4000840007EBEF /* HPPYReminderTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYReminderTableViewController.m; sourceTree = "<group>"; };
+		A098FC4C1C401BFC0007EBEF /* HPPYReminderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYReminderTableViewCell.h; sourceTree = "<group>"; };
+		A098FC4D1C401BFC0007EBEF /* HPPYReminderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYReminderTableViewCell.m; sourceTree = "<group>"; };
 		A0A0FE1D1C1AF1890008225E /* HPPYTaskDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYTaskDetailViewController.h; sourceTree = "<group>"; };
 		A0A0FE1E1C1AF1890008225E /* HPPYTaskDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYTaskDetailViewController.m; sourceTree = "<group>"; };
 		A0D184F91BF9CC0E0000B1F9 /* Happy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Happy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,6 +201,16 @@
 				A0D185031BF9CC0E0000B1F9 /* HPPYTaskContainerViewController.m */,
 				A04A09451BF9F05C005F385B /* HPPYStaticTextViewController.h */,
 				A04A09461BF9F05C005F385B /* HPPYStaticTextViewController.m */,
+				A01369321C1DD6EE00F69C31 /* HPPYSettingsTableViewController.h */,
+				A01369331C1DD6EE00F69C31 /* HPPYSettingsTableViewController.m */,
+				A098FC461C3FF2DD0007EBEF /* HPPYHeaderTableViewCell.h */,
+				A098FC471C3FF2DD0007EBEF /* HPPYHeaderTableViewCell.m */,
+				A058D4091C24236A00361186 /* HPPYTextInputTableViewCell.h */,
+				A058D40A1C24236A00361186 /* HPPYTextInputTableViewCell.m */,
+				A098FC4C1C401BFC0007EBEF /* HPPYReminderTableViewCell.h */,
+				A098FC4D1C401BFC0007EBEF /* HPPYReminderTableViewCell.m */,
+				A098FC491C4000840007EBEF /* HPPYReminderTableViewController.h */,
+				A098FC4A1C4000840007EBEF /* HPPYReminderTableViewController.m */,
 				A0D185051BF9CC0E0000B1F9 /* Main.storyboard */,
 				A0D185081BF9CC0E0000B1F9 /* Assets.xcassets */,
 				A0D1850A1BF9CC0E0000B1F9 /* LaunchScreen.storyboard */,
@@ -201,8 +226,8 @@
 				A04A09411BF9EE9D005F385B /* Localizable.strings */,
 				A05558561BF9E12E0036E954 /* Settings.bundle */,
 				A0D1850D1BF9CC0E0000B1F9 /* Info.plist */,
-				A0D184FD1BF9CC0E0000B1F9 /* main.m */,
 				A05C6CB41C1307FB00D1EF1A /* tasks.plist */,
+				A0D184FD1BF9CC0E0000B1F9 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -295,6 +320,7 @@
 				TargetAttributes = {
 					A0D184F81BF9CC0E0000B1F9 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = F388VYUZM3;
 					};
 					A0D185111BF9CC0E0000B1F9 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -411,17 +437,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A098FC4E1C401BFC0007EBEF /* HPPYReminderTableViewCell.m in Sources */,
 				A05558521BF9CE2D0036E954 /* HPPYRightMenuTableViewController.m in Sources */,
+				A098FC4B1C4000840007EBEF /* HPPYReminderTableViewController.m in Sources */,
 				A00E9ADB1BFDF45C00C94ABA /* HPPYTask.m in Sources */,
 				A079FFFF1C13063700B387CC /* HPPYTaskController.m in Sources */,
 				A04A094B1BFA0259005F385B /* contact.md in Sources */,
+				A058D40B1C24236A00361186 /* HPPYTextInputTableViewCell.m in Sources */,
 				A0A0FE1F1C1AF1890008225E /* HPPYTaskDetailViewController.m in Sources */,
 				A0D185041BF9CC0E0000B1F9 /* HPPYTaskContainerViewController.m in Sources */,
 				A04A09471BF9F05C005F385B /* HPPYStaticTextViewController.m in Sources */,
+				A01369341C1DD6EE00F69C31 /* HPPYSettingsTableViewController.m in Sources */,
 				A0D185011BF9CC0E0000B1F9 /* AppDelegate.m in Sources */,
 				A0D184FE1BF9CC0E0000B1F9 /* main.m in Sources */,
 				A05C6CB81C13309E00D1EF1A /* HPPYTaskCardViewController.m in Sources */,
 				A05558551BF9D8A30036E954 /* HPPYMenuTableViewCell.m in Sources */,
+				A098FC481C3FF2DD0007EBEF /* HPPYHeaderTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,6 +621,7 @@
 			baseConfigurationReference = 867A161B6F9B16C9161B4089 /* Pods-Happy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Happy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -603,6 +635,7 @@
 			baseConfigurationReference = F21E2FE5279E430BE94BDD7C /* Pods-Happy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Happy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

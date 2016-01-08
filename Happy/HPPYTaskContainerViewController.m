@@ -38,12 +38,6 @@
 - (IBAction)skipTask:(id)sender {
     [[self taskController] nextTask:[[self taskController] currentTask]];
     [self.taskCardViewController setTask:[[self taskController] currentTask]];
-    // TODO: update card
-}
-
-// MARK: App lifecycle
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
 }
 
 // MARK: SlideNavigationControllerDelegate
@@ -53,12 +47,16 @@
 
 // MARK: Storyboard
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSLog(@"%@", segue.identifier);
     if ([segue.identifier isEqualToString:@"ShowTaskCard"]) {
         HPPYTaskCardViewController *vc = segue.destinationViewController;
         self.taskCardViewController = vc;
         [vc setTask:[[self taskController] currentTask]];
     }
+}
+
+// MARK: App lifecycle
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
 }
 
 @end

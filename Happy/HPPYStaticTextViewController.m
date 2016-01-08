@@ -39,13 +39,14 @@
     return result;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
 // MARK: SlideNavigationControllerDelegate
 -(BOOL)slideNavigationControllerShouldDisplayRightMenu {
     return YES;
+}
+
+// MARK: App lifecycle
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
 }
 
 @end
