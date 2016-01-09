@@ -73,6 +73,7 @@
 		A04AA2F11C416ADE00DB4A69 /* HPPYCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYCodeViewController.h; sourceTree = "<group>"; };
 		A04AA2F21C416ADE00DB4A69 /* HPPYCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYCodeViewController.m; sourceTree = "<group>"; };
 		A04AA2F41C416D0E00DB4A69 /* hppyCodes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hppyCodes.plist; sourceTree = "<group>"; };
+		A04AA2F81C417D4A00DB4A69 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		A05558501BF9CE2D0036E954 /* HPPYRightMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYRightMenuTableViewController.h; sourceTree = "<group>"; };
 		A05558511BF9CE2D0036E954 /* HPPYRightMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYRightMenuTableViewController.m; sourceTree = "<group>"; };
 		A05558531BF9D8A30036E954 /* HPPYMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYMenuTableViewCell.h; sourceTree = "<group>"; };
@@ -84,7 +85,6 @@
 		A05C6CB51C1307FD00D1EF1A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = de; path = de.lproj/tasks.plist; sourceTree = "<group>"; };
 		A05C6CB61C13309E00D1EF1A /* HPPYTaskCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYTaskCardViewController.h; sourceTree = "<group>"; };
 		A05C6CB71C13309E00D1EF1A /* HPPYTaskCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYTaskCardViewController.m; sourceTree = "<group>"; };
-		A05C6CBA1C1334A100D1EF1A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		A079FFFD1C13063700B387CC /* HPPYTaskController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYTaskController.h; sourceTree = "<group>"; };
 		A079FFFE1C13063700B387CC /* HPPYTaskController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYTaskController.m; sourceTree = "<group>"; };
 		A098FC461C3FF2DD0007EBEF /* HPPYHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYHeaderTableViewCell.h; sourceTree = "<group>"; };
@@ -535,7 +535,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				A0D185061BF9CC0E0000B1F9 /* Base */,
-				A05C6CBA1C1334A100D1EF1A /* de */,
+				A04AA2F81C417D4A00DB4A69 /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

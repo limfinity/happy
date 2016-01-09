@@ -19,9 +19,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dreamBackground" translatesAutoresizingMaskIntoConstraints="NO" id="7nJ-o9-9Sf">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7U3-1Z-0h2">
                                 <rect key="frame" x="110" y="518" width="100" height="30"/>
                                 <constraints>
@@ -47,11 +44,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="v2e-du-UeI" secondAttribute="trailing" constant="20" id="Mhj-ww-xqq"/>
                             <constraint firstItem="7U3-1Z-0h2" firstAttribute="top" secondItem="v2e-du-UeI" secondAttribute="bottom" constant="20" id="QLT-mk-1qv"/>
                             <constraint firstItem="v2e-du-UeI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="SGB-09-gok"/>
-                            <constraint firstItem="7nJ-o9-9Sf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="UrO-ER-1Oy"/>
                             <constraint firstItem="7U3-1Z-0h2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ce1-Ad-5VO"/>
-                            <constraint firstAttribute="trailing" secondItem="7nJ-o9-9Sf" secondAttribute="trailing" id="hml-Ro-hzl"/>
-                            <constraint firstItem="7nJ-o9-9Sf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="qUM-1k-iSF"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7nJ-o9-9Sf" secondAttribute="bottom" id="s94-f0-nxJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="♡" id="UsI-4l-0DV"/>
@@ -569,7 +562,7 @@
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" address="YES"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -801,7 +794,6 @@ Schön, dass du dabei bist.</string>
         </scene>
     </scenes>
     <resources>
-        <image name="dreamBackground" width="375" height="667"/>
         <image name="hppyHeart" width="505" height="401"/>
     </resources>
     <inferredMetricsTieBreakers>
