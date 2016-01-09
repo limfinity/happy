@@ -19,12 +19,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    // Set up slide menu
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    HPPYRightMenuTableViewController *rightMenuViewController = [storyboard instantiateViewControllerWithIdentifier:@"RightMenuViewController"];
-    [SlideNavigationController sharedInstance].rightMenu = rightMenuViewController;
-    [self setUpMenuButton];
-    
     // Update version in settings
     [self updateVersion];
     
@@ -35,20 +29,42 @@
         application.applicationIconBadgeNumber = 0;
     }
     
-    return YES;
-}
+    // Handle root view manually to avoid problems with slide navigation
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self.window makeKeyAndVisible];
 
-- (void)setUpMenuButton {
-    UIButton *button  = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
-    [button setImage:[UIImage imageNamed:@"menuBurger"] forState:UIControlStateNormal];
-    [button addTarget:[SlideNavigationController sharedInstance] action:@selector(toggleRightMenu) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
-    [SlideNavigationController sharedInstance].rightBarButtonItem = rightBarButtonItem;
+    // Show correct view when starting the app
+    [self handleAppState];
+    
+    return YES;
 }
 
 - (void)updateVersion {
     NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     [[NSUserDefaults standardUserDefaults] setObject:version forKey:@"hppyVersion"];
+}
+
+- (void)handleAppState {
+    BOOL unlocked = [[NSUserDefaults standardUserDefaults] boolForKey:@"hppyUnlocked"];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    if (unlocked) {
+        // Set up slide menu
+        self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"TaskNavigationViewController"];
+        [self setupSlideMenu];
+    } else {
+        self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"CodeViewController"];
+    }
+}
+
+- (void)setupSlideMenu {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    HPPYRightMenuTableViewController *rightMenuViewController = [storyboard instantiateViewControllerWithIdentifier:@"RightMenuViewController"];
+    [SlideNavigationController sharedInstance].rightMenu = rightMenuViewController;
+    UIButton *button  = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+    [button setImage:[UIImage imageNamed:@"menuBurger"] forState:UIControlStateNormal];
+    [button addTarget:[SlideNavigationController sharedInstance] action:@selector(toggleRightMenu) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    [SlideNavigationController sharedInstance].rightBarButtonItem = rightBarButtonItem;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -67,6 +83,9 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    // For now always reset badge count
+    application.applicationIconBadgeNumber = 0;
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

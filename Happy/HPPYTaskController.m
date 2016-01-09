@@ -7,6 +7,7 @@
 //
 
 #import "HPPYTaskController.h"
+#import "HPPY.h"
 
 @interface HPPYTaskController () {
     NSArray *_tasks;
@@ -59,7 +60,7 @@
 // MARK: Private methods
 - (NSArray *)getTasks {
     NSMutableArray *tasks = [NSMutableArray new];
-    NSArray *array = [self getArrayFromFile:@"tasks.plist" reloadFromBundle:YES];
+    NSArray *array = [HPPY getArrayFromFile:@"tasks.plist" reloadFromBundle:YES];
     
     // TODO: Use nscopying protocol
     for (NSDictionary *dict in array) {
@@ -68,49 +69,6 @@
     }
     
     return tasks;
-}
-
-- (NSArray *)getArrayFromFile:(NSString *)fileName reloadFromBundle:(BOOL)reload {
-    NSArray *result;
-    
-    NSError *error;
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *path = [documentsDirectory stringByAppendingPathComponent:fileName];
-    
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    if (reload || ![fileManager fileExistsAtPath: path]) {
-        NSArray *pathArray = [fileName componentsSeparatedByString:@"."];
-        NSString *bundle;
-        if (pathArray.count > 1) {
-            bundle = [[NSBundle mainBundle] pathForResource:pathArray[0] ofType:pathArray[1]];
-        } else {
-            // Guess plist extension if no type was given
-            bundle = [[NSBundle mainBundle] pathForResource:fileName ofType:@"plist"];
-        }
-        
-        // Remove old file if it already exists
-        if ([ fileManager fileExistsAtPath:path]) {
-            if (![fileManager removeItemAtPath:path error:&error]) {
-                NSLog(@"Error removing old file %@: %@", fileName, error.description);
-                return nil;
-            }
-        }
-        
-        if (![fileManager copyItemAtPath:bundle toPath: path error:&error]) {
-            NSLog(@"Error getting file %@ from path: %@", fileName, error.description);
-            return nil;
-        }
-    }
-    
-    result = [NSArray arrayWithContentsOfFile:path];
-    
-    if (result == nil) {
-        NSLog(@"Error getting array from file %@", fileName);
-        return nil;
-    }
-    
-    return result;
 }
 
 @end
