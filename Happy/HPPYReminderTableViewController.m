@@ -56,7 +56,7 @@
                               components:NSCalendarUnitHour | NSCalendarUnitMinute
                               fromDate:reminder];
     NSInteger minutes = [time minute];
-    int fiveTimes = minutes / 5;
+    int fiveTimes = (int)minutes / 5;
     minutes = fiveTimes * 5.0;
     [time setMinute: minutes];
     [time setSecond:0];
