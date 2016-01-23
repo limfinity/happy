@@ -194,16 +194,16 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="hle-7i-S3o"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBa-2f-dcy">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBa-2f-dcy">
                                 <rect key="frame" x="20" y="145" width="280" height="343"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rhq-Ut-4ZI">
@@ -212,10 +212,15 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Mz0-eN-HIN"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Button">
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
+                                <state key="normal" title="Erledigt">
                                     <color key="titleColor" red="1" green="0.55755709990000002" blue="0.16999930299999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="completeTask:" destination="9p3-GZ-6mv" eventType="touchUpInside" id="CIN-JC-nQT"/>
                                 </connections>
@@ -615,6 +620,7 @@
 Code, den du per Email
 erhalten hast, ein.</string>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="22"/>
+                                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7t-vT-3sO">
@@ -628,27 +634,22 @@ erhalten hast, ein.</string>
                                                 <state key="disabled">
                                                     <color key="titleColor" red="0.91373527489999995" green="0.91373527489999995" blue="0.91373527489999995" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="unlockHappy:" destination="N0S-wc-5YC" eventType="touchUpInside" id="HPA-pi-XmL"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4q3-Hl-UUY">
-                                                <rect key="frame" x="20" y="230" width="280" height="56"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="56" id="zOz-aS-Xfv"/>
-                                                </constraints>
-                                                <string key="text">Hey!
-Schön, dass du dabei bist.</string>
-                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="22"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Code" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fWs-ZH-9eF">
                                                 <rect key="frame" x="20" y="408" width="280" height="46"/>
                                                 <color key="tintColor" red="0.3921568627" green="0.96470588239999999" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="46" id="zlv-0U-HGS"/>
                                                 </constraints>
+                                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="46"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="go"/>
                                             </textField>
@@ -671,6 +672,17 @@ Schön, dass du dabei bist.</string>
                                                     </mask>
                                                 </variation>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4q3-Hl-UUY">
+                                                <rect key="frame" x="20" y="230" width="280" height="56"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="56" id="zOz-aS-Xfv"/>
+                                                </constraints>
+                                                <string key="text">Hey!
+Schön, dass du dabei bist.</string>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="22"/>
+                                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>

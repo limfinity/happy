@@ -33,7 +33,12 @@
 }
 
 - (void)updateInterface {
-    self.titleLabel.text = self.task.titlePersonalized;
+    NSString *name = [[NSUserDefaults standardUserDefaults] stringForKey:@"hppyName"];
+    if (!name || name.length < 1) {
+        self.titleLabel.text = self.task.title;
+    } else {
+        self.titleLabel.text = [NSString stringWithFormat:self.task.titlePersonalized, name];
+    }
     self.detailTextView.text = self.task.body;
     self.backgroundImageView.image = [self.task categoryImage];
 }

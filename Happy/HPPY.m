@@ -6,6 +6,16 @@
 //  Copyright © 2016 Peter Pult. All rights reserved.
 //
 
+/* *******************************************
+ * NSUserDefaults Variables
+ * 
+ * hppyName       NSString
+ * hppyReminders  NSArray
+ * hppyVersion    NSString
+ * hppyUnlocked   BOOL
+ * AppleLanguages NSArray
+ ******************************************* */
+
 #import "HPPY.h"
 
 @implementation HPPY

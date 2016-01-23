@@ -36,13 +36,13 @@
 }
 
 - (void)updateSettings {
-    NSString *name = [[NSUserDefaults standardUserDefaults] valueForKey:@"hppyName"];
+    NSString *name = [[NSUserDefaults standardUserDefaults] stringForKey:@"hppyName"];
     _name = name ? name : @"";
     [self updateReminders];
 }
 
 - (void)updateReminders {
-    NSMutableArray *reminders = [[NSUserDefaults standardUserDefaults] valueForKey:@"hppyReminders"];
+    NSMutableArray *reminders = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] arrayForKey:@"hppyReminders"]];
     _reminders = reminders ? reminders : [NSMutableArray new];
     
     // Sort reminders only using the time

@@ -30,13 +30,7 @@
 		<key>titlePersonalized</key>
 		<string>Test Aufgabe für %@</string>
 		<key>body</key>
-		<string>Langer text kommt hier free.
-                Mit Umbrüchen
-                
-                Leerzeilen
-                
-                
-                und emoticons 🤓</string>
+		<string>Langer text kommt hier free.\nMit Umbrüchen Leerzeilen und emoticons 🤓</string>
 		<key>estimatedTime</key>
 		<integer>500</integer>
 		<key>category</key>
