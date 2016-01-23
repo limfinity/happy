@@ -38,6 +38,9 @@
 - (IBAction)skipTask:(id)sender {
     [[self taskController] nextTask:[[self taskController] currentTask]];
     [self.taskCardViewController setTask:[[self taskController] currentTask]];
+    
+    // Reset timer for started task
+    [[NSUserDefaults standardUserDefaults] setFloat:0.0 forKey:@"hppyStartTimeTask"];
 }
 
 // MARK: SlideNavigationControllerDelegate

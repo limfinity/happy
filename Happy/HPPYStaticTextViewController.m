@@ -20,9 +20,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    NSAttributedString *markdown = [[TSMarkdownParser standardParser] attributedStringFromMarkdown:[self getTextFromFile]];
-    [self.textView setAttributedText:markdown];    
+    UIFont *font = [UIFont systemFontOfSize:18.0 weight:UIFontWeightRegular];
+    UIFont *h1Font = [UIFont systemFontOfSize:36.0 weight:UIFontWeightThin];
+    TSMarkdownParser *parser = [TSMarkdownParser standardParser];
+    [parser setParagraphFont:font];
+    [parser setH1Font:h1Font];
+    NSAttributedString *markdown = [parser attributedStringFromMarkdown:[self getTextFromFile]];
+    [self.textView setAttributedText:markdown];
 }
 
 -(NSString *)getTextFromFile {

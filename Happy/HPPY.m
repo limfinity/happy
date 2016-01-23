@@ -9,11 +9,12 @@
 /* *******************************************
  * NSUserDefaults Variables
  * 
- * hppyName       NSString
- * hppyReminders  NSArray
- * hppyVersion    NSString
- * hppyUnlocked   BOOL
- * AppleLanguages NSArray
+ * hppyName          NSString
+ * hppyReminders     NSArray
+ * hppyVersion       NSString
+ * hppyUnlocked      BOOL
+ * hppyStartTimeTask Float
+ * AppleLanguages    NSArray
  ******************************************* */
 
 #import "HPPY.h"

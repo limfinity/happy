@@ -20,7 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     // Set language on all devices to German for MVP1
-    [[NSUserDefaults standardUserDefaults] setObject:@[@"de"] forKey:@"AppleLanguages"];
+    [[NSUserDefaults standardUserDefaults] setObject:@[@"de", @"de-de"] forKey:@"AppleLanguages"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     // Update version in settings

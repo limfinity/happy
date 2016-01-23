@@ -106,7 +106,7 @@
     
     if ([identifier isEqualToString:@"StaticTextViewController"]) {
         HPPYStaticTextViewController *vc = (HPPYStaticTextViewController *)[mainStoryboard instantiateViewControllerWithIdentifier:identifier];
-        vc.title = NSLocalizedString(menuRowDict[@"title"], nil);
+//        vc.title = NSLocalizedString(menuRowDict[@"title"], nil);
         vc.identifier = menuRowDict[@"id"];
         [SlideNavigationController sharedInstance].avoidSwitchingToSameClassViewController = NO;
         [[SlideNavigationController sharedInstance] popAllAndSwitchToViewController:vc withCompletion:nil];
