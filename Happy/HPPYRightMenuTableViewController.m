@@ -104,17 +104,19 @@
     NSDictionary *menuRowDict = _menu[indexPath.row];
     NSString *identifier = menuRowDict[@"viewController"];
     
+    UIViewController* vc = [mainStoryboard instantiateViewControllerWithIdentifier:identifier];
+    UIImage *image = [UIImage imageNamed:@"navigationHeart"];
+    vc.navigationItem.titleView = [[UIImageView alloc] initWithImage:image];
+    
     if ([identifier isEqualToString:@"StaticTextViewController"]) {
-        HPPYStaticTextViewController *vc = (HPPYStaticTextViewController *)[mainStoryboard instantiateViewControllerWithIdentifier:identifier];
-//        vc.title = NSLocalizedString(menuRowDict[@"title"], nil);
-        vc.identifier = menuRowDict[@"id"];
+        HPPYStaticTextViewController *staticVc = (HPPYStaticTextViewController *)vc;
+        staticVc.identifier = menuRowDict[@"id"];
         [SlideNavigationController sharedInstance].avoidSwitchingToSameClassViewController = NO;
-        [[SlideNavigationController sharedInstance] popAllAndSwitchToViewController:vc withCompletion:nil];
     } else {
-        UIViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:identifier];
         [SlideNavigationController sharedInstance].avoidSwitchingToSameClassViewController = YES;
-        [[SlideNavigationController sharedInstance] popAllAndSwitchToViewController:vc withCompletion:nil];
     }
+    [[SlideNavigationController sharedInstance] popAllAndSwitchToViewController:vc withCompletion:nil];
+
 }
 
 /*

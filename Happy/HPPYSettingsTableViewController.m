@@ -24,8 +24,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.title = NSLocalizedString(@"Settings", nil);
 }
 
 -(void)viewWillAppear:(BOOL)animated {

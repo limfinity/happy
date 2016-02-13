@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A00E9ADB1BFDF45C00C94ABA /* HPPYTask.m in Sources */ = {isa = PBXBuildFile; fileRef = A00E9ADA1BFDF45C00C94ABA /* HPPYTask.m */; };
 		A01369341C1DD6EE00F69C31 /* HPPYSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A01369331C1DD6EE00F69C31 /* HPPYSettingsTableViewController.m */; };
+		A021D9C71C6FDA7F00B63A8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A021D9C61C6FDA7F00B63A8D /* Assets.xcassets */; };
 		A04A09431BF9EE9D005F385B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A04A09411BF9EE9D005F385B /* Localizable.strings */; };
 		A04A09471BF9F05C005F385B /* HPPYStaticTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04A09461BF9F05C005F385B /* HPPYStaticTextViewController.m */; };
 		A04A094B1BFA0259005F385B /* contact.md in Sources */ = {isa = PBXBuildFile; fileRef = A04A094D1BFA0259005F385B /* contact.md */; };
@@ -31,7 +32,6 @@
 		A0D185011BF9CC0E0000B1F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D185001BF9CC0E0000B1F9 /* AppDelegate.m */; };
 		A0D185041BF9CC0E0000B1F9 /* HPPYTaskContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D185031BF9CC0E0000B1F9 /* HPPYTaskContainerViewController.m */; };
 		A0D185071BF9CC0E0000B1F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0D185051BF9CC0E0000B1F9 /* Main.storyboard */; };
-		A0D185091BF9CC0E0000B1F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0D185081BF9CC0E0000B1F9 /* Assets.xcassets */; };
 		A0D1850C1BF9CC0E0000B1F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0D1850A1BF9CC0E0000B1F9 /* LaunchScreen.storyboard */; };
 		A0D185171BF9CC0E0000B1F9 /* HappyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D185161BF9CC0E0000B1F9 /* HappyTests.m */; };
 		A0D185221BF9CC0F0000B1F9 /* HappyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D185211BF9CC0F0000B1F9 /* HappyUITests.m */; };
@@ -61,6 +61,7 @@
 		A00E9ADA1BFDF45C00C94ABA /* HPPYTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYTask.m; sourceTree = "<group>"; };
 		A01369321C1DD6EE00F69C31 /* HPPYSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYSettingsTableViewController.h; sourceTree = "<group>"; };
 		A01369331C1DD6EE00F69C31 /* HPPYSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYSettingsTableViewController.m; sourceTree = "<group>"; };
+		A021D9C61C6FDA7F00B63A8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A04A09401BF9ED9E005F385B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		A04A09421BF9EE9D005F385B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A04A09441BF9EEA2005F385B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -102,7 +103,6 @@
 		A0D185021BF9CC0E0000B1F9 /* HPPYTaskContainerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HPPYTaskContainerViewController.h; sourceTree = "<group>"; };
 		A0D185031BF9CC0E0000B1F9 /* HPPYTaskContainerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HPPYTaskContainerViewController.m; sourceTree = "<group>"; };
 		A0D185061BF9CC0E0000B1F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A0D185081BF9CC0E0000B1F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0D1850B1BF9CC0E0000B1F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0D1850D1BF9CC0E0000B1F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0D185121BF9CC0E0000B1F9 /* HappyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HappyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -223,8 +223,8 @@
 				A098FC4D1C401BFC0007EBEF /* HPPYReminderTableViewCell.m */,
 				A098FC491C4000840007EBEF /* HPPYReminderTableViewController.h */,
 				A098FC4A1C4000840007EBEF /* HPPYReminderTableViewController.m */,
+				A021D9C61C6FDA7F00B63A8D /* Assets.xcassets */,
 				A0D185051BF9CC0E0000B1F9 /* Main.storyboard */,
-				A0D185081BF9CC0E0000B1F9 /* Assets.xcassets */,
 				A0D1850A1BF9CC0E0000B1F9 /* LaunchScreen.storyboard */,
 				A0D184FC1BF9CC0E0000B1F9 /* Supporting Files */,
 			);
@@ -376,8 +376,8 @@
 				A04A09431BF9EE9D005F385B /* Localizable.strings in Resources */,
 				A05558571BF9E12E0036E954 /* Settings.bundle in Resources */,
 				A0D1850C1BF9CC0E0000B1F9 /* LaunchScreen.storyboard in Resources */,
-				A0D185091BF9CC0E0000B1F9 /* Assets.xcassets in Resources */,
 				A05C6CB21C1307FB00D1EF1A /* tasks.plist in Resources */,
+				A021D9C71C6FDA7F00B63A8D /* Assets.xcassets in Resources */,
 				A0D185071BF9CC0E0000B1F9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

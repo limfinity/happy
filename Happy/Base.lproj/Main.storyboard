@@ -7,7 +7,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--♡-->
+        <!--Task Container View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="TaskContainerViewController" id="BYZ-38-t0r" customClass="HPPYTaskContainerViewController" sceneMemberID="viewController">
@@ -47,7 +47,7 @@
                             <constraint firstItem="7U3-1Z-0h2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ce1-Ad-5VO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="♡" id="UsI-4l-0DV"/>
+                    <navigationItem key="navigationItem" id="UsI-4l-0DV"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="taskCardView" destination="v2e-du-UeI" id="a8S-h6-UDm"/>
@@ -201,7 +201,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBa-2f-dcy">
                                 <rect key="frame" x="20" y="180" width="280" height="308"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -274,7 +274,7 @@
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="textInput" id="0dd-1Y-gxI" customClass="HPPYTextInputTableViewCell">
-                                <rect key="frame" x="0.0" y="49.5" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="50" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0dd-1Y-gxI" id="gpB-Co-cxv">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -298,7 +298,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="addReminder" id="PdP-Zx-wFO" customClass="HPPYReminderTableViewCell">
-                                <rect key="frame" x="0.0" y="93.5" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="94" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PdP-Zx-wFO" id="paY-cD-kQk">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
@@ -309,7 +309,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="headerNameSection" id="gn4-Ai-zLA" customClass="HPPYHeaderTableViewCell">
-                                <rect key="frame" x="0.0" y="137.5" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="138" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gn4-Ai-zLA" id="ShP-Fh-uvM">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -335,7 +335,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="headerReminderSection" id="XU2-RQ-Xhy" customClass="HPPYHeaderTableViewCell">
-                                <rect key="frame" x="0.0" y="181.5" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="182" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XU2-RQ-Xhy" id="jwh-iz-Moy">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -437,7 +437,7 @@
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="deleteReminder" textLabel="NLt-di-bkJ" style="IBUITableViewCellStyleDefault" id="UHw-E1-haW">
-                                <rect key="frame" x="0.0" y="327.5" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="328" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UHw-E1-haW" id="CLB-up-MwO">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -493,7 +493,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="110"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="right" tableViewCell="GiA-F2-h8t" id="Y5V-ab-Hq7">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="109.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="0.55755709990000002" blue="0.16999930299999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -502,7 +502,7 @@
                                 <rect key="frame" x="0.0" y="138" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="right" tableViewCell="azb-He-teL" id="iOW-9V-MFB">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xkv-ue-HSe">
@@ -773,9 +773,10 @@ Schön, dass du dabei bist.</string>
                 <navigationController storyboardIdentifier="TaskNavigationViewController" automaticallyAdjustsScrollViewInsets="NO" id="pKP-vk-1Fu" customClass="SlideNavigationController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="R0s-G2-Uxi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" shadowImage="navigationShadow" backIndicatorImage="navigationBgWhite" id="R0s-G2-Uxi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -807,6 +808,8 @@ Schön, dass du dabei bist.</string>
     </scenes>
     <resources>
         <image name="hppyHeart" width="505" height="401"/>
+        <image name="navigationBgWhite" width="375" height="60"/>
+        <image name="navigationShadow" width="375" height="2"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="FF4-MA-qql"/>

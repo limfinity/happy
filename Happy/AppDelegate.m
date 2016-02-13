@@ -16,12 +16,15 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     // Set language on all devices to German for MVP1
+    // TODO: Test is wrong on 1st start!
     [[NSUserDefaults standardUserDefaults] setObject:@[@"de", @"de-de"] forKey:@"AppleLanguages"];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    // Customize navigation bar appearance
+    [self customizeNavigationBarAppearance];
     
     // Update version in settings
     [self updateVersion];
@@ -60,12 +63,17 @@
     }
 }
 
+- (void)customizeNavigationBarAppearance {
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigationBg"] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setShadowImage:[UIImage imageNamed:@"navigationShadow"]];
+}
+
 - (void)setupSlideMenu {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     HPPYRightMenuTableViewController *rightMenuViewController = [storyboard instantiateViewControllerWithIdentifier:@"RightMenuViewController"];
     [SlideNavigationController sharedInstance].rightMenu = rightMenuViewController;
-    UIButton *button  = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
-    [button setImage:[UIImage imageNamed:@"menuBurger"] forState:UIControlStateNormal];
+    UIButton *button  = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 20, 18)];
+    [button setImage:[UIImage imageNamed:@"burgerButton"] forState:UIControlStateNormal];
     [button addTarget:[SlideNavigationController sharedInstance] action:@selector(toggleRightMenu) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     [SlideNavigationController sharedInstance].rightBarButtonItem = rightBarButtonItem;

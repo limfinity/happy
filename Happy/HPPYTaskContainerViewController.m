@@ -25,6 +25,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // Set in initial view controller, afterwards title is set in menu view controller
+    UIImage *image = [UIImage imageNamed:@"navigationHeart"];
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:image];
 }
 
 - (HPPYTaskController *)taskController {
