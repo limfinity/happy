@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIView *backgroundView;
 @property (weak, nonatomic) IBOutlet UIImageView *categoryImageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UIButton *selectButton;
 
 @end
 
@@ -24,16 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self addRoundedCornersToView:self.categoryImageView];
     [self updateInterface];
-}
-
-- (void)addRoundedCornersToView:(UIView *)view {
-    NSAssert([view isKindOfClass:[UIView class]], @"Attribute needs to be of type 'UIView' to add rounded corners.");
-    
-    view.layer.cornerRadius = view.frame.size.width / 2;
-    view.layer.borderWidth = 1.0;
-    view.layer.borderColor = [[UIColor whiteColor] CGColor];
 }
 
 - (void)setTask:(HPPYTask *)task {
@@ -44,6 +36,8 @@
 - (void)updateInterface {
     self.titleLabel.text = self.task.title;
     self.categoryImageView.image = [_task categoryImage];
+    self.backgroundView.backgroundColor = [[_task categoryColor] colorWithAlphaComponent:0.3];
+    self.selectButton.backgroundColor = [_task categoryColor];
 }
 
 - (IBAction)selectTask:(id)sender {
