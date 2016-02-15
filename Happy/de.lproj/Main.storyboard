@@ -7,7 +7,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Task Container View Controller-->
+        <!--♡-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="TaskContainerViewController" id="BYZ-38-t0r" customClass="HPPYTaskContainerViewController" sceneMemberID="viewController">
@@ -26,7 +26,7 @@
                                     <constraint firstAttribute="width" constant="100" id="XB9-lg-dr9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
-                                <state key="normal" title="Skip">
+                                <state key="normal" title="Überspringen">
                                     <color key="titleColor" red="0.68235294117647061" green="0.68235294117647061" blue="0.68235294117647061" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -60,7 +60,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="UsI-4l-0DV"/>
+                    <navigationItem key="navigationItem" title="♡" id="UsI-4l-0DV"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="taskCardView" destination="v2e-du-UeI" id="a8S-h6-UDm"/>
@@ -127,7 +127,7 @@
                                     <constraint firstAttribute="height" constant="50" id="RxU-Lu-qLz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="28"/>
-                                <state key="normal" title="Select">
+                                <state key="normal" title="Auswählen">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -208,7 +208,7 @@
                                     <action selector="cancelTask:" destination="9p3-GZ-6mv" eventType="touchUpInside" id="XR8-9r-cXy"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Versuch einmal, dich an deinem Denken zu erfreuen, %name%!" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="yM9-H5-idP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heading" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="yM9-H5-idP">
                                 <rect key="frame" x="20" y="70" width="280" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="hle-7i-S3o"/>

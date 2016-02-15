@@ -17,12 +17,6 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    // Set language on all devices to German for MVP1
-    // TODO: Test is wrong on 1st start!
-    [[NSUserDefaults standardUserDefaults] setObject:@[@"de", @"de-de"] forKey:@"AppleLanguages"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    
     // Customize navigation bar appearance
     [self customizeNavigationBarAppearance];
     
