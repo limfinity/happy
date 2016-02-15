@@ -11,7 +11,6 @@
 
 @interface HPPYTaskController () {
     NSArray *_tasks;
-    HPPYTask *_currenTask;
 }
 
 @end
@@ -23,31 +22,47 @@
     self = [super init];
     
     if (self) {
-        _tasks = [self getTasks];
+        _tasks = [HPPYTaskController getTasks];
     }
     
     return self;
 }
 
-- (HPPYTask *)currentTask {
-    HPPYTask *task;
-    
-    if (_currenTask) {
-        task = _currenTask;
-    } else {
-        task = [_tasks firstObject];
++ (HPPYTask *)currentTask {
+    NSData *taskData = [[NSUserDefaults standardUserDefaults] objectForKey:@"hppyCurrentTask"];
+    if (taskData) {
+        HPPYTask *task = [NSKeyedUnarchiver unarchiveObjectWithData:taskData];
+        if (task) {
+            return task;
+        }
     }
     
+    HPPYTask* task = [[HPPYTaskController getTasks] firstObject];
+    [HPPYTaskController setCurrentTask:task];
     return task;
+}
+
++ (void)setCurrentTask:(HPPYTask *)task {
+    NSData *taskData = [NSKeyedArchiver archivedDataWithRootObject:task];
+    [[NSUserDefaults standardUserDefaults] setObject:taskData forKey:@"hppyCurrentTask"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (HPPYTask *)nextTask:(HPPYTask *)previousTask {
     HPPYTask *task;
     
-    int index = (int)[_tasks indexOfObject:previousTask] + 1;
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K MATCHES[c] %@", hppyIdentifierKey, previousTask.identifier];
+    NSUInteger index = [_tasks indexOfObjectPassingTest:^BOOL(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        return [predicate evaluateWithObject:obj];
+    }];
+    if (index == NSNotFound) {
+        index = 0;
+    } else {
+        index++;
+    }
     index = index < _tasks.count ? index : 0;
     task = _tasks[index];
-    _currenTask = task;
+    [HPPYTaskController setCurrentTask:task];
     
     return task;
 }
@@ -56,15 +71,18 @@
     // TODO: log task results either skipped or finished
 }
 
-
 // MARK: Private methods
-- (NSArray *)getTasks {
++ (NSArray *)getTasks {
     NSMutableArray *tasks = [NSMutableArray new];
     NSArray *array = [HPPY getArrayFromFile:@"tasks.plist" reloadFromBundle:YES];
     
-    // TODO: Use nscopying protocol
     for (NSDictionary *dict in array) {
-        HPPYTask *task = [[HPPYTask alloc] initWithIdentifier:dict[@"identifier"] title:dict[@"title"] titlePersonalized:dict[@"titlePersonalized"] body:dict[@"body"] estimatedTime:dict[@"estimatedTime"] category:[dict[@"category"] integerValue]];
+        HPPYTask *task = [[HPPYTask alloc] initWithIdentifier:dict[hppyIdentifierKey]
+                                                        title:dict[hppyTitleKey]
+                                            titlePersonalized:dict[hppyTitlePersonalizedKey]
+                                                         body:dict[hppyBodyKey]
+                                                estimatedTime:dict[hppyEstimatedTimeKey]
+                                                     category:[dict[hppyCategoryKey] integerValue]];
         [tasks addObject:task];
     }
     

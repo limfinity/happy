@@ -8,6 +8,13 @@
 
 #import "HPPYTask.h"
 
+NSString * const hppyIdentifierKey = @"identifier";
+NSString * const hppyTitleKey = @"title";
+NSString * const hppyTitlePersonalizedKey = @"titlePersonalized";
+NSString * const hppyBodyKey = @"body";
+NSString * const hppyEstimatedTimeKey = @"estimatedTime";
+NSString * const hppyCategoryKey = @"category";
+
 @implementation HPPYTask
 
 -(instancetype)initWithIdentifier:(NSString *)identifier
@@ -28,6 +35,30 @@
     return self;
 }
 
+// MARK: NSCoding protocol
+- (instancetype)initWithCoder:(NSCoder *)coder {
+    self = [super init];
+    if (self) {
+        self.identifier = [coder decodeObjectForKey:hppyIdentifierKey];
+        self.title = [coder decodeObjectForKey:hppyTitleKey];
+        self.titlePersonalized = [coder decodeObjectForKey:hppyTitlePersonalizedKey];
+        self.body = [coder decodeObjectForKey:hppyBodyKey];
+        self.estimatedTime = [coder decodeObjectForKey:hppyEstimatedTimeKey];
+        self.category = [coder decodeIntegerForKey:hppyCategoryKey];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:self.identifier forKey:hppyIdentifierKey];
+    [aCoder encodeObject:self.title forKey:hppyTitleKey];
+    [aCoder encodeObject:self.titlePersonalized forKey:hppyTitlePersonalizedKey];
+    [aCoder encodeObject:self.body forKey:hppyBodyKey];
+    [aCoder encodeObject:self.estimatedTime forKey:hppyEstimatedTimeKey];
+    [aCoder encodeInteger:self.category forKey:hppyCategoryKey];
+}
+
+// MARK: Public methods
 - (UIImage *)categoryImage {
     UIImage *image;
     NSString *imageName;

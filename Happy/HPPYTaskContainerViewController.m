@@ -40,9 +40,11 @@
 
 // MARK: Tasks
 - (IBAction)skipTask:(id)sender {
-    [[self taskController] nextTask:[[self taskController] currentTask]];
-    [self.taskCardViewController setTask:[[self taskController] currentTask]];
+    HPPYTask *currentTask = [HPPYTaskController currentTask];
+    HPPYTask *nextTask = [[self taskController] nextTask:currentTask];
+    [self.taskCardViewController setTask:nextTask];
     
+    // TODO: Check if still used or other option is more viable
     // Reset timer for started task
     [[NSUserDefaults standardUserDefaults] setFloat:0.0 forKey:@"hppyStartTimeTask"];
 }
@@ -57,7 +59,7 @@
     if ([segue.identifier isEqualToString:@"ShowTaskCard"]) {
         HPPYTaskCardViewController *vc = segue.destinationViewController;
         self.taskCardViewController = vc;
-        [vc setTask:[[self taskController] currentTask]];
+        [vc setTask:[HPPYTaskController currentTask]];
     }
 }
 

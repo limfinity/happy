@@ -16,7 +16,14 @@ typedef NS_ENUM(NSInteger, HPPYTaskCategory) {
     HPPYTaskCategory4
 };
 
-@interface HPPYTask : NSObject
+extern NSString * const hppyIdentifierKey;
+extern NSString * const hppyTitleKey;
+extern NSString * const hppyTitlePersonalizedKey;
+extern NSString * const hppyBodyKey;
+extern NSString * const hppyEstimatedTimeKey;
+extern NSString * const hppyCategoryKey;
+
+@interface HPPYTask : NSObject <NSCoding>
 
 @property (nonatomic, strong) NSString *identifier;
 @property (nonatomic, strong) NSString *title;

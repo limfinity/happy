@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIFont *font = [UIFont systemFontOfSize:18.0 weight:UIFontWeightRegular];
+    UIFont *font = [UIFont systemFontOfSize:18.0 weight:UIFontWeightLight];
     UIFont *h1Font = [UIFont systemFontOfSize:36.0 weight:UIFontWeightThin];
     TSMarkdownParser *parser = [TSMarkdownParser standardParser];
     [parser setParagraphFont:font];
