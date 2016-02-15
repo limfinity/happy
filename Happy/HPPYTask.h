@@ -10,12 +10,20 @@
 #import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSInteger, HPPYTaskCategory) {
-    HPPYTaskCategoryActivity,
-    HPPYTaskCategoryThinking,
-    HPPYTaskCategoryMeditation,
+    HPPYTaskCategory1,
+    HPPYTaskCategory2,
+    HPPYTaskCategory3,
+    HPPYTaskCategory4
 };
 
-@interface HPPYTask : NSObject
+extern NSString * const hppyIdentifierKey;
+extern NSString * const hppyTitleKey;
+extern NSString * const hppyTitlePersonalizedKey;
+extern NSString * const hppyBodyKey;
+extern NSString * const hppyEstimatedTimeKey;
+extern NSString * const hppyCategoryKey;
+
+@interface HPPYTask : NSObject <NSCoding>
 
 @property (nonatomic, strong) NSString *identifier;
 @property (nonatomic, strong) NSString *title;
@@ -31,5 +39,6 @@ typedef NS_ENUM(NSInteger, HPPYTaskCategory) {
                     estimatedTime:(NSNumber *)estimatedTime
                          category:(HPPYTaskCategory)category;
 - (UIImage *)categoryImage;
+- (UIColor *)categoryColor;
 
 @end

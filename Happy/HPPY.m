@@ -13,6 +13,7 @@
  * hppyReminders     NSArray
  * hppyVersion       NSString
  * hppyUnlocked      BOOL
+ * hppyCurrentTask   NSData -> HPPYTask
  * hppyStartTimeTask Float
  * AppleLanguages    NSArray
  ******************************************* */

@@ -12,7 +12,7 @@
 @interface HPPYTaskController : NSObject
 
 /// Gets the task where user left off
-- (HPPYTask *)currentTask;
++ (HPPYTask *)currentTask;
 
 /// Gets the next task in order after a given task, shows first task if no next task is available
 - (HPPYTask *)nextTask:(HPPYTask *)previousTask;
