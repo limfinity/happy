@@ -43,10 +43,6 @@
     HPPYTask *currentTask = [HPPYTaskController currentTask];
     HPPYTask *nextTask = [[self taskController] nextTask:currentTask];
     [self.taskCardViewController setTask:nextTask];
-    
-    // TODO: Check if still used or other option is more viable
-    // Reset timer for started task
-    [[NSUserDefaults standardUserDefaults] setFloat:0.0 forKey:@"hppyStartTimeTask"];
 }
 
 // MARK: SlideNavigationControllerDelegate

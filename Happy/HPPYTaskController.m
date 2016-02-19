@@ -72,7 +72,7 @@
 // MARK: Private methods
 + (NSArray *)getTasks {
     NSMutableArray *tasks = [NSMutableArray new];
-    NSArray *array = [HPPY getArrayFromFile:@"tasks.plist" reloadFromBundle:YES];
+    NSArray *array = [HPPY getArrayFromFile:@"hppyTasks.plist" reloadFromBundle:YES];
     
     for (NSDictionary *dict in array) {
         HPPYTask *task = [[HPPYTask alloc] initWithIdentifier:dict[hppyIdentifierKey]

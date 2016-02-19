@@ -1,7 +1,3 @@
-# Xcode
-#
-# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
-
 ## Build generated
 build/
 DerivedData
@@ -23,11 +19,14 @@ xcuserdata
 *.xcuserstate
 *.xcscmblueprint
 *.xcscheme
-**/hppyCodes.plist
 
 ## Obj-C/Swift specific
 *.hmap
 *.ipa
+
+## Custom
+**/hppyCodes.plist
+**/hppyTasks.plist
 
 # CocoaPods
 #

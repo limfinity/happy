@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A00891661C77D2AE00C161F4 /* hppyTasks.plist in Resources */ = {isa = PBXBuildFile; fileRef = A00891651C77D2AE00C161F4 /* hppyTasks.plist */; };
 		A00E9ADB1BFDF45C00C94ABA /* HPPYTask.m in Sources */ = {isa = PBXBuildFile; fileRef = A00E9ADA1BFDF45C00C94ABA /* HPPYTask.m */; };
 		A01369341C1DD6EE00F69C31 /* HPPYSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A01369331C1DD6EE00F69C31 /* HPPYSettingsTableViewController.m */; };
 		A021D9C71C6FDA7F00B63A8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A021D9C61C6FDA7F00B63A8D /* Assets.xcassets */; };
@@ -21,7 +22,6 @@
 		A05558551BF9D8A30036E954 /* HPPYMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A05558541BF9D8A30036E954 /* HPPYMenuTableViewCell.m */; };
 		A05558571BF9E12E0036E954 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A05558561BF9E12E0036E954 /* Settings.bundle */; };
 		A058D40B1C24236A00361186 /* HPPYTextInputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A058D40A1C24236A00361186 /* HPPYTextInputTableViewCell.m */; };
-		A05C6CB21C1307FB00D1EF1A /* tasks.plist in Resources */ = {isa = PBXBuildFile; fileRef = A05C6CB41C1307FB00D1EF1A /* tasks.plist */; };
 		A05C6CB81C13309E00D1EF1A /* HPPYTaskCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A05C6CB71C13309E00D1EF1A /* HPPYTaskCardViewController.m */; };
 		A079FFFF1C13063700B387CC /* HPPYTaskController.m in Sources */ = {isa = PBXBuildFile; fileRef = A079FFFE1C13063700B387CC /* HPPYTaskController.m */; };
 		A098FC481C3FF2DD0007EBEF /* HPPYHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A098FC471C3FF2DD0007EBEF /* HPPYHeaderTableViewCell.m */; };
@@ -57,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		867A161B6F9B16C9161B4089 /* Pods-Happy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Happy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Happy/Pods-Happy.debug.xcconfig"; sourceTree = "<group>"; };
+		A00891651C77D2AE00C161F4 /* hppyTasks.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hppyTasks.plist; sourceTree = "<group>"; };
 		A00E9AD91BFDF45C00C94ABA /* HPPYTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYTask.h; sourceTree = "<group>"; };
 		A00E9ADA1BFDF45C00C94ABA /* HPPYTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYTask.m; sourceTree = "<group>"; };
 		A01369321C1DD6EE00F69C31 /* HPPYSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYSettingsTableViewController.h; sourceTree = "<group>"; };
@@ -78,7 +79,6 @@
 		A05558561BF9E12E0036E954 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		A058D4091C24236A00361186 /* HPPYTextInputTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYTextInputTableViewCell.h; sourceTree = "<group>"; };
 		A058D40A1C24236A00361186 /* HPPYTextInputTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYTextInputTableViewCell.m; sourceTree = "<group>"; };
-		A05C6CB51C1307FD00D1EF1A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = de; path = de.lproj/tasks.plist; sourceTree = "<group>"; };
 		A05C6CB61C13309E00D1EF1A /* HPPYTaskCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYTaskCardViewController.h; sourceTree = "<group>"; };
 		A05C6CB71C13309E00D1EF1A /* HPPYTaskCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYTaskCardViewController.m; sourceTree = "<group>"; };
 		A079FFFD1C13063700B387CC /* HPPYTaskController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYTaskController.h; sourceTree = "<group>"; };
@@ -233,8 +233,8 @@
 				A04A09411BF9EE9D005F385B /* Localizable.strings */,
 				A05558561BF9E12E0036E954 /* Settings.bundle */,
 				A0D1850D1BF9CC0E0000B1F9 /* Info.plist */,
-				A05C6CB41C1307FB00D1EF1A /* tasks.plist */,
 				A04AA2F41C416D0E00DB4A69 /* hppyCodes.plist */,
+				A00891651C77D2AE00C161F4 /* hppyTasks.plist */,
 				A0D184FD1BF9CC0E0000B1F9 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -364,12 +364,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A00891661C77D2AE00C161F4 /* hppyTasks.plist in Resources */,
 				A04AA2F51C416D0E00DB4A69 /* hppyCodes.plist in Resources */,
 				A04A09501BFA14CB005F385B /* contact.md in Resources */,
 				A04A09431BF9EE9D005F385B /* Localizable.strings in Resources */,
 				A05558571BF9E12E0036E954 /* Settings.bundle in Resources */,
 				A0D1850C1BF9CC0E0000B1F9 /* LaunchScreen.storyboard in Resources */,
-				A05C6CB21C1307FB00D1EF1A /* tasks.plist in Resources */,
 				A021D9C71C6FDA7F00B63A8D /* Assets.xcassets in Resources */,
 				A0D185071BF9CC0E0000B1F9 /* Main.storyboard in Resources */,
 			);
@@ -511,14 +511,6 @@
 				A04A094F1BFA0567005F385B /* de */,
 			);
 			name = contact.md;
-			sourceTree = "<group>";
-		};
-		A05C6CB41C1307FB00D1EF1A /* tasks.plist */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A05C6CB51C1307FD00D1EF1A /* de */,
-			);
-			name = tasks.plist;
 			sourceTree = "<group>";
 		};
 		A0D185051BF9CC0E0000B1F9 /* Main.storyboard */ = {
