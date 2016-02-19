@@ -12,7 +12,7 @@
 		<key>body</key>
 		<string>Oft bereitet dir das Denken so viel Kummer. Hänge jetzt schönen Gedanken und Erinnerungen nach und lass deine Gedanken den »Filmvorführer« spielen. Nimm dir dafür einen Augenblick Zeit und suche dir einen ruhigen Ort. Es kann sein, dass sich mal schlechte Gedanken in die harmonische Bilderwelt einschleichen. Lass dich hiervon nicht irritieren. Gestehe deinen Gedanken ein gewisses Eigenleben zu. Bei Einsamkeit oder Frustration kann es in dieser Übung hilfreich sein, innere Dialoge mit »wohlwollenden Begleitern« zu führen, beispielsweise Comicfiguren, Berühmtheiten, die du schätzt oder reale Personen, die gerade nicht anwesend sind. Solche Dialoge ersetzen selbstverständlich nicht den Austausch mit echten Menschen. Trotzdem stellt sich häufig ein Gefühl von Geborgenheit und Gelassenheit ein, nachdem wir uns Dinge innerlich von der Seele geredet haben.</string>
 		<key>estimatedTime</key>
-		<integer>300</integer>
+		<integer>100</integer>
 		<key>category</key>
 		<integer>1</integer>
 	</dict>
@@ -26,7 +26,7 @@
 		<key>body</key>
 		<string>Das schafft einen Ausgleich. Nimm dir wenigstens 15 Minuten Zeit, um einmal um den Block zu gehen. Stattdessen kannst du auch zum Sport gehen. Das löst zwar keine Konflikte, nimmt aber so manchem Groll die Spitze. Gleichzeitig werden durch Ausdauersport im Körper chemische Prozesse angestoßen, die wie »körpereigene Antidepressiva« wirken. Sport wirkt also ausgleichend und stimmungsaufhellend. Nimm dir vor, zumindest einmal am Tag eine halbe Stunde in Bewegung zu sein, im Bestfall an der frischen Luft. Dein Tag sollte ein festes Bewegungsritual haben, sei es der Weg zur Arbeit oder der Vorsatz, die täglichen Besorgungen zu Fuß oder mit dem Rad zu erledigen. Körperliche Betätigung kann auch entspannend gestaltet werden: mit Übungen zu fernöstlichen Sportarten wie Pilates oder Yoga. Hierbei steht die ganzheitliche Körperwahrnehmung im Vordergrund und die tägliche Stresswahrnehmung wird reduziert.</string>
 		<key>estimatedTime</key>
-		<integer>900</integer>
+		<integer>60</integer>
 		<key>category</key>
 		<integer>2</integer>
 	</dict>

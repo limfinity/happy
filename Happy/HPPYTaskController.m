@@ -43,9 +43,7 @@
 }
 
 + (void)setCurrentTask:(HPPYTask *)task {
-    NSData *taskData = [NSKeyedArchiver archivedDataWithRootObject:task];
-    [[NSUserDefaults standardUserDefaults] setObject:taskData forKey:@"hppyCurrentTask"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    [task save]; // Saves task as current task
 }
 
 - (HPPYTask *)nextTask:(HPPYTask *)previousTask {

@@ -13,6 +13,7 @@ NSString * const hppyTitleKey = @"title";
 NSString * const hppyTitlePersonalizedKey = @"titlePersonalized";
 NSString * const hppyBodyKey = @"body";
 NSString * const hppyEstimatedTimeKey = @"estimatedTime";
+NSString * const hppyStartDateKey = @"startDate";
 NSString * const hppyCategoryKey = @"category";
 
 @implementation HPPYTask
@@ -44,6 +45,7 @@ NSString * const hppyCategoryKey = @"category";
         self.titlePersonalized = [coder decodeObjectForKey:hppyTitlePersonalizedKey];
         self.body = [coder decodeObjectForKey:hppyBodyKey];
         self.estimatedTime = [coder decodeObjectForKey:hppyEstimatedTimeKey];
+        self.startDate = [coder decodeObjectForKey:hppyStartDateKey];
         self.category = [coder decodeIntegerForKey:hppyCategoryKey];
     }
     return self;
@@ -55,10 +57,32 @@ NSString * const hppyCategoryKey = @"category";
     [aCoder encodeObject:self.titlePersonalized forKey:hppyTitlePersonalizedKey];
     [aCoder encodeObject:self.body forKey:hppyBodyKey];
     [aCoder encodeObject:self.estimatedTime forKey:hppyEstimatedTimeKey];
+    [aCoder encodeObject:self.startDate forKey:hppyStartDateKey];
     [aCoder encodeInteger:self.category forKey:hppyCategoryKey];
 }
 
 // MARK: Public methods
+- (void)start {
+    if (!_startDate) {
+        self.startDate = [NSDate new];
+        [self save];
+    }
+}
+
+- (float)progress {
+    NSAssert(_startDate, @"Task has not been started.");
+    
+    float progress = (float)fabs([_startDate timeIntervalSinceNow]);
+    progress = progress / [_estimatedTime floatValue];
+    return MIN(progress, 1.0);
+}
+
+- (void)save {
+    NSData *taskData = [NSKeyedArchiver archivedDataWithRootObject:self];
+    [[NSUserDefaults standardUserDefaults] setObject:taskData forKey:@"hppyCurrentTask"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 - (UIImage *)categoryImage {
     UIImage *image;
     NSString *imageName;

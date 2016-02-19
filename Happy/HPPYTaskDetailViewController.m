@@ -12,7 +12,6 @@
 
 @property (strong, nonatomic) HPPYTask *task;
 
-@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UITextView *detailTextView;
 @property (weak, nonatomic) IBOutlet UIButton *completeButton;
@@ -26,13 +25,17 @@
 
     // Needs to be set to true in storyboard, so font can be changed there, reset to false here.
     self.detailTextView.selectable = NO;
+    self.detailTextView.textContainer.lineFragmentPadding = 0;
+    self.detailTextView.textContainerInset = UIEdgeInsetsMake(0, 0, 0, 8);
+    
+    self.completeButton.enabled = NO;
     
     [self updateInterface];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    [self animateButtonBorderWithDuration];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self processTask];
 }
 
 -(void)viewDidLayoutSubviews {
@@ -44,6 +47,7 @@
 
 - (void)setTask:(HPPYTask *)task {
     _task = task;
+    [_task start];
     [self updateInterface];
 }
 
@@ -55,7 +59,8 @@
         self.titleLabel.text = [NSString stringWithFormat:self.task.titlePersonalized, name];
     }
     self.detailTextView.text = self.task.body;
-    self.backgroundImageView.image = [self.task categoryImage];
+    self.view.backgroundColor = self.task.categoryColor;
+    [self.completeButton setTitleColor:self.task.categoryColor forState:UIControlStateNormal];
 }
 
 - (IBAction)cancelTask:(id)sender {
@@ -63,46 +68,85 @@
 }
 
 - (IBAction)completeTask:(id)sender {
+    NSLog(@"Wants to complete task");
 }
 
-- (void)animateButtonBorderWithDuration {
-    CFTimeInterval startTime = [[NSUserDefaults standardUserDefaults] floatForKey:@"hppyStartTimeTask"];
-    CFTimeInterval duration = [self.task.estimatedTime floatValue];
-    CFTimeInterval difference;
-    float startValue;
-    float stopValue = 1.0;
-    if (!startTime || startTime == 0) {
-        startTime = CACurrentMediaTime();
-        difference = 0;
-        startValue = 0;
-        [[NSUserDefaults standardUserDefaults] setFloat:startTime forKey:@"hppyStartTimeTask"];
-    } else {
-        difference = CACurrentMediaTime() - startTime;
-        startValue = (float)(difference / duration);
-        startValue = MIN(1, startValue);
-        duration *= (stopValue - startValue);
-        if (startValue == 1) {
-            [[NSUserDefaults standardUserDefaults] setFloat:0.0 forKey:@"hppyStartTimeTask"];
-        }
-    }
+- (void)processTask {
+    [CATransaction begin]; {
+        [CATransaction setCompletionBlock:^{
+            [self activateButton];
+        }];
+        [self animateProcessingTime];
+    } [CATransaction commit];
+}
+
+- (void)activateButton {
+    [CATransaction begin]; {
+        [CATransaction setCompletionBlock:^{
+        }];
+        self.completeButton.enabled = YES;
+        [self animateButtonActivation];
+    } [CATransaction commit];
+}
+
+- (void)animateProcessingTime {
+    float progress = [_task progress];
+    float processingTime = [_task.estimatedTime floatValue];
+    CFTimeInterval duration = processingTime - (progress * processingTime);
     
-    UIBezierPath *path = [UIBezierPath bezierPathWithRect:self.completeButton.bounds];
+    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:self.completeButton.bounds cornerRadius:25.0];
     
-    CAShapeLayer *layer = [[CAShapeLayer alloc] init];
+    CAShapeLayer *layer = [CAShapeLayer new];
     layer.fillColor = [UIColor clearColor].CGColor;
-    layer.strokeColor = [UIColor redColor].CGColor;
+    layer.strokeColor = [UIColor whiteColor].CGColor;
     layer.lineWidth = 5.0;
     layer.path = path.CGPath;
     
-    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-    [animation setDuration:duration];
-    [animation setFromValue:(id)@(startValue)];
-    [animation setToValue:(id)@(stopValue)];
-    [animation setFillMode:kCAFillModeBackwards];
+    CABasicAnimation *animation1 = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+    animation1.fromValue = @(0.0);
+    animation1.toValue = @(progress);
+    animation1.beginTime = 0.0;
+    animation1.duration = progress * 2;
+    animation1.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     
-    [layer addAnimation:animation forKey:nil];
+    CABasicAnimation *animation2 = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+    animation2.fromValue = @(progress);
+    animation2.toValue = @(1.0);
+    animation2.beginTime = animation1.duration;
+    animation2.duration = duration;
+    
+    CAAnimationGroup *animationGroup = [CAAnimationGroup new];
+    animationGroup.animations = @[animation1, animation2];
+    animationGroup.duration = animation1.duration + animation2.duration;
+    animationGroup.fillMode = kCAFillModeForwards;
+    animationGroup.removedOnCompletion = NO;
+    animationGroup.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    
+    [layer addAnimation:animationGroup forKey:nil];
     
     [self.completeButton.layer addSublayer:layer];
+}
+
+- (void)animateButtonActivation {
+    CAShapeLayer *layer = [CAShapeLayer new];
+    layer.fillColor = [UIColor clearColor].CGColor;
+    layer.borderColor = [UIColor whiteColor].CGColor;
+    layer.borderWidth = 0.0;
+    layer.frame = self.completeButton.bounds;
+    layer.cornerRadius = 25.0;
+    
+    CABasicAnimation *fillAnimation = [CABasicAnimation animationWithKeyPath:@"borderWidth"];
+    fillAnimation.fromValue = @(0);
+    fillAnimation.toValue = @(50);
+    fillAnimation.beginTime = 0;
+    fillAnimation.duration = 0.7;
+    fillAnimation.fillMode = kCAFillModeForwards;
+    fillAnimation.removedOnCompletion = NO;
+    fillAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    
+    [layer addAnimation:fillAnimation forKey:nil];
+    
+    [self.completeButton.layer insertSublayer:layer atIndex:0];
 }
 
 // MARK: App lifecycle

@@ -21,6 +21,7 @@ extern NSString * const hppyTitleKey;
 extern NSString * const hppyTitlePersonalizedKey;
 extern NSString * const hppyBodyKey;
 extern NSString * const hppyEstimatedTimeKey;
+extern NSString * const hppyStartDateKey;
 extern NSString * const hppyCategoryKey;
 
 @interface HPPYTask : NSObject <NSCoding>
@@ -30,6 +31,7 @@ extern NSString * const hppyCategoryKey;
 @property (nonatomic, strong) NSString *titlePersonalized;
 @property (nonatomic, strong) NSString *body;
 @property (nonatomic, strong) NSNumber *estimatedTime; // in seconds
+@property (nonatomic, strong, getter=started) NSDate *startDate;
 @property (nonatomic, assign) HPPYTaskCategory category;
 
 -(instancetype)initWithIdentifier:(NSString *)identifier
@@ -38,6 +40,9 @@ extern NSString * const hppyCategoryKey;
                              body:(NSString *)body
                     estimatedTime:(NSNumber *)estimatedTime
                          category:(HPPYTaskCategory)category;
+- (void)start;
+- (float)progress;
+- (void)save;
 - (UIImage *)categoryImage;
 - (UIColor *)categoryColor;
 
