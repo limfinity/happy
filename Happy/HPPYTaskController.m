@@ -47,6 +47,9 @@
 }
 
 - (HPPYTask *)nextTask:(HPPYTask *)previousTask {
+    // Reset the current task
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"hppyCurrentTask"];
+
     HPPYTask *task;
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K MATCHES[c] %@", hppyIdentifierKey, previousTask.identifier];
