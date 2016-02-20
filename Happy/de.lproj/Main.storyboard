@@ -301,8 +301,7 @@
                                     <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="cancelTask:" destination="9p3-GZ-6mv" eventType="touchUpInside" id="Ilt-CO-NQw"/>
-                                    <action selector="close:" destination="Xvl-po-ec2" eventType="touchUpInside" id="4j3-me-mpN"/>
+                                    <action selector="close:" destination="Xvl-po-ec2" eventType="touchUpInside" id="mAe-no-MJr"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Super!" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="none" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BAI-ud-G9r">
@@ -401,10 +400,10 @@ etwas Gutes getan!</string>
                             <mask key="constraints">
                                 <exclude reference="jvj-0M-RbD"/>
                                 <exclude reference="hli-G2-Ikl"/>
-                                <exclude reference="7Nz-Y5-oVI"/>
-                                <exclude reference="cco-zJ-vjS"/>
                                 <exclude reference="5m8-wO-xcr"/>
                                 <exclude reference="mVM-R2-8yl"/>
+                                <exclude reference="7Nz-Y5-oVI"/>
+                                <exclude reference="cco-zJ-vjS"/>
                                 <exclude reference="JLN-N4-NaM"/>
                                 <exclude reference="jAY-ua-6Yz"/>
                             </mask>
