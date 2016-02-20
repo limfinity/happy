@@ -20,6 +20,23 @@
 #import "HPPY.h"
 
 @implementation HPPY
++ (BOOL)writeArray:(NSArray *)array toFile:(NSString *)fileName {
+    NSError *error;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *path = [documentsDirectory stringByAppendingPathComponent:fileName];
+    
+    // Remove old file if it already exists
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if ([fileManager fileExistsAtPath:path]) {
+        if (![fileManager removeItemAtPath:path error:&error]) {
+            NSLog(@"Error removing old file %@: %@", fileName, error.description);
+            return nil;
+        }
+    }
+    
+    return [array writeToFile:path atomically:YES];
+}
 
 + (NSArray *)getArrayFromFile:(NSString *)fileName reloadFromBundle:(BOOL)reload {
     NSArray *result;
@@ -46,6 +63,10 @@
                 NSLog(@"Error removing old file %@: %@", fileName, error.description);
                 return nil;
             }
+        }
+        
+        if (!bundle) {
+            return @[];
         }
         
         if (![fileManager copyItemAtPath:bundle toPath:path error:&error]) {

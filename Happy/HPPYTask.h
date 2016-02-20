@@ -23,6 +23,8 @@ extern NSString * const hppyBodyKey;
 extern NSString * const hppyEstimatedTimeKey;
 extern NSString * const hppyStartDateKey;
 extern NSString * const hppyCategoryKey;
+extern NSString * const hppyInTimeKey;
+extern NSString * const hppyCompletedDateKey;
 
 @interface HPPYTask : NSObject <NSCoding>
 
@@ -40,9 +42,7 @@ extern NSString * const hppyCategoryKey;
                              body:(NSString *)body
                     estimatedTime:(NSNumber *)estimatedTime
                          category:(HPPYTaskCategory)category;
-- (void)start;
 - (float)progress;
-- (void)save;
 - (UIImage *)categoryImage;
 - (UIColor *)categoryColor;
 

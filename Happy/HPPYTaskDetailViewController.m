@@ -7,6 +7,7 @@
 //
 
 #import "HPPYTaskDetailViewController.h"
+#import "HPPYTaskController.h"
 
 @interface HPPYTaskDetailViewController ()
 
@@ -47,7 +48,7 @@
 
 - (void)setTask:(HPPYTask *)task {
     _task = task;
-    [_task start];
+    [HPPYTaskController startTask:_task];
     [self updateInterface];
 }
 
@@ -63,12 +64,9 @@
     [self.completeButton setTitleColor:self.task.categoryColor forState:UIControlStateNormal];
 }
 
-- (IBAction)cancelTask:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
 - (IBAction)completeTask:(id)sender {
-    NSLog(@"Wants to complete task");
+    HPPYTaskController *taskController = [HPPYTaskController new];
+    [taskController completeTask:[HPPYTaskController currentTask]];
     [self performSegueWithIdentifier:@"ShowTaskSuccess" sender:self];
 }
 

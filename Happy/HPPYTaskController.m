@@ -38,18 +38,46 @@
     }
     
     HPPYTask* task = [[HPPYTaskController getTasks] firstObject];
-    [HPPYTaskController setCurrentTask:task];
+    [HPPYTaskController updateCurrentTask:task];
     return task;
 }
 
-+ (void)setCurrentTask:(HPPYTask *)task {
-    [task save]; // Saves task as current task
++ (void)startTask:(HPPYTask *)task {
+    if (!task.started) {
+        task.startDate = [NSDate date];
+        [HPPYTaskController updateCurrentTask:task];
+    }
+}
+
+- (HPPYTask *)skipTask:(HPPYTask *)task {
+    return [self nextTask:task];
+}
+
+- (HPPYTask *)completeTask:(HPPYTask *)task {
+    [self saveTaskEvent:[self completionEventFromTask:task]];
+    return [self nextTask:task];
+}
+
+// MARK: Private methods
+-(NSDictionary *)completionEventFromTask:(HPPYTask *)task {
+    NSMutableDictionary *dict = [NSMutableDictionary new];
+    NSDate *now = [NSDate date];
+    dict[hppyCompletedDateKey] = now;
+    dict[hppyInTimeKey] = @([now timeIntervalSinceDate:task.startDate]);
+    dict[hppyIdentifierKey] = task.identifier;
+    return dict;
+}
+
++ (void)updateCurrentTask:(HPPYTask *)task {
+    NSData *taskData = [NSKeyedArchiver archivedDataWithRootObject:task];
+    [[NSUserDefaults standardUserDefaults] setObject:taskData forKey:@"hppyCurrentTask"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (HPPYTask *)nextTask:(HPPYTask *)previousTask {
     // Reset the current task
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"hppyCurrentTask"];
-
+    
     HPPYTask *task;
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K MATCHES[c] %@", hppyIdentifierKey, previousTask.identifier];
@@ -63,16 +91,25 @@
     }
     index = index < _tasks.count ? index : 0;
     task = _tasks[index];
-    [HPPYTaskController setCurrentTask:task];
+    task.startDate = nil;
+    [HPPYTaskController updateCurrentTask:task];
     
     return task;
 }
 
-- (void)completeTask:(HPPYTask *)task {
-    // TODO: log task results either skipped or finished
+- (void)saveTaskEvent:(NSDictionary *)event {
+    NSMutableArray *events = [NSMutableArray arrayWithArray:[HPPYTaskController getTaskEvents]];
+    [events addObject:event];
+    if (![HPPY writeArray:events toFile:@"hppyTaskEvents.plist"]) {
+        NSLog(@"Error saving last task event.");
+    }
 }
 
-// MARK: Private methods
++ (NSArray *)getTaskEvents {
+    NSArray *array = [HPPY getArrayFromFile:@"hppyTaskEvents.plist" reloadFromBundle:NO];
+    return array;
+}
+
 + (NSArray *)getTasks {
     NSMutableArray *tasks = [NSMutableArray new];
     NSArray *array = [HPPY getArrayFromFile:@"hppyTasks.plist" reloadFromBundle:YES];

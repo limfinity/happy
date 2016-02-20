@@ -38,12 +38,21 @@
 
 // MARK: Tasks
 - (IBAction)skipTask:(id)sender {
-    HPPYTask *currentTask = [HPPYTaskController currentTask];
-    HPPYTask *nextTask = [[self taskController] nextTask:currentTask];
+    HPPYTask *task = [HPPYTaskController currentTask];
+    HPPYTask *nextTask = [[self taskController] skipTask:task];
     [self.taskCardViewController setTask:nextTask];
 }
 
 // MARK: Storyboard
+- (IBAction)canceledTask:(UIStoryboardSegue *)segue {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)finishedTask:(UIStoryboardSegue *)segue {
+    [self.taskCardViewController setTask:[HPPYTaskController currentTask]];
+    [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"ShowTaskCard"]) {
         HPPYTaskCardViewController *vc = segue.destinationViewController;

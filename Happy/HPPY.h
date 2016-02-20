@@ -21,6 +21,15 @@
 + (NSArray *)getArrayFromFile:(NSString *)fileName reloadFromBundle:(BOOL)reload;
 
 /**
+ * Helper method to write a given array to a file.
+ *
+ * @param array The array to save
+ * @param fileName The filename to write to
+ * @result Bool indicating if writing was successful
+ */
++ (BOOL)writeArray:(NSArray *)array toFile:(NSString *)fileName;
+
+/**
  * Helper method to get an image with a solid color.
  *
  * @param color The solid color

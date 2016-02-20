@@ -71,6 +71,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="led-hG-lF4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="954" y="279"/>
         </scene>
@@ -204,7 +205,7 @@
                                     <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="cancelTask:" destination="9p3-GZ-6mv" eventType="touchUpInside" id="XR8-9r-cXy"/>
+                                    <segue destination="led-hG-lF4" kind="unwind" unwindAction="canceledTask:" id="U4o-LO-U1u"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="none" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yM9-H5-idP">
@@ -304,7 +305,7 @@
                                     <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="close:" destination="Xvl-po-ec2" eventType="touchUpInside" id="mAe-no-MJr"/>
+                                    <segue destination="led-hG-lF4" kind="unwind" unwindAction="finishedTask:" id="A9d-kT-VX8"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Super!" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="none" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BAI-ud-G9r">

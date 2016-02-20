@@ -15,6 +15,8 @@ NSString * const hppyBodyKey = @"body";
 NSString * const hppyEstimatedTimeKey = @"estimatedTime";
 NSString * const hppyStartDateKey = @"startDate";
 NSString * const hppyCategoryKey = @"category";
+NSString * const hppyInTimeKey = @"inTime";
+NSString * const hppyCompletedDateKey = @"completedDate";
 
 @implementation HPPYTask
 
@@ -62,25 +64,12 @@ NSString * const hppyCategoryKey = @"category";
 }
 
 // MARK: Public methods
-- (void)start {
-    if (!_startDate) {
-        self.startDate = [NSDate new];
-        [self save];
-    }
-}
-
 - (float)progress {
     NSAssert(_startDate, @"Task has not been started.");
     
     float progress = (float)fabs([_startDate timeIntervalSinceNow]);
     progress = progress / [_estimatedTime floatValue];
     return MIN(progress, 1.0);
-}
-
-- (void)save {
-    NSData *taskData = [NSKeyedArchiver archivedDataWithRootObject:self];
-    [[NSUserDefaults standardUserDefaults] setObject:taskData forKey:@"hppyCurrentTask"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (UIImage *)categoryImage {

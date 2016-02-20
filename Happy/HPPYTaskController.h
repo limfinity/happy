@@ -14,10 +14,13 @@
 /// Gets the task where user left off
 + (HPPYTask *)currentTask;
 
-/// Gets the next task in order after a given task, shows first task if no next task is available
-- (HPPYTask *)nextTask:(HPPYTask *)previousTask;
+/// Starts the given task
++ (void)startTask:(HPPYTask *)task;
 
-/// Marks a task as completed and persists the result in a file
-- (void)completeTask:(HPPYTask *)task;
+/// Skips the given task and returns the next task
+- (HPPYTask *)skipTask:(HPPYTask *)task;
+
+/// Marks a task as completed and persists the result in a file; return the next task
+- (HPPYTask *)completeTask:(HPPYTask *)task;
 
 @end

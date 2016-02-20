@@ -14,10 +14,6 @@
     [super viewDidLoad];
 }
 
-- (IBAction)close:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
 // MARK: App lifecycle
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
