@@ -19,7 +19,9 @@
 		A04AA2F01C416AC100DB4A69 /* HPPY.m in Sources */ = {isa = PBXBuildFile; fileRef = A04AA2EF1C416AC100DB4A69 /* HPPY.m */; };
 		A04AA2F31C416ADE00DB4A69 /* HPPYCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04AA2F21C416ADE00DB4A69 /* HPPYCodeViewController.m */; };
 		A04AA2F51C416D0E00DB4A69 /* hppyCodes.plist in Resources */ = {isa = PBXBuildFile; fileRef = A04AA2F41C416D0E00DB4A69 /* hppyCodes.plist */; };
-		A05558521BF9CE2D0036E954 /* HPPYRightMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A05558511BF9CE2D0036E954 /* HPPYRightMenuTableViewController.m */; };
+		A0554A021C78976F00817BCF /* HPPYMenuableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0554A011C78976F00817BCF /* HPPYMenuableViewController.m */; };
+		A0554A051C789A8C00817BCF /* HPPYMenuableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0554A041C789A8C00817BCF /* HPPYMenuableTableViewController.m */; };
+		A05558521BF9CE2D0036E954 /* HPPYLeftMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A05558511BF9CE2D0036E954 /* HPPYLeftMenuTableViewController.m */; };
 		A05558551BF9D8A30036E954 /* HPPYMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A05558541BF9D8A30036E954 /* HPPYMenuTableViewCell.m */; };
 		A05558571BF9E12E0036E954 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A05558561BF9E12E0036E954 /* Settings.bundle */; };
 		A058D40B1C24236A00361186 /* HPPYTextInputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A058D40A1C24236A00361186 /* HPPYTextInputTableViewCell.m */; };
@@ -75,8 +77,12 @@
 		A04AA2F11C416ADE00DB4A69 /* HPPYCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYCodeViewController.h; sourceTree = "<group>"; };
 		A04AA2F21C416ADE00DB4A69 /* HPPYCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYCodeViewController.m; sourceTree = "<group>"; };
 		A04AA2F41C416D0E00DB4A69 /* hppyCodes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hppyCodes.plist; sourceTree = "<group>"; };
-		A05558501BF9CE2D0036E954 /* HPPYRightMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYRightMenuTableViewController.h; sourceTree = "<group>"; };
-		A05558511BF9CE2D0036E954 /* HPPYRightMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYRightMenuTableViewController.m; sourceTree = "<group>"; };
+		A0554A001C78976F00817BCF /* HPPYMenuableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYMenuableViewController.h; sourceTree = "<group>"; };
+		A0554A011C78976F00817BCF /* HPPYMenuableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYMenuableViewController.m; sourceTree = "<group>"; };
+		A0554A031C789A8C00817BCF /* HPPYMenuableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYMenuableTableViewController.h; sourceTree = "<group>"; };
+		A0554A041C789A8C00817BCF /* HPPYMenuableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYMenuableTableViewController.m; sourceTree = "<group>"; };
+		A05558501BF9CE2D0036E954 /* HPPYLeftMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYLeftMenuTableViewController.h; sourceTree = "<group>"; };
+		A05558511BF9CE2D0036E954 /* HPPYLeftMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYLeftMenuTableViewController.m; sourceTree = "<group>"; };
 		A05558531BF9D8A30036E954 /* HPPYMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYMenuTableViewCell.h; sourceTree = "<group>"; };
 		A05558541BF9D8A30036E954 /* HPPYMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYMenuTableViewCell.m; sourceTree = "<group>"; };
 		A05558561BF9E12E0036E954 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -205,8 +211,12 @@
 				A0A0FE1E1C1AF1890008225E /* HPPYTaskDetailViewController.m */,
 				A00891671C77D91700C161F4 /* HPPYTaskSuccessVIewController.h */,
 				A00891681C77D91700C161F4 /* HPPYTaskSuccessVIewController.m */,
-				A05558501BF9CE2D0036E954 /* HPPYRightMenuTableViewController.h */,
-				A05558511BF9CE2D0036E954 /* HPPYRightMenuTableViewController.m */,
+				A0554A001C78976F00817BCF /* HPPYMenuableViewController.h */,
+				A0554A011C78976F00817BCF /* HPPYMenuableViewController.m */,
+				A0554A031C789A8C00817BCF /* HPPYMenuableTableViewController.h */,
+				A0554A041C789A8C00817BCF /* HPPYMenuableTableViewController.m */,
+				A05558501BF9CE2D0036E954 /* HPPYLeftMenuTableViewController.h */,
+				A05558511BF9CE2D0036E954 /* HPPYLeftMenuTableViewController.m */,
 				A05558531BF9D8A30036E954 /* HPPYMenuTableViewCell.h */,
 				A05558541BF9D8A30036E954 /* HPPYMenuTableViewCell.m */,
 				A0D185021BF9CC0E0000B1F9 /* HPPYTaskContainerViewController.h */,
@@ -449,8 +459,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0554A021C78976F00817BCF /* HPPYMenuableViewController.m in Sources */,
 				A098FC4E1C401BFC0007EBEF /* HPPYReminderTableViewCell.m in Sources */,
-				A05558521BF9CE2D0036E954 /* HPPYRightMenuTableViewController.m in Sources */,
+				A05558521BF9CE2D0036E954 /* HPPYLeftMenuTableViewController.m in Sources */,
+				A0554A051C789A8C00817BCF /* HPPYMenuableTableViewController.m in Sources */,
 				A098FC4B1C4000840007EBEF /* HPPYReminderTableViewController.m in Sources */,
 				A00E9ADB1BFDF45C00C94ABA /* HPPYTask.m in Sources */,
 				A079FFFF1C13063700B387CC /* HPPYTaskController.m in Sources */,

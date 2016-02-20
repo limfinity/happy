@@ -8,12 +8,11 @@
 
 #import "HPPYSettingsTableViewController.h"
 #import "HPPYReminderTableViewController.h"
-#import <iOS-Slide-Menu/SlideNavigationController.h>
 #import "HPPYHeaderTableViewCell.h"
 #import "HPPYTextInputTableViewCell.h"
 #import "HPPYReminderTableViewCell.h"
 
-@interface HPPYSettingsTableViewController () <UITextFieldDelegate, SlideNavigationControllerDelegate> {
+@interface HPPYSettingsTableViewController () <UITextFieldDelegate> {
     NSString *_name;
     NSMutableArray *_reminders;
 }
@@ -203,11 +202,6 @@
          vc.reminder = [((HPPYReminderTableViewCell *)sender).reminder copy];
      }
  }
-
-// MARK: SlideNavigationControllerDelegate
-- (BOOL)slideNavigationControllerShouldDisplayRightMenu {
-    return YES;
-}
 
 // MARK: App lifecycle
 - (void)didReceiveMemoryWarning {

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HPPYMenuableTableViewController.h"
 
-@interface HPPYSettingsTableViewController : UITableViewController
+@interface HPPYSettingsTableViewController : HPPYMenuableTableViewController
 
 @end

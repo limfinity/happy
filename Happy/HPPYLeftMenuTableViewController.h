@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HPPYRightMenuTableViewController : UITableViewController
+@interface HPPYLeftMenuTableViewController : UITableViewController
 
 @end

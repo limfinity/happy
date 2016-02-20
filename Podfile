@@ -3,7 +3,7 @@
 
 target 'Happy' do
 
-pod 'iOS-Slide-Menu' # WARNING: Update carefully custom changes made in SlideNavigationController.m
+pod 'SWRevealViewController'
 pod 'TSMarkdownParser'
 
 end

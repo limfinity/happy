@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HPPYMenuableViewController.h"
 
-@interface HPPYStaticTextViewController : UIViewController
+@interface HPPYStaticTextViewController : HPPYMenuableViewController
 
 @property (nonatomic, strong) NSString *identifier;
 

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface HPPY : NSObject
 
@@ -18,5 +19,14 @@
  * @result Array containing content of the file
  */
 + (NSArray *)getArrayFromFile:(NSString *)fileName reloadFromBundle:(BOOL)reload;
+
+/**
+ * Helper method to get an image with a solid color.
+ *
+ * @param color The solid color
+ * @param size The size of the image
+ * @result Image with given size and color
+ */
++ (UIImage *)imageWithColor:(UIColor *)color andSize:(CGSize)size;
 
 @end

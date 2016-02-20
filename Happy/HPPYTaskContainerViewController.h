@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HPPYMenuableViewController.h"
 
-@interface HPPYTaskContainerViewController : UIViewController
+@interface HPPYTaskContainerViewController : HPPYMenuableViewController
 
 
 @end

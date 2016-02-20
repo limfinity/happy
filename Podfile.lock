@@ -1,13 +1,13 @@
 PODS:
-  - iOS-Slide-Menu (1.5)
+  - SWRevealViewController (2.3.0)
   - TSMarkdownParser (1.0.18)
 
 DEPENDENCIES:
-  - iOS-Slide-Menu
+  - SWRevealViewController
   - TSMarkdownParser
 
 SPEC CHECKSUMS:
-  iOS-Slide-Menu: 40b0cbd8916c42afc755f0869793cd09e7a32102
+  SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
   TSMarkdownParser: 7c710ad556a8c2335574770017a9c817c4c53615
 
 COCOAPODS: 0.39.0

@@ -6,23 +6,24 @@
 //  Copyright © 2015 Peter Pult. All rights reserved.
 //
 
-#import "HPPYRightMenuTableViewController.h"
+#import "HPPYLeftMenuTableViewController.h"
+#import "SWRevealViewController.h"
 #import "HPPYMenuTableViewCell.h"
 #import "HPPYTaskContainerViewController.h"
 #import "HPPYStaticTextViewController.h"
-#import <iOS-Slide-Menu/SlideNavigationController.h>
 
-@interface HPPYRightMenuTableViewController () {
+@interface HPPYLeftMenuTableViewController () {
     NSArray *_menu;
 }
 
 @end
 
-@implementation HPPYRightMenuTableViewController
+@implementation HPPYLeftMenuTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationController.navigationBar.shadowImage = [UIImage imageNamed:@"navigationShadowInverse"];    
     [self initializeMenu];
 }
 
@@ -62,60 +63,42 @@
 
 // MARK: TableView
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 0) {
-        return 1;
-    }
-
     return _menu.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0) {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"menuHeader" forIndexPath:indexPath];
-        return cell;
-    }
-    
     HPPYMenuTableViewCell *cell = (HPPYMenuTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"menu" forIndexPath:indexPath];
     NSDictionary *menuRowDict = _menu[indexPath.row];
     cell.titleLabel.text = NSLocalizedString(menuRowDict[@"title"], nil);
-    cell.subTitleLabel.text = NSLocalizedString(menuRowDict[@"subTitle"], nil);
-    
+    cell.subTitleLabel.text = NSLocalizedString(menuRowDict[@"subTitle"], nil);    
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0) {
-        return 110;
-    } else {
         return 60;
-    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0) {
-        return;
-    }
-    
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     NSDictionary *menuRowDict = _menu[indexPath.row];
     NSString *identifier = menuRowDict[@"viewController"];
     
-    UIViewController* vc = [mainStoryboard instantiateViewControllerWithIdentifier:identifier];
-    UIImage *image = [UIImage imageNamed:@"navigationHeart"];
-    vc.navigationItem.titleView = [[UIImageView alloc] initWithImage:image];
+    UINavigationController* navVc = [mainStoryboard instantiateViewControllerWithIdentifier:identifier];
+    UIViewController *vc = [navVc childViewControllers].firstObject;
     
     if ([identifier isEqualToString:@"StaticTextViewController"]) {
-        HPPYStaticTextViewController *staticVc = (HPPYStaticTextViewController *)vc;
+        HPPYStaticTextViewController *staticVc = (HPPYStaticTextViewController*)vc;
         staticVc.identifier = menuRowDict[@"id"];
-        [SlideNavigationController sharedInstance].avoidSwitchingToSameClassViewController = NO;
-    } else {
-        [SlideNavigationController sharedInstance].avoidSwitchingToSameClassViewController = YES;
     }
-    [[SlideNavigationController sharedInstance] popAllAndSwitchToViewController:vc withCompletion:nil];
+    
+    SWRevealViewController *revealViewController = self.revealViewController;
+    if (revealViewController) {
+        [revealViewController pushFrontViewController:navVc animated:YES];
+    }
 
 }
 

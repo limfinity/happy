@@ -7,10 +7,9 @@
 //
 
 #import "HPPYStaticTextViewController.h"
-#import <iOS-Slide-Menu/SlideNavigationController.h>
 #import <TSMarkdownParser/TSMarkdownParser.h>
 
-@interface HPPYStaticTextViewController () <SlideNavigationControllerDelegate>
+@interface HPPYStaticTextViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 
@@ -41,11 +40,6 @@
         result = content;
     }
     return result;
-}
-
-// MARK: SlideNavigationControllerDelegate
--(BOOL)slideNavigationControllerShouldDisplayRightMenu {
-    return YES;
 }
 
 // MARK: App lifecycle
