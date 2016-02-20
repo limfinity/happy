@@ -33,6 +33,9 @@
     // Handle root view manually to avoid problems with slide navigation
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self.window makeKeyAndVisible];
+    
+    // Make background white to light up horizontal flip animations
+    self.window.backgroundColor = [UIColor whiteColor];
 
     // Show correct view when starting the app
     [self handleAppState];

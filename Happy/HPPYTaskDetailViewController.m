@@ -69,6 +69,7 @@
 
 - (IBAction)completeTask:(id)sender {
     NSLog(@"Wants to complete task");
+    [self performSegueWithIdentifier:@"ShowTaskSuccess" sender:self];
 }
 
 - (void)processTask {
