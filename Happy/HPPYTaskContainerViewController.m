@@ -15,7 +15,6 @@
     HPPYTaskController *_taskController;
 }
 
-//@property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
 @property (weak, nonatomic) IBOutlet UIView *taskCardView;
 @property (weak, nonatomic) HPPYTaskCardViewController *taskCardViewController;
 
@@ -25,17 +24,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Set in initial view controller, afterwards title is set in menu view controller
-//    UIImage *image = [UIImage imageNamed:@"navigationHeart"];
-//    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:image];
-//    
-//    SWRevealViewController *revealViewController = self.revealViewController;
-//    if ( revealViewController ) {
-//        [self.menuButton setTarget: self.revealViewController];
-//        [self.menuButton setAction: @selector( revealToggle: )];
-//        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-//    }
 }
 
 - (HPPYTaskController *)taskController {
