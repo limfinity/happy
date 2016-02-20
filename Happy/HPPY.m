@@ -41,7 +41,7 @@
         }
         
         // Remove old file if it already exists
-        if ([ fileManager fileExistsAtPath:path]) {
+        if ([fileManager fileExistsAtPath:path]) {
             if (![fileManager removeItemAtPath:path error:&error]) {
                 NSLog(@"Error removing old file %@: %@", fileName, error.description);
                 return nil;

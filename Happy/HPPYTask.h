@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSInteger, HPPYTaskCategory) {
-    HPPYTaskCategory1,
+    HPPYTaskCategory1 = 1,
     HPPYTaskCategory2,
     HPPYTaskCategory3,
     HPPYTaskCategory4
