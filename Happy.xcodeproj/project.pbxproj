@@ -7,18 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A00891661C77D2AE00C161F4 /* hppyTasks.plist in Resources */ = {isa = PBXBuildFile; fileRef = A00891651C77D2AE00C161F4 /* hppyTasks.plist */; };
 		A00891691C77D91700C161F4 /* HPPYTaskSuccessVIewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00891681C77D91700C161F4 /* HPPYTaskSuccessVIewController.m */; };
 		A00E9ADB1BFDF45C00C94ABA /* HPPYTask.m in Sources */ = {isa = PBXBuildFile; fileRef = A00E9ADA1BFDF45C00C94ABA /* HPPYTask.m */; };
 		A01369341C1DD6EE00F69C31 /* HPPYSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A01369331C1DD6EE00F69C31 /* HPPYSettingsTableViewController.m */; };
 		A021D9C71C6FDA7F00B63A8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A021D9C61C6FDA7F00B63A8D /* Assets.xcassets */; };
+		A03DDAF91C79026400B9B70D /* hppyCodes.plist in Resources */ = {isa = PBXBuildFile; fileRef = A03DDAF71C79026400B9B70D /* hppyCodes.plist */; };
+		A03DDAFA1C79026400B9B70D /* hppyTasks.plist in Resources */ = {isa = PBXBuildFile; fileRef = A03DDAF81C79026400B9B70D /* hppyTasks.plist */; };
 		A04A09431BF9EE9D005F385B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A04A09411BF9EE9D005F385B /* Localizable.strings */; };
 		A04A09471BF9F05C005F385B /* HPPYStaticTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04A09461BF9F05C005F385B /* HPPYStaticTextViewController.m */; };
 		A04A094B1BFA0259005F385B /* contact.md in Sources */ = {isa = PBXBuildFile; fileRef = A04A094D1BFA0259005F385B /* contact.md */; };
 		A04A09501BFA14CB005F385B /* contact.md in Resources */ = {isa = PBXBuildFile; fileRef = A04A094D1BFA0259005F385B /* contact.md */; };
 		A04AA2F01C416AC100DB4A69 /* HPPY.m in Sources */ = {isa = PBXBuildFile; fileRef = A04AA2EF1C416AC100DB4A69 /* HPPY.m */; };
 		A04AA2F31C416ADE00DB4A69 /* HPPYCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04AA2F21C416ADE00DB4A69 /* HPPYCodeViewController.m */; };
-		A04AA2F51C416D0E00DB4A69 /* hppyCodes.plist in Resources */ = {isa = PBXBuildFile; fileRef = A04AA2F41C416D0E00DB4A69 /* hppyCodes.plist */; };
 		A0554A021C78976F00817BCF /* HPPYMenuableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0554A011C78976F00817BCF /* HPPYMenuableViewController.m */; };
 		A0554A051C789A8C00817BCF /* HPPYMenuableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0554A041C789A8C00817BCF /* HPPYMenuableTableViewController.m */; };
 		A0554A081C789F2A00817BCF /* HPPYRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0554A071C789F2A00817BCF /* HPPYRevealViewController.m */; };
@@ -61,7 +61,6 @@
 
 /* Begin PBXFileReference section */
 		867A161B6F9B16C9161B4089 /* Pods-Happy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Happy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Happy/Pods-Happy.debug.xcconfig"; sourceTree = "<group>"; };
-		A00891651C77D2AE00C161F4 /* hppyTasks.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hppyTasks.plist; sourceTree = "<group>"; };
 		A00891671C77D91700C161F4 /* HPPYTaskSuccessVIewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYTaskSuccessVIewController.h; sourceTree = "<group>"; };
 		A00891681C77D91700C161F4 /* HPPYTaskSuccessVIewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYTaskSuccessVIewController.m; sourceTree = "<group>"; };
 		A00E9AD91BFDF45C00C94ABA /* HPPYTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYTask.h; sourceTree = "<group>"; };
@@ -69,6 +68,8 @@
 		A01369321C1DD6EE00F69C31 /* HPPYSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYSettingsTableViewController.h; sourceTree = "<group>"; };
 		A01369331C1DD6EE00F69C31 /* HPPYSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYSettingsTableViewController.m; sourceTree = "<group>"; };
 		A021D9C61C6FDA7F00B63A8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A03DDAF71C79026400B9B70D /* hppyCodes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = hppyCodes.plist; path = private/hppyCodes.plist; sourceTree = "<group>"; };
+		A03DDAF81C79026400B9B70D /* hppyTasks.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = hppyTasks.plist; path = private/hppyTasks.plist; sourceTree = "<group>"; };
 		A04A09441BF9EEA2005F385B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A04A09451BF9F05C005F385B /* HPPYStaticTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYStaticTextViewController.h; sourceTree = "<group>"; };
 		A04A09461BF9F05C005F385B /* HPPYStaticTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYStaticTextViewController.m; sourceTree = "<group>"; };
@@ -77,7 +78,6 @@
 		A04AA2EF1C416AC100DB4A69 /* HPPY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPY.m; sourceTree = "<group>"; };
 		A04AA2F11C416ADE00DB4A69 /* HPPYCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYCodeViewController.h; sourceTree = "<group>"; };
 		A04AA2F21C416ADE00DB4A69 /* HPPYCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYCodeViewController.m; sourceTree = "<group>"; };
-		A04AA2F41C416D0E00DB4A69 /* hppyCodes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = hppyCodes.plist; sourceTree = "<group>"; };
 		A0554A001C78976F00817BCF /* HPPYMenuableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYMenuableViewController.h; sourceTree = "<group>"; };
 		A0554A011C78976F00817BCF /* HPPYMenuableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYMenuableViewController.m; sourceTree = "<group>"; };
 		A0554A031C789A8C00817BCF /* HPPYMenuableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYMenuableTableViewController.h; sourceTree = "<group>"; };
@@ -253,9 +253,9 @@
 				A04A09411BF9EE9D005F385B /* Localizable.strings */,
 				A05558561BF9E12E0036E954 /* Settings.bundle */,
 				A0D1850D1BF9CC0E0000B1F9 /* Info.plist */,
-				A04AA2F41C416D0E00DB4A69 /* hppyCodes.plist */,
-				A00891651C77D2AE00C161F4 /* hppyTasks.plist */,
 				A0D184FD1BF9CC0E0000B1F9 /* main.m */,
+				A03DDAF71C79026400B9B70D /* hppyCodes.plist */,
+				A03DDAF81C79026400B9B70D /* hppyTasks.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -384,13 +384,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A00891661C77D2AE00C161F4 /* hppyTasks.plist in Resources */,
-				A04AA2F51C416D0E00DB4A69 /* hppyCodes.plist in Resources */,
+				A03DDAFA1C79026400B9B70D /* hppyTasks.plist in Resources */,
 				A04A09501BFA14CB005F385B /* contact.md in Resources */,
 				A04A09431BF9EE9D005F385B /* Localizable.strings in Resources */,
 				A05558571BF9E12E0036E954 /* Settings.bundle in Resources */,
 				A0D1850C1BF9CC0E0000B1F9 /* LaunchScreen.storyboard in Resources */,
 				A021D9C71C6FDA7F00B63A8D /* Assets.xcassets in Resources */,
+				A03DDAF91C79026400B9B70D /* hppyCodes.plist in Resources */,
 				A0D185071BF9CC0E0000B1F9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
