@@ -51,9 +51,7 @@
     BOOL unlocked = [[NSUserDefaults standardUserDefaults] boolForKey:@"hppyUnlocked"];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     if (unlocked) {
-        // Set up slide menu
         self.window.rootViewController = [storyboard instantiateInitialViewController];
-//        [self setupSlideMenu];
     } else {
         self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"CodeViewController"];
     }
@@ -63,17 +61,6 @@
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigationBg"] forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setShadowImage:[UIImage imageNamed:@"navigationShadow"]];
 }
-
-//- (void)setupSlideMenu {
-//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//    HPPYRightMenuTableViewController *rightMenuViewController = [storyboard instantiateViewControllerWithIdentifier:@"RightMenuViewController"];
-//    [SlideNavigationController sharedInstance].rightMenu = rightMenuViewController;
-//    UIButton *button  = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 20, 18)];
-//    [button setImage:[UIImage imageNamed:@"burgerButton"] forState:UIControlStateNormal];
-//    [button addTarget:[SlideNavigationController sharedInstance] action:@selector(toggleRightMenu) forControlEvents:UIControlEventTouchUpInside];
-//    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
-//    [SlideNavigationController sharedInstance].rightBarButtonItem = rightBarButtonItem;
-//}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

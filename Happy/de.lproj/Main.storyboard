@@ -656,7 +656,7 @@ etwas Gutes getan!</string>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xkv-ue-HSe">
-                                            <rect key="frame" x="8" y="8" width="304" height="25"/>
+                                            <rect key="frame" x="20" y="8" width="280" height="25"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="25" id="fh9-zh-0Ad"/>
                                             </constraints>
@@ -665,7 +665,7 @@ etwas Gutes getan!</string>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWa-Cl-hMI">
-                                            <rect key="frame" x="8" y="33" width="304" height="20"/>
+                                            <rect key="frame" x="20" y="33" width="280" height="20"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="LKo-We-Kpz"/>
@@ -676,13 +676,25 @@ etwas Gutes getan!</string>
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="Xkv-ue-HSe" secondAttribute="trailing" constant="20" id="1QC-iH-plV"/>
                                         <constraint firstItem="LWa-Cl-hMI" firstAttribute="leading" secondItem="iOW-9V-MFB" secondAttribute="leadingMargin" id="6r5-H1-kmy"/>
+                                        <constraint firstItem="LWa-Cl-hMI" firstAttribute="leading" secondItem="iOW-9V-MFB" secondAttribute="leading" constant="20" id="Ph5-oh-eb8"/>
                                         <constraint firstItem="LWa-Cl-hMI" firstAttribute="trailing" secondItem="iOW-9V-MFB" secondAttribute="trailingMargin" id="VS5-8f-Kc6"/>
                                         <constraint firstItem="Xkv-ue-HSe" firstAttribute="leading" secondItem="iOW-9V-MFB" secondAttribute="leadingMargin" id="YHf-V0-Qru"/>
                                         <constraint firstItem="Xkv-ue-HSe" firstAttribute="trailing" secondItem="iOW-9V-MFB" secondAttribute="trailingMargin" id="apQ-vJ-K7X"/>
+                                        <constraint firstItem="Xkv-ue-HSe" firstAttribute="leading" secondItem="iOW-9V-MFB" secondAttribute="leading" constant="20" id="cor-Og-bSw"/>
                                         <constraint firstItem="Xkv-ue-HSe" firstAttribute="top" secondItem="iOW-9V-MFB" secondAttribute="topMargin" id="jIl-0K-gew"/>
                                         <constraint firstItem="LWa-Cl-hMI" firstAttribute="top" secondItem="Xkv-ue-HSe" secondAttribute="bottom" id="nsg-yi-TDO"/>
+                                        <constraint firstAttribute="trailing" secondItem="LWa-Cl-hMI" secondAttribute="trailing" constant="20" id="ukP-hb-dd9"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="YHf-V0-Qru"/>
+                                            <exclude reference="apQ-vJ-K7X"/>
+                                            <exclude reference="6r5-H1-kmy"/>
+                                            <exclude reference="VS5-8f-Kc6"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="subTitleLabel" destination="LWa-Cl-hMI" id="3Sa-Z2-exF"/>
@@ -930,7 +942,7 @@ Schön, dass du dabei bist.</string>
         <!--Reveal View Controller-->
         <scene sceneID="b7L-zY-Ar4">
             <objects>
-                <viewController id="2lL-UH-UBo" customClass="SWRevealViewController" sceneMemberID="viewController">
+                <viewController id="2lL-UH-UBo" customClass="HPPYRevealViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6Rr-OX-q6S"/>
                         <viewControllerLayoutGuide type="bottom" id="rLw-M4-Th6"/>

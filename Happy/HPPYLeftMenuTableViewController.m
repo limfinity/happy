@@ -14,6 +14,7 @@
 
 @interface HPPYLeftMenuTableViewController () {
     NSArray *_menu;
+    NSString *_activeItem;
 }
 
 @end
@@ -54,6 +55,8 @@
                   @"viewController":@"SettingsViewController"
                   }
               ];
+    
+    _activeItem = _menu.firstObject[@"id"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -83,23 +86,27 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    SWRevealViewController *revealViewController = self.revealViewController;
+    if (!revealViewController) { return; }
+    
     NSDictionary *menuRowDict = _menu[indexPath.row];
+    if ([menuRowDict[@"id"] isEqualToString:_activeItem]) {
+        [revealViewController revealToggleAnimated:YES];
+        return;
+    }
+    _activeItem = menuRowDict[@"id"];
     NSString *identifier = menuRowDict[@"viewController"];
     
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
     UINavigationController* navVc = [mainStoryboard instantiateViewControllerWithIdentifier:identifier];
     UIViewController *vc = [navVc childViewControllers].firstObject;
     
     if ([identifier isEqualToString:@"StaticTextViewController"]) {
         HPPYStaticTextViewController *staticVc = (HPPYStaticTextViewController*)vc;
-        staticVc.identifier = menuRowDict[@"id"];
-    }
-    
-    SWRevealViewController *revealViewController = self.revealViewController;
-    if (revealViewController) {
-        [revealViewController pushFrontViewController:navVc animated:YES];
+        staticVc.identifier = _activeItem;
     }
 
+    [revealViewController pushFrontViewController:navVc animated:YES];
 }
 
 /*
