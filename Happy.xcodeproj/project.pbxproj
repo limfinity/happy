@@ -13,6 +13,7 @@
 		A021D9C71C6FDA7F00B63A8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A021D9C61C6FDA7F00B63A8D /* Assets.xcassets */; };
 		A03DDAF91C79026400B9B70D /* hppyCodes.plist in Resources */ = {isa = PBXBuildFile; fileRef = A03DDAF71C79026400B9B70D /* hppyCodes.plist */; };
 		A03DDAFA1C79026400B9B70D /* hppyTasks.plist in Resources */ = {isa = PBXBuildFile; fileRef = A03DDAF81C79026400B9B70D /* hppyTasks.plist */; };
+		A03DDAFD1C79E28300B9B70D /* HPPYCountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = A03DDAFC1C79E28300B9B70D /* HPPYCountDown.m */; };
 		A04A09431BF9EE9D005F385B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A04A09411BF9EE9D005F385B /* Localizable.strings */; };
 		A04A09471BF9F05C005F385B /* HPPYStaticTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04A09461BF9F05C005F385B /* HPPYStaticTextViewController.m */; };
 		A04A094B1BFA0259005F385B /* contact.md in Sources */ = {isa = PBXBuildFile; fileRef = A04A094D1BFA0259005F385B /* contact.md */; };
@@ -70,6 +71,8 @@
 		A021D9C61C6FDA7F00B63A8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A03DDAF71C79026400B9B70D /* hppyCodes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = hppyCodes.plist; path = private/hppyCodes.plist; sourceTree = "<group>"; };
 		A03DDAF81C79026400B9B70D /* hppyTasks.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = hppyTasks.plist; path = private/hppyTasks.plist; sourceTree = "<group>"; };
+		A03DDAFB1C79E28300B9B70D /* HPPYCountDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYCountDown.h; sourceTree = "<group>"; };
+		A03DDAFC1C79E28300B9B70D /* HPPYCountDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYCountDown.m; sourceTree = "<group>"; };
 		A04A09441BF9EEA2005F385B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A04A09451BF9F05C005F385B /* HPPYStaticTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYStaticTextViewController.h; sourceTree = "<group>"; };
 		A04A09461BF9F05C005F385B /* HPPYStaticTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYStaticTextViewController.m; sourceTree = "<group>"; };
@@ -202,6 +205,8 @@
 				A0D185001BF9CC0E0000B1F9 /* AppDelegate.m */,
 				A04AA2EE1C416AC100DB4A69 /* HPPY.h */,
 				A04AA2EF1C416AC100DB4A69 /* HPPY.m */,
+				A03DDAFB1C79E28300B9B70D /* HPPYCountDown.h */,
+				A03DDAFC1C79E28300B9B70D /* HPPYCountDown.m */,
 				A04AA2F11C416ADE00DB4A69 /* HPPYCodeViewController.h */,
 				A04AA2F21C416ADE00DB4A69 /* HPPYCodeViewController.m */,
 				A00E9AD91BFDF45C00C94ABA /* HPPYTask.h */,
@@ -474,6 +479,7 @@
 				A04A094B1BFA0259005F385B /* contact.md in Sources */,
 				A058D40B1C24236A00361186 /* HPPYTextInputTableViewCell.m in Sources */,
 				A0A0FE1F1C1AF1890008225E /* HPPYTaskDetailViewController.m in Sources */,
+				A03DDAFD1C79E28300B9B70D /* HPPYCountDown.m in Sources */,
 				A0D185041BF9CC0E0000B1F9 /* HPPYTaskContainerViewController.m in Sources */,
 				A04A09471BF9F05C005F385B /* HPPYStaticTextViewController.m in Sources */,
 				A01369341C1DD6EE00F69C31 /* HPPYSettingsTableViewController.m in Sources */,

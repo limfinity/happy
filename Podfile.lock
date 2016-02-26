@@ -1,6 +1,6 @@
 PODS:
   - SWRevealViewController (2.3.0)
-  - TSMarkdownParser (1.0.18)
+  - TSMarkdownParser (1.0.20)
 
 DEPENDENCIES:
   - SWRevealViewController
@@ -8,6 +8,6 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
-  TSMarkdownParser: 7c710ad556a8c2335574770017a9c817c4c53615
+  TSMarkdownParser: 5ef8a617d39f92812860e0a3544348de33abe549
 
 COCOAPODS: 0.39.0

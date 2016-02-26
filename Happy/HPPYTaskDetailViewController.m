@@ -8,6 +8,7 @@
 
 #import "HPPYTaskDetailViewController.h"
 #import "HPPYTaskController.h"
+#import "HPPYCountDown.h"
 
 @interface HPPYTaskDetailViewController ()
 
@@ -37,13 +38,6 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [self processTask];
-}
-
--(void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
-    
-    // Move visible text to top at start.
-    [self.detailTextView setContentOffset:CGPointZero];
 }
 
 - (void)setTask:(HPPYTask *)task {
@@ -83,6 +77,7 @@
     [CATransaction begin]; {
         [CATransaction setCompletionBlock:^{
         }];
+        self.completeButton.titleLabel.text = NSLocalizedString(@"Finish", nil);
         self.completeButton.enabled = YES;
         [self animateButtonActivation];
     } [CATransaction commit];
@@ -92,6 +87,7 @@
     float progress = [_task progress];
     float processingTime = [_task.estimatedTime floatValue];
     CFTimeInterval duration = processingTime - (progress * processingTime);
+    duration = MAX(duration, 1);
     
     UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:self.completeButton.bounds cornerRadius:25.0];
     
@@ -124,6 +120,15 @@
     [layer addAnimation:animationGroup forKey:nil];
     
     [self.completeButton.layer addSublayer:layer];
+    
+    if (progress < 1) {
+        HPPYCountDown *cd = [[HPPYCountDown alloc] initWithSeconds:animationGroup.duration];
+        [cd startWithBlock:^(NSString *remainingTime) {
+                [self.completeButton setTitle:remainingTime forState:UIControlStateDisabled];
+        } completion:^{
+            NSLog(@"timer finished");
+        }];
+    }
 }
 
 - (void)animateButtonActivation {

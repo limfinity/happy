@@ -6,6 +6,7 @@
   Copyright © 2015 Peter Pult. All rights reserved.
 */
 
+/* MENU */
 "Home" = "Home";
 "Home is where your heart is." = "Zu Hause ist wo dein Herz ist.";
 "Contact" = "Kontakt";
@@ -14,6 +15,8 @@
 "All that legal stuff." = "Der ganze rechtliche Kram.";
 "Settings" = "Einstellungen";
 "Your very custom Happy App." = "Deine ganz persönliche Happy App.";
+
+/* SETTINGS */
 "Name" = "Name";
 "Reminders" = "Erinnerungen";
 "Add Reminder" = "Erinnerung";
@@ -22,3 +25,6 @@
 "Friendly Reminder" = "Freundliche Erinnerung";
 "Push Reminder Body 1" = "Auf geht's, eine neue Aufgabe steht an. 🤗";
 "Jane Doe" = "Maria Musterfrau";
+
+/* TASK DETAILS */
+"Finish" = "Erledigt";

@@ -10,6 +10,7 @@
 #import "SWRevealViewController.h"
 #import "HPPYTaskController.h"
 #import "HPPYTaskCardViewController.h"
+#import "HPPYCountDown.h"
 
 @interface HPPYTaskContainerViewController () {
     HPPYTaskController *_taskController;
