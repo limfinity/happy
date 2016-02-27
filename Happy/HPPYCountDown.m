@@ -34,13 +34,17 @@
 }
 
 - (void)startWithBlock:(void (^)(NSString *remainingTime))block completion:(void (^)(void))completionBlock {
-//    _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerFired:) userInfo:@[block, completionBlock] repeats:YES];
     _timer = [NSTimer timerWithTimeInterval:1
                                      target:self
                                    selector:@selector(timerFired:)
                                    userInfo:@[block, completionBlock]
                                     repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
+}
+
+- (void)stop {
+    [_timer invalidate];
+    _timer = nil;
 }
 
 // MARK: Private methods

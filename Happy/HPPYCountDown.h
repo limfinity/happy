@@ -12,5 +12,6 @@
 
 - (instancetype)initWithSeconds:(int)seconds;
 - (void)startWithBlock:(void (^)(NSString *remainingTime))block completion:(void (^)(void))completionBlock;
+- (void)stop;
 
 @end

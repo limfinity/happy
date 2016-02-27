@@ -238,7 +238,7 @@
                                 <state key="normal" title="Erledigt">
                                     <color key="titleColor" red="0.9882352941176471" green="0.71372549019607845" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <state key="disabled" title=" 00:00">
+                                <state key="disabled" title="00:00">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">

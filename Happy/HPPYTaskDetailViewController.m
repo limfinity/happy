@@ -10,7 +10,10 @@
 #import "HPPYTaskController.h"
 #import "HPPYCountDown.h"
 
-@interface HPPYTaskDetailViewController ()
+@interface HPPYTaskDetailViewController () {
+    BOOL _movedScrollViewToTop;
+    HPPYCountDown *_countdown;
+}
 
 @property (strong, nonatomic) HPPYTask *task;
 
@@ -31,14 +34,55 @@
     self.detailTextView.textContainerInset = UIEdgeInsetsMake(0, 0, 0, 8);
     
     self.completeButton.enabled = NO;
+    _movedScrollViewToTop = NO;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(appReturnsActive:)
+                                                 name:UIApplicationDidBecomeActiveNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(appResignsActive:)
+                                                 name:UIApplicationWillResignActiveNotification
+                                               object:nil];
     
     [self updateInterface];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+- (void)appReturnsActive:(NSNotification *)notification{
     [self processTask];
 }
+
+- (void)appResignsActive:(NSNotification *)notification{
+    [self.completeButton.layer removeAllAnimations];
+    if (_countdown) {
+        [_countdown stop];
+        _countdown = nil;
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self appReturnsActive:nil];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    [self appResignsActive:nil];
+}
+
+-(void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
+    // Move visible text to top at start.
+    
+    if (!_movedScrollViewToTop) {
+        [self.detailTextView setContentOffset:CGPointZero];
+        _movedScrollViewToTop = YES;
+    }
+}
+
 
 - (void)setTask:(HPPYTask *)task {
     _task = task;
@@ -65,22 +109,13 @@
 }
 
 - (void)processTask {
-    [CATransaction begin]; {
-        [CATransaction setCompletionBlock:^{
-            [self activateButton];
-        }];
-        [self animateProcessingTime];
-    } [CATransaction commit];
+    [self animateProcessingTime];
 }
 
 - (void)activateButton {
-    [CATransaction begin]; {
-        [CATransaction setCompletionBlock:^{
-        }];
-        self.completeButton.titleLabel.text = NSLocalizedString(@"Finish", nil);
-        self.completeButton.enabled = YES;
-        [self animateButtonActivation];
-    } [CATransaction commit];
+    self.completeButton.titleLabel.text = NSLocalizedString(@"Finish", nil);
+    self.completeButton.enabled = YES;
+    [self animateButtonActivation];
 }
 
 - (void)animateProcessingTime {
@@ -102,31 +137,36 @@
     animation1.toValue = @(progress);
     animation1.beginTime = 0.0;
     animation1.duration = progress * 2;
-    animation1.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    animation1.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
     
     CABasicAnimation *animation2 = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
     animation2.fromValue = @(progress);
     animation2.toValue = @(1.0);
     animation2.beginTime = animation1.duration;
     animation2.duration = duration;
+    animation2.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
     
     CAAnimationGroup *animationGroup = [CAAnimationGroup new];
     animationGroup.animations = @[animation1, animation2];
     animationGroup.duration = animation1.duration + animation2.duration;
     animationGroup.fillMode = kCAFillModeForwards;
     animationGroup.removedOnCompletion = NO;
-    animationGroup.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    animationGroup.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
     
     [layer addAnimation:animationGroup forKey:nil];
     
     [self.completeButton.layer addSublayer:layer];
     
-    if (progress < 1) {
-        HPPYCountDown *cd = [[HPPYCountDown alloc] initWithSeconds:animationGroup.duration];
-        [cd startWithBlock:^(NSString *remainingTime) {
+    if (progress <= 1) {
+        _countdown = [[HPPYCountDown alloc] initWithSeconds:animationGroup.duration];
+        [_countdown startWithBlock:^(NSString *remainingTime) {
+            if (progress == 1) {
+                [self.completeButton setTitle:NSLocalizedString(@"Default Countdown", nil) forState:UIControlStateDisabled];
+            } else {
                 [self.completeButton setTitle:remainingTime forState:UIControlStateDisabled];
+            }
         } completion:^{
-            NSLog(@"timer finished");
+            [self activateButton];
         }];
     }
 }
