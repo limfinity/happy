@@ -23,4 +23,7 @@
 /// Marks a task as completed and persists the result in a file; return the next task
 - (HPPYTask *)completeTask:(HPPYTask *)task;
 
+/// Returns the last date a given task was completed, `nil` when task hsa never been completed before
++ (NSDate *)getLastCompletionDateFromTask:(HPPYTask *)task;
+
 @end

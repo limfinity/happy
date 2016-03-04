@@ -14,7 +14,6 @@ NSString * const hppyTitlePersonalizedKey = @"titlePersonalized";
 NSString * const hppyBodyKey = @"body";
 NSString * const hppyEstimatedTimeKey = @"estimatedTime";
 NSString * const hppyStartDateKey = @"startDate";
-NSString * const hppyLastCompletionDateKey = @"lastCompletionDate";
 NSString * const hppyCategoryKey = @"category";
 NSString * const hppyInTimeKey = @"inTime";
 NSString * const hppyCompletedDateKey = @"completedDate";
@@ -26,7 +25,6 @@ NSString * const hppyCompletedDateKey = @"completedDate";
                 titlePersonalized:(NSString *)titlePersonalized
                              body:(NSString *)body
                     estimatedTime:(NSNumber *)estimatedTime
-               lastCompletionDate:(NSDate *)lastCompletionDate
                          category:(HPPYTaskCategory)category {
     self = [super init];
     if (self) {
@@ -35,7 +33,6 @@ NSString * const hppyCompletedDateKey = @"completedDate";
         self.titlePersonalized = titlePersonalized;
         self.body = body;
         self.estimatedTime = estimatedTime;
-        self.lastCompletionDate = lastCompletionDate;
         self.category = category;
     }
     return self;
@@ -51,7 +48,6 @@ NSString * const hppyCompletedDateKey = @"completedDate";
         self.body = [coder decodeObjectForKey:hppyBodyKey];
         self.estimatedTime = [coder decodeObjectForKey:hppyEstimatedTimeKey];
         self.startDate = [coder decodeObjectForKey:hppyStartDateKey];
-        self.lastCompletionDate = [coder decodeObjectForKey:hppyLastCompletionDateKey];
         self.category = [coder decodeIntegerForKey:hppyCategoryKey];
     }
     return self;
@@ -64,7 +60,6 @@ NSString * const hppyCompletedDateKey = @"completedDate";
     [aCoder encodeObject:self.body forKey:hppyBodyKey];
     [aCoder encodeObject:self.estimatedTime forKey:hppyEstimatedTimeKey];
     [aCoder encodeObject:self.startDate forKey:hppyStartDateKey];
-    [aCoder encodeObject:self.lastCompletionDate forKey:hppyLastCompletionDateKey];
     [aCoder encodeInteger:self.category forKey:hppyCategoryKey];
 }
 

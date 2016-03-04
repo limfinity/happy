@@ -8,6 +8,7 @@
 
 #import "HPPYTaskCardViewController.h"
 #import "HPPYTaskDetailViewController.h"
+#import "HPPYTaskController.h"
 
 @interface HPPYTaskCardViewController ()
 
@@ -41,10 +42,11 @@
     self.selectButton.backgroundColor = [_task categoryColor];
     self.lastCompletionLabel.textColor = [_task categoryColor];
     
-    if (_task.lastCompletionDate) {
+    NSDate *lastCompletionDate = [HPPYTaskController getLastCompletionDateFromTask:_task];
+    if (lastCompletionDate) {
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         [formatter setDateFormat:@"d.M.y"]; // Date not localized use `dateFormatFromTemplate:options:locale` to achieve localization
-        NSString *dateString = [formatter stringFromDate:_task.lastCompletionDate];
+        NSString *dateString = [formatter stringFromDate:lastCompletionDate];
         self.lastCompletionLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Last Completion Date", nil), dateString];
     } else {
         self.lastCompletionLabel.text = @"";
