@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIView *backgroundView;
 @property (weak, nonatomic) IBOutlet UIImageView *categoryImageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *lastCompletionLabel;
 @property (weak, nonatomic) IBOutlet UIButton *selectButton;
 
 @end
@@ -34,10 +35,20 @@
 }
 
 - (void)updateInterface {
-    self.titleLabel.text = self.task.title;
+    self.titleLabel.text = _task.title;
     self.categoryImageView.image = [_task categoryImage];
     self.backgroundView.backgroundColor = [[_task categoryColor] colorWithAlphaComponent:0.3];
     self.selectButton.backgroundColor = [_task categoryColor];
+    self.lastCompletionLabel.textColor = [_task categoryColor];
+    
+    if (_task.lastCompletionDate) {
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"d.M.y"]; // Date not localized use `dateFormatFromTemplate:options:locale` to achieve localization
+        NSString *dateString = [formatter stringFromDate:_task.lastCompletionDate];
+        self.lastCompletionLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Last Completion Date", nil), dateString];
+    } else {
+        self.lastCompletionLabel.text = @"";
+    }
 }
 
 - (IBAction)selectTask:(id)sender {

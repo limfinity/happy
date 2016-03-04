@@ -26,6 +26,9 @@
 "Push Reminder Body 1" = "Auf geht's, eine neue Aufgabe steht an. 🤗";
 "Jane Doe" = "Maria Musterfrau";
 
+/* TASK OVERVIEW */
+"Last Completion Date" = "Zuletzt erledigt am %@";
+
 /* TASK DETAILS */
 "Finish" = "Erledigt";
 "Default Countdown" = "00:00";

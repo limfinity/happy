@@ -113,13 +113,27 @@
 + (NSArray *)getTasks {
     NSMutableArray *tasks = [NSMutableArray new];
     NSArray *array = [HPPY getArrayFromFile:@"hppyTasks.plist" reloadFromBundle:YES];
+    NSArray *taskEvents = [[self getTaskEvents] sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        return obj1[hppyCompletedDateKey] < obj2[hppyCompletedDateKey];
+    }];
     
     for (NSDictionary *dict in array) {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K MATCHES[c] %@", hppyIdentifierKey, dict[hppyIdentifierKey]];
+        NSUInteger index = [taskEvents indexOfObjectPassingTest:^BOOL(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            return [predicate evaluateWithObject:obj];
+        }];
+        NSDate *lastCompletionDate;
+        if (index != NSNotFound) {
+            lastCompletionDate = taskEvents[index][hppyCompletedDateKey];
+        } else {
+            lastCompletionDate = nil;
+        }
         HPPYTask *task = [[HPPYTask alloc] initWithIdentifier:dict[hppyIdentifierKey]
                                                         title:dict[hppyTitleKey]
                                             titlePersonalized:dict[hppyTitlePersonalizedKey]
                                                          body:dict[hppyBodyKey]
                                                 estimatedTime:dict[hppyEstimatedTimeKey]
+                                           lastCompletionDate:lastCompletionDate
                                                      category:[dict[hppyCategoryKey] integerValue]];
         [tasks addObject:task];
     }
