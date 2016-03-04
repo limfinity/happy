@@ -93,7 +93,7 @@
 - (void)updateInterface {
     NSString *name = [[NSUserDefaults standardUserDefaults] stringForKey:@"hppyName"];
     if (!name || name.length < 1) {
-        self.titleLabel.text = self.task.title;
+        self.titleLabel.text = self.task.titleUnpersonalized;
     } else {
         self.titleLabel.text = [NSString stringWithFormat:self.task.titlePersonalized, name];
     }

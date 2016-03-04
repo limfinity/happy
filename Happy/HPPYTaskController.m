@@ -140,6 +140,7 @@
         HPPYTask *task = [[HPPYTask alloc] initWithIdentifier:dict[hppyIdentifierKey]
                                                         title:dict[hppyTitleKey]
                                             titlePersonalized:dict[hppyTitlePersonalizedKey]
+                                          titleUnpersonalized:dict[hppyTitleUnpersonalizedKey]
                                                          body:dict[hppyBodyKey]
                                                 estimatedTime:dict[hppyEstimatedTimeKey]
                                                      category:[dict[hppyCategoryKey] integerValue]];

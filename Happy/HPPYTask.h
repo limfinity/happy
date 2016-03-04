@@ -19,6 +19,7 @@ typedef NS_ENUM(NSInteger, HPPYTaskCategory) {
 extern NSString * const hppyIdentifierKey;
 extern NSString * const hppyTitleKey;
 extern NSString * const hppyTitlePersonalizedKey;
+extern NSString * const hppyTitleUnpersonalizedKey;
 extern NSString * const hppyBodyKey;
 extern NSString * const hppyEstimatedTimeKey;
 extern NSString * const hppyStartDateKey;
@@ -31,6 +32,7 @@ extern NSString * const hppyCompletedDateKey;
 @property (nonatomic, strong) NSString *identifier;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *titlePersonalized;
+@property (nonatomic, strong) NSString *titleUnpersonalized;
 @property (nonatomic, strong) NSString *body;
 @property (nonatomic, strong) NSNumber *estimatedTime; // in seconds
 @property (nonatomic, strong, getter=started) NSDate *startDate;
@@ -39,6 +41,7 @@ extern NSString * const hppyCompletedDateKey;
 -(instancetype)initWithIdentifier:(NSString *)identifier
                             title:(NSString *)title
                 titlePersonalized:(NSString *)titlePersonalized
+              titleUnpersonalized:(NSString *)titleUnpersonalized
                              body:(NSString *)body
                     estimatedTime:(NSNumber *)estimatedTime
                          category:(HPPYTaskCategory)category;

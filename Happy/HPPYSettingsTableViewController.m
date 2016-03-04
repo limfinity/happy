@@ -178,18 +178,12 @@
     if (textField.tag == 100) {
         NSString *username = [textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
         
-        if (username.length > 0) {
-            [[NSUserDefaults standardUserDefaults] setObject:username forKey:@"hppyName"];
-            [[NSUserDefaults standardUserDefaults] synchronize];
-            
-            // Use tableview behaviour for deselecting the row
-            [self.tableView deselectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES];
-            [self tableView:self.tableView willDeselectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-            
-            return YES;
-        }
+        [[NSUserDefaults standardUserDefaults] setObject:username forKey:@"hppyName"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
         
-        return NO;
+        // Use tableview behaviour for deselecting the row
+        [self.tableView deselectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES];
+        [self tableView:self.tableView willDeselectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     }
     
     return YES;

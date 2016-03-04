@@ -11,6 +11,7 @@
 NSString * const hppyIdentifierKey = @"identifier";
 NSString * const hppyTitleKey = @"title";
 NSString * const hppyTitlePersonalizedKey = @"titlePersonalized";
+NSString * const hppyTitleUnpersonalizedKey = @"titleUnpersonalized";
 NSString * const hppyBodyKey = @"body";
 NSString * const hppyEstimatedTimeKey = @"estimatedTime";
 NSString * const hppyStartDateKey = @"startDate";
@@ -23,6 +24,7 @@ NSString * const hppyCompletedDateKey = @"completedDate";
 -(instancetype)initWithIdentifier:(NSString *)identifier
                             title:(NSString *)title
                 titlePersonalized:(NSString *)titlePersonalized
+              titleUnpersonalized:(NSString *)titleUnpersonalized
                              body:(NSString *)body
                     estimatedTime:(NSNumber *)estimatedTime
                          category:(HPPYTaskCategory)category {
@@ -31,6 +33,7 @@ NSString * const hppyCompletedDateKey = @"completedDate";
         self.identifier = identifier;
         self.title = title;
         self.titlePersonalized = titlePersonalized;
+        self.titleUnpersonalized = titleUnpersonalized;
         self.body = body;
         self.estimatedTime = estimatedTime;
         self.category = category;
@@ -45,6 +48,7 @@ NSString * const hppyCompletedDateKey = @"completedDate";
         self.identifier = [coder decodeObjectForKey:hppyIdentifierKey];
         self.title = [coder decodeObjectForKey:hppyTitleKey];
         self.titlePersonalized = [coder decodeObjectForKey:hppyTitlePersonalizedKey];
+        self.titleUnpersonalized = [coder decodeObjectForKey:hppyTitleUnpersonalizedKey];
         self.body = [coder decodeObjectForKey:hppyBodyKey];
         self.estimatedTime = [coder decodeObjectForKey:hppyEstimatedTimeKey];
         self.startDate = [coder decodeObjectForKey:hppyStartDateKey];
@@ -57,6 +61,7 @@ NSString * const hppyCompletedDateKey = @"completedDate";
     [aCoder encodeObject:self.identifier forKey:hppyIdentifierKey];
     [aCoder encodeObject:self.title forKey:hppyTitleKey];
     [aCoder encodeObject:self.titlePersonalized forKey:hppyTitlePersonalizedKey];
+    [aCoder encodeObject:self.titleUnpersonalized forKey:hppyTitleUnpersonalizedKey];
     [aCoder encodeObject:self.body forKey:hppyBodyKey];
     [aCoder encodeObject:self.estimatedTime forKey:hppyEstimatedTimeKey];
     [aCoder encodeObject:self.startDate forKey:hppyStartDateKey];
