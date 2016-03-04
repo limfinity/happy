@@ -17,10 +17,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hppyHeart" translatesAutoresizingMaskIntoConstraints="NO" id="35o-r9-m57">
-                                <rect key="frame" x="20" y="240" width="560" height="120"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="colorfulBg" translatesAutoresizingMaskIntoConstraints="NO" id="rYo-p1-bDr">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whiteHeart" translatesAutoresizingMaskIntoConstraints="NO" id="35o-r9-m57">
+                                <rect key="frame" x="20" y="263" width="560" height="75"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="phj-iP-YKI"/>
+                                    <constraint firstAttribute="height" constant="75" id="phj-iP-YKI"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -29,9 +32,13 @@
                             <constraint firstItem="35o-r9-m57" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="19N-2i-m55"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="35o-r9-m57" secondAttribute="bottom" id="GK5-Zv-o2h"/>
                             <constraint firstAttribute="trailing" secondItem="35o-r9-m57" secondAttribute="trailing" id="IOJ-hn-9zj"/>
+                            <constraint firstAttribute="trailing" secondItem="rYo-p1-bDr" secondAttribute="trailing" id="Vms-MH-jUD"/>
                             <constraint firstItem="35o-r9-m57" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="20" id="aiC-qq-Kx5"/>
+                            <constraint firstItem="rYo-p1-bDr" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="gfA-aV-CLh"/>
                             <constraint firstAttribute="trailing" secondItem="35o-r9-m57" secondAttribute="trailing" constant="20" id="iiZ-Bf-oZ4"/>
                             <constraint firstItem="35o-r9-m57" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="lJR-2T-W2S"/>
+                            <constraint firstAttribute="bottom" secondItem="rYo-p1-bDr" secondAttribute="bottom" id="mBg-q8-pEA"/>
+                            <constraint firstItem="rYo-p1-bDr" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="oLd-Ne-amI"/>
                             <constraint firstItem="35o-r9-m57" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="-20" id="sdZ-Pe-GQl"/>
                         </constraints>
                         <variation key="default">
@@ -50,6 +57,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="hppyHeart" width="505" height="401"/>
+        <image name="colorfulBg" width="375" height="667"/>
+        <image name="whiteHeart" width="279" height="224"/>
     </resources>
 </document>

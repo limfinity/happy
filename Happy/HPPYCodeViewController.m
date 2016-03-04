@@ -18,9 +18,8 @@
 }
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (weak, nonatomic) IBOutlet UITextField *codeTextField;
-@property (weak, nonatomic) IBOutlet UIButton *unlockButton;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicatorView;
 
 @end
 
@@ -29,68 +28,70 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.unlockButton.enabled = NO;
     self.codeTextField.delegate = self;
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
-    
-    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scrollViewTouched)];
-    [self.scrollView addGestureRecognizer:gesture];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
+    [self.codeTextField becomeFirstResponder];
 }
 
-- (IBAction)unlockHappy:(id)sender {
-    [self.view endEditing:YES];
-    NSString *code = [self.codeTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)unlockHappyWithCode:(NSString *)code {
     if (!_codes) {
         _codes = [HPPY getArrayFromFile:HPPY_CODES_FILE_NAME reloadFromBundle:YES];
     }
     if ([_codes containsObject:code]) {
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"hppyUnlocked"];
         [[NSUserDefaults standardUserDefaults] synchronize];
-        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-        [appDelegate handleAppState];
+        [self handleAppState];
     } else {
         NSLog(@"don't unlock");
+        [self.codeTextField setText:@""];
+        [self.loadingIndicatorView stopAnimating];
     }
 }
 
+- (void)handleAppState {
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate handleAppState];
+}
+
 // MARK: Keyboard
-- (void)keyboardWillShow:(NSNotification *)notification {
+- (void)keyboardDidShow:(NSNotification *)notification {
     NSDictionary *userInfo = notification.userInfo;
     CGRect keyboardFrame = ((NSValue *)userInfo[UIKeyboardFrameEndUserInfoKey]).CGRectValue;
     CGSize keyboardSize = keyboardFrame.size;
-    CGSize newScrollViewContentSize = self.scrollView.contentSize;
-    newScrollViewContentSize.height += keyboardSize.height;
-    [self.scrollView setContentSize:newScrollViewContentSize];
+    CGSize size = self.scrollView.contentSize;
+    size.height -= keyboardSize.height;
+    [self.scrollView setFrame:CGRectMake(0, 0, size.width, size.height)];
+    CGRect rect = self.codeTextField.frame;
+    size.height = rect.origin.y + rect.size.height + 10;
+    [self.scrollView setContentSize:size];
     CGPoint bottomOffset = CGPointMake(0, self.scrollView.contentSize.height - self.scrollView.bounds.size.height);
-    [self.scrollView setContentOffset:bottomOffset animated:YES];
-}
-
-- (void)keyboardWillHide:(NSNotification *)notification {
-    [self.scrollView setContentSize:self.contentView.frame.size];
-}
-
-// MARK: Gestures
-- (void)scrollViewTouched {
-    [self.view endEditing:YES];
+    if (bottomOffset.y > 0) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.scrollView setContentOffset:bottomOffset animated:YES];
+        });
+    }
 }
 
 // MARK: UITextFieldDelegate
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    
     // Don't allow more than the defined amount of characters to be entered
-    if (textField.text.length == HPPY_CODE_LENGTH && ![string isEqualToString:@""]) {
-        self.unlockButton.enabled = YES;
+    NSMutableString *code = [NSMutableString stringWithString:[textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]];
+    if (code.length == HPPY_CODE_LENGTH && ![string isEqualToString:@""]) {
         return NO;
-    } else if (textField.text.length == HPPY_CODE_LENGTH - 1 && ![string isEqualToString:@""]) {
-        self.unlockButton.enabled = YES;
-    } else {
-        self.unlockButton.enabled = NO;
+    } else if (code.length == HPPY_CODE_LENGTH - 1 && ![string isEqualToString:@""]) {
+        [self.loadingIndicatorView startAnimating];
+        [self performSelector:@selector(unlockHappyWithCode:) withObject:[code stringByAppendingString:string] afterDelay:0.5];
+        return YES;
     }
     return YES;
 }
-
 
 /*
  #pragma mark - Navigation
