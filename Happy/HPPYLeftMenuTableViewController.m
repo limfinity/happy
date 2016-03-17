@@ -11,6 +11,7 @@
 #import "HPPYMenuTableViewCell.h"
 #import "HPPYTaskContainerViewController.h"
 #import "HPPYStaticTextViewController.h"
+#import "HPPYTutorialViewController.h"
 
 @interface HPPYLeftMenuTableViewController () {
     NSArray *_menu;
@@ -49,12 +50,22 @@
                   @"viewController":@"StaticTextViewController"
                   },
               @{
+                  @"id":@"tutorial",
+                  @"title":@"Tutorial",
+                  @"subTitle":@"How Happy works.",
+                  @"viewController":@"TutorialViewController"
+                  },
+              @{
                   @"id":@"settings",
                   @"title":@"Settings",
                   @"subTitle":@"Your very custom Happy App.",
                   @"viewController":@"SettingsViewController"
                   }
               ];
+    
+    
+    
+    
     
     _activeItem = _menu.firstObject[@"id"];
 }
@@ -89,18 +100,29 @@
     SWRevealViewController *revealViewController = self.revealViewController;
     if (!revealViewController) { return; }
     
+    // Close menu without reloading content when active page is selected
     NSDictionary *menuRowDict = _menu[indexPath.row];
     if ([menuRowDict[@"id"] isEqualToString:_activeItem]) {
         [revealViewController revealToggleAnimated:YES];
         return;
     }
-    _activeItem = menuRowDict[@"id"];
-    NSString *identifier = menuRowDict[@"viewController"];
     
+    NSString *identifier = menuRowDict[@"viewController"];
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    
+    // Show tutorial in modal view instead of slide menu style
+    if ([identifier isEqualToString:@"TutorialViewController"]) {
+        HPPYTutorialViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:identifier];
+        [self presentViewController:vc animated:YES completion:nil];
+        return;
+    }
+    
+    _activeItem = menuRowDict[@"id"];
+    
     UINavigationController* navVc = [mainStoryboard instantiateViewControllerWithIdentifier:identifier];
     UIViewController *vc = [navVc childViewControllers].firstObject;
     
+    // Handle static pages
     if ([identifier isEqualToString:@"StaticTextViewController"]) {
         HPPYStaticTextViewController *staticVc = (HPPYStaticTextViewController*)vc;
         staticVc.identifier = _activeItem;

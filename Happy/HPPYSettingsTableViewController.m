@@ -85,7 +85,8 @@
     [formatter setDateFormat:@"HH:mm"];
     NSDate *reminder = _reminders[indexPath.row];
     NSString *stringFromDate = [formatter stringFromDate:reminder];
-    cell.textLabel.text = stringFromDate;
+    cell.timeLabel.text = stringFromDate;
+    cell.textLabel.text = @"";
     cell.reminder = reminder;
     return cell;
 }
@@ -136,7 +137,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 35;
+    return 90;
 }
 
 /*

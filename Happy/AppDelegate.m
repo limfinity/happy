@@ -16,8 +16,9 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Customize navigation bar appearance
+    // Customize appearances
     [self customizeNavigationBarAppearance];
+    [self customizeUIPageControlAppearance];
     
     // Update version in settings
     [self updateVersion];
@@ -60,6 +61,13 @@
 - (void)customizeNavigationBarAppearance {
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigationBg"] forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setShadowImage:[UIImage imageNamed:@"navigationShadow"]];
+}
+
+- (void)customizeUIPageControlAppearance {
+    UIPageControl *pageControl = [UIPageControl appearance];
+    pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
+    pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
+    pageControl.backgroundColor = [UIColor clearColor];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

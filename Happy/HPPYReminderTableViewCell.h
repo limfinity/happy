@@ -11,5 +11,6 @@
 @interface HPPYReminderTableViewCell : UITableViewCell
 
 @property (nonatomic, weak) NSDate *reminder;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 @end
