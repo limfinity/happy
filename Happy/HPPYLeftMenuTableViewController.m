@@ -63,10 +63,6 @@
                   }
               ];
     
-    
-    
-    
-    
     _activeItem = _menu.firstObject[@"id"];
 }
 
