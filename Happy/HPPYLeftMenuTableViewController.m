@@ -44,9 +44,9 @@
                   @"viewController":@"StaticTextViewController"
                   },
               @{
-                  @"id":@"imprint",
-                  @"title":@"Imprint",
-                  @"subTitle":@"All that legal stuff.",
+                  @"id":@"information",
+                  @"title":@"Information",
+                  @"subTitle":@"All you need to know.",
                   @"viewController":@"StaticTextViewController"
                   },
               @{
@@ -109,6 +109,7 @@
     // Show tutorial in modal view instead of slide menu style
     if ([identifier isEqualToString:@"TutorialViewController"]) {
         HPPYTutorialViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:identifier];
+        vc.isOnboarding = NO;
         [self presentViewController:vc animated:YES completion:nil];
         return;
     }

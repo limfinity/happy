@@ -28,6 +28,7 @@
     NSString *title;
     if (self.reminder) {
         title = NSLocalizedString(@"Edit Reminder", nil);
+        [self.datePicker setDate:self.reminder];
     } else {
         title = NSLocalizedString(@"Add Reminder", nil);
     }
@@ -63,7 +64,7 @@
     reminder = [[NSCalendar currentCalendar] dateFromComponents:time];
     [self removeReminder];
     [_reminders addObject:reminder];
-    [self addLocalNotification:reminder];
+    [HPPYReminderTableViewController addLocalNotification:reminder];
     [self saveReminders];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -106,8 +107,18 @@
 }
 
 // MARK: Notifications
-- (void)addLocalNotification:(NSDate *)reminder {
-    // TODO: Move check to onboarding
++ (void)addDefaultNotification {
+    NSDateComponents *time = [[NSDateComponents alloc] init];
+    [time setHour:19];
+    [time setMinute:0];
+    NSDate *reminder = [[NSCalendar currentCalendar] dateFromComponents:time];
+    [HPPYReminderTableViewController addLocalNotification:reminder];
+    NSArray *reminderArray = @[reminder];
+    [[NSUserDefaults standardUserDefaults] setObject:reminderArray forKey:@"hppyReminders"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++ (void)addLocalNotification:(NSDate *)reminder {
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0")) {
         UIUserNotificationType types = UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge;
         UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];

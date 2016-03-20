@@ -43,8 +43,6 @@
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    
-    NSLog(@"didlayout");
 }
 
 - (void)unlockHappyWithCode:(NSString *)code {
@@ -56,7 +54,6 @@
         [[NSUserDefaults standardUserDefaults] synchronize];
         [self handleAppState];
     } else {
-        NSLog(@"don't unlock");
         self.scrollView.scrollEnabled = NO;
         [self.codeTextField setText:@""];
         self.scrollView.scrollEnabled = YES;

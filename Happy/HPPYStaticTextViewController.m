@@ -28,17 +28,66 @@
     [self.textView setAttributedText:markdown];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.textView.scrollEnabled = NO;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    self.textView.scrollEnabled = YES;
+}
+
+//- (void)viewDidLayoutSubviews {
+//    [super viewDidLayoutSubviews];
+//    [self.textView setContentOffset:CGPointZero animated:NO];
+//}
+
 -(NSString *)getTextFromFile {
     NSString *result;
-    NSString *path = [[NSBundle mainBundle] pathForResource:self.identifier ofType:@"md"];
+    NSString *fileName = [NSString stringWithFormat:@"%@.md", self.identifier];
+    
     NSError *error;
-    NSString *content = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
-    if (error) {
-        NSLog(@"Error getting static text for identifier %@ from local file: %@", self.identifier, error.description);
-        result = @"";
-    } else {
-        result = content;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *path = [documentsDirectory stringByAppendingPathComponent:fileName];
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if (![fileManager fileExistsAtPath: path]) {
+        NSArray *pathArray = [fileName componentsSeparatedByString:@"."];
+        NSString *bundle;
+        if (pathArray.count > 1) {
+            bundle = [[NSBundle mainBundle] pathForResource:pathArray[0] ofType:pathArray[1]];
+        } else {
+            // Guess md extension if no type was given
+            bundle = [[NSBundle mainBundle] pathForResource:fileName ofType:@"md"];
+        }
+        
+        // Remove old file if it already exists
+        if ([fileManager fileExistsAtPath:path]) {
+            if (![fileManager removeItemAtPath:path error:&error]) {
+                NSLog(@"Error removing old file %@: %@", fileName, error.description);
+                return nil;
+            }
+        }
+        
+        if (!bundle) {
+            return @"";
+        }
+        
+        if (![fileManager copyItemAtPath:bundle toPath:path error:&error]) {
+            NSLog(@"Error getting file %@ from path: %@", fileName, error.description);
+            return @"";
+        }
     }
+    
+    result = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
+    
+    if (result == nil) {
+        NSLog(@"Error getting text from file %@", fileName);
+        return @"";
+    }
+    
     return result;
 }
 

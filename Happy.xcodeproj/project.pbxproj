@@ -15,6 +15,7 @@
 		A03DDAF91C79026400B9B70D /* hppyCodes.plist in Resources */ = {isa = PBXBuildFile; fileRef = A03DDAF71C79026400B9B70D /* hppyCodes.plist */; };
 		A03DDAFA1C79026400B9B70D /* hppyTasks.plist in Resources */ = {isa = PBXBuildFile; fileRef = A03DDAF81C79026400B9B70D /* hppyTasks.plist */; };
 		A03DDAFD1C79E28300B9B70D /* HPPYCountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = A03DDAFC1C79E28300B9B70D /* HPPYCountDown.m */; };
+		A0438C3C1C9E295F00D5677C /* information.md in Resources */ = {isa = PBXBuildFile; fileRef = A0D2F74B1C9E24CE001F0898 /* information.md */; };
 		A04A09431BF9EE9D005F385B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A04A09411BF9EE9D005F385B /* Localizable.strings */; };
 		A04A09471BF9F05C005F385B /* HPPYStaticTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04A09461BF9F05C005F385B /* HPPYStaticTextViewController.m */; };
 		A04A094B1BFA0259005F385B /* contact.md in Sources */ = {isa = PBXBuildFile; fileRef = A04A094D1BFA0259005F385B /* contact.md */; };
@@ -41,6 +42,7 @@
 		A0D1850C1BF9CC0E0000B1F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0D1850A1BF9CC0E0000B1F9 /* LaunchScreen.storyboard */; };
 		A0D185171BF9CC0E0000B1F9 /* HappyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D185161BF9CC0E0000B1F9 /* HappyTests.m */; };
 		A0D185221BF9CC0F0000B1F9 /* HappyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D185211BF9CC0F0000B1F9 /* HappyUITests.m */; };
+		A0D2F7491C9E24CE001F0898 /* information.md in Sources */ = {isa = PBXBuildFile; fileRef = A0D2F74B1C9E24CE001F0898 /* information.md */; };
 		FFC158F9AC2BFC5FFFF2A6F6 /* libPods-Happy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB57B20CF21F172247699B93 /* libPods-Happy.a */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +124,7 @@
 		A0D1851D1BF9CC0E0000B1F9 /* HappyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HappyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D185211BF9CC0F0000B1F9 /* HappyUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HappyUITests.m; sourceTree = "<group>"; };
 		A0D185231BF9CC0F0000B1F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0D2F74A1C9E24CE001F0898 /* de */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = de; path = de.lproj/information.md; sourceTree = "<group>"; };
 		A0F9C0A31C728488001B845E /* de */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = de; path = de.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A0F9C0A41C7284C1001B845E /* de */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = de; path = de.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB57B20CF21F172247699B93 /* libPods-Happy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Happy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,6 +177,7 @@
 		A04A094A1BFA0246005F385B /* Static */ = {
 			isa = PBXGroup;
 			children = (
+				A0D2F74B1C9E24CE001F0898 /* information.md */,
 				A04A094D1BFA0259005F385B /* contact.md */,
 			);
 			name = Static;
@@ -376,6 +380,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				de,
+				Base,
 			);
 			mainGroup = A0D184F01BF9CC0E0000B1F9;
 			productRefGroup = A0D184FA1BF9CC0E0000B1F9 /* Products */;
@@ -394,6 +399,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0438C3C1C9E295F00D5677C /* information.md in Resources */,
 				A03DDAFA1C79026400B9B70D /* hppyTasks.plist in Resources */,
 				A04A09501BFA14CB005F385B /* contact.md in Resources */,
 				A04A09431BF9EE9D005F385B /* Localizable.strings in Resources */,
@@ -498,6 +504,7 @@
 				A05558551BF9D8A30036E954 /* HPPYMenuTableViewCell.m in Sources */,
 				A0554A081C789F2A00817BCF /* HPPYRevealViewController.m in Sources */,
 				A098FC481C3FF2DD0007EBEF /* HPPYHeaderTableViewCell.m in Sources */,
+				A0D2F7491C9E24CE001F0898 /* information.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,6 +570,14 @@
 				A0F9C0A41C7284C1001B845E /* de */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A0D2F74B1C9E24CE001F0898 /* information.md */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A0D2F74A1C9E24CE001F0898 /* de */,
+			);
+			name = information.md;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

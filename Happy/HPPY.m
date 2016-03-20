@@ -9,6 +9,7 @@
 /* *******************************************
  * NSUserDefaults Variables
  * 
+ * hppyStartedBefore BOOL
  * hppyName          NSString
  * hppyReminders     NSArray
  * hppyVersion       NSString

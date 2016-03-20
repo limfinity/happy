@@ -12,4 +12,6 @@
 
 @property (nonatomic, strong) NSDate *reminder;
 
++ (void)addDefaultNotification;
+
 @end

@@ -8,11 +8,13 @@
 
 /* MENU */
 "Home" = "Home";
-"Home is where your heart is." = "Zu Hause ist wo dein Herz ist.";
+"Home is where your heart is." = "Zu Hause ist wo Dein Herz ist.";
 "Contact" = "Kontakt";
 "Get in touch with us." = "Kontaktiere uns.";
 "Imprint" = "Impressum";
 "All that legal stuff." = "Der ganze rechtliche Kram.";
+"Information" = "Information";
+"All you need to know." = "Alles was Du wissen musst.";
 "Tutorial" = "Tutorial";
 "How Happy works." = "Wie Happy Dir hilft.";
 "Settings" = "Einstellungen";
@@ -34,3 +36,8 @@
 /* TASK DETAILS */
 "Finish" = "Erledigt";
 "Default Countdown" = "00:00";
+
+/* TUTORIAL */
+"Close" = "Schließen";
+"Start" = "Starten";
+"Next" = "Weiter";

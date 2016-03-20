@@ -7,6 +7,7 @@
 //
 
 #import "HPPYTutorialViewController.h"
+#import "HPPYReminderTableViewController.h"
 
 @interface HPPYTutorialViewController () <UIPageViewControllerDelegate, UIPageViewControllerDataSource>
 
@@ -24,12 +25,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.closeButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+    
     UIViewController *vc1 = [self.storyboard instantiateViewControllerWithIdentifier:@"Tutorial1ViewController"];
     UIViewController *vc2 = [self.storyboard instantiateViewControllerWithIdentifier:@"Tutorial2ViewController"];
     UIViewController *vc3 = [self.storyboard instantiateViewControllerWithIdentifier:@"Tutorial3ViewController"];
     UIViewController *vc4 = [self.storyboard instantiateViewControllerWithIdentifier:@"Tutorial4ViewController"];
     
     _contentViewControllers = @[vc1, vc2, vc3, vc4];
+    
+    [self updatePageControlToIndex:0];
     
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"TutorialPageViewController"];
     self.pageViewController.dataSource = self;
@@ -44,7 +49,32 @@
 }
 
 - (IBAction)close:(id)sender {
+    if (self.pageControl.currentPage != self.pageControl.numberOfPages - 1) {
+        [self goToPreviousPage];
+        return;
+    }
+    if (_isOnboarding) {
+        [HPPYReminderTableViewController addDefaultNotification];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"hppyStartedBefore"];
+    }
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)goToPreviousPage {
+    NSInteger currentIndex = ((UIViewController *)self.pageViewController.viewControllers.firstObject).view.tag;
+    
+    // Don't do anything if we're already at the first page
+    if (currentIndex >= self.pageControl.numberOfPages - 1) {
+        return;
+    }
+    
+    // Instead get the view controller of the previous page
+    UIViewController *vc = [self viewControllerAtIndex:++currentIndex];
+    NSArray *initialViewControllers = [NSArray arrayWithObject:vc];
+    
+    // Do the setViewControllers: again but this time use direction animation:
+    [self.pageViewController setViewControllers:initialViewControllers direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+    [self updatePageControlToIndex:currentIndex];
 }
 
 - (UIViewController *)viewControllerAtIndex:(NSUInteger)index {
@@ -53,10 +83,23 @@
     return vc;
 }
 
+- (void)updatePageControlToIndex:(NSInteger)index {
+    if (index >= self.pageControl.numberOfPages - 1) {
+        if (_isOnboarding) {
+            [self.closeButton setTitle:NSLocalizedString(@"Start", nil) forState:UIControlStateNormal];
+        } else {
+            [self.closeButton setTitle:NSLocalizedString(@"Close", nil) forState:UIControlStateNormal];
+        }
+    } else {
+        [self.closeButton setTitle:NSLocalizedString(@"Next", nil) forState:UIControlStateNormal];
+    }
+    self.pageControl.currentPage = index;
+}
+
 -(void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray<UIViewController *> *)previousViewControllers transitionCompleted:(BOOL)completed {
     if (completed) {
         NSInteger currentIndex = ((UIViewController *)pageViewController.viewControllers.firstObject).view.tag;
-        self.pageControl.currentPage = currentIndex;
+        [self updatePageControlToIndex:currentIndex];
     }
 }
 

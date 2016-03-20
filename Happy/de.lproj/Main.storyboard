@@ -458,18 +458,26 @@ etwas Gutes getan!</string>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EZm-l0-yHA">
-                                            <rect key="frame" x="16" y="8" width="296" height="28"/>
+                                            <rect key="frame" x="15" y="8" width="297" height="28"/>
                                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                         </textField>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="EZm-l0-yHA" firstAttribute="top" secondItem="gpB-Co-cxv" secondAttribute="top" id="L0A-P1-lNR"/>
                                         <constraint firstItem="EZm-l0-yHA" firstAttribute="top" secondItem="gpB-Co-cxv" secondAttribute="topMargin" id="Qwe-Qs-42I"/>
                                         <constraint firstItem="EZm-l0-yHA" firstAttribute="trailing" secondItem="gpB-Co-cxv" secondAttribute="trailingMargin" id="Rm6-Y0-hz7"/>
                                         <constraint firstItem="EZm-l0-yHA" firstAttribute="leading" secondItem="gpB-Co-cxv" secondAttribute="leadingMargin" constant="8" id="lRg-Py-dJN"/>
+                                        <constraint firstItem="EZm-l0-yHA" firstAttribute="leading" secondItem="gpB-Co-cxv" secondAttribute="leading" constant="15" id="rg0-f4-I9o"/>
                                         <constraint firstItem="EZm-l0-yHA" firstAttribute="bottom" secondItem="gpB-Co-cxv" secondAttribute="bottomMargin" id="v39-9K-dB6"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="L0A-P1-lNR"/>
+                                            <exclude reference="lRg-Py-dJN"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="textField" destination="EZm-l0-yHA" id="Mvj-tZ-qhp"/>
@@ -483,7 +491,7 @@ etwas Gutes getan!</string>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xLl-7T-Cve">
-                                            <rect key="frame" x="16" y="8" width="263" height="28"/>
+                                            <rect key="frame" x="15" y="8" width="264" height="28"/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -493,24 +501,27 @@ etwas Gutes getan!</string>
                                         <constraint firstItem="xLl-7T-Cve" firstAttribute="leading" secondItem="paY-cD-kQk" secondAttribute="leadingMargin" constant="8" id="4uN-Ym-dBS"/>
                                         <constraint firstItem="xLl-7T-Cve" firstAttribute="trailing" secondItem="paY-cD-kQk" secondAttribute="trailingMargin" id="NrJ-mC-xoT"/>
                                         <constraint firstItem="xLl-7T-Cve" firstAttribute="top" secondItem="paY-cD-kQk" secondAttribute="topMargin" id="aQN-0A-MR9"/>
+                                        <constraint firstItem="xLl-7T-Cve" firstAttribute="leading" secondItem="paY-cD-kQk" secondAttribute="leading" constant="15" id="gUT-jb-FCt"/>
                                         <constraint firstItem="xLl-7T-Cve" firstAttribute="bottom" secondItem="paY-cD-kQk" secondAttribute="bottomMargin" id="yE4-KA-XUX"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="4uN-Ym-dBS"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="timeLabel" destination="xLl-7T-Cve" id="Nuq-Ps-ly2"/>
                                     <segue destination="VMD-s6-byw" kind="presentation" identifier="ShowReminderFormEdit" id="pzd-kO-HG5"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="headerNameSection" rowHeight="90" id="gn4-Ai-zLA" customClass="HPPYHeaderTableViewCell">
-                                <rect key="frame" x="0.0" y="202" width="320" height="90"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="headerNameSection" rowHeight="104" id="gn4-Ai-zLA" customClass="HPPYHeaderTableViewCell">
+                                <rect key="frame" x="0.0" y="202" width="320" height="104"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gn4-Ai-zLA" id="ShP-Fh-uvM">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="104"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="colorfulBg" translatesAutoresizingMaskIntoConstraints="NO" id="XQ1-oW-PSU">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nrA-yO-HXq">
                                             <rect key="frame" x="8" y="8" width="304" height="28"/>
                                             <constraints>
@@ -521,9 +532,11 @@ etwas Gutes getan!</string>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hMf-hy-tNT">
-                                            <rect key="frame" x="8" y="41" width="304" height="41"/>
-                                            <string key="text">Stelle hier Deinen Namen ein, das kann Dein Vorname oder ein Spitzname sein. Du kannst das Feld auch ganz leer lassen, wenn du magst.</string>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <rect key="frame" x="8" y="36" width="304" height="60"/>
+                                            <string key="text">Stelle Deinen Namen ein, damit die App
+Dich persönlich ansprechen kann. Ein
+Spitznamen ist auch möglich.</string>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -535,12 +548,8 @@ etwas Gutes getan!</string>
                                         <constraint firstAttribute="trailingMargin" secondItem="nrA-yO-HXq" secondAttribute="trailing" id="J9c-BD-27Q"/>
                                         <constraint firstItem="nrA-yO-HXq" firstAttribute="top" secondItem="ShP-Fh-uvM" secondAttribute="topMargin" id="JQu-pq-H5b"/>
                                         <constraint firstItem="nrA-yO-HXq" firstAttribute="leading" secondItem="ShP-Fh-uvM" secondAttribute="leadingMargin" id="Krg-j2-f4q"/>
-                                        <constraint firstItem="XQ1-oW-PSU" firstAttribute="leading" secondItem="ShP-Fh-uvM" secondAttribute="leading" id="Zbp-MI-Rqp"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="nrA-yO-HXq" secondAttribute="bottom" id="Zfe-gy-e0B"/>
-                                        <constraint firstAttribute="trailing" secondItem="XQ1-oW-PSU" secondAttribute="trailing" id="i6l-6M-w7I"/>
-                                        <constraint firstItem="XQ1-oW-PSU" firstAttribute="top" secondItem="ShP-Fh-uvM" secondAttribute="top" id="kH4-6g-BHa"/>
-                                        <constraint firstItem="hMf-hy-tNT" firstAttribute="top" secondItem="nrA-yO-HXq" secondAttribute="bottom" constant="5" id="tYr-Si-AoE"/>
-                                        <constraint firstAttribute="bottom" secondItem="XQ1-oW-PSU" secondAttribute="bottom" constant="1" id="uoc-bb-mpi"/>
+                                        <constraint firstItem="hMf-hy-tNT" firstAttribute="top" secondItem="nrA-yO-HXq" secondAttribute="bottom" id="tYr-Si-AoE"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
@@ -553,45 +562,28 @@ etwas Gutes getan!</string>
                                     <outlet property="titleLabel" destination="nrA-yO-HXq" id="3p9-Ne-58n"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="headerReminderSection" rowHeight="90" id="XU2-RQ-Xhy" customClass="HPPYHeaderTableViewCell">
-                                <rect key="frame" x="0.0" y="292" width="320" height="90"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="headerReminderSection" rowHeight="150" id="XU2-RQ-Xhy" customClass="HPPYHeaderTableViewCell">
+                                <rect key="frame" x="0.0" y="306" width="320" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XU2-RQ-Xhy" id="jwh-iz-Moy">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="colorfulBg" translatesAutoresizingMaskIntoConstraints="NO" id="Gt6-SC-Kvw">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
-                                        </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yL6-iS-dpt">
-                                            <rect key="frame" x="238" y="8" width="74" height="74"/>
-                                            <color key="backgroundColor" white="1" alpha="0.39746786347517732" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="30" id="kNN-lg-y0l"/>
-                                                <constraint firstAttribute="width" secondItem="yL6-iS-dpt" secondAttribute="height" multiplier="1:1" id="tuJ-yq-bBj"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                            <state key="normal" title="+">
-                                                <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            </state>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="kNN-lg-y0l"/>
-                                                </mask>
-                                            </variation>
-                                            <connections>
-                                                <segue destination="VMD-s6-byw" kind="presentation" identifier="ShowReminderFormCreate" id="FF4-MA-qql"/>
-                                            </connections>
-                                        </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9Wo-HF-Hqo">
-                                            <rect key="frame" x="8" y="41" width="220" height="41"/>
-                                            <string key="text">Lasse Dich täglich beliebig oft erinnern. Wir empfehlen Dir 2-4 Erinnerungen. Tappe auf das '+' um eine Erinnerung hinzuzufügen.</string>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <rect key="frame" x="8" y="36" width="304" height="80"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="80" id="zPj-7t-ne2"/>
+                                            </constraints>
+                                            <string key="text">Regelmäßig im Alltag eingeübt sind
+Selbsthilfemaßnahmen besonders
+wirkungsvoll. Lass Dich daran erinnern,
+damit es Dir leichter fällt. </string>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Erinnerungen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpw-i7-JdO">
-                                            <rect key="frame" x="8" y="8" width="220" height="28"/>
+                                            <rect key="frame" x="8" y="8" width="304" height="28"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="28" id="Qvt-dh-ulJ"/>
                                             </constraints>
@@ -599,29 +591,63 @@ etwas Gutes getan!</string>
                                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yL6-iS-dpt">
+                                            <rect key="frame" x="8" y="124" width="304" height="24"/>
+                                            <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="24" id="W5n-pl-RKO"/>
+                                                <constraint firstAttribute="width" constant="30" id="kNN-lg-y0l"/>
+                                                <constraint firstAttribute="width" secondItem="yL6-iS-dpt" secondAttribute="height" multiplier="1:1" id="tuJ-yq-bBj"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                            <state key="normal" title="Erinnerung hinzufügen">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="12"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="kNN-lg-y0l"/>
+                                                    <exclude reference="tuJ-yq-bBj"/>
+                                                </mask>
+                                            </variation>
+                                            <connections>
+                                                <segue destination="VMD-s6-byw" kind="presentation" identifier="ShowReminderFormCreate" id="FF4-MA-qql"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottomMargin" secondItem="yL6-iS-dpt" secondAttribute="bottom" id="6oO-lc-rfn"/>
                                         <constraint firstItem="9Wo-HF-Hqo" firstAttribute="leading" secondItem="jwh-iz-Moy" secondAttribute="leadingMargin" id="A7a-Cs-baY"/>
                                         <constraint firstItem="yL6-iS-dpt" firstAttribute="top" secondItem="jwh-iz-Moy" secondAttribute="topMargin" id="CuE-uY-2gA"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="cpw-i7-JdO" secondAttribute="trailing" id="G4f-tD-emQ"/>
                                         <constraint firstItem="cpw-i7-JdO" firstAttribute="leading" secondItem="jwh-iz-Moy" secondAttribute="leadingMargin" id="Git-u7-Sgi"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="cpw-i7-JdO" secondAttribute="bottom" id="O0Y-mK-6Lc"/>
+                                        <constraint firstItem="yL6-iS-dpt" firstAttribute="trailing" secondItem="jwh-iz-Moy" secondAttribute="trailingMargin" id="OPH-OU-0A7"/>
                                         <constraint firstItem="9Wo-HF-Hqo" firstAttribute="bottom" secondItem="jwh-iz-Moy" secondAttribute="bottomMargin" id="QEf-4s-AtY"/>
-                                        <constraint firstAttribute="bottom" secondItem="Gt6-SC-Kvw" secondAttribute="bottom" id="TXC-Rv-DDO"/>
-                                        <constraint firstAttribute="trailing" secondItem="Gt6-SC-Kvw" secondAttribute="trailing" id="YXu-Wn-CY5"/>
-                                        <constraint firstItem="yL6-iS-dpt" firstAttribute="leading" secondItem="cpw-i7-JdO" secondAttribute="trailing" constant="10" id="fpr-bx-rll"/>
-                                        <constraint firstItem="Gt6-SC-Kvw" firstAttribute="leading" secondItem="jwh-iz-Moy" secondAttribute="leading" id="j5y-pX-REg"/>
+                                        <constraint firstItem="yL6-iS-dpt" firstAttribute="top" secondItem="9Wo-HF-Hqo" secondAttribute="bottom" constant="8" id="TaM-L6-4rj"/>
+                                        <constraint firstItem="yL6-iS-dpt" firstAttribute="leading" secondItem="cpw-i7-JdO" secondAttribute="trailing" constant="5" id="fpr-bx-rll"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="9Wo-HF-Hqo" secondAttribute="trailing" id="fwf-4z-lKA"/>
+                                        <constraint firstItem="yL6-iS-dpt" firstAttribute="leading" secondItem="jwh-iz-Moy" secondAttribute="leadingMargin" id="k4W-A4-WUC"/>
                                         <constraint firstItem="yL6-iS-dpt" firstAttribute="trailing" secondItem="jwh-iz-Moy" secondAttribute="trailingMargin" id="m9Y-aR-0UR"/>
-                                        <constraint firstItem="9Wo-HF-Hqo" firstAttribute="top" secondItem="cpw-i7-JdO" secondAttribute="bottom" constant="5" id="oJR-cP-6Ma"/>
-                                        <constraint firstItem="Gt6-SC-Kvw" firstAttribute="top" secondItem="jwh-iz-Moy" secondAttribute="top" id="rgV-Tk-2my"/>
+                                        <constraint firstItem="9Wo-HF-Hqo" firstAttribute="top" secondItem="cpw-i7-JdO" secondAttribute="bottom" id="oJR-cP-6Ma"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="cpw-i7-JdO" secondAttribute="trailing" id="tFx-bu-33c"/>
-                                        <constraint firstItem="yL6-iS-dpt" firstAttribute="leading" secondItem="9Wo-HF-Hqo" secondAttribute="trailing" constant="10" id="xtw-0w-Aq7"/>
+                                        <constraint firstItem="yL6-iS-dpt" firstAttribute="leading" secondItem="9Wo-HF-Hqo" secondAttribute="trailing" constant="5" id="xtw-0w-Aq7"/>
                                         <constraint firstItem="cpw-i7-JdO" firstAttribute="top" secondItem="jwh-iz-Moy" secondAttribute="topMargin" id="zUK-XW-7dS"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
                                             <exclude reference="O0Y-mK-6Lc"/>
                                             <exclude reference="tFx-bu-33c"/>
+                                            <exclude reference="QEf-4s-AtY"/>
+                                            <exclude reference="6oO-lc-rfn"/>
+                                            <exclude reference="CuE-uY-2gA"/>
+                                            <exclude reference="fpr-bx-rll"/>
+                                            <exclude reference="m9Y-aR-0UR"/>
+                                            <exclude reference="xtw-0w-Aq7"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -716,7 +742,7 @@ etwas Gutes getan!</string>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Reminder" id="2We-r2-HWS">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="pC3-Nx-EQC">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="pC3-Nx-EQC">
                             <connections>
                                 <action selector="cancel:" destination="f7C-5d-VXL" id="krV-aX-0a1"/>
                             </connections>
@@ -822,7 +848,7 @@ etwas Gutes getan!</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eD2-Em-vQM">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eD2-Em-vQM">
                                 <rect key="frame" x="15" y="0.0" width="290" height="568"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
@@ -882,14 +908,11 @@ etwas Gutes getan!</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Nd-ri-QI4" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deg-YA-kxj">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bitte trage den Code aus der E-Mail ein und es geht los mit den Aufgaben! " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deg-YA-kxj">
                                                 <rect key="frame" x="20" y="219" width="280" height="84"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="84" id="DWo-kG-m7d"/>
                                                 </constraints>
-                                                <string key="text">Bitte gib zunächst den
-Code ein, den du per Email
-erhalten hast.</string>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="22"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -929,7 +952,7 @@ erhalten hast.</string>
                                                     <constraint firstAttribute="height" constant="56" id="zOz-aS-Xfv"/>
                                                 </constraints>
                                                 <string key="text">Hey!
-Schön, dass du dabei bist.</string>
+Schön, dass Du dabei bist.</string>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="22"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1340,8 +1363,8 @@ Schön, dass du dabei bist.</string>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="bUi-83-U6R"/>
                                         <exclude reference="NQg-qh-1Lt"/>
+                                        <exclude reference="bUi-83-U6R"/>
                                     </mask>
                                 </variation>
                             </imageView>
@@ -1385,8 +1408,8 @@ Schön, dass du dabei bist.</string>
                                     <mask key="constraints">
                                         <exclude reference="TQs-kz-WsV"/>
                                         <exclude reference="axc-Vp-sqb"/>
-                                        <exclude reference="nKH-m5-wjJ"/>
                                         <exclude reference="O17-ba-R7v"/>
+                                        <exclude reference="nKH-m5-wjJ"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -1438,8 +1461,8 @@ Schön, dass du dabei bist.</string>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="qJu-1c-ENS"/>
                                         <exclude reference="e8u-8v-yya"/>
+                                        <exclude reference="qJu-1c-ENS"/>
                                     </mask>
                                 </variation>
                             </imageView>
@@ -1503,9 +1526,9 @@ Schön, dass du dabei bist.</string>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="tzj-vj-I9G"/>
-                                <exclude reference="NgA-mi-bA4"/>
                                 <exclude reference="DCh-Ug-AEr"/>
+                                <exclude reference="NgA-mi-bA4"/>
+                                <exclude reference="tzj-vj-I9G"/>
                             </mask>
                         </variation>
                     </view>
@@ -1536,8 +1559,8 @@ Schön, dass du dabei bist.</string>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="jf6-4H-WXL"/>
                                         <exclude reference="X8i-3q-0ol"/>
+                                        <exclude reference="jf6-4H-WXL"/>
                                     </mask>
                                 </variation>
                             </imageView>
@@ -1579,8 +1602,8 @@ Schön, dass du dabei bist.</string>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="ekp-5Y-VgE"/>
                                         <exclude reference="6j3-m9-cFN"/>
+                                        <exclude reference="ekp-5Y-VgE"/>
                                         <exclude reference="dHf-Vt-TuF"/>
                                         <exclude reference="tNK-0g-qed"/>
                                     </mask>
@@ -1601,8 +1624,8 @@ Schön, dass du dabei bist.</string>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="ZoG-1O-CQj"/>
                                 <exclude reference="Ues-Ef-uUa"/>
+                                <exclude reference="ZoG-1O-CQj"/>
                                 <exclude reference="hpu-nA-VjR"/>
                             </mask>
                         </variation>

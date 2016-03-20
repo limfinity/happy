@@ -11,6 +11,7 @@
 #import "HPPYTaskController.h"
 #import "HPPYTaskCardViewController.h"
 #import "HPPYCountDown.h"
+#import "HPPYTutorialViewController.h"
 
 @interface HPPYTaskContainerViewController () {
     HPPYTaskController *_taskController;
@@ -28,6 +29,16 @@
     
     // Call at start to update tasks from file
     [self taskController];
+    
+    BOOL showOnboarding = ![[NSUserDefaults standardUserDefaults] boolForKey:@"hppyStartedBefore"];
+    if (showOnboarding) {
+        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+        HPPYTutorialViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"TutorialViewController"];
+        vc.isOnboarding = YES;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self presentViewController:vc animated:YES completion:nil];
+        });
+    }
 }
 
 - (HPPYTaskController *)taskController {

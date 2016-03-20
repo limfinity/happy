@@ -10,4 +10,6 @@
 
 @interface HPPYTutorialViewController : UIViewController
 
+@property (nonatomic, assign) BOOL isOnboarding;
+
 @end
