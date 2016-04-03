@@ -123,7 +123,7 @@
     NSMutableArray *events = [NSMutableArray arrayWithArray:[HPPYTaskController getTaskEvents]];
     [events addObject:event];
     if (![HPPY writeArray:events toFile:@"hppyTaskEvents.plist"]) {
-        NSLog(@"Error saving last task event.");
+        NSLog(@"Error saving last task event");
     }
 }
 
@@ -138,12 +138,14 @@
     
     for (NSDictionary *dict in array) {
         HPPYTask *task = [[HPPYTask alloc] initWithIdentifier:dict[hppyIdentifierKey]
+                                                         type:dict[hppyTypeKey]
                                                         title:dict[hppyTitleKey]
                                             titlePersonalized:dict[hppyTitlePersonalizedKey]
                                           titleUnpersonalized:dict[hppyTitleUnpersonalizedKey]
                                                          body:dict[hppyBodyKey]
                                                 estimatedTime:dict[hppyEstimatedTimeKey]
-                                                     category:[dict[hppyCategoryKey] integerValue]];
+                                                     category:[dict[hppyCategoryKey] integerValue]
+                                                 attachements:dict[hppyAttachementsKey]];
         [tasks addObject:task];
     }
     

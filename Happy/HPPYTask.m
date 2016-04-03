@@ -9,6 +9,7 @@
 #import "HPPYTask.h"
 
 NSString * const hppyIdentifierKey = @"identifier";
+NSString * const hppyTypeKey = @"type";
 NSString * const hppyTitleKey = @"title";
 NSString * const hppyTitlePersonalizedKey = @"titlePersonalized";
 NSString * const hppyTitleUnpersonalizedKey = @"titleUnpersonalized";
@@ -18,25 +19,30 @@ NSString * const hppyStartDateKey = @"startDate";
 NSString * const hppyCategoryKey = @"category";
 NSString * const hppyInTimeKey = @"inTime";
 NSString * const hppyCompletedDateKey = @"completedDate";
+NSString * const hppyAttachementsKey = @"attachements";
 
 @implementation HPPYTask
 
--(instancetype)initWithIdentifier:(NSString *)identifier
-                            title:(NSString *)title
-                titlePersonalized:(NSString *)titlePersonalized
-              titleUnpersonalized:(NSString *)titleUnpersonalized
-                             body:(NSString *)body
-                    estimatedTime:(NSNumber *)estimatedTime
-                         category:(HPPYTaskCategory)category {
+- (instancetype)initWithIdentifier:(NSString *)identifier
+                              type:(NSString *)type
+                             title:(NSString *)title
+                 titlePersonalized:(NSString *)titlePersonalized
+               titleUnpersonalized:(NSString *)titleUnpersonalized
+                              body:(NSString *)body
+                     estimatedTime:(NSNumber *)estimatedTime
+                          category:(HPPYTaskCategory)category
+                      attachements:(NSArray *)attachements {
     self = [super init];
     if (self) {
         self.identifier = identifier;
+        self.type = type;
         self.title = title;
         self.titlePersonalized = titlePersonalized;
         self.titleUnpersonalized = titleUnpersonalized;
         self.body = body;
         self.estimatedTime = estimatedTime;
         self.category = category;
+        self.attachements = attachements;
     }
     return self;
 }
@@ -46,6 +52,7 @@ NSString * const hppyCompletedDateKey = @"completedDate";
     self = [super init];
     if (self) {
         self.identifier = [coder decodeObjectForKey:hppyIdentifierKey];
+        self.type = [coder decodeObjectForKey:hppyTypeKey];
         self.title = [coder decodeObjectForKey:hppyTitleKey];
         self.titlePersonalized = [coder decodeObjectForKey:hppyTitlePersonalizedKey];
         self.titleUnpersonalized = [coder decodeObjectForKey:hppyTitleUnpersonalizedKey];
@@ -53,12 +60,14 @@ NSString * const hppyCompletedDateKey = @"completedDate";
         self.estimatedTime = [coder decodeObjectForKey:hppyEstimatedTimeKey];
         self.startDate = [coder decodeObjectForKey:hppyStartDateKey];
         self.category = [coder decodeIntegerForKey:hppyCategoryKey];
+        self.attachements = [coder decodeObjectForKey:hppyAttachementsKey];
     }
     return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder {
     [aCoder encodeObject:self.identifier forKey:hppyIdentifierKey];
+    [aCoder encodeObject:self.type forKey:hppyTypeKey];
     [aCoder encodeObject:self.title forKey:hppyTitleKey];
     [aCoder encodeObject:self.titlePersonalized forKey:hppyTitlePersonalizedKey];
     [aCoder encodeObject:self.titleUnpersonalized forKey:hppyTitleUnpersonalizedKey];
@@ -66,6 +75,7 @@ NSString * const hppyCompletedDateKey = @"completedDate";
     [aCoder encodeObject:self.estimatedTime forKey:hppyEstimatedTimeKey];
     [aCoder encodeObject:self.startDate forKey:hppyStartDateKey];
     [aCoder encodeInteger:self.category forKey:hppyCategoryKey];
+    [aCoder encodeObject:self.attachements forKey:hppyAttachementsKey];
 }
 
 // MARK: Public methods

@@ -32,7 +32,7 @@
     if ([fileManager fileExistsAtPath:path]) {
         if (![fileManager removeItemAtPath:path error:&error]) {
             NSLog(@"Error removing old file %@: %@", fileName, error.description);
-            return nil;
+            return NO;
         }
     }
     

@@ -31,6 +31,12 @@
 		A058D40B1C24236A00361186 /* HPPYTextInputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A058D40A1C24236A00361186 /* HPPYTextInputTableViewCell.m */; };
 		A05C6CB81C13309E00D1EF1A /* HPPYTaskCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A05C6CB71C13309E00D1EF1A /* HPPYTaskCardViewController.m */; };
 		A079FFFF1C13063700B387CC /* HPPYTaskController.m in Sources */ = {isa = PBXBuildFile; fileRef = A079FFFE1C13063700B387CC /* HPPYTaskController.m */; };
+		A0913D3B1CB192AB00D6EE9F /* HPPYAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A0913D3A1CB192AB00D6EE9F /* HPPYAudioPlayer.m */; };
+		A0913D421CB1A3E400D6EE9F /* atemuebung.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A0913D3D1CB1A3E400D6EE9F /* atemuebung.mp3 */; };
+		A0913D431CB1A3E400D6EE9F /* bodyScan.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A0913D3E1CB1A3E400D6EE9F /* bodyScan.mp3 */; };
+		A0913D441CB1A3E400D6EE9F /* dasKrokodil.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A0913D3F1CB1A3E400D6EE9F /* dasKrokodil.mp3 */; };
+		A0913D451CB1A3E400D6EE9F /* inneresLaecheln.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A0913D401CB1A3E400D6EE9F /* inneresLaecheln.mp3 */; };
+		A0913D461CB1A3E400D6EE9F /* morgenuebung.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A0913D411CB1A3E400D6EE9F /* morgenuebung.mp3 */; };
 		A098FC481C3FF2DD0007EBEF /* HPPYHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A098FC471C3FF2DD0007EBEF /* HPPYHeaderTableViewCell.m */; };
 		A098FC4B1C4000840007EBEF /* HPPYReminderTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A098FC4A1C4000840007EBEF /* HPPYReminderTableViewController.m */; };
 		A098FC4E1C401BFC0007EBEF /* HPPYReminderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A098FC4D1C401BFC0007EBEF /* HPPYReminderTableViewCell.m */; };
@@ -103,6 +109,13 @@
 		A05C6CB71C13309E00D1EF1A /* HPPYTaskCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYTaskCardViewController.m; sourceTree = "<group>"; };
 		A079FFFD1C13063700B387CC /* HPPYTaskController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYTaskController.h; sourceTree = "<group>"; };
 		A079FFFE1C13063700B387CC /* HPPYTaskController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYTaskController.m; sourceTree = "<group>"; };
+		A0913D391CB192AB00D6EE9F /* HPPYAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYAudioPlayer.h; sourceTree = "<group>"; };
+		A0913D3A1CB192AB00D6EE9F /* HPPYAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYAudioPlayer.m; sourceTree = "<group>"; };
+		A0913D3D1CB1A3E400D6EE9F /* atemuebung.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = atemuebung.mp3; path = private/atemuebung.mp3; sourceTree = "<group>"; };
+		A0913D3E1CB1A3E400D6EE9F /* bodyScan.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = bodyScan.mp3; path = private/bodyScan.mp3; sourceTree = "<group>"; };
+		A0913D3F1CB1A3E400D6EE9F /* dasKrokodil.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = dasKrokodil.mp3; path = private/dasKrokodil.mp3; sourceTree = "<group>"; };
+		A0913D401CB1A3E400D6EE9F /* inneresLaecheln.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = inneresLaecheln.mp3; path = private/inneresLaecheln.mp3; sourceTree = "<group>"; };
+		A0913D411CB1A3E400D6EE9F /* morgenuebung.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = morgenuebung.mp3; path = private/morgenuebung.mp3; sourceTree = "<group>"; };
 		A098FC461C3FF2DD0007EBEF /* HPPYHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYHeaderTableViewCell.h; sourceTree = "<group>"; };
 		A098FC471C3FF2DD0007EBEF /* HPPYHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYHeaderTableViewCell.m; sourceTree = "<group>"; };
 		A098FC491C4000840007EBEF /* HPPYReminderTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYReminderTableViewController.h; sourceTree = "<group>"; };
@@ -183,6 +196,18 @@
 			name = Static;
 			sourceTree = "<group>";
 		};
+		A0913D3C1CB1A3A900D6EE9F /* AudioFiles */ = {
+			isa = PBXGroup;
+			children = (
+				A0913D3D1CB1A3E400D6EE9F /* atemuebung.mp3 */,
+				A0913D3E1CB1A3E400D6EE9F /* bodyScan.mp3 */,
+				A0913D3F1CB1A3E400D6EE9F /* dasKrokodil.mp3 */,
+				A0913D401CB1A3E400D6EE9F /* inneresLaecheln.mp3 */,
+				A0913D411CB1A3E400D6EE9F /* morgenuebung.mp3 */,
+			);
+			name = AudioFiles;
+			sourceTree = "<group>";
+		};
 		A0D184F01BF9CC0E0000B1F9 = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +239,8 @@
 				A04AA2EF1C416AC100DB4A69 /* HPPY.m */,
 				A03DDAFB1C79E28300B9B70D /* HPPYCountDown.h */,
 				A03DDAFC1C79E28300B9B70D /* HPPYCountDown.m */,
+				A0913D391CB192AB00D6EE9F /* HPPYAudioPlayer.h */,
+				A0913D3A1CB192AB00D6EE9F /* HPPYAudioPlayer.m */,
 				A04AA2F11C416ADE00DB4A69 /* HPPYCodeViewController.h */,
 				A04AA2F21C416ADE00DB4A69 /* HPPYCodeViewController.m */,
 				A00E9AD91BFDF45C00C94ABA /* HPPYTask.h */,
@@ -263,6 +290,7 @@
 		A0D184FC1BF9CC0E0000B1F9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A0913D3C1CB1A3A900D6EE9F /* AudioFiles */,
 				A04A094A1BFA0246005F385B /* Static */,
 				A04A09411BF9EE9D005F385B /* Localizable.strings */,
 				A05558561BF9E12E0036E954 /* Settings.bundle */,
@@ -404,11 +432,16 @@
 				A03DDAFA1C79026400B9B70D /* hppyTasks.plist in Resources */,
 				A04A09501BFA14CB005F385B /* contact.md in Resources */,
 				A04A09431BF9EE9D005F385B /* Localizable.strings in Resources */,
+				A0913D441CB1A3E400D6EE9F /* dasKrokodil.mp3 in Resources */,
 				A05558571BF9E12E0036E954 /* Settings.bundle in Resources */,
+				A0913D421CB1A3E400D6EE9F /* atemuebung.mp3 in Resources */,
 				A0D1850C1BF9CC0E0000B1F9 /* LaunchScreen.storyboard in Resources */,
+				A0913D461CB1A3E400D6EE9F /* morgenuebung.mp3 in Resources */,
 				A021D9C71C6FDA7F00B63A8D /* Assets.xcassets in Resources */,
+				A0913D431CB1A3E400D6EE9F /* bodyScan.mp3 in Resources */,
 				A03DDAF91C79026400B9B70D /* hppyCodes.plist in Resources */,
 				A0D185071BF9CC0E0000B1F9 /* Main.storyboard in Resources */,
+				A0913D451CB1A3E400D6EE9F /* inneresLaecheln.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +551,7 @@
 				A05558551BF9D8A30036E954 /* HPPYMenuTableViewCell.m in Sources */,
 				A0554A081C789F2A00817BCF /* HPPYRevealViewController.m in Sources */,
 				A098FC481C3FF2DD0007EBEF /* HPPYHeaderTableViewCell.m in Sources */,
+				A0913D3B1CB192AB00D6EE9F /* HPPYAudioPlayer.m in Sources */,
 				A0D2F7491C9E24CE001F0898 /* information.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

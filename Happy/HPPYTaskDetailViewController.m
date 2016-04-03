@@ -9,6 +9,7 @@
 #import "HPPYTaskDetailViewController.h"
 #import "HPPYTaskController.h"
 #import "HPPYCountDown.h"
+#import "HPPYAudioPlayer.h"
 
 @interface HPPYTaskDetailViewController () {
     BOOL _movedScrollViewToTop;
@@ -20,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UITextView *detailTextView;
 @property (weak, nonatomic) IBOutlet UIButton *completeButton;
+@property (strong, nonatomic) HPPYAudioPlayer *audioPlayer;
 
 @end
 
@@ -44,6 +46,27 @@
                                              selector:@selector(appResignsActive:)
                                                  name:UIApplicationWillResignActiveNotification
                                                object:nil];
+    
+    // TODO: Pause and resume audio when entering and re-entering to and from background
+    // TODO: Finish task when audio is done playing pay attention to background behaviour
+    // TODO: Don't start playing again when already finished
+    
+    // TODO: Remove little time differnce between animation and timer. Animation is a little bit longer, at least when disrupted during play time.
+    
+    BOOL isAudio = [_task.type isEqualToString:HPPYTaskTypeAudio];
+    if (isAudio) {
+        NSArray *attachements = _task.attachements;
+        if (attachements && attachements.count > 0) {
+            NSString *fileName = (NSString *)attachements.firstObject;
+            if (fileName) {
+                self.audioPlayer = [[HPPYAudioPlayer alloc] initWithFileName:fileName];
+            } else {
+                NSLog(@"Error getting file name for audio from attachements");
+            }
+        } else {
+            NSLog(@"Error attachements for task are empty");
+        }
+    }
     
     [self updateInterface];
 }
@@ -76,13 +99,11 @@
     [super viewDidLayoutSubviews];
     
     // Move visible text to top at start.
-    
     if (!_movedScrollViewToTop) {
         [self.detailTextView setContentOffset:CGPointZero];
         _movedScrollViewToTop = YES;
     }
 }
-
 
 - (void)setTask:(HPPYTask *)task {
     _task = task;
@@ -109,7 +130,12 @@
 }
 
 - (void)processTask {
-    [self animateProcessingTime];
+    float progress = _audioPlayer ? _audioPlayer.progress : _task.progress;
+    float processingTime = _audioPlayer ? _audioPlayer.duration : [_task.estimatedTime floatValue];
+    [self animateProcessingTimeWithProgress:progress andProcessingTime:processingTime];
+    if (_audioPlayer) {
+        [_audioPlayer start];
+    }
 }
 
 - (void)activateButton {
@@ -118,9 +144,7 @@
     [self animateButtonActivation];
 }
 
-- (void)animateProcessingTime {
-    float progress = [_task progress];
-    float processingTime = [_task.estimatedTime floatValue];
+- (void)animateProcessingTimeWithProgress:(float)progress andProcessingTime:(float)processingTime {
     CFTimeInterval duration = processingTime - (progress * processingTime);
     duration = MAX(duration, 1);
     
@@ -148,11 +172,10 @@
     
     CAAnimationGroup *animationGroup = [CAAnimationGroup new];
     animationGroup.animations = @[animation1, animation2];
-    animationGroup.duration = animation1.duration + animation2.duration;
+    animationGroup.duration = MAX(1, animation2.duration);
     animationGroup.fillMode = kCAFillModeForwards;
     animationGroup.removedOnCompletion = NO;
     animationGroup.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
-    
     [layer addAnimation:animationGroup forKey:nil];
     
     [self.completeButton.layer addSublayer:layer];
