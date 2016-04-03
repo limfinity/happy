@@ -1,12 +1,17 @@
 PODS:
+  - HockeySDK (3.8.6):
+    - HockeySDK/AllFeaturesLib (= 3.8.6)
+  - HockeySDK/AllFeaturesLib (3.8.6)
   - SWRevealViewController (2.3.0)
   - TSMarkdownParser (1.0.20)
 
 DEPENDENCIES:
+  - HockeySDK
   - SWRevealViewController
   - TSMarkdownParser
 
 SPEC CHECKSUMS:
+  HockeySDK: ab68303eec6680f6b539de65d747742dd276e934
   SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
   TSMarkdownParser: 5ef8a617d39f92812860e0a3544348de33abe549
 

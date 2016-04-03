@@ -5,6 +5,7 @@ target 'Happy' do
 
 pod 'SWRevealViewController'
 pod 'TSMarkdownParser'
+pod 'HockeySDK'
 
 end
 

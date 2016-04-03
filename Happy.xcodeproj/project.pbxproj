@@ -305,6 +305,7 @@
 				A0D184F71BF9CC0E0000B1F9 /* Resources */,
 				4ABB4319E582BBD10B35BD50 /* Embed Pods Frameworks */,
 				C97ACA09EFC158C4CF78A403 /* Copy Pods Resources */,
+				A01DBBF91C9EBF03003FC1FA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -362,7 +363,7 @@
 				TargetAttributes = {
 					A0D184F81BF9CC0E0000B1F9 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = F388VYUZM3;
+						DevelopmentTeam = V47RS89Z27;
 					};
 					A0D185111BF9CC0E0000B1F9 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -457,6 +458,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Happy/Pods-Happy-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		A01DBBF91C9EBF03003FC1FA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "FILE=\"${SRCROOT}/HockeySDK-iOS/BuildAgent\"\nif [ -f \"$FILE\" ]; then\n\"$FILE\"\nfi";
 		};
 		C97ACA09EFC158C4CF78A403 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -672,8 +686,9 @@
 				INFOPLIST_FILE = Happy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ppult.happy;
+				PRODUCT_BUNDLE_IDENTIFIER = io.hppy.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "01082e04-35fd-4985-b1f0-b79ade8a7d30";
 			};
 			name = Debug;
 		};
@@ -686,8 +701,9 @@
 				INFOPLIST_FILE = Happy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ppult.happy;
+				PRODUCT_BUNDLE_IDENTIFIER = io.hppy.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "01082e04-35fd-4985-b1f0-b79ade8a7d30";
 			};
 			name = Release;
 		};

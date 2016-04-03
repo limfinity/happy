@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "HPPYLeftMenuTableViewController.h"
 
+@import HockeySDK;
+
 @interface AppDelegate ()
 
 @end
@@ -16,6 +18,15 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [[BITHockeyManager sharedHockeyManager] configureWithIdentifier:@"d58816ba9e5b41c6b38eeacd4bf86c54"];
+    // Do some additional configuration if needed here
+    [[BITHockeyManager sharedHockeyManager].crashManager setCrashManagerStatus:BITCrashManagerStatusAutoSend];
+    [[BITHockeyManager sharedHockeyManager] startManager];
+    [[BITHockeyManager sharedHockeyManager].authenticator
+     authenticateInstallation];
+
+    
     // Customize appearances
     [self customizeNavigationBarAppearance];
     
