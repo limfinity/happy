@@ -7,15 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HPPYTask.h"
 
 @interface HPPYAudioPlayer : NSObject
 
-- (instancetype)initWithFileName:(NSString *)fileName;
+@property (nonatomic, assign, getter=isPlaying) BOOL playing;
+
+- (instancetype)initWithTask:(HPPYTask *)task;
 - (void)start;
 - (void)pause;
 - (void)resume;
 - (void)stop;
 - (float)progress;
+- (NSTimeInterval)currentTime;
 - (NSTimeInterval)duration;
 
 @end

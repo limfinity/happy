@@ -11,9 +11,19 @@
 #import "HPPYCountDown.h"
 #import "HPPYAudioPlayer.h"
 
+typedef NS_ENUM(NSInteger, HPPYTaskState) {
+    HPPYTaskStateAudioPlaying,
+    HPPYTaskStateAudioPaused,
+    HPPYTaskStateRunning,
+    HPPYTaskStateCompletable,
+    HPPYTaskStateNotStarted
+};
+
 @interface HPPYTaskDetailViewController () {
     BOOL _movedScrollViewToTop;
     HPPYCountDown *_countdown;
+    CAShapeLayer *_processAnimationLayer;
+    HPPYTaskState _state;
 }
 
 @property (strong, nonatomic) HPPYTask *task;
@@ -27,6 +37,20 @@
 
 @implementation HPPYTaskDetailViewController
 
+// MARK: User interaction
+- (IBAction)completeTask:(id)sender {
+    if (_state != HPPYTaskStateCompletable) {
+        if (_audioPlayer) {
+            [self toggleAudioState];
+        }
+        return;
+    }
+    HPPYTaskController *taskController = [HPPYTaskController new];
+    [taskController completeTask:[HPPYTaskController currentTask]];
+    [self performSegueWithIdentifier:@"ShowTaskSuccess" sender:self];
+}
+
+// MARK: View life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -35,8 +59,8 @@
     self.detailTextView.textContainer.lineFragmentPadding = 0;
     self.detailTextView.textContainerInset = UIEdgeInsetsMake(0, 0, 0, 8);
     
-    self.completeButton.enabled = NO;
     _movedScrollViewToTop = NO;
+    _state = HPPYTaskStateNotStarted;
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(appReturnsActive:)
@@ -55,38 +79,33 @@
     
     BOOL isAudio = [_task.type isEqualToString:HPPYTaskTypeAudio];
     if (isAudio) {
-        NSArray *attachements = _task.attachements;
-        if (attachements && attachements.count > 0) {
-            NSString *fileName = (NSString *)attachements.firstObject;
-            if (fileName) {
-                self.audioPlayer = [[HPPYAudioPlayer alloc] initWithFileName:fileName];
-            } else {
-                NSLog(@"Error getting file name for audio from attachements");
-            }
-        } else {
-            NSLog(@"Error attachements for task are empty");
-        }
+        self.audioPlayer = [[HPPYAudioPlayer alloc] initWithTask:_task];
     }
     
     [self updateInterface];
-}
-
-- (void)appReturnsActive:(NSNotification *)notification{
-    [self processTask];
-}
-
-- (void)appResignsActive:(NSNotification *)notification{
-    [self.completeButton.layer removeAllAnimations];
-    if (_countdown) {
-        [_countdown stop];
-        _countdown = nil;
-    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
     [self appReturnsActive:nil];
+    
+    // For audio control begin receiving control events
+    if (_audioPlayer) {
+        [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+        [self becomeFirstResponder];
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    // For audio control stop receiving control events
+    if (_audioPlayer) {
+        [_audioPlayer stop];
+        [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
+        [self resignFirstResponder];
+    }
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -105,6 +124,72 @@
     }
 }
 
+- (void)appReturnsActive:(NSNotification *)notification {
+    [self updateCompletionButtonUI];
+    switch (_state) {
+        case HPPYTaskStateNotStarted:
+            if (!_audioPlayer) {
+                [self startOrResumeProcessingAnimation];
+            }
+            break;
+        case HPPYTaskStateAudioPlaying:
+            [self startOrResumeProcessingAnimation];
+            break;
+        case HPPYTaskStateAudioPaused:
+            // Let user resume audio
+            break;
+        default:
+            [self startOrResumeProcessingAnimation];
+            break;
+    }
+}
+
+- (void)appResignsActive:(NSNotification *)notification {
+    if (_processAnimationLayer) {
+        [_processAnimationLayer removeFromSuperlayer];
+        _processAnimationLayer = nil;
+    }
+    
+    if (_countdown) {
+        [_countdown stop];
+    }
+}
+
+// MARK: Audio control
+- (void)toggleAudioState {
+    if (_audioPlayer.isPlaying) {
+        [_audioPlayer pause];
+        _state = HPPYTaskStateAudioPaused;
+        [self stopProcessingAnimation];
+    } else {
+        [_audioPlayer resume];
+        _state = HPPYTaskStateAudioPlaying;
+        [self startOrResumeProcessingAnimation];
+    }
+    [self updateCompletionButtonUI];
+}
+
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+- (void)remoteControlReceivedWithEvent:(UIEvent *)event {
+    if (!_audioPlayer) {
+        return;
+    }
+    
+    if (event.type == UIEventTypeRemoteControl) {
+        if (event.subtype == UIEventSubtypeRemoteControlPlay) {
+            [_audioPlayer resume];
+            _state = HPPYTaskStateAudioPlaying;
+        } else if (event.subtype == UIEventSubtypeRemoteControlPause) {
+            [_audioPlayer pause];
+            _state = HPPYTaskStateAudioPaused;
+        }
+    }
+}
+
+// MARK: Interface change
 - (void)setTask:(HPPYTask *)task {
     _task = task;
     [HPPYTaskController startTask:_task];
@@ -120,78 +205,153 @@
     }
     self.detailTextView.text = self.task.body;
     self.view.backgroundColor = self.task.categoryColor;
-    [self.completeButton setTitleColor:self.task.categoryColor forState:UIControlStateNormal];
+    [self updateCompletionButtonUI];
 }
 
-- (IBAction)completeTask:(id)sender {
-    HPPYTaskController *taskController = [HPPYTaskController new];
-    [taskController completeTask:[HPPYTaskController currentTask]];
-    [self performSegueWithIdentifier:@"ShowTaskSuccess" sender:self];
-}
-
-- (void)processTask {
-    float progress = _audioPlayer ? _audioPlayer.progress : _task.progress;
-    float processingTime = _audioPlayer ? _audioPlayer.duration : [_task.estimatedTime floatValue];
-    [self animateProcessingTimeWithProgress:progress andProcessingTime:processingTime];
-    if (_audioPlayer) {
-        [_audioPlayer start];
+- (void)updateCompletionButtonUI {
+    NSString *buttonTitle;
+    BOOL buttonEnabled;
+    UIColor *titleColor;
+    switch (_state) {
+        case HPPYTaskStateNotStarted:
+            if (_audioPlayer) {
+                buttonEnabled = YES;
+                buttonTitle = NSLocalizedString(@"Play", nil);
+            } else {
+                buttonEnabled = NO;
+                buttonTitle = NSLocalizedString(@"Default Countdown", nil);
+            }
+            titleColor = [UIColor whiteColor];
+            break;
+        case HPPYTaskStateAudioPlaying:
+            buttonEnabled = YES;
+            buttonTitle = NSLocalizedString(@"Pause", nil);
+            titleColor = [UIColor whiteColor];
+            break;
+        case HPPYTaskStateAudioPaused:
+            buttonEnabled = YES;
+            buttonTitle = NSLocalizedString(@"Play", nil);
+            titleColor = [UIColor whiteColor];
+            break;
+        case HPPYTaskStateRunning:
+            // Countdown is displayed
+            buttonEnabled = NO;
+            titleColor = [UIColor whiteColor];
+            break;
+        case HPPYTaskStateCompletable:
+            buttonEnabled = YES;
+            buttonTitle = NSLocalizedString(@"Finish", nil);
+            titleColor = self.task.categoryColor;
+            break;
     }
+    [self.completeButton setTitle:buttonTitle forState:UIControlStateNormal];
+    self.completeButton.userInteractionEnabled = buttonEnabled;
+    [self.completeButton setTitleColor:titleColor forState:UIControlStateNormal];
 }
 
 - (void)activateButton {
-    self.completeButton.titleLabel.text = NSLocalizedString(@"Finish", nil);
-    self.completeButton.enabled = YES;
+    _state = HPPYTaskStateCompletable;
     [self animateButtonActivation];
+    [self updateCompletionButtonUI];
 }
 
-- (void)animateProcessingTimeWithProgress:(float)progress andProcessingTime:(float)processingTime {
+- (void)startOrResumeProcessingAnimation {
+    float progress = _audioPlayer ? _audioPlayer.progress : _task.progress;
+    float processingTime = _audioPlayer ? _audioPlayer.duration : [_task.estimatedTime floatValue];
+    
+    if (_audioPlayer && progress > 0 && _processAnimationLayer) {
+        [self resumeProcessingAnimation];
+    } else {
+        [self startProcessingAnimationWithProgress:progress andProcessingTime:processingTime];
+    }
+}
+
+- (void)stopProcessingAnimation {
+    if (_processAnimationLayer) {
+        [self stopTimer];
+        CFTimeInterval pausedTime = [_processAnimationLayer convertTime:CACurrentMediaTime() fromLayer:nil];
+        _processAnimationLayer.speed = 0.0;
+        _processAnimationLayer.timeOffset = pausedTime;
+    }
+}
+
+- (void)resumeProcessingAnimation {
+    if (_processAnimationLayer) {
+        CFTimeInterval pausedTime = [_processAnimationLayer timeOffset];
+        _processAnimationLayer.speed = 1.0;
+        _processAnimationLayer.timeOffset = 0.0;
+        _processAnimationLayer.beginTime = 0.0;
+        CFTimeInterval timeSincePause = [_processAnimationLayer convertTime:CACurrentMediaTime() fromLayer:nil] - pausedTime;
+        _processAnimationLayer.beginTime = timeSincePause;
+        if (_audioPlayer) {
+            NSTimeInterval timeLeft = [_audioPlayer duration] - [_audioPlayer currentTime];
+            [self startTimerWithDuration:timeLeft];
+        }
+        
+    }
+}
+
+- (void)startTimerWithDuration:(CFTimeInterval)duration {
+    _countdown = [[HPPYCountDown alloc] initWithSeconds:duration];
+    [_countdown startWithBlock:^(NSString *remainingTime) {
+        [self.completeButton setTitle:remainingTime forState:UIControlStateNormal];
+    } completion:^{
+        [self activateButton];
+    }];
+}
+
+- (void)stopTimer {
+    [_countdown stop];
+}
+
+- (void)startProcessingAnimationWithProgress:(float)progress andProcessingTime:(float)processingTime {
     CFTimeInterval duration = processingTime - (progress * processingTime);
-    duration = MAX(duration, 1);
+    CFTimeInterval minDuration = 1;
+    duration = MAX(minDuration, duration);
+    
+    NSLog(@"animate with progress: %f, processing time: %f and duration: %f", progress, processingTime, duration);
+    
+    if (progress <= 1) {
+        [self startTimerWithDuration:duration];
+    }
     
     UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:self.completeButton.bounds cornerRadius:25.0];
     
-    CAShapeLayer *layer = [CAShapeLayer new];
-    layer.fillColor = [UIColor clearColor].CGColor;
-    layer.strokeColor = [UIColor whiteColor].CGColor;
-    layer.lineWidth = 5.0;
-    layer.path = path.CGPath;
+    _processAnimationLayer = [CAShapeLayer new];
+    _processAnimationLayer.fillColor = [UIColor clearColor].CGColor;
+    _processAnimationLayer.strokeColor = [UIColor whiteColor].CGColor;
+    _processAnimationLayer.lineWidth = 5.0;
+    _processAnimationLayer.path = path.CGPath;
     
     CABasicAnimation *animation1 = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
     animation1.fromValue = @(0.0);
     animation1.toValue = @(progress);
     animation1.beginTime = 0.0;
-    animation1.duration = progress * 2;
+    animation1.duration = (progress == 1) ? minDuration : 0.5;
     animation1.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+    
+    NSLog(@"animation 1 duration: %f", animation1.duration);
     
     CABasicAnimation *animation2 = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
     animation2.fromValue = @(progress);
     animation2.toValue = @(1.0);
     animation2.beginTime = animation1.duration;
-    animation2.duration = duration;
+    animation2.duration = duration - animation1.duration;
     animation2.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+    
+    NSLog(@"animation 2 duration: %f", animation2.duration);
     
     CAAnimationGroup *animationGroup = [CAAnimationGroup new];
     animationGroup.animations = @[animation1, animation2];
-    animationGroup.duration = MAX(1, animation2.duration);
+    animationGroup.duration = animation1.duration + animation2.duration;
     animationGroup.fillMode = kCAFillModeForwards;
     animationGroup.removedOnCompletion = NO;
     animationGroup.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
-    [layer addAnimation:animationGroup forKey:nil];
+    [_processAnimationLayer addAnimation:animationGroup forKey:@"processingAnimation"];
     
-    [self.completeButton.layer addSublayer:layer];
+    NSLog(@"animation group duration: %f", animationGroup.duration);
     
-    if (progress <= 1) {
-        _countdown = [[HPPYCountDown alloc] initWithSeconds:animationGroup.duration];
-        [_countdown startWithBlock:^(NSString *remainingTime) {
-            if (progress == 1) {
-                [self.completeButton setTitle:NSLocalizedString(@"Default Countdown", nil) forState:UIControlStateDisabled];
-            } else {
-                [self.completeButton setTitle:remainingTime forState:UIControlStateDisabled];
-            }
-        } completion:^{
-            [self activateButton];
-        }];
-    }
+    [self.completeButton.layer addSublayer:_processAnimationLayer];
 }
 
 - (void)animateButtonActivation {

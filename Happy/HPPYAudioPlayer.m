@@ -8,10 +8,13 @@
 
 #import "HPPYAudioPlayer.h"
 #import <AVFoundation/AVFoundation.h>
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface HPPYAudioPlayer ()
 
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
+@property (nonatomic, strong) AVAudioSession *audioSession;
+@property (nonatomic, weak) HPPYTask *task;
 
 @end
 
@@ -32,8 +35,11 @@
             NSError *error = nil;
             NSURL *url = [NSURL fileURLWithPath:path];
             self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+            [self.audioPlayer prepareToPlay];
             if (error) {
                 NSLog(@"Error creating audio player with file: %@", fileName);
+            } else {
+                [self setupAudioSession];
             }
         } else {
             NSLog(@"Error getting path of audio file: %@", fileName);
@@ -42,13 +48,69 @@
     return self;
 }
 
+- (instancetype)initWithTask:(HPPYTask *)task {
+    NSArray *attachements = task.attachements;
+    if (!attachements || attachements.count == 0) {
+        NSLog(@"Error attachements for task are empty");
+        return nil;
+    }
+    
+    NSString *fileName = (NSString *)attachements.firstObject;
+    if (!fileName) {
+        NSLog(@"Error getting file name for audio from attachements");
+        return nil;
+    }
+    
+    self = [[HPPYAudioPlayer alloc] initWithFileName:fileName];
+    
+    if (self) {
+        self.task = task;
+    }
+    
+    return self;
+}
+
+- (void)dealloc {
+    NSError *error;
+    [_audioSession setActive:NO error:&error];
+    if (error) {
+        NSLog(@"Error deactivating audio session");
+        return;
+    }
+}
+
+- (void)updateMediaPlayerInformation {
+    if (!_task) {
+        return;
+    }
+    
+    NSDictionary *mediaPlayingInfo = @{MPMediaItemPropertyTitle: _task.title,
+                                       MPMediaItemPropertyArtist: @"Happy",
+                                       MPNowPlayingInfoPropertyPlaybackRate: @1};
+    [MPNowPlayingInfoCenter defaultCenter].nowPlayingInfo = mediaPlayingInfo;
+}
+
+- (void)setupAudioSession {
+    self.audioSession = [AVAudioSession sharedInstance];
+    NSError *error;
+    [_audioSession setCategory:AVAudioSessionCategoryPlayback error:&error];
+    [_audioSession setActive:YES error:&error];
+    if (error) {
+        NSLog(@"Error activating audio session");
+        return;
+    }
+    
+}
+
 // MARK: Public methods
 - (void)start {
     if (!_audioPlayer) {
         return;
     }
+    [self updateMediaPlayerInformation];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [self.audioPlayer play];
+        self.playing = YES;
     });
 }
 
@@ -57,6 +119,7 @@
         return;
     }
     [self.audioPlayer pause];
+    self.playing = NO;
 }
 
 - (void)resume {
@@ -71,6 +134,7 @@
         return;
     }
     [self.audioPlayer stop];
+    self.playing = NO;
 }
 
 - (float)progress {
@@ -81,9 +145,15 @@
     if (isnan(currentTime)) {
         currentTime = 0;
     }
-    NSLog(@"time left: %f", (float)fabs(_audioPlayer.duration) - currentTime);
     float progress = currentTime / (float)fabs(_audioPlayer.duration);
     return progress;
+}
+
+- (NSTimeInterval)currentTime {
+    if (!_audioPlayer) {
+        return 0;
+    }
+    return  [self.audioPlayer currentTime];
 }
 
 - (NSTimeInterval)duration {

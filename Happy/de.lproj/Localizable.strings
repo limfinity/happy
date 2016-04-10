@@ -34,8 +34,11 @@
 "Last Completion Date" = "Zuletzt erledigt am %@";
 
 /* TASK DETAILS */
-"Finish" = "Erledigt";
+"Start" = "Starten";
+"Finish" = "Abschließen";
 "Default Countdown" = "00:00";
+"Play" = "Play";
+"Pause" = "Pause";
 
 /* TUTORIAL */
 "Close" = "Schließen";
