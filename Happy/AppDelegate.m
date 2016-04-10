@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "HPPYLeftMenuTableViewController.h"
+#import "ARAnalytics/ARAnalytics.h"
 
 @import HockeySDK;
 
@@ -19,14 +20,23 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+#ifdef DEBUG
     [[BITHockeyManager sharedHockeyManager] configureWithIdentifier:@"d58816ba9e5b41c6b38eeacd4bf86c54"];
+#else
+    [[BITHockeyManager sharedHockeyManager] configureWithIdentifier:@"94087a5528db42e592fcad4093678c57"];
+#endif
     // Do some additional configuration if needed here
     [[BITHockeyManager sharedHockeyManager].crashManager setCrashManagerStatus:BITCrashManagerStatusAutoSend];
     [[BITHockeyManager sharedHockeyManager] startManager];
     [[BITHockeyManager sharedHockeyManager].authenticator
      authenticateInstallation];
-
     
+    // Set up tracking
+    [ARAnalytics setupWithAnalytics:@{
+      ARGoogleAnalyticsID : @"UA-76220642-1",
+      ARMixpanelToken : @"a93872e0566a689e37e755be7102f41d"
+    }];
+
     // Customize appearances
     [self customizeNavigationBarAppearance];
     

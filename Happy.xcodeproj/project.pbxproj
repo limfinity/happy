@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A00891691C77D91700C161F4 /* HPPYTaskSuccessVIewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00891681C77D91700C161F4 /* HPPYTaskSuccessVIewController.m */; };
+		A00891691C77D91700C161F4 /* HPPYTaskSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00891681C77D91700C161F4 /* HPPYTaskSuccessViewController.m */; };
 		A00E9ADB1BFDF45C00C94ABA /* HPPYTask.m in Sources */ = {isa = PBXBuildFile; fileRef = A00E9ADA1BFDF45C00C94ABA /* HPPYTask.m */; };
 		A01369341C1DD6EE00F69C31 /* HPPYSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A01369331C1DD6EE00F69C31 /* HPPYSettingsTableViewController.m */; };
 		A01430AF1C9B4C0B00A283B5 /* HPPYTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A01430AE1C9B4C0B00A283B5 /* HPPYTutorialViewController.m */; };
@@ -71,8 +71,8 @@
 
 /* Begin PBXFileReference section */
 		867A161B6F9B16C9161B4089 /* Pods-Happy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Happy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Happy/Pods-Happy.debug.xcconfig"; sourceTree = "<group>"; };
-		A00891671C77D91700C161F4 /* HPPYTaskSuccessVIewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYTaskSuccessVIewController.h; sourceTree = "<group>"; };
-		A00891681C77D91700C161F4 /* HPPYTaskSuccessVIewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYTaskSuccessVIewController.m; sourceTree = "<group>"; };
+		A00891671C77D91700C161F4 /* HPPYTaskSuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYTaskSuccessViewController.h; sourceTree = "<group>"; };
+		A00891681C77D91700C161F4 /* HPPYTaskSuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYTaskSuccessViewController.m; sourceTree = "<group>"; };
 		A00E9AD91BFDF45C00C94ABA /* HPPYTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYTask.h; sourceTree = "<group>"; };
 		A00E9ADA1BFDF45C00C94ABA /* HPPYTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYTask.m; sourceTree = "<group>"; };
 		A01369321C1DD6EE00F69C31 /* HPPYSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYSettingsTableViewController.h; sourceTree = "<group>"; };
@@ -208,6 +208,59 @@
 			name = AudioFiles;
 			sourceTree = "<group>";
 		};
+		A0A02C541CBADDF9000B0A1B /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				A00E9AD91BFDF45C00C94ABA /* HPPYTask.h */,
+				A00E9ADA1BFDF45C00C94ABA /* HPPYTask.m */,
+				A079FFFD1C13063700B387CC /* HPPYTaskController.h */,
+				A079FFFE1C13063700B387CC /* HPPYTaskController.m */,
+				A0D185021BF9CC0E0000B1F9 /* HPPYTaskContainerViewController.h */,
+				A0D185031BF9CC0E0000B1F9 /* HPPYTaskContainerViewController.m */,
+				A05C6CB61C13309E00D1EF1A /* HPPYTaskCardViewController.h */,
+				A05C6CB71C13309E00D1EF1A /* HPPYTaskCardViewController.m */,
+				A0A0FE1D1C1AF1890008225E /* HPPYTaskDetailViewController.h */,
+				A0A0FE1E1C1AF1890008225E /* HPPYTaskDetailViewController.m */,
+				A00891671C77D91700C161F4 /* HPPYTaskSuccessViewController.h */,
+				A00891681C77D91700C161F4 /* HPPYTaskSuccessViewController.m */,
+			);
+			name = Tasks;
+			sourceTree = "<group>";
+		};
+		A0A02C551CBADE3D000B0A1B /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				A0554A061C789F2A00817BCF /* HPPYRevealViewController.h */,
+				A0554A071C789F2A00817BCF /* HPPYRevealViewController.m */,
+				A0554A001C78976F00817BCF /* HPPYMenuableViewController.h */,
+				A0554A011C78976F00817BCF /* HPPYMenuableViewController.m */,
+				A0554A031C789A8C00817BCF /* HPPYMenuableTableViewController.h */,
+				A0554A041C789A8C00817BCF /* HPPYMenuableTableViewController.m */,
+				A05558501BF9CE2D0036E954 /* HPPYLeftMenuTableViewController.h */,
+				A05558511BF9CE2D0036E954 /* HPPYLeftMenuTableViewController.m */,
+				A05558531BF9D8A30036E954 /* HPPYMenuTableViewCell.h */,
+				A05558541BF9D8A30036E954 /* HPPYMenuTableViewCell.m */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		A0A02C561CBADE5A000B0A1B /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A01369321C1DD6EE00F69C31 /* HPPYSettingsTableViewController.h */,
+				A01369331C1DD6EE00F69C31 /* HPPYSettingsTableViewController.m */,
+				A098FC461C3FF2DD0007EBEF /* HPPYHeaderTableViewCell.h */,
+				A098FC471C3FF2DD0007EBEF /* HPPYHeaderTableViewCell.m */,
+				A058D4091C24236A00361186 /* HPPYTextInputTableViewCell.h */,
+				A058D40A1C24236A00361186 /* HPPYTextInputTableViewCell.m */,
+				A098FC4C1C401BFC0007EBEF /* HPPYReminderTableViewCell.h */,
+				A098FC4D1C401BFC0007EBEF /* HPPYReminderTableViewCell.m */,
+				A098FC491C4000840007EBEF /* HPPYReminderTableViewController.h */,
+				A098FC4A1C4000840007EBEF /* HPPYReminderTableViewController.m */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
 		A0D184F01BF9CC0E0000B1F9 = {
 			isa = PBXGroup;
 			children = (
@@ -241,44 +294,15 @@
 				A03DDAFC1C79E28300B9B70D /* HPPYCountDown.m */,
 				A0913D391CB192AB00D6EE9F /* HPPYAudioPlayer.h */,
 				A0913D3A1CB192AB00D6EE9F /* HPPYAudioPlayer.m */,
+				A0A02C541CBADDF9000B0A1B /* Tasks */,
+				A0A02C551CBADE3D000B0A1B /* Menu */,
+				A0A02C561CBADE5A000B0A1B /* Settings */,
 				A04AA2F11C416ADE00DB4A69 /* HPPYCodeViewController.h */,
 				A04AA2F21C416ADE00DB4A69 /* HPPYCodeViewController.m */,
-				A00E9AD91BFDF45C00C94ABA /* HPPYTask.h */,
-				A00E9ADA1BFDF45C00C94ABA /* HPPYTask.m */,
-				A079FFFD1C13063700B387CC /* HPPYTaskController.h */,
-				A079FFFE1C13063700B387CC /* HPPYTaskController.m */,
-				A05C6CB61C13309E00D1EF1A /* HPPYTaskCardViewController.h */,
-				A05C6CB71C13309E00D1EF1A /* HPPYTaskCardViewController.m */,
-				A0A0FE1D1C1AF1890008225E /* HPPYTaskDetailViewController.h */,
-				A0A0FE1E1C1AF1890008225E /* HPPYTaskDetailViewController.m */,
-				A00891671C77D91700C161F4 /* HPPYTaskSuccessVIewController.h */,
-				A00891681C77D91700C161F4 /* HPPYTaskSuccessVIewController.m */,
-				A0554A061C789F2A00817BCF /* HPPYRevealViewController.h */,
-				A0554A071C789F2A00817BCF /* HPPYRevealViewController.m */,
-				A0554A001C78976F00817BCF /* HPPYMenuableViewController.h */,
-				A0554A011C78976F00817BCF /* HPPYMenuableViewController.m */,
-				A0554A031C789A8C00817BCF /* HPPYMenuableTableViewController.h */,
-				A0554A041C789A8C00817BCF /* HPPYMenuableTableViewController.m */,
-				A05558501BF9CE2D0036E954 /* HPPYLeftMenuTableViewController.h */,
-				A05558511BF9CE2D0036E954 /* HPPYLeftMenuTableViewController.m */,
-				A05558531BF9D8A30036E954 /* HPPYMenuTableViewCell.h */,
-				A05558541BF9D8A30036E954 /* HPPYMenuTableViewCell.m */,
-				A0D185021BF9CC0E0000B1F9 /* HPPYTaskContainerViewController.h */,
-				A0D185031BF9CC0E0000B1F9 /* HPPYTaskContainerViewController.m */,
-				A04A09451BF9F05C005F385B /* HPPYStaticTextViewController.h */,
-				A04A09461BF9F05C005F385B /* HPPYStaticTextViewController.m */,
-				A01369321C1DD6EE00F69C31 /* HPPYSettingsTableViewController.h */,
-				A01369331C1DD6EE00F69C31 /* HPPYSettingsTableViewController.m */,
-				A098FC461C3FF2DD0007EBEF /* HPPYHeaderTableViewCell.h */,
-				A098FC471C3FF2DD0007EBEF /* HPPYHeaderTableViewCell.m */,
-				A058D4091C24236A00361186 /* HPPYTextInputTableViewCell.h */,
-				A058D40A1C24236A00361186 /* HPPYTextInputTableViewCell.m */,
-				A098FC4C1C401BFC0007EBEF /* HPPYReminderTableViewCell.h */,
-				A098FC4D1C401BFC0007EBEF /* HPPYReminderTableViewCell.m */,
-				A098FC491C4000840007EBEF /* HPPYReminderTableViewController.h */,
-				A098FC4A1C4000840007EBEF /* HPPYReminderTableViewController.m */,
 				A01430AD1C9B4C0B00A283B5 /* HPPYTutorialViewController.h */,
 				A01430AE1C9B4C0B00A283B5 /* HPPYTutorialViewController.m */,
+				A04A09451BF9F05C005F385B /* HPPYStaticTextViewController.h */,
+				A04A09461BF9F05C005F385B /* HPPYStaticTextViewController.m */,
 				A021D9C61C6FDA7F00B63A8D /* Assets.xcassets */,
 				A0D185051BF9CC0E0000B1F9 /* Main.storyboard */,
 				A0D1850A1BF9CC0E0000B1F9 /* LaunchScreen.storyboard */,
@@ -543,7 +567,7 @@
 				A01369341C1DD6EE00F69C31 /* HPPYSettingsTableViewController.m in Sources */,
 				A0D185011BF9CC0E0000B1F9 /* AppDelegate.m in Sources */,
 				A04AA2F31C416ADE00DB4A69 /* HPPYCodeViewController.m in Sources */,
-				A00891691C77D91700C161F4 /* HPPYTaskSuccessVIewController.m in Sources */,
+				A00891691C77D91700C161F4 /* HPPYTaskSuccessViewController.m in Sources */,
 				A0D184FE1BF9CC0E0000B1F9 /* main.m in Sources */,
 				A04AA2F01C416AC100DB4A69 /* HPPY.m in Sources */,
 				A01430AF1C9B4C0B00A283B5 /* HPPYTutorialViewController.m in Sources */,
@@ -716,13 +740,13 @@
 			baseConfigurationReference = 867A161B6F9B16C9161B4089 /* Pods-Happy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Lilian Krasberg (34HW53WG7P)";
 				INFOPLIST_FILE = Happy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.hppy.app;
+				PRODUCT_BUNDLE_IDENTIFIER = io.hppy.ios.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "01082e04-35fd-4985-b1f0-b79ade8a7d30";
+				PROVISIONING_PROFILE = "d3741b40-bf78-4e32-a3c5-b07739eab234";
 			};
 			name = Debug;
 		};
@@ -731,13 +755,13 @@
 			baseConfigurationReference = F21E2FE5279E430BE94BDD7C /* Pods-Happy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Lilian Krasberg (9QBJM7B83T)";
 				INFOPLIST_FILE = Happy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.hppy.app;
+				PRODUCT_BUNDLE_IDENTIFIER = io.hppy.ios.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "01082e04-35fd-4985-b1f0-b79ade8a7d30";
+				PROVISIONING_PROFILE = "30a0af2f-21ed-4edc-b149-6bb65351bd0b";
 			};
 			name = Release;
 		};

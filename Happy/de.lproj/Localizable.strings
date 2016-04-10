@@ -8,17 +8,17 @@
 
 /* MENU */
 "Home" = "Home";
-"Home is where your heart is." = "Zu Hause ist wo Dein Herz ist.";
+"Home is where your heart is." = "Tu Dir etwas Gutes";
 "Contact" = "Kontakt";
-"Get in touch with us." = "Kontaktiere uns.";
+"Get in touch with us." = "Kontaktiere uns";
 "Imprint" = "Impressum";
-"All that legal stuff." = "Der ganze rechtliche Kram.";
+"All that legal stuff." = "Der ganze rechtliche Kram";
 "Information" = "Information";
-"All you need to know." = "Alles was Du wissen musst.";
+"All you need to know." = "Alles was Du wissen musst";
 "Tutorial" = "Tutorial";
-"How Happy works." = "Wie Happy Dir hilft.";
+"How Happy works." = "Wie Tu Dir Gut funktioniert";
 "Settings" = "Einstellungen";
-"Your very custom Happy App." = "Deine ganz persönliche Happy App.";
+"Your very custom Happy App." = "Deine persönliche Tu Dir Gut App";
 
 /* SETTINGS */
 "Name" = "Name";
@@ -27,7 +27,7 @@
 "Edit Reminder" = "Bearbeiten";
 "Delete Reminder" = "Erinnerung Löschen";
 "Friendly Reminder" = "Freundliche Erinnerung";
-"Push Reminder Body 1" = "Auf geht's, eine neue Aufgabe steht an. 🤗";
+"Push Reminder Body 1" = "Auf geht's, tu Dir etwas Gutes.";
 "Jane Doe" = "Maria Musterfrau";
 
 /* TASK OVERVIEW */

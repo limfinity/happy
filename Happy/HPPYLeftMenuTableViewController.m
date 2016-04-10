@@ -12,6 +12,7 @@
 #import "HPPYTaskContainerViewController.h"
 #import "HPPYStaticTextViewController.h"
 #import "HPPYTutorialViewController.h"
+#import "ARAnalytics/ARAnalytics.h"
 
 @interface HPPYLeftMenuTableViewController () {
     NSArray *_menu;

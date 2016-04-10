@@ -11,6 +11,7 @@
 #import "HPPYHeaderTableViewCell.h"
 #import "HPPYTextInputTableViewCell.h"
 #import "HPPYReminderTableViewCell.h"
+#import "ARAnalytics/ARAnalytics.h"
 
 @interface HPPYSettingsTableViewController () <UITextFieldDelegate> {
     NSString *_name;
@@ -23,6 +24,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [ARAnalytics pageView:@"Settings"];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -182,6 +185,8 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if (textField.tag == 100) {
         NSString *username = [textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        
+        [ARAnalytics event:@"Name Updated" withProperties:@{@"Is Empty": username.length > 0 ? @"No" : @"Yes"}];
         
         [[NSUserDefaults standardUserDefaults] setObject:username forKey:@"hppyName"];
         [[NSUserDefaults standardUserDefaults] synchronize];

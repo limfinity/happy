@@ -8,6 +8,7 @@
 
 #import "HPPYTutorialViewController.h"
 #import "HPPYReminderTableViewController.h"
+#import "ARAnalytics/ARAnalytics.h"
 
 @interface HPPYTutorialViewController () <UIPageViewControllerDelegate, UIPageViewControllerDataSource>
 
@@ -24,6 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [ARAnalytics pageView:@"Tutorial" withProperties:@{@"Is Onboarding": _isOnboarding ? @"Yes" : @"No"}];
     
     self.closeButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     
@@ -50,6 +53,7 @@
 
 - (IBAction)close:(id)sender {
     if (self.pageControl.currentPage != self.pageControl.numberOfPages - 1) {
+        [ARAnalytics event:@"Tapped Next" withProperties:@{@"Current Page": @(self.pageControl.currentPage)}];
         [self goToPreviousPage];
         return;
     }
@@ -57,6 +61,7 @@
         [HPPYReminderTableViewController addDefaultNotification];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"hppyStartedBefore"];
     }
+    [ARAnalytics event:@"Tapped Close"];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

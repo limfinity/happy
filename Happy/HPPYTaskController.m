@@ -8,6 +8,7 @@
 
 #import "HPPYTaskController.h"
 #import "HPPY.h"
+#import "ARAnalytics/ARAnalytics.h"
 
 @interface HPPYTaskController () {
     NSArray *_tasks;
@@ -123,7 +124,7 @@
     NSMutableArray *events = [NSMutableArray arrayWithArray:[HPPYTaskController getTaskEvents]];
     [events addObject:event];
     if (![HPPY writeArray:events toFile:@"hppyTaskEvents.plist"]) {
-        NSLog(@"Error saving last task event");
+        ARLog(@"Error saving last task event");
     }
 }
 

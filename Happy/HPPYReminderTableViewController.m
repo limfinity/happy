@@ -9,6 +9,7 @@
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
 #import "HPPYReminderTableViewController.h"
+#import "ARAnalytics/ARAnalytics.h"
 
 @interface HPPYReminderTableViewController () {
     NSMutableSet *_reminders;
@@ -33,6 +34,8 @@
         title = NSLocalizedString(@"Add Reminder", nil);
     }
     [self setTitle:title];
+    
+    [ARAnalytics pageView:title];
 }
 
 
@@ -71,6 +74,7 @@
 
 - (void)removeReminder {
     if (self.reminder) {
+        [ARAnalytics event:@"Reminder Removed" withProperties:@{@"Date": self.reminder}];
         [_reminders removeObject:self.reminder];
         [self removeLocalNotification:self.reminder];
     }
@@ -119,6 +123,8 @@
 }
 
 + (void)addLocalNotification:(NSDate *)reminder {
+    [ARAnalytics event:@"Reminder Added" withProperties:@{@"Date": reminder}];
+    
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0")) {
         UIUserNotificationType types = UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge;
         UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];

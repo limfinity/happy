@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HPPYTask.h"
 
-@interface HPPYTaskSuccessVIewController : UIViewController
+@interface HPPYTaskSuccessViewController : UIViewController
+
+- (void)setTask:(HPPYTask *)task;
 
 @end

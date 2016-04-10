@@ -304,10 +304,10 @@ machen</string>
             </objects>
             <point key="canvasLocation" x="1776" y="279"/>
         </scene>
-        <!--Task SuccessV Iew Controller-->
+        <!--Task Success View Controller-->
         <scene sceneID="uEe-de-DZs">
             <objects>
-                <viewController id="Xvl-po-ec2" customClass="HPPYTaskSuccessVIewController" sceneMemberID="viewController">
+                <viewController id="Xvl-po-ec2" customClass="HPPYTaskSuccessViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7EG-BT-sI6"/>
                         <viewControllerLayoutGuide type="bottom" id="BZK-BA-nXk"/>
@@ -344,8 +344,9 @@ machen</string>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="Hz4-qm-xis"/>
                                 </constraints>
-                                <string key="text">Du hast dir gerade
-etwas Gutes getan!</string>
+                                <string key="text">Du hast Dir gerade
+etwas Gutes
+getan!</string>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="36"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

@@ -9,6 +9,7 @@
 #import "HPPYTaskCardViewController.h"
 #import "HPPYTaskDetailViewController.h"
 #import "HPPYTaskController.h"
+#import "ARAnalytics/ARAnalytics.h"
 
 @interface HPPYTaskCardViewController ()
 
@@ -26,13 +27,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self updateInterface];
 }
 
 - (void)setTask:(HPPYTask *)task {
     _task = task;
-    [self updateInterface];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self updateInterface];
+    });
 }
 
 - (void)updateInterface {
@@ -51,6 +53,8 @@
     } else {
         self.lastCompletionLabel.text = @"";
     }
+    
+    [ARAnalytics pageView:@"Task Overview" withProperties:_task.trackingData];
 }
 
 - (IBAction)selectTask:(id)sender {
@@ -59,6 +63,7 @@
 // MARK: Storyboard
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"ShowTaskDetail"]) {
+        [ARAnalytics event:@"Task Selected" withProperties:_task.trackingData];
         HPPYTaskDetailViewController *vc = segue.destinationViewController;
         [vc setTask:_task];
     }

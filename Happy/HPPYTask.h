@@ -58,5 +58,6 @@ extern NSString * const hppyAttachementsKey;
 - (float)progress;
 - (UIImage *)categoryImage;
 - (UIColor *)categoryColor;
+- (NSDictionary *)trackingData;
 
 @end

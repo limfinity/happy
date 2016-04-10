@@ -8,6 +8,7 @@
 
 #import "HPPYStaticTextViewController.h"
 #import <TSMarkdownParser/TSMarkdownParser.h>
+#import "ARAnalytics/ARAnalytics.h"
 
 @interface HPPYStaticTextViewController ()
 
@@ -19,6 +20,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [ARAnalytics pageView:@"Static" withProperties:@{@"Static Page Identifier": _identifier}];
+    
     UIFont *font = [UIFont systemFontOfSize:18.0 weight:UIFontWeightLight];
     UIFont *h1Font = [UIFont systemFontOfSize:36.0 weight:UIFontWeightThin];
     TSMarkdownParser *parser = [TSMarkdownParser standardParser];
@@ -66,7 +70,7 @@
         // Remove old file if it already exists
         if ([fileManager fileExistsAtPath:path]) {
             if (![fileManager removeItemAtPath:path error:&error]) {
-                NSLog(@"Error removing old file %@: %@", fileName, error.description);
+                ARLog(@"Error removing old file %@: %@", fileName, error.description);
                 return nil;
             }
         }
@@ -76,7 +80,7 @@
         }
         
         if (![fileManager copyItemAtPath:bundle toPath:path error:&error]) {
-            NSLog(@"Error getting file %@ from path: %@", fileName, error.description);
+            ARLog(@"Error getting file %@ from path: %@", fileName, error.description);
             return @"";
         }
     }
@@ -84,7 +88,7 @@
     result = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
     
     if (result == nil) {
-        NSLog(@"Error getting text from file %@", fileName);
+        ARLog(@"Error getting text from file %@", fileName);
         return @"";
     }
     

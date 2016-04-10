@@ -9,8 +9,9 @@
 #import "HPPYAudioPlayer.h"
 #import <AVFoundation/AVFoundation.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import "ARAnalytics/ARAnalytics.h"
 
-@interface HPPYAudioPlayer ()
+@interface HPPYAudioPlayer () <AVAudioPlayerDelegate>
 
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 @property (nonatomic, strong) AVAudioSession *audioSession;
@@ -35,14 +36,15 @@
             NSError *error = nil;
             NSURL *url = [NSURL fileURLWithPath:path];
             self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+            self.audioPlayer.delegate = self;
             [self.audioPlayer prepareToPlay];
             if (error) {
-                NSLog(@"Error creating audio player with file: %@", fileName);
+                ARLog(@"Error creating audio player with file: %@", fileName);
             } else {
                 [self setupAudioSession];
             }
         } else {
-            NSLog(@"Error getting path of audio file: %@", fileName);
+            ARLog(@"Error getting path of audio file: %@", fileName);
         }
     }
     return self;
@@ -51,13 +53,13 @@
 - (instancetype)initWithTask:(HPPYTask *)task {
     NSArray *attachements = task.attachements;
     if (!attachements || attachements.count == 0) {
-        NSLog(@"Error attachements for task are empty");
+        ARLog(@"Error attachements for task are empty");
         return nil;
     }
     
     NSString *fileName = (NSString *)attachements.firstObject;
     if (!fileName) {
-        NSLog(@"Error getting file name for audio from attachements");
+        ARLog(@"Error getting file name for audio from attachements");
         return nil;
     }
     
@@ -74,7 +76,7 @@
     NSError *error;
     [_audioSession setActive:NO error:&error];
     if (error) {
-        NSLog(@"Error deactivating audio session");
+        ARLog(@"Error deactivating audio session");
         return;
     }
 }
@@ -85,7 +87,7 @@
     }
     
     NSDictionary *mediaPlayingInfo = @{MPMediaItemPropertyTitle: _task.title,
-                                       MPMediaItemPropertyArtist: @"Happy",
+                                       MPMediaItemPropertyArtist: @"Tu Dir Gut",
                                        MPNowPlayingInfoPropertyPlaybackRate: @1};
     [MPNowPlayingInfoCenter defaultCenter].nowPlayingInfo = mediaPlayingInfo;
 }
@@ -96,7 +98,7 @@
     [_audioSession setCategory:AVAudioSessionCategoryPlayback error:&error];
     [_audioSession setActive:YES error:&error];
     if (error) {
-        NSLog(@"Error activating audio session");
+        ARLog(@"Error activating audio session");
         return;
     }
     
@@ -161,6 +163,13 @@
         return 0;
     }
     return [self.audioPlayer duration];
+}
+
+// MARK: Audio player delegate
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
+    if (_task) {
+        [ARAnalytics event:@"Audio Playing Finished" withProperties:_task.trackingData];
+    }
 }
 
 @end

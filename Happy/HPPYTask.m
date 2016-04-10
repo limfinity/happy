@@ -127,4 +127,8 @@ NSString * const hppyAttachementsKey = @"attachements";
     return color;
 }
 
+- (NSDictionary *)trackingData {
+    return @{@"Task Identifier": self.identifier, @"Task Title": self.title};
+}
+
 @end

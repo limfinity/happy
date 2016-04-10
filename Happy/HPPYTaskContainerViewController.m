@@ -12,6 +12,7 @@
 #import "HPPYTaskCardViewController.h"
 #import "HPPYCountDown.h"
 #import "HPPYTutorialViewController.h"
+#import "ARAnalytics/ARAnalytics.h"
 
 @interface HPPYTaskContainerViewController () {
     HPPYTaskController *_taskController;
@@ -26,7 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+        
     // Call at start to update tasks from file
     [self taskController];
     
@@ -53,10 +54,13 @@
     HPPYTask *task = [HPPYTaskController currentTask];
     HPPYTask *nextTask = [[self taskController] skipTask:task];
     [self.taskCardViewController setTask:nextTask];
+    
+    [ARAnalytics event:@"Task Skipped" withProperties:task.trackingData];
 }
 
 // MARK: Storyboard
 - (IBAction)canceledTask:(UIStoryboardSegue *)segue {
+    [ARAnalytics event:@"Task Canceled" withProperties:[HPPYTaskController currentTask].trackingData];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

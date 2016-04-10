@@ -19,6 +19,7 @@
  ******************************************* */
 
 #import "HPPY.h"
+#import "ARAnalytics/ARAnalytics.h"
 
 @implementation HPPY
 + (BOOL)writeArray:(NSArray *)array toFile:(NSString *)fileName {
@@ -31,7 +32,7 @@
     NSFileManager *fileManager = [NSFileManager defaultManager];
     if ([fileManager fileExistsAtPath:path]) {
         if (![fileManager removeItemAtPath:path error:&error]) {
-            NSLog(@"Error removing old file %@: %@", fileName, error.description);
+            ARLog(@"Error removing old file %@: %@", fileName, error.description);
             return NO;
         }
     }
@@ -61,7 +62,7 @@
         // Remove old file if it already exists
         if ([fileManager fileExistsAtPath:path]) {
             if (![fileManager removeItemAtPath:path error:&error]) {
-                NSLog(@"Error removing old file %@: %@", fileName, error.description);
+                ARLog(@"Error removing old file %@: %@", fileName, error.description);
                 return nil;
             }
         }
@@ -71,7 +72,7 @@
         }
         
         if (![fileManager copyItemAtPath:bundle toPath:path error:&error]) {
-            NSLog(@"Error getting file %@ from path: %@", fileName, error.description);
+            ARLog(@"Error getting file %@ from path: %@", fileName, error.description);
             return nil;
         }
     }
@@ -79,7 +80,7 @@
     result = [NSArray arrayWithContentsOfFile:path];
     
     if (result == nil) {
-        NSLog(@"Error getting array from file %@", fileName);
+        ARLog(@"Error getting array from file %@", fileName);
         return nil;
     }
     

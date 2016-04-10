@@ -9,6 +9,8 @@
 #import "HPPYCodeViewController.h"
 #import "HPPY.h"
 #import "AppDelegate.h"
+#import "ARAnalytics/ARAnalytics.h"
+
 
 #define HPPY_CODE_LENGTH 6
 #define HPPY_CODES_FILE_NAME @"hppyCodes.plist"
@@ -28,6 +30,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [ARAnalytics pageView:@"Code"];
     
     self.codeTextField.delegate = self;
     
@@ -50,6 +54,7 @@
         _codes = [HPPY getArrayFromFile:HPPY_CODES_FILE_NAME reloadFromBundle:YES];
     }
     if ([_codes containsObject:code]) {
+        [ARAnalytics event:@"Unlocked" withProperties:@{@"Happy Code": code}];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"hppyUnlocked"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         [self handleAppState];

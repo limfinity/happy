@@ -1,17 +1,33 @@
 PODS:
+  - ARAnalytics/CoreIOS (3.9.1)
+  - ARAnalytics/GoogleAnalytics (3.9.1):
+    - ARAnalytics/CoreIOS
+    - GoogleAnalytics
+  - ARAnalytics/Mixpanel (3.9.1):
+    - ARAnalytics/CoreIOS
+    - Mixpanel
+  - GoogleAnalytics (3.14.0)
   - HockeySDK (3.8.6):
     - HockeySDK/AllFeaturesLib (= 3.8.6)
   - HockeySDK/AllFeaturesLib (3.8.6)
+  - Mixpanel (2.9.6):
+    - Mixpanel/Mixpanel (= 2.9.6)
+  - Mixpanel/Mixpanel (2.9.6)
   - SWRevealViewController (2.3.0)
   - TSMarkdownParser (1.0.20)
 
 DEPENDENCIES:
+  - ARAnalytics/GoogleAnalytics
+  - ARAnalytics/Mixpanel
   - HockeySDK
   - SWRevealViewController
   - TSMarkdownParser
 
 SPEC CHECKSUMS:
+  ARAnalytics: c23edc9467fd1830d5d54d763e11655b3b7041da
+  GoogleAnalytics: 9be1afdb8deeac4bb5f13ca7f7d3b9db2a1f43dc
   HockeySDK: ab68303eec6680f6b539de65d747742dd276e934
+  Mixpanel: 048a9f2512ac1bb8bfdecf719da024873f50a9c2
   SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
   TSMarkdownParser: 5ef8a617d39f92812860e0a3544348de33abe549
 

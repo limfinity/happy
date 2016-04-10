@@ -10,6 +10,7 @@
 #import "HPPYTaskController.h"
 #import "HPPYCountDown.h"
 #import "HPPYAudioPlayer.h"
+#import "ARAnalytics/ARAnalytics.h"
 
 typedef NS_ENUM(NSInteger, HPPYTaskState) {
     HPPYTaskStateAudioPlaying,
@@ -45,6 +46,7 @@ typedef NS_ENUM(NSInteger, HPPYTaskState) {
         }
         return;
     }
+    [ARAnalytics event:@"Task Completed" withProperties:_task.trackingData];
     HPPYTaskController *taskController = [HPPYTaskController new];
     [taskController completeTask:[HPPYTaskController currentTask]];
     [self performSegueWithIdentifier:@"ShowTaskSuccess" sender:self];
@@ -54,6 +56,8 @@ typedef NS_ENUM(NSInteger, HPPYTaskState) {
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    [ARAnalytics pageView:@"Task Detail" withProperties:_task.trackingData];
+    
     // Needs to be set to true in storyboard, so font can be changed there, reset to false here.
     self.detailTextView.selectable = NO;
     self.detailTextView.textContainer.lineFragmentPadding = 0;
@@ -70,12 +74,6 @@ typedef NS_ENUM(NSInteger, HPPYTaskState) {
                                              selector:@selector(appResignsActive:)
                                                  name:UIApplicationWillResignActiveNotification
                                                object:nil];
-    
-    // TODO: Pause and resume audio when entering and re-entering to and from background
-    // TODO: Finish task when audio is done playing pay attention to background behaviour
-    // TODO: Don't start playing again when already finished
-    
-    // TODO: Remove little time differnce between animation and timer. Animation is a little bit longer, at least when disrupted during play time.
     
     BOOL isAudio = [_task.type isEqualToString:HPPYTaskTypeAudio];
     if (isAudio) {
@@ -158,11 +156,13 @@ typedef NS_ENUM(NSInteger, HPPYTaskState) {
 // MARK: Audio control
 - (void)toggleAudioState {
     if (_audioPlayer.isPlaying) {
+        [ARAnalytics event:@"Audio Paused"];
         [_audioPlayer pause];
         _state = HPPYTaskStateAudioPaused;
         [self stopProcessingAnimation];
     } else {
         [_audioPlayer resume];
+        [ARAnalytics event:@"Audio Resumed"];
         _state = HPPYTaskStateAudioPlaying;
         [self startOrResumeProcessingAnimation];
     }
@@ -193,7 +193,6 @@ typedef NS_ENUM(NSInteger, HPPYTaskState) {
 - (void)setTask:(HPPYTask *)task {
     _task = task;
     [HPPYTaskController startTask:_task];
-    [self updateInterface];
 }
 
 - (void)updateInterface {
@@ -309,7 +308,7 @@ typedef NS_ENUM(NSInteger, HPPYTaskState) {
     CFTimeInterval minDuration = 1;
     duration = MAX(minDuration, duration);
     
-    NSLog(@"animate with progress: %f, processing time: %f and duration: %f", progress, processingTime, duration);
+//    NSLog(@"animate with progress: %f, processing time: %f and duration: %f", progress, processingTime, duration);
     
     if (progress <= 1) {
         [self startTimerWithDuration:duration];
@@ -330,7 +329,7 @@ typedef NS_ENUM(NSInteger, HPPYTaskState) {
     animation1.duration = (progress == 1) ? minDuration : 0.5;
     animation1.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
     
-    NSLog(@"animation 1 duration: %f", animation1.duration);
+//    NSLog(@"animation 1 duration: %f", animation1.duration);
     
     CABasicAnimation *animation2 = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
     animation2.fromValue = @(progress);
@@ -339,7 +338,7 @@ typedef NS_ENUM(NSInteger, HPPYTaskState) {
     animation2.duration = duration - animation1.duration;
     animation2.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
     
-    NSLog(@"animation 2 duration: %f", animation2.duration);
+//    NSLog(@"animation 2 duration: %f", animation2.duration);
     
     CAAnimationGroup *animationGroup = [CAAnimationGroup new];
     animationGroup.animations = @[animation1, animation2];
@@ -349,7 +348,7 @@ typedef NS_ENUM(NSInteger, HPPYTaskState) {
     animationGroup.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
     [_processAnimationLayer addAnimation:animationGroup forKey:@"processingAnimation"];
     
-    NSLog(@"animation group duration: %f", animationGroup.duration);
+//    NSLog(@"animation group duration: %f", animationGroup.duration);
     
     [self.completeButton.layer addSublayer:_processAnimationLayer];
 }
