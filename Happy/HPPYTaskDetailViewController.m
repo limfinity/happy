@@ -32,6 +32,8 @@ typedef NS_ENUM(NSInteger, HPPYTaskState) {
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UITextView *detailTextView;
 @property (weak, nonatomic) IBOutlet UIButton *completeButton;
+@property (weak, nonatomic) IBOutlet UILabel *audioNotice;
+@property (weak, nonatomic) IBOutlet UIImageView *audioIcon;
 @property (strong, nonatomic) HPPYAudioPlayer *audioPlayer;
 
 @end
@@ -78,6 +80,11 @@ typedef NS_ENUM(NSInteger, HPPYTaskState) {
     BOOL isAudio = [_task.type isEqualToString:HPPYTaskTypeAudio];
     if (isAudio) {
         self.audioPlayer = [[HPPYAudioPlayer alloc] initWithTask:_task];
+        [self.audioIcon setHidden:NO];
+        [self.audioNotice setHidden:NO];
+    } else {
+        [self.audioIcon setHidden:YES];
+        [self.audioNotice setHidden:YES];
     }
     
     [self updateInterface];

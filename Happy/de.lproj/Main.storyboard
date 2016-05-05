@@ -279,17 +279,38 @@ machen</string>
                                     <action selector="completeTask:" destination="9p3-GZ-6mv" eventType="touchUpInside" id="CIN-JC-nQT"/>
                                 </connections>
                             </button>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="speakerOn" translatesAutoresizingMaskIntoConstraints="NO" id="svI-HT-0VK">
+                                <rect key="frame" x="66" y="538" width="23" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="23" id="9Fk-dX-QEo"/>
+                                    <constraint firstAttribute="height" constant="17" id="WYc-iS-Ge5"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dies ist eine Audioaufgabe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vu-tB-sai">
+                                <rect key="frame" x="97" y="536" width="160" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="Bk5-P7-cXJ"/>
+                                    <constraint firstAttribute="height" constant="20" id="nUj-00-PU2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.99607843139999996" green="0.76470588240000004" blue="0.59215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="yM9-H5-idP" firstAttribute="leading" secondItem="oz0-al-Lgm" secondAttribute="leading" constant="20" id="2d8-pl-5zl"/>
                             <constraint firstAttribute="trailing" secondItem="in8-WG-j2J" secondAttribute="trailing" constant="12" id="71f-2e-kMz"/>
                             <constraint firstAttribute="trailing" secondItem="NBa-2f-dcy" secondAttribute="trailing" constant="20" id="Eyr-bD-2c0"/>
+                            <constraint firstItem="9vu-tB-sai" firstAttribute="leading" secondItem="svI-HT-0VK" secondAttribute="trailing" constant="8" id="EzZ-RT-6U9"/>
                             <constraint firstItem="Kmc-9w-5MK" firstAttribute="top" secondItem="rhq-Ut-4ZI" secondAttribute="bottom" constant="40" id="P56-VX-3gP"/>
+                            <constraint firstItem="svI-HT-0VK" firstAttribute="centerY" secondItem="9vu-tB-sai" secondAttribute="centerY" id="UpU-yA-nff"/>
                             <constraint firstAttribute="trailing" secondItem="rhq-Ut-4ZI" secondAttribute="trailing" constant="20" id="VOY-FN-K6M"/>
                             <constraint firstAttribute="trailing" secondItem="yM9-H5-idP" secondAttribute="trailing" constant="20" id="YOr-C7-pl6"/>
                             <constraint firstItem="in8-WG-j2J" firstAttribute="top" secondItem="SAj-vx-mj2" secondAttribute="bottom" constant="8" id="eBc-UX-Ynh"/>
+                            <constraint firstItem="9vu-tB-sai" firstAttribute="top" secondItem="rhq-Ut-4ZI" secondAttribute="bottom" constant="8" id="fvx-no-usL"/>
                             <constraint firstItem="NBa-2f-dcy" firstAttribute="leading" secondItem="oz0-al-Lgm" secondAttribute="leading" constant="20" id="ktK-wn-WVP"/>
+                            <constraint firstItem="9vu-tB-sai" firstAttribute="centerX" secondItem="rhq-Ut-4ZI" secondAttribute="centerX" constant="17" id="nEd-XR-Tyk"/>
                             <constraint firstItem="NBa-2f-dcy" firstAttribute="top" secondItem="yM9-H5-idP" secondAttribute="bottom" constant="5" id="nRb-3g-jRf"/>
                             <constraint firstItem="rhq-Ut-4ZI" firstAttribute="leading" secondItem="oz0-al-Lgm" secondAttribute="leading" constant="20" id="nya-Gs-Ez3"/>
                             <constraint firstItem="yM9-H5-idP" firstAttribute="top" secondItem="in8-WG-j2J" secondAttribute="bottom" constant="20" id="rgR-hf-xoB"/>
@@ -298,6 +319,8 @@ machen</string>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="audioIcon" destination="svI-HT-0VK" id="2Jy-Az-XSG"/>
+                        <outlet property="audioNotice" destination="9vu-tB-sai" id="lWZ-Zx-ttH"/>
                         <outlet property="completeButton" destination="rhq-Ut-4ZI" id="XrC-UL-dEL"/>
                         <outlet property="detailTextView" destination="NBa-2f-dcy" id="VwI-U0-e8k"/>
                         <outlet property="titleLabel" destination="yM9-H5-idP" id="IfT-7f-PjJ"/>
@@ -1667,6 +1690,7 @@ Schön, dass Du dabei bist.</string>
         <image name="closeButton" width="18" height="18"/>
         <image name="colorfulBg" width="375" height="667"/>
         <image name="iconCloud" width="126" height="126"/>
+        <image name="speakerOn" width="23" height="20"/>
         <image name="successGradient" width="375" height="368"/>
         <image name="tutorial1" width="316" height="487"/>
         <image name="tutorial2" width="316" height="487"/>
