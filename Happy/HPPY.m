@@ -12,6 +12,7 @@
  * hppyStartedBefore BOOL
  * hppyName          NSString
  * hppyReminders     NSArray
+ * hppyAllowTracking BOOL
  * hppyVersion       NSString
  * hppyUnlocked      BOOL
  * hppyCurrentTask   NSData -> HPPYTask

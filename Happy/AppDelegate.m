@@ -30,12 +30,37 @@
     [[BITHockeyManager sharedHockeyManager] startManager];
     [[BITHockeyManager sharedHockeyManager].authenticator
      authenticateInstallation];
+
+    NSUserDefaults * standardUserDefaults = [NSUserDefaults standardUserDefaults];
+    NSString * hppyVersion = [standardUserDefaults objectForKey:@"hppyVersion"];
+    if (!hppyVersion) {
+        [self registerDefaultsFromSettingsBundle];
+    }
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
-    // Set up tracking
-    [ARAnalytics setupWithAnalytics:@{
-      ARGoogleAnalyticsID : @"UA-76220642-1",
-      ARMixpanelToken : @"a93872e0566a689e37e755be7102f41d"
-    }];
+    BOOL disallowed = [[NSUserDefaults standardUserDefaults] boolForKey:@"hppyTrackingDisallowed"];
+    BOOL allowTracking = [[NSUserDefaults standardUserDefaults] boolForKey:@"hppyAllowTracking"];
+    if (!allowTracking) {
+        if (!disallowed) {
+            // Set up tracking
+            [ARAnalytics setupWithAnalytics:@{
+              ARGoogleAnalyticsID : @"UA-76220642-1",
+              ARMixpanelToken : @"a93872e0566a689e37e755be7102f41d"
+            }];
+            [ARAnalytics event:@"Tracking Disallowed"];
+            for (ARAnalyticalProvider *provider in [ARAnalytics currentProviders]) {
+                [ARAnalytics removeProvider:provider];
+            }
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"hppyTrackingDisallowed"];
+        }
+    } else {
+        // Set up tracking
+        [ARAnalytics setupWithAnalytics:@{
+          ARGoogleAnalyticsID : @"UA-76220642-1",
+          ARMixpanelToken : @"a93872e0566a689e37e755be7102f41d"
+        }];
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"hppyTrackingDisallowed"];
+    }
 
     // Customize appearances
     [self customizeNavigationBarAppearance];
@@ -76,6 +101,30 @@
     } else {
         self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"CodeViewController"];
     }
+}
+
+- (void)registerDefaultsFromSettingsBundle {
+    // this function writes default settings as settings
+    NSString *settingsBundle = [[NSBundle mainBundle] pathForResource:@"Settings" ofType:@"bundle"];
+    if(!settingsBundle) {
+        NSLog(@"Could not find Settings.bundle");
+        return;
+    }
+    
+    NSDictionary *settings = [NSDictionary dictionaryWithContentsOfFile:[settingsBundle stringByAppendingPathComponent:@"Root.plist"]];
+    NSArray *preferences = [settings objectForKey:@"PreferenceSpecifiers"];
+    
+    NSMutableDictionary *defaultsToRegister = [[NSMutableDictionary alloc] initWithCapacity:[preferences count]];
+    for(NSDictionary *prefSpecification in preferences) {
+        NSString *key = [prefSpecification objectForKey:@"Key"];
+        if(key) {
+            [defaultsToRegister setObject:[prefSpecification objectForKey:@"DefaultValue"] forKey:key];
+            NSLog(@"writing as default %@ to the key %@",[prefSpecification objectForKey:@"DefaultValue"],key);
+        }
+    }
+    
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaultsToRegister];
+    
 }
 
 - (void)customizeNavigationBarAppearance {

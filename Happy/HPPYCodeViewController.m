@@ -49,6 +49,12 @@
     [super viewDidLayoutSubviews];
 }
 
+- (IBAction)openSurvey:(id)sender {
+    [ARAnalytics event:@"Survey Opened"];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"https://ww3.unipark.de/uc/tudirgut1/"]];
+}
+
+
 - (void)unlockHappyWithCode:(NSString *)code {
     if (!_codes) {
         _codes = [HPPY getArrayFromFile:HPPY_CODES_FILE_NAME reloadFromBundle:YES];
@@ -80,7 +86,7 @@
     self.bottomScrollViewContraint.constant = keyboardSize.height;
     [self.view layoutIfNeeded];
     CGRect rect = self.codeTextField.frame;
-    size.height = rect.origin.y + rect.size.height + 10;
+    size.height = rect.origin.y + rect.size.height + 40;
     [self.scrollView setContentSize:size];
     [self scrollToBottom];
 }
