@@ -21,14 +21,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7U3-1Z-0h2">
-                                <rect key="frame" x="110" y="533" width="100" height="20"/>
+                                <rect key="frame" x="95" y="533" width="130" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="RB6-rB-vpW"/>
-                                    <constraint firstAttribute="width" constant="100" id="XB9-lg-dr9"/>
+                                    <constraint firstAttribute="width" constant="130" id="XB9-lg-dr9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
-                                <state key="normal" title="Überspringen">
+                                <state key="normal" title="Überspringen (3)">
                                     <color key="titleColor" red="0.68235294117647061" green="0.68235294117647061" blue="0.68235294117647061" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="skipTask:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FQa-gM-2wg"/>
@@ -67,6 +70,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="menuButton" destination="dSL-hG-8Un" id="fvF-yA-0IP"/>
+                        <outlet property="skipButton" destination="7U3-1Z-0h2" id="1Ex-VH-HDC"/>
                         <outlet property="taskCardView" destination="v2e-du-UeI" id="a8S-h6-UDm"/>
                     </connections>
                 </viewController>
@@ -344,9 +348,9 @@ machen</string>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="Hz4-qm-xis"/>
                                 </constraints>
-                                <string key="text">Du hast Dir gerade
-etwas Gutes
-getan!</string>
+                                <string key="text">Du nimmst Dir Zeit 
+für Dich selbst.
+Weiter so.</string>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="36"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

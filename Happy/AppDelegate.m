@@ -73,6 +73,7 @@
     if (locationNotification) {
         // Reset badge count
         application.applicationIconBadgeNumber = 0;
+        [self resetSkips];
     }
     
     // Handle root view manually to avoid problems with slide navigation
@@ -132,6 +133,11 @@
     [[UINavigationBar appearance] setShadowImage:[UIImage imageNamed:@"navigationShadow"]];
 }
 
+- (void)resetSkips {
+    [[NSUserDefaults standardUserDefaults] setInteger:4 forKey:@"hppySkipsLeft"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
@@ -151,6 +157,14 @@
     
     // For now always reset badge count
     application.applicationIconBadgeNumber = 0;
+    
+    double skipLocked = [[NSUserDefaults standardUserDefaults] doubleForKey:@"hppySkipLocked"];
+    if (skipLocked != 0) {
+        double difference = CACurrentMediaTime() - skipLocked;
+        if (difference > 60 * 60 * 12) {
+            [self resetSkips];
+        }
+    }
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
@@ -169,6 +183,8 @@
     
     // Reset badge count
     application.applicationIconBadgeNumber = 0;
+    
+    [self resetSkips];
 }
 
 @end
