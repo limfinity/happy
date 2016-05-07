@@ -293,7 +293,7 @@ machen</string>
                                     <constraint firstAttribute="height" constant="20" id="nUj-00-PU2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -479,7 +479,7 @@ Weiter so.</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="textInput" id="0dd-1Y-gxI" customClass="HPPYTextInputTableViewCell">
-                                <rect key="frame" x="0.0" y="114" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="113.5" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0dd-1Y-gxI" id="gpB-Co-cxv">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -512,7 +512,7 @@ Weiter so.</string>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="addReminder" id="PdP-Zx-wFO" customClass="HPPYReminderTableViewCell">
-                                <rect key="frame" x="0.0" y="158" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="157.5" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PdP-Zx-wFO" id="paY-cD-kQk">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
@@ -544,7 +544,7 @@ Weiter so.</string>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="headerNameSection" rowHeight="104" id="gn4-Ai-zLA" customClass="HPPYHeaderTableViewCell">
-                                <rect key="frame" x="0.0" y="202" width="320" height="104"/>
+                                <rect key="frame" x="0.0" y="201.5" width="320" height="104"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gn4-Ai-zLA" id="ShP-Fh-uvM">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="104"/>
@@ -591,7 +591,7 @@ Spitznamen ist auch möglich.</string>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="headerReminderSection" rowHeight="150" id="XU2-RQ-Xhy" customClass="HPPYHeaderTableViewCell">
-                                <rect key="frame" x="0.0" y="306" width="320" height="150"/>
+                                <rect key="frame" x="0.0" y="305.5" width="320" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XU2-RQ-Xhy" id="jwh-iz-Moy">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
@@ -747,7 +747,7 @@ damit es Dir leichter fällt. </string>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="deleteReminder" textLabel="NLt-di-bkJ" style="IBUITableViewCellStyleDefault" id="UHw-E1-haW">
-                                <rect key="frame" x="0.0" y="328" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="327.5" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UHw-E1-haW" id="CLB-up-MwO">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -993,20 +993,6 @@ Schön, dass Du dabei bist.</string>
                                                 </constraints>
                                                 <color key="color" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                             </activityIndicatorView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwC-N8-38z">
-                                                <rect key="frame" x="83" y="379" width="155" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="155" id="AG8-ar-HJI"/>
-                                                    <constraint firstAttribute="height" constant="30" id="B4I-Dy-Bn7"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
-                                                <state key="normal" title="Keinen Code erhalten?">
-                                                    <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="openSurvey:" destination="N0S-wc-5YC" eventType="touchUpInside" id="gYC-7b-Wco"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -1018,14 +1004,12 @@ Schön, dass Du dabei bist.</string>
                                             <constraint firstItem="4q3-Hl-UUY" firstAttribute="leading" secondItem="9Nd-ri-QI4" secondAttribute="leading" constant="20" id="K4Y-Rd-9Xd"/>
                                             <constraint firstItem="kaq-gI-w2t" firstAttribute="leading" secondItem="9Nd-ri-QI4" secondAttribute="leading" constant="20" id="KL1-G5-KlQ"/>
                                             <constraint firstItem="fWs-ZH-9eF" firstAttribute="top" secondItem="deg-YA-kxj" secondAttribute="bottom" constant="30" id="LHP-bG-ohu"/>
-                                            <constraint firstItem="zwC-N8-38z" firstAttribute="centerX" secondItem="9Nd-ri-QI4" secondAttribute="centerX" id="Ldj-Gj-TDT"/>
                                             <constraint firstItem="J0q-cO-Hgn" firstAttribute="trailing" secondItem="fWs-ZH-9eF" secondAttribute="trailing" id="MGJ-P1-tuN"/>
                                             <constraint firstAttribute="trailing" secondItem="kaq-gI-w2t" secondAttribute="trailing" constant="20" id="PMR-05-yUV"/>
                                             <constraint firstItem="deg-YA-kxj" firstAttribute="top" secondItem="4q3-Hl-UUY" secondAttribute="bottom" constant="8" id="TbF-db-w3x"/>
                                             <constraint firstAttribute="trailing" secondItem="4q3-Hl-UUY" secondAttribute="trailing" constant="20" id="U0l-DR-ecw"/>
                                             <constraint firstItem="4q3-Hl-UUY" firstAttribute="top" secondItem="MOq-ET-koK" secondAttribute="bottom" constant="30" id="VAG-73-dvQ"/>
                                             <constraint firstItem="kaq-gI-w2t" firstAttribute="top" secondItem="fWs-ZH-9eF" secondAttribute="bottom" id="a3b-mc-aKo"/>
-                                            <constraint firstItem="zwC-N8-38z" firstAttribute="top" secondItem="fWs-ZH-9eF" secondAttribute="bottom" id="amO-YZ-rUR"/>
                                             <constraint firstItem="MOq-ET-koK" firstAttribute="leading" secondItem="9Nd-ri-QI4" secondAttribute="leading" constant="20" id="cp6-oN-N6K"/>
                                             <constraint firstAttribute="trailing" secondItem="MOq-ET-koK" secondAttribute="trailing" constant="20" id="fEl-PA-Sl9"/>
                                             <constraint firstAttribute="trailing" secondItem="deg-YA-kxj" secondAttribute="trailing" constant="20" id="jlK-9g-uT7"/>

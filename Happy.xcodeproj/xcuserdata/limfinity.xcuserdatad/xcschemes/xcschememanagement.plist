@@ -4,10 +4,10 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Happy HockeyApp.xcscheme</key>
+		<key>Happy Hockey.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>1</integer>
 		</dict>
 		<key>Happy.xcscheme</key>
 		<dict>
@@ -17,6 +17,16 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>A076C0791CDB6760008332DD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A076C0AF1CDB68EE008332DD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A0D184F81BF9CC0E0000B1F9</key>
 		<dict>
 			<key>primary</key>

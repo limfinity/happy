@@ -30,6 +30,47 @@
 		A05558571BF9E12E0036E954 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A05558561BF9E12E0036E954 /* Settings.bundle */; };
 		A058D40B1C24236A00361186 /* HPPYTextInputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A058D40A1C24236A00361186 /* HPPYTextInputTableViewCell.m */; };
 		A05C6CB81C13309E00D1EF1A /* HPPYTaskCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A05C6CB71C13309E00D1EF1A /* HPPYTaskCardViewController.m */; };
+		A076C0B21CDB68EE008332DD /* HPPYMenuableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0554A011C78976F00817BCF /* HPPYMenuableViewController.m */; };
+		A076C0B31CDB68EE008332DD /* HPPYReminderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A098FC4D1C401BFC0007EBEF /* HPPYReminderTableViewCell.m */; };
+		A076C0B41CDB68EE008332DD /* HPPYLeftMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A05558511BF9CE2D0036E954 /* HPPYLeftMenuTableViewController.m */; };
+		A076C0B51CDB68EE008332DD /* HPPYMenuableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0554A041C789A8C00817BCF /* HPPYMenuableTableViewController.m */; };
+		A076C0B61CDB68EE008332DD /* HPPYReminderTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A098FC4A1C4000840007EBEF /* HPPYReminderTableViewController.m */; };
+		A076C0B71CDB68EE008332DD /* HPPYTask.m in Sources */ = {isa = PBXBuildFile; fileRef = A00E9ADA1BFDF45C00C94ABA /* HPPYTask.m */; };
+		A076C0B81CDB68EE008332DD /* HPPYTaskController.m in Sources */ = {isa = PBXBuildFile; fileRef = A079FFFE1C13063700B387CC /* HPPYTaskController.m */; };
+		A076C0B91CDB68EE008332DD /* contact.md in Sources */ = {isa = PBXBuildFile; fileRef = A04A094D1BFA0259005F385B /* contact.md */; };
+		A076C0BA1CDB68EE008332DD /* HPPYTextInputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A058D40A1C24236A00361186 /* HPPYTextInputTableViewCell.m */; };
+		A076C0BB1CDB68EE008332DD /* HPPYTaskDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0A0FE1E1C1AF1890008225E /* HPPYTaskDetailViewController.m */; };
+		A076C0BC1CDB68EE008332DD /* HPPYCountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = A03DDAFC1C79E28300B9B70D /* HPPYCountDown.m */; };
+		A076C0BD1CDB68EE008332DD /* HPPYTaskContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D185031BF9CC0E0000B1F9 /* HPPYTaskContainerViewController.m */; };
+		A076C0BE1CDB68EE008332DD /* HPPYStaticTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04A09461BF9F05C005F385B /* HPPYStaticTextViewController.m */; };
+		A076C0BF1CDB68EE008332DD /* HPPYSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A01369331C1DD6EE00F69C31 /* HPPYSettingsTableViewController.m */; };
+		A076C0C01CDB68EE008332DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D185001BF9CC0E0000B1F9 /* AppDelegate.m */; };
+		A076C0C11CDB68EE008332DD /* HPPYCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04AA2F21C416ADE00DB4A69 /* HPPYCodeViewController.m */; };
+		A076C0C21CDB68EE008332DD /* HPPYTaskSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00891681C77D91700C161F4 /* HPPYTaskSuccessViewController.m */; };
+		A076C0C31CDB68EE008332DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D184FD1BF9CC0E0000B1F9 /* main.m */; };
+		A076C0C41CDB68EE008332DD /* HPPY.m in Sources */ = {isa = PBXBuildFile; fileRef = A04AA2EF1C416AC100DB4A69 /* HPPY.m */; };
+		A076C0C51CDB68EE008332DD /* HPPYTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A01430AE1C9B4C0B00A283B5 /* HPPYTutorialViewController.m */; };
+		A076C0C61CDB68EE008332DD /* HPPYTaskCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A05C6CB71C13309E00D1EF1A /* HPPYTaskCardViewController.m */; };
+		A076C0C71CDB68EE008332DD /* HPPYMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A05558541BF9D8A30036E954 /* HPPYMenuTableViewCell.m */; };
+		A076C0C81CDB68EE008332DD /* HPPYRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0554A071C789F2A00817BCF /* HPPYRevealViewController.m */; };
+		A076C0C91CDB68EE008332DD /* HPPYHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A098FC471C3FF2DD0007EBEF /* HPPYHeaderTableViewCell.m */; };
+		A076C0CA1CDB68EE008332DD /* HPPYAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A0913D3A1CB192AB00D6EE9F /* HPPYAudioPlayer.m */; };
+		A076C0CB1CDB68EE008332DD /* information.md in Sources */ = {isa = PBXBuildFile; fileRef = A0D2F74B1C9E24CE001F0898 /* information.md */; };
+		A076C0CD1CDB68EE008332DD /* libPods-Happy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB57B20CF21F172247699B93 /* libPods-Happy.a */; };
+		A076C0CF1CDB68EE008332DD /* information.md in Resources */ = {isa = PBXBuildFile; fileRef = A0D2F74B1C9E24CE001F0898 /* information.md */; };
+		A076C0D01CDB68EE008332DD /* hppyTasks.plist in Resources */ = {isa = PBXBuildFile; fileRef = A03DDAF81C79026400B9B70D /* hppyTasks.plist */; };
+		A076C0D11CDB68EE008332DD /* contact.md in Resources */ = {isa = PBXBuildFile; fileRef = A04A094D1BFA0259005F385B /* contact.md */; };
+		A076C0D21CDB68EE008332DD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A04A09411BF9EE9D005F385B /* Localizable.strings */; };
+		A076C0D31CDB68EE008332DD /* dasKrokodil.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A0913D3F1CB1A3E400D6EE9F /* dasKrokodil.mp3 */; };
+		A076C0D41CDB68EE008332DD /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A05558561BF9E12E0036E954 /* Settings.bundle */; };
+		A076C0D51CDB68EE008332DD /* atemuebung.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A0913D3D1CB1A3E400D6EE9F /* atemuebung.mp3 */; };
+		A076C0D61CDB68EE008332DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0D1850A1BF9CC0E0000B1F9 /* LaunchScreen.storyboard */; };
+		A076C0D71CDB68EE008332DD /* morgenuebung.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A0913D411CB1A3E400D6EE9F /* morgenuebung.mp3 */; };
+		A076C0D81CDB68EE008332DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A021D9C61C6FDA7F00B63A8D /* Assets.xcassets */; };
+		A076C0D91CDB68EE008332DD /* bodyScan.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A0913D3E1CB1A3E400D6EE9F /* bodyScan.mp3 */; };
+		A076C0DA1CDB68EE008332DD /* hppyCodes.plist in Resources */ = {isa = PBXBuildFile; fileRef = A03DDAF71C79026400B9B70D /* hppyCodes.plist */; };
+		A076C0DB1CDB68EE008332DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0D185051BF9CC0E0000B1F9 /* Main.storyboard */; };
+		A076C0DC1CDB68EE008332DD /* inneresLaecheln.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A0913D401CB1A3E400D6EE9F /* inneresLaecheln.mp3 */; };
 		A079FFFF1C13063700B387CC /* HPPYTaskController.m in Sources */ = {isa = PBXBuildFile; fileRef = A079FFFE1C13063700B387CC /* HPPYTaskController.m */; };
 		A0913D3B1CB192AB00D6EE9F /* HPPYAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A0913D3A1CB192AB00D6EE9F /* HPPYAudioPlayer.m */; };
 		A0913D421CB1A3E400D6EE9F /* atemuebung.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A0913D3D1CB1A3E400D6EE9F /* atemuebung.mp3 */; };
@@ -107,6 +148,8 @@
 		A058D40A1C24236A00361186 /* HPPYTextInputTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYTextInputTableViewCell.m; sourceTree = "<group>"; };
 		A05C6CB61C13309E00D1EF1A /* HPPYTaskCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYTaskCardViewController.h; sourceTree = "<group>"; };
 		A05C6CB71C13309E00D1EF1A /* HPPYTaskCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYTaskCardViewController.m; sourceTree = "<group>"; };
+		A076C0E31CDB68EE008332DD /* Happy Hockey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Happy Hockey.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A076C0E41CDB68EE008332DD /* Happy copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Happy copy-Info.plist"; path = "/Users/limfinity/Developer/ios/Happy/repo/Happy copy-Info.plist"; sourceTree = "<absolute>"; };
 		A079FFFD1C13063700B387CC /* HPPYTaskController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYTaskController.h; sourceTree = "<group>"; };
 		A079FFFE1C13063700B387CC /* HPPYTaskController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYTaskController.m; sourceTree = "<group>"; };
 		A0913D391CB192AB00D6EE9F /* HPPYAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYAudioPlayer.h; sourceTree = "<group>"; };
@@ -145,6 +188,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A076C0CC1CDB68EE008332DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A076C0CD1CDB68EE008332DD /* libPods-Happy.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A0D184F61BF9CC0E0000B1F9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -270,6 +321,7 @@
 				A0D184FA1BF9CC0E0000B1F9 /* Products */,
 				1E45DEC50A5D65D5D4DC32EA /* Pods */,
 				9E7E096EBBD9F68D60A7EAFB /* Frameworks */,
+				A076C0E41CDB68EE008332DD /* Happy copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -279,6 +331,7 @@
 				A0D184F91BF9CC0E0000B1F9 /* Happy.app */,
 				A0D185121BF9CC0E0000B1F9 /* HappyTests.xctest */,
 				A0D1851D1BF9CC0E0000B1F9 /* HappyUITests.xctest */,
+				A076C0E31CDB68EE008332DD /* Happy Hockey.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -347,6 +400,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A076C0AF1CDB68EE008332DD /* Happy Hockey */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A076C0E01CDB68EE008332DD /* Build configuration list for PBXNativeTarget "Happy Hockey" */;
+			buildPhases = (
+				A076C0B01CDB68EE008332DD /* Check Pods Manifest.lock */,
+				A076C0B11CDB68EE008332DD /* Sources */,
+				A076C0CC1CDB68EE008332DD /* Frameworks */,
+				A076C0CE1CDB68EE008332DD /* Resources */,
+				A076C0DD1CDB68EE008332DD /* Embed Pods Frameworks */,
+				A076C0DE1CDB68EE008332DD /* Copy Pods Resources */,
+				A076C0DF1CDB68EE008332DD /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Happy Hockey";
+			productName = Happy;
+			productReference = A076C0E31CDB68EE008332DD /* Happy Hockey.app */;
+			productType = "com.apple.product-type.application";
+		};
 		A0D184F81BF9CC0E0000B1F9 /* Happy */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A0D185261BF9CC0F0000B1F9 /* Build configuration list for PBXNativeTarget "Happy" */;
@@ -441,6 +515,7 @@
 			projectRoot = "";
 			targets = (
 				A0D184F81BF9CC0E0000B1F9 /* Happy */,
+				A076C0AF1CDB68EE008332DD /* Happy Hockey */,
 				A0D185111BF9CC0E0000B1F9 /* HappyTests */,
 				A0D1851C1BF9CC0E0000B1F9 /* HappyUITests */,
 			);
@@ -448,6 +523,27 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A076C0CE1CDB68EE008332DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A076C0CF1CDB68EE008332DD /* information.md in Resources */,
+				A076C0D01CDB68EE008332DD /* hppyTasks.plist in Resources */,
+				A076C0D11CDB68EE008332DD /* contact.md in Resources */,
+				A076C0D21CDB68EE008332DD /* Localizable.strings in Resources */,
+				A076C0D31CDB68EE008332DD /* dasKrokodil.mp3 in Resources */,
+				A076C0D41CDB68EE008332DD /* Settings.bundle in Resources */,
+				A076C0D51CDB68EE008332DD /* atemuebung.mp3 in Resources */,
+				A076C0D61CDB68EE008332DD /* LaunchScreen.storyboard in Resources */,
+				A076C0D71CDB68EE008332DD /* morgenuebung.mp3 in Resources */,
+				A076C0D81CDB68EE008332DD /* Assets.xcassets in Resources */,
+				A076C0D91CDB68EE008332DD /* bodyScan.mp3 in Resources */,
+				A076C0DA1CDB68EE008332DD /* hppyCodes.plist in Resources */,
+				A076C0DB1CDB68EE008332DD /* Main.storyboard in Resources */,
+				A076C0DC1CDB68EE008332DD /* inneresLaecheln.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A0D184F71BF9CC0E0000B1F9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -529,6 +625,64 @@
 			shellPath = /bin/sh;
 			shellScript = "FILE=\"${SRCROOT}/HockeySDK-iOS/BuildAgent\"\nif [ -f \"$FILE\" ]; then\n\"$FILE\"\nfi";
 		};
+		A076C0B01CDB68EE008332DD /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A076C0DD1CDB68EE008332DD /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Happy/Pods-Happy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A076C0DE1CDB68EE008332DD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Happy/Pods-Happy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A076C0DF1CDB68EE008332DD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "FILE=\"${SRCROOT}/HockeySDK-iOS/BuildAgent\"\nif [ -f \"$FILE\" ]; then\n\"$FILE\"\nfi";
+		};
 		C97ACA09EFC158C4CF78A403 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -547,6 +701,39 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A076C0B11CDB68EE008332DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A076C0B21CDB68EE008332DD /* HPPYMenuableViewController.m in Sources */,
+				A076C0B31CDB68EE008332DD /* HPPYReminderTableViewCell.m in Sources */,
+				A076C0B41CDB68EE008332DD /* HPPYLeftMenuTableViewController.m in Sources */,
+				A076C0B51CDB68EE008332DD /* HPPYMenuableTableViewController.m in Sources */,
+				A076C0B61CDB68EE008332DD /* HPPYReminderTableViewController.m in Sources */,
+				A076C0B71CDB68EE008332DD /* HPPYTask.m in Sources */,
+				A076C0B81CDB68EE008332DD /* HPPYTaskController.m in Sources */,
+				A076C0B91CDB68EE008332DD /* contact.md in Sources */,
+				A076C0BA1CDB68EE008332DD /* HPPYTextInputTableViewCell.m in Sources */,
+				A076C0BB1CDB68EE008332DD /* HPPYTaskDetailViewController.m in Sources */,
+				A076C0BC1CDB68EE008332DD /* HPPYCountDown.m in Sources */,
+				A076C0BD1CDB68EE008332DD /* HPPYTaskContainerViewController.m in Sources */,
+				A076C0BE1CDB68EE008332DD /* HPPYStaticTextViewController.m in Sources */,
+				A076C0BF1CDB68EE008332DD /* HPPYSettingsTableViewController.m in Sources */,
+				A076C0C01CDB68EE008332DD /* AppDelegate.m in Sources */,
+				A076C0C11CDB68EE008332DD /* HPPYCodeViewController.m in Sources */,
+				A076C0C21CDB68EE008332DD /* HPPYTaskSuccessViewController.m in Sources */,
+				A076C0C31CDB68EE008332DD /* main.m in Sources */,
+				A076C0C41CDB68EE008332DD /* HPPY.m in Sources */,
+				A076C0C51CDB68EE008332DD /* HPPYTutorialViewController.m in Sources */,
+				A076C0C61CDB68EE008332DD /* HPPYTaskCardViewController.m in Sources */,
+				A076C0C71CDB68EE008332DD /* HPPYMenuTableViewCell.m in Sources */,
+				A076C0C81CDB68EE008332DD /* HPPYRevealViewController.m in Sources */,
+				A076C0C91CDB68EE008332DD /* HPPYHeaderTableViewCell.m in Sources */,
+				A076C0CA1CDB68EE008332DD /* HPPYAudioPlayer.m in Sources */,
+				A076C0CB1CDB68EE008332DD /* information.md in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A0D184F51BF9CC0E0000B1F9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -655,6 +842,41 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A076C0E11CDB68EE008332DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 867A161B6F9B16C9161B4089 /* Pods-Happy.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
+				INFOPLIST_FILE = "Happy copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.hppy.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "01082e04-35fd-4985-b1f0-b79ade8a7d30";
+			};
+			name = Debug;
+		};
+		A076C0E21CDB68EE008332DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F21E2FE5279E430BE94BDD7C /* Pods-Happy.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"DEBUG=1",
+				);
+				INFOPLIST_FILE = "Happy copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.hppy.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "01082e04-35fd-4985-b1f0-b79ade8a7d30";
+			};
+			name = Release;
+		};
 		A0D185241BF9CC0F0000B1F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -816,6 +1038,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A076C0E01CDB68EE008332DD /* Build configuration list for PBXNativeTarget "Happy Hockey" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A076C0E11CDB68EE008332DD /* Debug */,
+				A076C0E21CDB68EE008332DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A0D184F41BF9CC0E0000B1F9 /* Build configuration list for PBXProject "Happy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

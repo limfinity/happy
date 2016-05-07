@@ -49,12 +49,6 @@
     [super viewDidLayoutSubviews];
 }
 
-- (IBAction)openSurvey:(id)sender {
-    [ARAnalytics event:@"Survey Opened"];
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"https://ww3.unipark.de/uc/tudirgut1/"]];
-}
-
-
 - (void)unlockHappyWithCode:(NSString *)code {
     if (!_codes) {
         _codes = [HPPY getArrayFromFile:HPPY_CODES_FILE_NAME reloadFromBundle:YES];
