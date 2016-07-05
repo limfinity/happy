@@ -134,7 +134,9 @@
     UILocalNotification *notification = [UILocalNotification new];
     notification.fireDate = reminder;
     notification.timeZone = [NSTimeZone defaultTimeZone];
-    notification.alertTitle = NSLocalizedString(@"Friendly Reminder", nil);
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.2")) {
+        notification.alertTitle = NSLocalizedString(@"Friendly Reminder", nil);
+    }
     notification.alertBody = NSLocalizedString(@"Push Reminder Body 1", nil);
     notification.repeatInterval = NSCalendarUnitDay;
     notification.soundName = UILocalNotificationDefaultSoundName;

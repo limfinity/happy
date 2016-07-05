@@ -72,7 +72,10 @@
     int skipsLeft = [self skipsLeft] - 1;
     if (skipsLeft == 0) {
         self.skipButton.enabled = NO;
-        [[NSUserDefaults standardUserDefaults] setDouble:CACurrentMediaTime() forKey:@"hppySkipLocked"];
+        double skipLocked = [[NSUserDefaults standardUserDefaults] doubleForKey:@"hppySkipLocked"];
+        if (skipLocked == 0) {
+            [[NSUserDefaults standardUserDefaults] setDouble:CACurrentMediaTime() forKey:@"hppySkipLocked"];
+        }
     } else {
         [[NSUserDefaults standardUserDefaults] setDouble:0 forKey:@"hppySkipLocked"];
         self.skipButton.enabled = YES;
