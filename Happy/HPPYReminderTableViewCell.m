@@ -11,6 +11,7 @@
 @implementation HPPYReminderTableViewCell
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     // Initialization code
 }
 
