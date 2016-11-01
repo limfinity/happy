@@ -12,7 +12,6 @@
 		A01369341C1DD6EE00F69C31 /* HPPYSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A01369331C1DD6EE00F69C31 /* HPPYSettingsTableViewController.m */; };
 		A01430AF1C9B4C0B00A283B5 /* HPPYTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A01430AE1C9B4C0B00A283B5 /* HPPYTutorialViewController.m */; };
 		A021D9C71C6FDA7F00B63A8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A021D9C61C6FDA7F00B63A8D /* Assets.xcassets */; };
-		A03DDAF91C79026400B9B70D /* hppyCodes.plist in Resources */ = {isa = PBXBuildFile; fileRef = A03DDAF71C79026400B9B70D /* hppyCodes.plist */; };
 		A03DDAFA1C79026400B9B70D /* hppyTasks.plist in Resources */ = {isa = PBXBuildFile; fileRef = A03DDAF81C79026400B9B70D /* hppyTasks.plist */; };
 		A03DDAFD1C79E28300B9B70D /* HPPYCountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = A03DDAFC1C79E28300B9B70D /* HPPYCountDown.m */; };
 		A0438C3C1C9E295F00D5677C /* information.md in Resources */ = {isa = PBXBuildFile; fileRef = A0D2F74B1C9E24CE001F0898 /* information.md */; };
@@ -21,7 +20,6 @@
 		A04A094B1BFA0259005F385B /* contact.md in Sources */ = {isa = PBXBuildFile; fileRef = A04A094D1BFA0259005F385B /* contact.md */; };
 		A04A09501BFA14CB005F385B /* contact.md in Resources */ = {isa = PBXBuildFile; fileRef = A04A094D1BFA0259005F385B /* contact.md */; };
 		A04AA2F01C416AC100DB4A69 /* HPPY.m in Sources */ = {isa = PBXBuildFile; fileRef = A04AA2EF1C416AC100DB4A69 /* HPPY.m */; };
-		A04AA2F31C416ADE00DB4A69 /* HPPYCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04AA2F21C416ADE00DB4A69 /* HPPYCodeViewController.m */; };
 		A0554A021C78976F00817BCF /* HPPYMenuableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0554A011C78976F00817BCF /* HPPYMenuableViewController.m */; };
 		A0554A051C789A8C00817BCF /* HPPYMenuableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0554A041C789A8C00817BCF /* HPPYMenuableTableViewController.m */; };
 		A0554A081C789F2A00817BCF /* HPPYRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0554A071C789F2A00817BCF /* HPPYRevealViewController.m */; };
@@ -45,7 +43,6 @@
 		A076C0BE1CDB68EE008332DD /* HPPYStaticTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04A09461BF9F05C005F385B /* HPPYStaticTextViewController.m */; };
 		A076C0BF1CDB68EE008332DD /* HPPYSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A01369331C1DD6EE00F69C31 /* HPPYSettingsTableViewController.m */; };
 		A076C0C01CDB68EE008332DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D185001BF9CC0E0000B1F9 /* AppDelegate.m */; };
-		A076C0C11CDB68EE008332DD /* HPPYCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04AA2F21C416ADE00DB4A69 /* HPPYCodeViewController.m */; };
 		A076C0C21CDB68EE008332DD /* HPPYTaskSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00891681C77D91700C161F4 /* HPPYTaskSuccessViewController.m */; };
 		A076C0C31CDB68EE008332DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D184FD1BF9CC0E0000B1F9 /* main.m */; };
 		A076C0C41CDB68EE008332DD /* HPPY.m in Sources */ = {isa = PBXBuildFile; fileRef = A04AA2EF1C416AC100DB4A69 /* HPPY.m */; };
@@ -68,7 +65,6 @@
 		A076C0D71CDB68EE008332DD /* morgenuebung.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A0913D411CB1A3E400D6EE9F /* morgenuebung.mp3 */; };
 		A076C0D81CDB68EE008332DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A021D9C61C6FDA7F00B63A8D /* Assets.xcassets */; };
 		A076C0D91CDB68EE008332DD /* bodyScan.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A0913D3E1CB1A3E400D6EE9F /* bodyScan.mp3 */; };
-		A076C0DA1CDB68EE008332DD /* hppyCodes.plist in Resources */ = {isa = PBXBuildFile; fileRef = A03DDAF71C79026400B9B70D /* hppyCodes.plist */; };
 		A076C0DB1CDB68EE008332DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0D185051BF9CC0E0000B1F9 /* Main.storyboard */; };
 		A076C0DC1CDB68EE008332DD /* inneresLaecheln.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A0913D401CB1A3E400D6EE9F /* inneresLaecheln.mp3 */; };
 		A079FFFF1C13063700B387CC /* HPPYTaskController.m in Sources */ = {isa = PBXBuildFile; fileRef = A079FFFE1C13063700B387CC /* HPPYTaskController.m */; };
@@ -121,7 +117,6 @@
 		A01430AD1C9B4C0B00A283B5 /* HPPYTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYTutorialViewController.h; sourceTree = "<group>"; };
 		A01430AE1C9B4C0B00A283B5 /* HPPYTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYTutorialViewController.m; sourceTree = "<group>"; };
 		A021D9C61C6FDA7F00B63A8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A03DDAF71C79026400B9B70D /* hppyCodes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = hppyCodes.plist; path = private/hppyCodes.plist; sourceTree = "<group>"; };
 		A03DDAF81C79026400B9B70D /* hppyTasks.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = hppyTasks.plist; path = private/hppyTasks.plist; sourceTree = "<group>"; };
 		A03DDAFB1C79E28300B9B70D /* HPPYCountDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYCountDown.h; sourceTree = "<group>"; };
 		A03DDAFC1C79E28300B9B70D /* HPPYCountDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYCountDown.m; sourceTree = "<group>"; };
@@ -131,8 +126,6 @@
 		A04A094F1BFA0567005F385B /* de */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = de; path = de.lproj/contact.md; sourceTree = "<group>"; };
 		A04AA2EE1C416AC100DB4A69 /* HPPY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPY.h; sourceTree = "<group>"; };
 		A04AA2EF1C416AC100DB4A69 /* HPPY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPY.m; sourceTree = "<group>"; };
-		A04AA2F11C416ADE00DB4A69 /* HPPYCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYCodeViewController.h; sourceTree = "<group>"; };
-		A04AA2F21C416ADE00DB4A69 /* HPPYCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYCodeViewController.m; sourceTree = "<group>"; };
 		A0554A001C78976F00817BCF /* HPPYMenuableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYMenuableViewController.h; sourceTree = "<group>"; };
 		A0554A011C78976F00817BCF /* HPPYMenuableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYMenuableViewController.m; sourceTree = "<group>"; };
 		A0554A031C789A8C00817BCF /* HPPYMenuableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYMenuableTableViewController.h; sourceTree = "<group>"; };
@@ -349,8 +342,6 @@
 				A0A02C541CBADDF9000B0A1B /* Tasks */,
 				A0A02C551CBADE3D000B0A1B /* Menu */,
 				A0A02C561CBADE5A000B0A1B /* Settings */,
-				A04AA2F11C416ADE00DB4A69 /* HPPYCodeViewController.h */,
-				A04AA2F21C416ADE00DB4A69 /* HPPYCodeViewController.m */,
 				A01430AD1C9B4C0B00A283B5 /* HPPYTutorialViewController.h */,
 				A01430AE1C9B4C0B00A283B5 /* HPPYTutorialViewController.m */,
 				A04A09451BF9F05C005F385B /* HPPYStaticTextViewController.h */,
@@ -373,7 +364,6 @@
 				A0D1850D1BF9CC0E0000B1F9 /* Info.plist */,
 				A076C0E41CDB68EE008332DD /* Happy_Hockey_Info.plist */,
 				A0D184FD1BF9CC0E0000B1F9 /* main.m */,
-				A03DDAF71C79026400B9B70D /* hppyCodes.plist */,
 				A03DDAF81C79026400B9B70D /* hppyTasks.plist */,
 			);
 			name = "Supporting Files";
@@ -538,7 +528,6 @@
 				A076C0D71CDB68EE008332DD /* morgenuebung.mp3 in Resources */,
 				A076C0D81CDB68EE008332DD /* Assets.xcassets in Resources */,
 				A076C0D91CDB68EE008332DD /* bodyScan.mp3 in Resources */,
-				A076C0DA1CDB68EE008332DD /* hppyCodes.plist in Resources */,
 				A076C0DB1CDB68EE008332DD /* Main.storyboard in Resources */,
 				A076C0DC1CDB68EE008332DD /* inneresLaecheln.mp3 in Resources */,
 			);
@@ -559,7 +548,6 @@
 				A0913D461CB1A3E400D6EE9F /* morgenuebung.mp3 in Resources */,
 				A021D9C71C6FDA7F00B63A8D /* Assets.xcassets in Resources */,
 				A0913D431CB1A3E400D6EE9F /* bodyScan.mp3 in Resources */,
-				A03DDAF91C79026400B9B70D /* hppyCodes.plist in Resources */,
 				A0D185071BF9CC0E0000B1F9 /* Main.storyboard in Resources */,
 				A0913D451CB1A3E400D6EE9F /* inneresLaecheln.mp3 in Resources */,
 			);
@@ -720,7 +708,6 @@
 				A076C0BE1CDB68EE008332DD /* HPPYStaticTextViewController.m in Sources */,
 				A076C0BF1CDB68EE008332DD /* HPPYSettingsTableViewController.m in Sources */,
 				A076C0C01CDB68EE008332DD /* AppDelegate.m in Sources */,
-				A076C0C11CDB68EE008332DD /* HPPYCodeViewController.m in Sources */,
 				A076C0C21CDB68EE008332DD /* HPPYTaskSuccessViewController.m in Sources */,
 				A076C0C31CDB68EE008332DD /* main.m in Sources */,
 				A076C0C41CDB68EE008332DD /* HPPY.m in Sources */,
@@ -753,7 +740,6 @@
 				A04A09471BF9F05C005F385B /* HPPYStaticTextViewController.m in Sources */,
 				A01369341C1DD6EE00F69C31 /* HPPYSettingsTableViewController.m in Sources */,
 				A0D185011BF9CC0E0000B1F9 /* AppDelegate.m in Sources */,
-				A04AA2F31C416ADE00DB4A69 /* HPPYCodeViewController.m in Sources */,
 				A00891691C77D91700C161F4 /* HPPYTaskSuccessViewController.m in Sources */,
 				A0D184FE1BF9CC0E0000B1F9 /* main.m in Sources */,
 				A04AA2F01C416AC100DB4A69 /* HPPY.m in Sources */,

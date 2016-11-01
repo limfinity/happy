@@ -14,7 +14,6 @@
  * hppyReminders     NSArray
  * hppyAllowTracking BOOL
  * hppyVersion       NSString
- * hppyUnlocked      BOOL
  * hppySkipsLeft     NSInteger
  * hppySkipLocked    Double
  * hppyCurrentTask   NSData -> HPPYTask

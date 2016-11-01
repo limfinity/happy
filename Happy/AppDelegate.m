@@ -95,12 +95,11 @@
 }
 
 - (void)handleAppState {
-    BOOL unlocked = [[NSUserDefaults standardUserDefaults] boolForKey:@"hppyUnlocked"];
+    // TODO: Reuse for premium unlock
+    BOOL unlocked = YES;
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     if (unlocked) {
         self.window.rootViewController = [storyboard instantiateInitialViewController];
-    } else {
-        self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"CodeViewController"];
     }
 }
 
