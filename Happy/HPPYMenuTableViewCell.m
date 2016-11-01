@@ -11,6 +11,7 @@
 @implementation HPPYMenuTableViewCell
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     // Initialization code
 }
 

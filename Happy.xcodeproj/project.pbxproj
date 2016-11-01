@@ -477,6 +477,9 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Peter Pult";
 				TargetAttributes = {
+					A076C0AF1CDB68EE008332DD = {
+						DevelopmentTeam = 3AV6KY2PRJ;
+					};
 					A0D184F81BF9CC0E0000B1F9 = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = V47RS89Z27;
@@ -833,13 +836,14 @@
 			baseConfigurationReference = 867A161B6F9B16C9161B4089 /* Pods-Happy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Universität Bern";
+				DEVELOPMENT_TEAM = 3AV6KY2PRJ;
 				INFOPLIST_FILE = Happy_Hockey_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.hppy.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "01082e04-35fd-4985-b1f0-b79ade8a7d30";
+				PROVISIONING_PROFILE_SPECIFIER = "Happy In House";
 			};
 			name = Debug;
 		};
@@ -848,7 +852,8 @@
 			baseConfigurationReference = F21E2FE5279E430BE94BDD7C /* Pods-Happy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Universität Bern";
+				DEVELOPMENT_TEAM = 3AV6KY2PRJ;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"COCOAPODS=1",
@@ -859,7 +864,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.hppy.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "01082e04-35fd-4985-b1f0-b79ade8a7d30";
+				PROVISIONING_PROFILE_SPECIFIER = "Happy In House";
 			};
 			name = Release;
 		};

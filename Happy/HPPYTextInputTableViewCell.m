@@ -11,6 +11,7 @@
 @implementation HPPYTextInputTableViewCell
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     // Initialization code
 }
 
