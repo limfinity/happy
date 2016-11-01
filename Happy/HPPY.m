@@ -11,7 +11,6 @@
  * 
  * hppyStartedBefore BOOL
  * hppyName          NSString
- * hppyReminders     NSArray
  * hppyAllowTracking BOOL
  * hppyVersion       NSString
  * hppySkipsLeft     NSInteger

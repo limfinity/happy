@@ -11,9 +11,7 @@
 #import "HPPYReminderTableViewController.h"
 #import "ARAnalytics/ARAnalytics.h"
 
-@interface HPPYReminderTableViewController () {
-    NSMutableSet *_reminders;
-}
+@interface HPPYReminderTableViewController ()
 
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 
@@ -23,8 +21,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    _reminders = [self getReminders];
     
     NSString *title;
     if (self.reminder) {
@@ -43,17 +39,6 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 // MARK: Reminder
-- (NSMutableSet *)getReminders {
-    NSArray *reminders = [[NSUserDefaults standardUserDefaults] arrayForKey:@"hppyReminders"];
-    return reminders ? [NSMutableSet setWithArray:reminders] : [NSMutableSet new];
-}
-
-- (void)saveReminders {
-    NSArray *reminderArray = [_reminders allObjects];
-    [[NSUserDefaults standardUserDefaults] setObject:reminderArray forKey:@"hppyReminders"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
-
 - (IBAction)updateReminder:(id)sender {
     NSDate *reminder = self.datePicker.date;
     NSDateComponents *time = [[NSCalendar currentCalendar]
@@ -66,17 +51,14 @@
     [time setSecond:0];
     reminder = [[NSCalendar currentCalendar] dateFromComponents:time];
     [self removeReminder];
-    [_reminders addObject:reminder];
     [HPPYReminderTableViewController addLocalNotification:reminder];
-    [self saveReminders];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)removeReminder {
-    if (self.reminder) {
-        [ARAnalytics event:@"Reminder Removed" withProperties:@{@"Date": self.reminder}];
-        [_reminders removeObject:self.reminder];
-        [self removeLocalNotification:self.reminder];
+    NSDate *reminder = self.reminder;
+    if (reminder) {
+        [self removeLocalNotification:reminder];
     }
 }
 
@@ -106,7 +88,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self removeReminder];
-    [self saveReminders];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -117,9 +98,6 @@
     [time setMinute:0];
     NSDate *reminder = [[NSCalendar currentCalendar] dateFromComponents:time];
     [HPPYReminderTableViewController addLocalNotification:reminder];
-    NSArray *reminderArray = @[reminder];
-    [[NSUserDefaults standardUserDefaults] setObject:reminderArray forKey:@"hppyReminders"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 + (void)addLocalNotification:(NSDate *)reminder {
@@ -153,9 +131,12 @@
     NSArray *notifications = [app scheduledLocalNotifications];
     for (UILocalNotification *notification in notifications) {
         if ([notification.fireDate isEqualToDate:reminder]) {
+            [ARAnalytics event:@"Reminder Removed" withProperties:@{@"Date": reminder}];
             [app cancelLocalNotification:notification];
+            return;
         }
     }
+    [ARAnalytics event:@"Failed Reminder Removed" withProperties:@{@"Date": reminder}];
 }
 
 // MARK: App lifecycle

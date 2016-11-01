@@ -42,8 +42,12 @@
 }
 
 - (void)updateReminders {
-    NSMutableArray *reminders = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] arrayForKey:@"hppyReminders"]];
-    _reminders = reminders ? reminders : [NSMutableArray new];
+    NSArray *notifications = [[UIApplication sharedApplication] scheduledLocalNotifications];
+    NSMutableArray *reminders = [NSMutableArray new];
+    for (UILocalNotification *notification in notifications) {
+        [reminders addObject:notification.fireDate];
+    }
+    _reminders = reminders;
     
     // Sort reminders only using the time
     if (_reminders.count > 1) {
