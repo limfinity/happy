@@ -26,4 +26,7 @@
 /// Returns the last date a given task was completed, `nil` when task hsa never been completed before
 + (NSDate *)getLastCompletionDateFromTask:(HPPYTask *)task;
 
+/// Returns an array with all tasks
++ (NSArray *)getTasks;
+
 @end

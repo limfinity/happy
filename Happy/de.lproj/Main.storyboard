@@ -21,59 +21,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7U3-1Z-0h2">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="RB6-rB-vpW"/>
-                                    <constraint firstAttribute="width" constant="130" id="XB9-lg-dr9"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
-                                <state key="normal" title="Überspringen (3)">
-                                    <color key="titleColor" red="0.68235294117647061" green="0.68235294117647061" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <state key="disabled">
-                                    <color key="titleColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="skipTask:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FQa-gM-2wg"/>
-                                </connections>
-                            </button>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v2e-du-UeI">
-                                <connections>
-                                    <segue destination="3qh-nW-kg5" kind="embed" identifier="ShowTaskCard" id="ODU-HG-KrP"/>
-                                </connections>
-                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v2e-du-UeI"/>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7U3-1Z-0h2" secondAttribute="bottom" constant="15" id="4F9-6g-Mgu"/>
-                            <constraint firstItem="v2e-du-UeI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="EAR-w6-HLg"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="v2e-du-UeI" secondAttribute="bottom" constant="60" id="KaN-hJ-9Ih"/>
+                            <constraint firstItem="v2e-du-UeI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="EAR-w6-HLg"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="v2e-du-UeI" secondAttribute="bottom" id="KaN-hJ-9Ih"/>
                             <constraint firstAttribute="trailingMargin" secondItem="v2e-du-UeI" secondAttribute="trailing" constant="15" id="Mhj-ww-xqq"/>
-                            <constraint firstItem="7U3-1Z-0h2" firstAttribute="top" secondItem="v2e-du-UeI" secondAttribute="bottom" constant="20" id="QLT-mk-1qv"/>
                             <constraint firstItem="v2e-du-UeI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="SGB-09-gok"/>
-                            <constraint firstItem="7U3-1Z-0h2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ce1-Ad-5VO"/>
-                            <constraint firstAttribute="trailing" secondItem="v2e-du-UeI" secondAttribute="trailing" constant="15" id="h3h-kt-9Kk"/>
-                            <constraint firstItem="v2e-du-UeI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="v8S-Bd-bpo"/>
+                            <constraint firstAttribute="trailing" secondItem="v2e-du-UeI" secondAttribute="trailing" id="h3h-kt-9Kk"/>
+                            <constraint firstItem="v2e-du-UeI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="v8S-Bd-bpo"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="Mhj-ww-xqq"/>
                                 <exclude reference="SGB-09-gok"/>
-                                <exclude reference="QLT-mk-1qv"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="♡" id="UsI-4l-0DV">
                         <barButtonItem key="leftBarButtonItem" image="burgerButtonLeft" id="dSL-hG-8Un"/>
+                        <barButtonItem key="rightBarButtonItem" title="List" id="vnO-4P-3IB">
+                            <connections>
+                                <action selector="switchMode:" destination="BYZ-38-t0r" id="U1t-TR-cVN"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="containerView" destination="v2e-du-UeI" id="U0a-vZ-yMg"/>
                         <outlet property="menuButton" destination="dSL-hG-8Un" id="fvF-yA-0IP"/>
-                        <outlet property="skipButton" destination="7U3-1Z-0h2" id="1Ex-VH-HDC"/>
-                        <outlet property="taskCardView" destination="v2e-du-UeI" id="a8S-h6-UDm"/>
+                        <outlet property="switchModeBarButton" destination="vnO-4P-3IB" id="5YP-vA-Ktn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <exit id="led-hG-lF4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-143" y="279"/>
         </scene>
@@ -86,7 +66,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2d0-Jz-yld"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="daO-Gq-EK9">
-                        <rect key="frame" x="0.0" y="0.0" width="290" height="429"/>
+                        <rect key="frame" x="0.0" y="0.0" width="290" height="458"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YzF-o9-SCl">
@@ -198,7 +178,102 @@ machen</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oju-bk-Jkw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-144" y="958"/>
+            <point key="canvasLocation" x="692" y="981"/>
+        </scene>
+        <!--Task Card Container View Controller-->
+        <scene sceneID="82d-3B-NAq">
+            <objects>
+                <viewController storyboardIdentifier="TaskCardContainer" id="pHk-00-qQJ" customClass="HPPYTaskCardContainerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DkL-Mz-ejL"/>
+                        <viewControllerLayoutGuide type="bottom" id="o9l-4a-V7O"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yBb-YC-b51">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9N-x2-SFQ">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="ITM-nR-78l"/>
+                                    <constraint firstAttribute="height" constant="20" id="Iwr-Ip-upG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                <state key="normal" title="Überspringen (3)">
+                                    <color key="titleColor" red="0.68235294120000001" green="0.68235294120000001" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="skipTask:" destination="pHk-00-qQJ" eventType="touchUpInside" id="F5H-mK-Kme"/>
+                                </connections>
+                            </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l8R-y7-6k0">
+                                <connections>
+                                    <segue destination="3qh-nW-kg5" kind="embed" identifier="ShowTaskCard" id="kqG-q6-8yj"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="C9N-x2-SFQ" firstAttribute="top" secondItem="l8R-y7-6k0" secondAttribute="bottom" constant="60" id="B05-dO-3ds"/>
+                            <constraint firstItem="C9N-x2-SFQ" firstAttribute="centerX" secondItem="yBb-YC-b51" secondAttribute="centerX" id="BDe-q4-VDZ"/>
+                            <constraint firstItem="l8R-y7-6k0" firstAttribute="leading" secondItem="yBb-YC-b51" secondAttribute="leading" constant="15" id="FDB-oA-YjY"/>
+                            <constraint firstItem="l8R-y7-6k0" firstAttribute="top" secondItem="yBb-YC-b51" secondAttribute="top" constant="15" id="PtA-bf-MGa"/>
+                            <constraint firstItem="o9l-4a-V7O" firstAttribute="top" secondItem="C9N-x2-SFQ" secondAttribute="bottom" constant="15" id="eGj-Hb-eKc"/>
+                            <constraint firstAttribute="trailing" secondItem="l8R-y7-6k0" secondAttribute="trailing" constant="15" id="eMl-a7-sAu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="skipButton" destination="C9N-x2-SFQ" id="gVh-62-lGZ"/>
+                        <outlet property="taskCardView" destination="l8R-y7-6k0" id="2l7-Kd-tUu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xWY-OJ-lV8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-144" y="981"/>
+        </scene>
+        <!--Task List View Controller-->
+        <scene sceneID="7PD-4P-zQg">
+            <objects>
+                <viewController storyboardIdentifier="TaskList" id="J3y-m0-8FE" customClass="HPPYTaskListViewController" customModule="Happy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7Jc-k6-JPp"/>
+                        <viewControllerLayoutGuide type="bottom" id="UAu-D4-fgy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zrW-dD-bKL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="39u-qo-ZQ9">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TaskCell" id="Saa-MH-tpF">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Saa-MH-tpF" id="krf-hj-1TP">
+                                            <frame key="frameInset" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="39u-qo-ZQ9" secondAttribute="trailing" id="CMO-hz-tdg"/>
+                            <constraint firstItem="UAu-D4-fgy" firstAttribute="top" secondItem="39u-qo-ZQ9" secondAttribute="bottom" id="VSa-J3-6LW"/>
+                            <constraint firstItem="39u-qo-ZQ9" firstAttribute="leading" secondItem="zrW-dD-bKL" secondAttribute="leading" id="nBR-rB-RCS"/>
+                            <constraint firstItem="39u-qo-ZQ9" firstAttribute="top" secondItem="zrW-dD-bKL" secondAttribute="top" id="xui-7c-r58"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="39u-qo-ZQ9" id="3Tf-nx-hCW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pKu-w7-NI7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-144.375" y="1685.9154929577464"/>
         </scene>
         <!--Task Detail View Controller-->
         <scene sceneID="d2v-JG-yIq">
@@ -221,9 +296,6 @@ machen</string>
                                 <state key="normal" image="closeButton">
                                     <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="led-hG-lF4" kind="unwind" unwindAction="canceledTask:" id="U4o-LO-U1u"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="none" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yM9-H5-idP">
                                 <constraints>
@@ -337,9 +409,6 @@ machen</string>
                                 <state key="normal" image="closeButton">
                                     <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="led-hG-lF4" kind="unwind" unwindAction="finishedTask:" id="A9d-kT-VX8"/>
-                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Super!" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="none" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BAI-ud-G9r">
                                 <constraints>
@@ -431,13 +500,13 @@ Weiter so.</string>
                             <mask key="constraints">
                                 <exclude reference="hLu-IV-PzX"/>
                                 <exclude reference="jvj-0M-RbD"/>
-                                <exclude reference="hli-G2-Ikl"/>
-                                <exclude reference="5m8-wO-xcr"/>
-                                <exclude reference="mVM-R2-8yl"/>
                                 <exclude reference="7Nz-Y5-oVI"/>
                                 <exclude reference="cco-zJ-vjS"/>
                                 <exclude reference="JLN-N4-NaM"/>
                                 <exclude reference="jAY-ua-6Yz"/>
+                                <exclude reference="5m8-wO-xcr"/>
+                                <exclude reference="mVM-R2-8yl"/>
+                                <exclude reference="hli-G2-Ikl"/>
                             </mask>
                         </variation>
                     </view>
@@ -456,7 +525,7 @@ Weiter so.</string>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="textInput" id="0dd-1Y-gxI" customClass="HPPYTextInputTableViewCell">
-                                <rect key="frame" x="0.0" y="119.5" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="120" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0dd-1Y-gxI" id="gpB-Co-cxv">
                                     <frame key="frameInset" width="320" height="44"/>
@@ -488,7 +557,7 @@ Weiter so.</string>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="addReminder" id="PdP-Zx-wFO" customClass="HPPYReminderTableViewCell">
-                                <rect key="frame" x="0.0" y="163.5" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="164" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PdP-Zx-wFO" id="paY-cD-kQk">
                                     <frame key="frameInset" width="287" height="44"/>
@@ -519,7 +588,7 @@ Weiter so.</string>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="headerNameSection" rowHeight="104" id="gn4-Ai-zLA" customClass="HPPYHeaderTableViewCell">
-                                <rect key="frame" x="0.0" y="207.5" width="320" height="104"/>
+                                <rect key="frame" x="0.0" y="208" width="320" height="104"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gn4-Ai-zLA" id="ShP-Fh-uvM">
                                     <frame key="frameInset" width="320" height="104"/>
@@ -564,7 +633,7 @@ Spitznamen ist auch möglich.</string>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="headerReminderSection" rowHeight="150" id="XU2-RQ-Xhy" customClass="HPPYHeaderTableViewCell">
-                                <rect key="frame" x="0.0" y="311.5" width="320" height="150"/>
+                                <rect key="frame" x="0.0" y="312" width="320" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XU2-RQ-Xhy" id="jwh-iz-Moy">
                                     <frame key="frameInset" width="320" height="150"/>
@@ -638,9 +707,9 @@ damit es Dir leichter fällt. </string>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
+                                            <exclude reference="QEf-4s-AtY"/>
                                             <exclude reference="O0Y-mK-6Lc"/>
                                             <exclude reference="tFx-bu-33c"/>
-                                            <exclude reference="QEf-4s-AtY"/>
                                             <exclude reference="6oO-lc-rfn"/>
                                             <exclude reference="CuE-uY-2gA"/>
                                             <exclude reference="fpr-bx-rll"/>
@@ -715,7 +784,7 @@ damit es Dir leichter fällt. </string>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="deleteReminder" textLabel="NLt-di-bkJ" style="IBUITableViewCellStyleDefault" id="UHw-E1-haW">
-                                <rect key="frame" x="0.0" y="333.5" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="334" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UHw-E1-haW" id="CLB-up-MwO">
                                     <frame key="frameInset" width="320" height="44"/>
@@ -805,10 +874,10 @@ damit es Dir leichter fällt. </string>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
-                                            <exclude reference="YHf-V0-Qru"/>
-                                            <exclude reference="apQ-vJ-K7X"/>
                                             <exclude reference="6r5-H1-kmy"/>
                                             <exclude reference="VS5-8f-Kc6"/>
+                                            <exclude reference="YHf-V0-Qru"/>
+                                            <exclude reference="apQ-vJ-K7X"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -1046,10 +1115,10 @@ damit es Dir leichter fällt. </string>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="Xik-ii-p4Y"/>
-                                        <exclude reference="zZK-t7-AGz"/>
                                         <exclude reference="J3x-fD-e9o"/>
                                         <exclude reference="pTP-Tr-6gj"/>
+                                        <exclude reference="Xik-ii-p4Y"/>
+                                        <exclude reference="zZK-t7-AGz"/>
                                     </mask>
                                 </variation>
                             </view>
