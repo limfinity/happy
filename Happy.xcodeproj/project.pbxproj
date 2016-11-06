@@ -72,6 +72,8 @@
 		A076C0DB1CDB68EE008332DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0D185051BF9CC0E0000B1F9 /* Main.storyboard */; };
 		A076C0DC1CDB68EE008332DD /* inneresLaecheln.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A0913D401CB1A3E400D6EE9F /* inneresLaecheln.mp3 */; };
 		A079FFFF1C13063700B387CC /* HPPYTaskController.m in Sources */ = {isa = PBXBuildFile; fileRef = A079FFFE1C13063700B387CC /* HPPYTaskController.m */; };
+		A084B2E11DCF43D900EC6011 /* HPPYTaskListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A084B2E01DCF43D900EC6011 /* HPPYTaskListCollectionViewCell.swift */; };
+		A084B2E21DCF43D900EC6011 /* HPPYTaskListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A084B2E01DCF43D900EC6011 /* HPPYTaskListCollectionViewCell.swift */; };
 		A0913D3B1CB192AB00D6EE9F /* HPPYAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A0913D3A1CB192AB00D6EE9F /* HPPYAudioPlayer.m */; };
 		A0913D421CB1A3E400D6EE9F /* atemuebung.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A0913D3D1CB1A3E400D6EE9F /* atemuebung.mp3 */; };
 		A0913D431CB1A3E400D6EE9F /* bodyScan.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A0913D3E1CB1A3E400D6EE9F /* bodyScan.mp3 */; };
@@ -154,6 +156,7 @@
 		A076C0E41CDB68EE008332DD /* Happy_Hockey_Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Happy_Hockey_Info.plist; path = /Users/limfinity/Developer/ios/Happy/repo/Happy_Hockey_Info.plist; sourceTree = "<absolute>"; };
 		A079FFFD1C13063700B387CC /* HPPYTaskController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYTaskController.h; sourceTree = "<group>"; };
 		A079FFFE1C13063700B387CC /* HPPYTaskController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYTaskController.m; sourceTree = "<group>"; };
+		A084B2E01DCF43D900EC6011 /* HPPYTaskListCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPPYTaskListCollectionViewCell.swift; sourceTree = "<group>"; };
 		A0913D391CB192AB00D6EE9F /* HPPYAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYAudioPlayer.h; sourceTree = "<group>"; };
 		A0913D3A1CB192AB00D6EE9F /* HPPYAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYAudioPlayer.m; sourceTree = "<group>"; };
 		A0913D3D1CB1A3E400D6EE9F /* atemuebung.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = atemuebung.mp3; path = private/atemuebung.mp3; sourceTree = "<group>"; };
@@ -269,6 +272,7 @@
 				A079FFFD1C13063700B387CC /* HPPYTaskController.h */,
 				A079FFFE1C13063700B387CC /* HPPYTaskController.m */,
 				A04009311DCBD47F00A6EAF4 /* HPPYTaskListViewController.swift */,
+				A084B2E01DCF43D900EC6011 /* HPPYTaskListCollectionViewCell.swift */,
 				A0D185021BF9CC0E0000B1F9 /* HPPYTaskContainerViewController.h */,
 				A0D185031BF9CC0E0000B1F9 /* HPPYTaskContainerViewController.m */,
 				A04009371DCBD7B700A6EAF4 /* HPPYTaskCardContainerViewController.h */,
@@ -722,6 +726,7 @@
 				A040093A1DCBD7B700A6EAF4 /* HPPYTaskCardContainerViewController.m in Sources */,
 				A076C0B91CDB68EE008332DD /* contact.md in Sources */,
 				A076C0BA1CDB68EE008332DD /* HPPYTextInputTableViewCell.m in Sources */,
+				A084B2E21DCF43D900EC6011 /* HPPYTaskListCollectionViewCell.swift in Sources */,
 				A076C0BB1CDB68EE008332DD /* HPPYTaskDetailViewController.m in Sources */,
 				A04009331DCBD47F00A6EAF4 /* HPPYTaskListViewController.swift in Sources */,
 				A076C0BC1CDB68EE008332DD /* HPPYCountDown.m in Sources */,
@@ -756,6 +761,7 @@
 				A04009391DCBD7B700A6EAF4 /* HPPYTaskCardContainerViewController.m in Sources */,
 				A04A094B1BFA0259005F385B /* contact.md in Sources */,
 				A058D40B1C24236A00361186 /* HPPYTextInputTableViewCell.m in Sources */,
+				A084B2E11DCF43D900EC6011 /* HPPYTaskListCollectionViewCell.swift in Sources */,
 				A0A0FE1F1C1AF1890008225E /* HPPYTaskDetailViewController.m in Sources */,
 				A04009321DCBD47F00A6EAF4 /* HPPYTaskListViewController.swift in Sources */,
 				A03DDAFD1C79E28300B9B70D /* HPPYCountDown.m in Sources */,

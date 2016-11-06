@@ -245,30 +245,58 @@ machen</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="39u-qo-ZQ9">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="msp-0E-G1S">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TaskCell" id="Saa-MH-tpF">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Saa-MH-tpF" id="krf-hj-1TP">
-                                            <frame key="frameInset" width="320" height="43"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="MQh-nT-cIC">
+                                    <size key="itemSize" width="96" height="59"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TaskListCell" id="qTC-dD-qpf" customClass="HPPYTaskListCollectionViewCell" customModule="Happy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="96" height="59"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="96" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIS-Nj-LbG">
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="12"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="IIS-Nj-LbG" firstAttribute="leading" secondItem="qTC-dD-qpf" secondAttribute="leadingMargin" id="2YS-ij-1kR"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="IIS-Nj-LbG" secondAttribute="trailing" id="5xR-7x-ROW"/>
+                                            <constraint firstItem="IIS-Nj-LbG" firstAttribute="top" secondItem="qTC-dD-qpf" secondAttribute="topMargin" id="CVP-iu-bPQ"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="IIS-Nj-LbG" secondAttribute="bottom" id="Fef-lG-3fB"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="title" destination="IIS-Nj-LbG" id="2KU-cy-rkg"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="39u-qo-ZQ9" secondAttribute="trailing" id="CMO-hz-tdg"/>
-                            <constraint firstItem="UAu-D4-fgy" firstAttribute="top" secondItem="39u-qo-ZQ9" secondAttribute="bottom" id="VSa-J3-6LW"/>
-                            <constraint firstItem="39u-qo-ZQ9" firstAttribute="leading" secondItem="zrW-dD-bKL" secondAttribute="leading" id="nBR-rB-RCS"/>
-                            <constraint firstItem="39u-qo-ZQ9" firstAttribute="top" secondItem="zrW-dD-bKL" secondAttribute="top" id="xui-7c-r58"/>
+                            <constraint firstItem="UAu-D4-fgy" firstAttribute="top" secondItem="msp-0E-G1S" secondAttribute="bottom" id="IPc-GF-soX"/>
+                            <constraint firstItem="msp-0E-G1S" firstAttribute="leading" secondItem="zrW-dD-bKL" secondAttribute="leading" id="NYC-9g-mkf"/>
+                            <constraint firstAttribute="trailing" secondItem="msp-0E-G1S" secondAttribute="trailing" id="Uih-hT-cgg"/>
+                            <constraint firstItem="msp-0E-G1S" firstAttribute="top" secondItem="zrW-dD-bKL" secondAttribute="top" id="pZN-ZG-KcR"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
-                        <outlet property="tableView" destination="39u-qo-ZQ9" id="3Tf-nx-hCW"/>
+                        <outlet property="collectionView" destination="msp-0E-G1S" id="jxK-4c-0AG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pKu-w7-NI7" userLabel="First Responder" sceneMemberID="firstResponder"/>
