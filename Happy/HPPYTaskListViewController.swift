@@ -36,10 +36,20 @@ class HPPYTaskListViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
+                
         if collectionViewSizeChanged {
             collectionViewSizeChanged = false
             collectionView.performBatchUpdates({}, completion: nil)
+        }
+    }
+    
+    // MARK: Storyboard
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowTaskDetailDirect" {
+            if let cell = sender as? HPPYTaskListCollectionViewCell {
+                let vc = segue.destination as? HPPYTaskDetailViewController
+                vc?.setTask(cell.task!)
+            }
         }
     }
     
@@ -69,6 +79,11 @@ extension HPPYTaskListViewController: UICollectionViewDelegate, UICollectionView
         let height: CGFloat = 100.0
         let width = floor((collectionView.frame.size.width) / 2.0)
         return CGSize(width: width, height: height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = self.collectionView(collectionView, cellForItemAt: indexPath) as! HPPYTaskListCollectionViewCell
+        performSegue(withIdentifier: "ShowTaskDetailDirect", sender: cell)
     }
     
 }

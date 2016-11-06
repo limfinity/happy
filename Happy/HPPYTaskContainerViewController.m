@@ -9,6 +9,8 @@
 #import "HPPYTaskContainerViewController.h"
 #import "SWRevealViewController.h"
 #import "HPPYTutorialViewController.h"
+#import "HPPYTaskController.h"
+#import "HPPYTaskCardContainerViewController.h"
 #import "ARAnalytics/ARAnalytics.h"
 
 typedef NS_ENUM(NSInteger, HPPYTaskContainerViewState) {
@@ -83,10 +85,10 @@ typedef NS_ENUM(NSInteger, HPPYTaskContainerViewState) {
 - (void)updateBarButtonTitleDependingOnState:(HPPYTaskContainerViewState)state {
     switch (state) {
         case HPPYTaskContainerViewStateCard:
-            [_switchModeBarButton setTitle:@"List"]; // TODO: Make localizable or/and replace with icons
+            [_switchModeBarButton setImage:[UIImage imageNamed:@"navigationListIcon"]];
             break;
         case HPPYTaskContainerViewStateList:
-            [_switchModeBarButton setTitle:@"Card"]; // TODO: Make localizable or/and replace with icons
+            [_switchModeBarButton setImage:[UIImage imageNamed:@"navigationSingleIcon"]];
             break;
     }
 }
@@ -115,6 +117,19 @@ typedef NS_ENUM(NSInteger, HPPYTaskContainerViewState) {
     
     // Notify Child View Controller
     [viewController removeFromParentViewController];
+}
+
+// MARK: Navigation
+- (IBAction)canceledTask:(UIStoryboardSegue *)segue {
+    [ARAnalytics event:@"Task Canceled" withProperties:[HPPYTaskController currentTask].trackingData];
+}
+
+- (IBAction)finishedTask:(UIStoryboardSegue *)segue {
+    // TODO: skip task, when taskcardviewcontroller is active
+    if ([_currentViewController isKindOfClass:[HPPYTaskCardContainerViewController class]]) {
+        HPPYTaskCardContainerViewController *taskViewController = (HPPYTaskCardContainerViewController *)_currentViewController;
+        [[taskViewController taskCardViewController] setTask:[HPPYTaskController currentTask]];
+    }
 }
 
 @end

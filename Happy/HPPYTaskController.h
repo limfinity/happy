@@ -15,7 +15,7 @@
 + (HPPYTask *)currentTask;
 
 /// Starts the given task
-+ (void)startTask:(HPPYTask *)task;
++ (HPPYTask *)startTask:(HPPYTask *)task;
 
 /// Skips the given task and returns the next task
 - (HPPYTask *)skipTask:(HPPYTask *)task;

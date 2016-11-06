@@ -32,7 +32,7 @@
 
 /* TASK OVERVIEW */
 "Last Completion Date" = "Zuletzt erledigt am %@";
-"Skip (x)" = "Überspringen (%d)";
+"Skip" = "Überspringen";
 
 /* TASK DETAILS */
 "Start" = "Starten";

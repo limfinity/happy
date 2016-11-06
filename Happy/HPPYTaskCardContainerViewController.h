@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HPPYTaskCardViewController.h"
 
 @interface HPPYTaskCardContainerViewController : UIViewController
+
+@property (weak, nonatomic) HPPYTaskCardViewController *taskCardViewController;
 
 @end

@@ -13,8 +13,6 @@
  * hppyName          NSString
  * hppyAllowTracking BOOL
  * hppyVersion       NSString
- * hppySkipsLeft     NSInteger
- * hppySkipLocked    Double
  * hppyCurrentTask   NSData -> HPPYTask
  * AppleLanguages    NSArray
  ******************************************* */

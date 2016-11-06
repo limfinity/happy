@@ -13,7 +13,6 @@
 @property (strong, nonatomic) UIWindow *window;
 
 - (void)handleAppState;
-- (void)resetSkips;
 
 @end
 

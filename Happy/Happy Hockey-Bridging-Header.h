@@ -3,3 +3,5 @@
 //
 
 #import "HPPYTaskController.h"
+#import "HPPYTask.h"
+#import "HPPYTaskDetailViewController.h"

@@ -11,12 +11,14 @@ import UIKit
 class HPPYTaskListCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var speakerIcon: UIImageView!
     
     // Never set before UI was initialized
     var task: HPPYTask? {
         didSet {
             title.text = task?.title
             title.backgroundColor = task?.categoryColor().withAlphaComponent(0.3)
+            speakerIcon.isHidden = task?.type != HPPYTaskTypeAudio
         }
     }
     

@@ -44,8 +44,11 @@
         if (!disallowed) {
             // Set up tracking
             [ARAnalytics setupWithAnalytics:@{
-              ARGoogleAnalyticsID : @"UA-76220642-1",
-              ARMixpanelToken : @"a93872e0566a689e37e755be7102f41d"
+#ifdef DEBUG
+                ARMixpanelToken : @"c64faf7c9dcaee95dfeee2443d4ae450"
+#else
+                ARMixpanelToken : @"a93872e0566a689e37e755be7102f41d"
+#endif
             }];
             [ARAnalytics event:@"Tracking Disallowed"];
             for (ARAnalyticalProvider *provider in [ARAnalytics currentProviders]) {
@@ -56,8 +59,11 @@
     } else {
         // Set up tracking
         [ARAnalytics setupWithAnalytics:@{
-          ARGoogleAnalyticsID : @"UA-76220642-1",
-          ARMixpanelToken : @"a93872e0566a689e37e755be7102f41d"
+#ifdef DEBUG
+            ARMixpanelToken : @"c64faf7c9dcaee95dfeee2443d4ae450"
+#else
+            ARMixpanelToken : @"a93872e0566a689e37e755be7102f41d"
+#endif
         }];
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"hppyTrackingDisallowed"];
     }
@@ -73,7 +79,6 @@
     if (locationNotification) {
         // Reset badge count
         application.applicationIconBadgeNumber = 0;
-        [self resetSkips];
     }
     
     // Handle root view manually to avoid problems with slide navigation
@@ -130,11 +135,7 @@
 - (void)customizeNavigationBarAppearance {
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigationBg"] forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setShadowImage:[UIImage imageNamed:@"navigationShadow"]];
-}
-
-- (void)resetSkips {
-    [[NSUserDefaults standardUserDefaults] setInteger:4 forKey:@"hppySkipsLeft"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    [[UIBarButtonItem appearance] setTitlePositionAdjustment:UIOffsetMake(5, 0) forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -156,14 +157,6 @@
     
     // For now always reset badge count
     application.applicationIconBadgeNumber = 0;
-    
-    double skipLocked = [[NSUserDefaults standardUserDefaults] doubleForKey:@"hppySkipLocked"];
-    if (skipLocked != 0) {
-        double difference = CACurrentMediaTime() - skipLocked;
-        if (difference > 60 * 60 * 12) {
-            [self resetSkips];
-        }
-    }
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
@@ -182,8 +175,6 @@
     
     // Reset badge count
     application.applicationIconBadgeNumber = 0;
-    
-    [self resetSkips];
 }
 
 @end
