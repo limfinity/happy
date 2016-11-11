@@ -69,6 +69,17 @@ extension HPPYTaskListViewController: UICollectionViewDelegate, UICollectionView
         return tasks.filter { $0.category.rawValue == section + 1 }.count
     }
     
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionElementKindSectionHeader:
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "TaskListHeader", for: indexPath) as! HPPYTaskListHeaderView
+            headerView.categoryImageView.image = tasks.filter { $0.category.rawValue == indexPath.section + 1 }.first?.categoryImage()
+            return headerView
+        default:
+            assert(false, "Error unexpected collection view for kind \(kind)")
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let task = tasks
             .filter { $0.category.rawValue == indexPath.section + 1 }
@@ -78,16 +89,21 @@ extension HPPYTaskListViewController: UICollectionViewDelegate, UICollectionView
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        let size = CGSize(width: collectionView.frame.size.width, height: 146)
+        return size
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return CGSize.zero
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: SECTION_SPACING, left: SECTION_SPACING, bottom: SECTION_SPACING, right: SECTION_SPACING)
+        return UIEdgeInsets(top: 0, left: SECTION_SPACING, bottom: SECTION_SPACING, right: SECTION_SPACING)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return HORIZONTAL_CELL_SPACING
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize.zero // TODO: Add header
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

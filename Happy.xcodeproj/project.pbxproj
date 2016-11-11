@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A00891691C77D91700C161F4 /* HPPYTaskSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00891681C77D91700C161F4 /* HPPYTaskSuccessViewController.m */; };
+		A00DE73A1DD60F64004B05A1 /* HPPYTaskListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00DE7391DD60F64004B05A1 /* HPPYTaskListHeaderView.swift */; };
+		A00DE73B1DD60F67004B05A1 /* HPPYTaskListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00DE7391DD60F64004B05A1 /* HPPYTaskListHeaderView.swift */; };
 		A00E9ADB1BFDF45C00C94ABA /* HPPYTask.m in Sources */ = {isa = PBXBuildFile; fileRef = A00E9ADA1BFDF45C00C94ABA /* HPPYTask.m */; };
 		A01369341C1DD6EE00F69C31 /* HPPYSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A01369331C1DD6EE00F69C31 /* HPPYSettingsTableViewController.m */; };
 		A01430AF1C9B4C0B00A283B5 /* HPPYTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A01430AE1C9B4C0B00A283B5 /* HPPYTutorialViewController.m */; };
@@ -116,6 +118,7 @@
 		867A161B6F9B16C9161B4089 /* Pods-Happy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Happy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Happy/Pods-Happy.debug.xcconfig"; sourceTree = "<group>"; };
 		A00891671C77D91700C161F4 /* HPPYTaskSuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYTaskSuccessViewController.h; sourceTree = "<group>"; };
 		A00891681C77D91700C161F4 /* HPPYTaskSuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYTaskSuccessViewController.m; sourceTree = "<group>"; };
+		A00DE7391DD60F64004B05A1 /* HPPYTaskListHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPPYTaskListHeaderView.swift; sourceTree = "<group>"; };
 		A00E9AD91BFDF45C00C94ABA /* HPPYTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYTask.h; sourceTree = "<group>"; };
 		A00E9ADA1BFDF45C00C94ABA /* HPPYTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYTask.m; sourceTree = "<group>"; };
 		A01369321C1DD6EE00F69C31 /* HPPYSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYSettingsTableViewController.h; sourceTree = "<group>"; };
@@ -272,6 +275,7 @@
 				A079FFFD1C13063700B387CC /* HPPYTaskController.h */,
 				A079FFFE1C13063700B387CC /* HPPYTaskController.m */,
 				A04009311DCBD47F00A6EAF4 /* HPPYTaskListViewController.swift */,
+				A00DE7391DD60F64004B05A1 /* HPPYTaskListHeaderView.swift */,
 				A084B2E01DCF43D900EC6011 /* HPPYTaskListCollectionViewCell.swift */,
 				A0D185021BF9CC0E0000B1F9 /* HPPYTaskContainerViewController.h */,
 				A0D185031BF9CC0E0000B1F9 /* HPPYTaskContainerViewController.m */,
@@ -739,6 +743,7 @@
 				A076C0C41CDB68EE008332DD /* HPPY.m in Sources */,
 				A076C0C51CDB68EE008332DD /* HPPYTutorialViewController.m in Sources */,
 				A076C0C61CDB68EE008332DD /* HPPYTaskCardViewController.m in Sources */,
+				A00DE73B1DD60F67004B05A1 /* HPPYTaskListHeaderView.swift in Sources */,
 				A076C0C71CDB68EE008332DD /* HPPYMenuTableViewCell.m in Sources */,
 				A076C0C81CDB68EE008332DD /* HPPYRevealViewController.m in Sources */,
 				A076C0C91CDB68EE008332DD /* HPPYHeaderTableViewCell.m in Sources */,
@@ -774,6 +779,7 @@
 				A04AA2F01C416AC100DB4A69 /* HPPY.m in Sources */,
 				A01430AF1C9B4C0B00A283B5 /* HPPYTutorialViewController.m in Sources */,
 				A05C6CB81C13309E00D1EF1A /* HPPYTaskCardViewController.m in Sources */,
+				A00DE73A1DD60F64004B05A1 /* HPPYTaskListHeaderView.swift in Sources */,
 				A05558551BF9D8A30036E954 /* HPPYMenuTableViewCell.m in Sources */,
 				A0554A081C789F2A00817BCF /* HPPYRevealViewController.m in Sources */,
 				A098FC481C3FF2DD0007EBEF /* HPPYHeaderTableViewCell.m in Sources */,
