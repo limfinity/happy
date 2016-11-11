@@ -8,6 +8,9 @@
 
 import UIKit
 
+let HORIZONTAL_CELL_SPACING: CGFloat = 5
+let SECTION_SPACING: CGFloat = 15
+
 class HPPYTaskListViewController: UIViewController {
     
     var collectionViewSizeChanged: Bool = false
@@ -75,9 +78,21 @@ extension HPPYTaskListViewController: UICollectionViewDelegate, UICollectionView
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: SECTION_SPACING, left: SECTION_SPACING, bottom: SECTION_SPACING, right: SECTION_SPACING)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return HORIZONTAL_CELL_SPACING
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize.zero // TODO: Add header
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let height: CGFloat = 100.0
-        let width = floor((collectionView.frame.size.width) / 2.0)
+        let width = floor((collectionView.frame.size.width - 2 * SECTION_SPACING - HORIZONTAL_CELL_SPACING) / 2.0)
         return CGSize(width: width, height: height)
     }
     
