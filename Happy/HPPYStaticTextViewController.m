@@ -42,11 +42,6 @@
     self.textView.scrollEnabled = YES;
 }
 
-//- (void)viewDidLayoutSubviews {
-//    [super viewDidLayoutSubviews];
-//    [self.textView setContentOffset:CGPointZero animated:NO];
-//}
-
 -(NSString *)getTextFromFile {
     NSString *result;
     NSString *fileName = [NSString stringWithFormat:@"%@.md", self.identifier];

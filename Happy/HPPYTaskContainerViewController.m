@@ -125,7 +125,6 @@ typedef NS_ENUM(NSInteger, HPPYTaskContainerViewState) {
 }
 
 - (IBAction)finishedTask:(UIStoryboardSegue *)segue {
-    // TODO: skip task, when taskcardviewcontroller is active
     if ([_currentViewController isKindOfClass:[HPPYTaskCardContainerViewController class]]) {
         HPPYTaskCardContainerViewController *taskViewController = (HPPYTaskCardContainerViewController *)_currentViewController;
         [[taskViewController taskCardViewController] setTask:[HPPYTaskController currentTask]];

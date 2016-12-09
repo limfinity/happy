@@ -23,6 +23,12 @@ class HPPYTaskListViewController: UIViewController {
     }
     lazy var tasks = HPPYTaskController.getTasks().flatMap { $0 as? HPPYTask }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        ARAnalytics.pageView("Task List")
+    }
+    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         

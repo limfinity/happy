@@ -23,7 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+        
     // Call at start to update tasks from file
     [self taskController];
 }

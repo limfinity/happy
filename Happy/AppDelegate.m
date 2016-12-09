@@ -112,7 +112,7 @@
     // this function writes default settings as settings
     NSString *settingsBundle = [[NSBundle mainBundle] pathForResource:@"Settings" ofType:@"bundle"];
     if(!settingsBundle) {
-        NSLog(@"Could not find Settings.bundle");
+        ARLog(@"Error could not find Settings.bundle");
         return;
     }
     
@@ -124,7 +124,6 @@
         NSString *key = [prefSpecification objectForKey:@"Key"];
         if(key) {
             [defaultsToRegister setObject:[prefSpecification objectForKey:@"DefaultValue"] forKey:key];
-            NSLog(@"writing as default %@ to the key %@",[prefSpecification objectForKey:@"DefaultValue"],key);
         }
     }
     
