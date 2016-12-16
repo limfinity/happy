@@ -84,6 +84,7 @@ extension HPPYTaskListViewController: UICollectionViewDelegate, UICollectionView
         default:
             assert(false, "Error unexpected collection view for kind \(kind)")
         }
+        return UICollectionReusableView() // Should never be called
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
