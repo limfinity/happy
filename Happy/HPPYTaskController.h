@@ -15,7 +15,7 @@
 + (HPPYTask *)currentTask;
 
 /// Starts the given task
-+ (void)startTask:(HPPYTask *)task;
++ (HPPYTask *)startTask:(HPPYTask *)task;
 
 /// Skips the given task and returns the next task
 - (HPPYTask *)skipTask:(HPPYTask *)task;
@@ -25,5 +25,8 @@
 
 /// Returns the last date a given task was completed, `nil` when task hsa never been completed before
 + (NSDate *)getLastCompletionDateFromTask:(HPPYTask *)task;
+
+/// Returns an array with all tasks
++ (NSArray *)getTasks;
 
 @end

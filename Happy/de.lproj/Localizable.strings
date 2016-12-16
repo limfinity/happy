@@ -26,13 +26,13 @@
 "Add Reminder" = "Erinnerung";
 "Edit Reminder" = "Bearbeiten";
 "Delete Reminder" = "Erinnerung Löschen";
-"Friendly Reminder" = "Freundliche Erinnerung";
-"Push Reminder Body 1" = "Auf geht's, tu Dir etwas Gutes.";
+"Friendly Reminder" = "Deine tägliche Aufgabe";
+"Push Reminder Body 1" = "Nimm Dir einige Minuten für Dich selbst und tu Dir etwas Gutes.";
 "Jane Doe" = "Maria Musterfrau";
 
 /* TASK OVERVIEW */
 "Last Completion Date" = "Zuletzt erledigt am %@";
-"Skip (x)" = "Überspringen (%d)";
+"Skip" = "Überspringen";
 
 /* TASK DETAILS */
 "Start" = "Starten";

@@ -19,6 +19,13 @@
 
 - (UIViewController *)viewControllerAtIndex:(NSUInteger)index;
 
+@property (nonatomic, strong) UITapGestureRecognizer *tapGestureRecognizer;
+
+@property (nonatomic, strong) UIDynamicAnimator *animator;
+@property (nonatomic, strong) UIGravityBehavior *gravityBehaviour;
+@property (nonatomic, strong) UIPushBehavior* pushBehavior;
+@property (nonatomic, strong) UIAttachmentBehavior *panAttachmentBehaviour;
+
 @end
 
 @implementation HPPYTutorialViewController
@@ -49,6 +56,47 @@
     [self.view bringSubviewToFront:self.pageControl];
     [self.view bringSubviewToFront:self.closeButton];
     [self.pageViewController didMoveToParentViewController:self];
+    
+    self.tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(bouncePageViewController:)];
+    [self.view addGestureRecognizer:_tapGestureRecognizer];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self setupPageViewControllerViewAnimatorProperties];
+}
+
+- (void)setupPageViewControllerViewAnimatorProperties {
+    NSAssert(self.animator == nil, @"Animator is not nil – setupContentViewControllerAnimatorProperties likely called twice.");
+    self.animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+    
+    UIView *view = self.pageViewController.viewControllers.firstObject.view;
+    
+    UICollisionBehavior *collisionBehaviour = [[UICollisionBehavior alloc] initWithItems:@[view]];
+    [collisionBehaviour setTranslatesReferenceBoundsIntoBoundaryWithInsets:UIEdgeInsetsMake(0, -35, 0, 0)];
+    [self.animator addBehavior:collisionBehaviour];
+    
+    self.gravityBehaviour = [[UIGravityBehavior alloc] initWithItems:@[view]];
+    self.gravityBehaviour.gravityDirection = CGVectorMake(1.0f, 0.0f);
+    [self.animator addBehavior:self.gravityBehaviour];
+    
+    self.pushBehavior = [[UIPushBehavior alloc] initWithItems:@[view] mode:UIPushBehaviorModeInstantaneous];
+    self.pushBehavior.magnitude = 0.0f;
+    self.pushBehavior.angle = 0.0f;
+    [self.animator addBehavior:self.pushBehavior];
+    
+    UIDynamicItemBehavior *itemBehaviour = [[UIDynamicItemBehavior alloc] initWithItems:@[view]];
+    itemBehaviour.elasticity = 0.6f;
+    [self.animator addBehavior:itemBehaviour];
+}
+
+- (void)bouncePageViewController:(UITapGestureRecognizer *)recognizer {
+    // Only bounce on first page
+    if (self.pageControl.currentPage == 0) {
+        self.pushBehavior.pushDirection = CGVectorMake(-35.0f, 0.0f);
+        self.pushBehavior.active = YES;
+    }
 }
 
 - (IBAction)close:(id)sender {

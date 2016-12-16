@@ -43,11 +43,20 @@
     return task;
 }
 
-+ (void)startTask:(HPPYTask *)task {
-    if (!task.started) {
-        task.startDate = [NSDate date];
-        [HPPYTaskController updateCurrentTask:task];
++ (HPPYTask *)startTask:(HPPYTask *)task {
+    HPPYTask *currentTask = [HPPYTaskController currentTask];
+    
+    // Avoid restarting a already running task
+    if (currentTask.started && [task.identifier isEqualToString:currentTask.identifier]) {
+        return currentTask;
     }
+    if (task.started) {
+        return task;
+    }
+    
+    task.startDate = [NSDate date];
+    [HPPYTaskController updateCurrentTask:task];
+    return task;
 }
 
 - (HPPYTask *)skipTask:(HPPYTask *)task {

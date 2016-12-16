@@ -8,20 +8,23 @@
 
 #import "HPPYTaskContainerViewController.h"
 #import "SWRevealViewController.h"
-#import "HPPYTaskController.h"
-#import "HPPYTaskCardViewController.h"
-#import "HPPYCountDown.h"
 #import "HPPYTutorialViewController.h"
+#import "HPPYTaskController.h"
+#import "HPPYTaskCardContainerViewController.h"
 #import "ARAnalytics/ARAnalytics.h"
-#import "AppDelegate.h"
+
+typedef NS_ENUM(NSInteger, HPPYTaskContainerViewState) {
+    HPPYTaskContainerViewStateCard,
+    HPPYTaskContainerViewStateList
+};
 
 @interface HPPYTaskContainerViewController () {
-    HPPYTaskController *_taskController;
+    HPPYTaskContainerViewState _state;
 }
 
-@property (weak, nonatomic) IBOutlet UIView *taskCardView;
-@property (weak, nonatomic) IBOutlet UIButton *skipButton;
-@property (weak, nonatomic) HPPYTaskCardViewController *taskCardViewController;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *switchModeBarButton;
+@property (weak, nonatomic) IBOutlet UIView *containerView;
+@property (weak, nonatomic) UIViewController *currentViewController;
 
 @end
 
@@ -29,9 +32,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-        
-    // Call at start to update tasks from file
-    [self taskController];
     
     BOOL showOnboarding = ![[NSUserDefaults standardUserDefaults] boolForKey:@"hppyStartedBefore"];
     if (showOnboarding) {
@@ -42,91 +42,93 @@
             [self presentViewController:vc animated:YES completion:nil];
         });
     }
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
     
-    [self updateSkipButton];
-}
-
-- (HPPYTaskController *)taskController {
-    if (!_taskController) {
-        _taskController = [HPPYTaskController new];
-    }
-    return _taskController;
-}
-
-// MARK: Tasks
-- (IBAction)skipTask:(id)sender {
-    HPPYTask *task = [HPPYTaskController currentTask];
-    HPPYTask *nextTask = [[self taskController] skipTask:task];
-    [self.taskCardViewController setTask:nextTask];
-    [self decrementSkipsLeft];
-    [self updateSkipButton];
+    _state = HPPYTaskContainerViewStateCard;
+    [self showViewControllerDependingOnState:_state];
     
-    [ARAnalytics event:@"Task Skipped" withProperties:task.trackingData];
+    [super viewDidLoad];
 }
 
-- (void)updateSkipButton {
-    int skipsLeft = [self skipsLeft] - 1;
-    if (skipsLeft == 0) {
-        self.skipButton.enabled = NO;
-        double skipLocked = [[NSUserDefaults standardUserDefaults] doubleForKey:@"hppySkipLocked"];
-        if (skipLocked == 0) {
-            [[NSUserDefaults standardUserDefaults] setDouble:CACurrentMediaTime() forKey:@"hppySkipLocked"];
-        }
-    } else {
-        [[NSUserDefaults standardUserDefaults] setDouble:0 forKey:@"hppySkipLocked"];
-        self.skipButton.enabled = YES;
+- (IBAction)switchMode:(id)sender {
+    switch (_state) {
+        case HPPYTaskContainerViewStateCard:
+            _state = HPPYTaskContainerViewStateList;
+            break;
+        case HPPYTaskContainerViewStateList:
+            _state = HPPYTaskContainerViewStateCard;
+            break;
     }
-    [self.skipButton setTitle:[NSString stringWithFormat:NSLocalizedString(@"Skip (x)", nil), skipsLeft] forState:UIControlStateNormal];
+    [self showViewControllerDependingOnState:_state];
 }
 
-- (void)decrementSkipsLeft {
-    int skipsLeft = [self skipsLeft];
-    skipsLeft--;
-    [self setSkipsLeft:skipsLeft];
-}
-
-- (void)setSkipsLeft:(int)skips {
-    [[NSUserDefaults standardUserDefaults] setInteger:(NSInteger)skips forKey:@"hppySkipsLeft"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
-
-- (int)skipsLeft {
-    int skipsLeft = (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"hppySkipsLeft"];
-    if (skipsLeft == 0) {
-        skipsLeft = 4;
+- (void)showViewControllerDependingOnState:(HPPYTaskContainerViewState)state {
+    UIViewController *viewController;
+    
+    switch (state) {
+        case HPPYTaskContainerViewStateCard:
+            viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"TaskCardContainer"];
+            break;
+        case HPPYTaskContainerViewStateList:
+            viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"TaskList"];
+            break;
     }
-    return skipsLeft;
+    
+    [self addViewControllerAsChildViewController:viewController toContainerView:_containerView];
+    [self updateBarButtonTitleDependingOnState:state];
+    
+    if (_currentViewController) {
+        [self removeViewControllerAsChildViewController:_currentViewController];
+    }
+    self.currentViewController = viewController;
 }
 
-// MARK: Storyboard
+- (void)updateBarButtonTitleDependingOnState:(HPPYTaskContainerViewState)state {
+    switch (state) {
+        case HPPYTaskContainerViewStateCard:
+            [_switchModeBarButton setImage:[UIImage imageNamed:@"navigationListIcon"]];
+            break;
+        case HPPYTaskContainerViewStateList:
+            [_switchModeBarButton setImage:[UIImage imageNamed:@"navigationSingleIcon"]];
+            break;
+    }
+}
+
+- (void)addViewControllerAsChildViewController:(UIViewController *)viewController toContainerView:(UIView *)containerView {
+    // Add Child View Controller
+    [self addChildViewController:viewController];
+    
+    // Add Child View as Subview
+    [containerView addSubview:viewController.view];
+    
+    // Configure Child View
+    viewController.view.frame = containerView.bounds;
+    viewController.view.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
+    
+    // Notify Child View Controller
+    [viewController didMoveToParentViewController:self];
+}
+
+- (void)removeViewControllerAsChildViewController:(UIViewController *)viewController {
+    // Notify Child View Controller
+    [viewController willMoveToParentViewController:nil];
+    
+    // Remove Child View From Superview
+    [viewController.view removeFromSuperview];
+    
+    // Notify Child View Controller
+    [viewController removeFromParentViewController];
+}
+
+// MARK: Navigation
 - (IBAction)canceledTask:(UIStoryboardSegue *)segue {
     [ARAnalytics event:@"Task Canceled" withProperties:[HPPYTaskController currentTask].trackingData];
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)finishedTask:(UIStoryboardSegue *)segue {
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    [appDelegate resetSkips];
-    [self updateSkipButton];
-    [self.taskCardViewController setTask:[HPPYTaskController currentTask]];
-    [self.presentedViewController dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"ShowTaskCard"]) {
-        HPPYTaskCardViewController *vc = segue.destinationViewController;
-        self.taskCardViewController = vc;
-        [vc setTask:[HPPYTaskController currentTask]];
+    if ([_currentViewController isKindOfClass:[HPPYTaskCardContainerViewController class]]) {
+        HPPYTaskCardContainerViewController *taskViewController = (HPPYTaskCardContainerViewController *)_currentViewController;
+        [[taskViewController taskCardViewController] setTask:[HPPYTaskController currentTask]];
     }
-}
-
-// MARK: App lifecycle
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
 }
 
 @end

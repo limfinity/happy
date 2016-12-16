@@ -7,21 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0809041E071D07B3763A8507 /* libPods-Happy Hockey.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F42C0F14791ED85D8B6B73 /* libPods-Happy Hockey.a */; };
+		7810270E440311D664851416 /* libPods-Happy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1B0E70ADCD423DF137CE1D /* libPods-Happy.a */; };
 		A00891691C77D91700C161F4 /* HPPYTaskSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00891681C77D91700C161F4 /* HPPYTaskSuccessViewController.m */; };
+		A00DE73A1DD60F64004B05A1 /* HPPYTaskListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00DE7391DD60F64004B05A1 /* HPPYTaskListHeaderView.swift */; };
+		A00DE73B1DD60F67004B05A1 /* HPPYTaskListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00DE7391DD60F64004B05A1 /* HPPYTaskListHeaderView.swift */; };
 		A00E9ADB1BFDF45C00C94ABA /* HPPYTask.m in Sources */ = {isa = PBXBuildFile; fileRef = A00E9ADA1BFDF45C00C94ABA /* HPPYTask.m */; };
 		A01369341C1DD6EE00F69C31 /* HPPYSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A01369331C1DD6EE00F69C31 /* HPPYSettingsTableViewController.m */; };
 		A01430AF1C9B4C0B00A283B5 /* HPPYTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A01430AE1C9B4C0B00A283B5 /* HPPYTutorialViewController.m */; };
 		A021D9C71C6FDA7F00B63A8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A021D9C61C6FDA7F00B63A8D /* Assets.xcassets */; };
-		A03DDAF91C79026400B9B70D /* hppyCodes.plist in Resources */ = {isa = PBXBuildFile; fileRef = A03DDAF71C79026400B9B70D /* hppyCodes.plist */; };
 		A03DDAFA1C79026400B9B70D /* hppyTasks.plist in Resources */ = {isa = PBXBuildFile; fileRef = A03DDAF81C79026400B9B70D /* hppyTasks.plist */; };
 		A03DDAFD1C79E28300B9B70D /* HPPYCountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = A03DDAFC1C79E28300B9B70D /* HPPYCountDown.m */; };
+		A04009321DCBD47F00A6EAF4 /* HPPYTaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04009311DCBD47F00A6EAF4 /* HPPYTaskListViewController.swift */; };
+		A04009331DCBD47F00A6EAF4 /* HPPYTaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04009311DCBD47F00A6EAF4 /* HPPYTaskListViewController.swift */; };
+		A04009391DCBD7B700A6EAF4 /* HPPYTaskCardContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04009381DCBD7B700A6EAF4 /* HPPYTaskCardContainerViewController.m */; };
+		A040093A1DCBD7B700A6EAF4 /* HPPYTaskCardContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04009381DCBD7B700A6EAF4 /* HPPYTaskCardContainerViewController.m */; };
 		A0438C3C1C9E295F00D5677C /* information.md in Resources */ = {isa = PBXBuildFile; fileRef = A0D2F74B1C9E24CE001F0898 /* information.md */; };
 		A04A09431BF9EE9D005F385B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A04A09411BF9EE9D005F385B /* Localizable.strings */; };
 		A04A09471BF9F05C005F385B /* HPPYStaticTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04A09461BF9F05C005F385B /* HPPYStaticTextViewController.m */; };
 		A04A094B1BFA0259005F385B /* contact.md in Sources */ = {isa = PBXBuildFile; fileRef = A04A094D1BFA0259005F385B /* contact.md */; };
 		A04A09501BFA14CB005F385B /* contact.md in Resources */ = {isa = PBXBuildFile; fileRef = A04A094D1BFA0259005F385B /* contact.md */; };
 		A04AA2F01C416AC100DB4A69 /* HPPY.m in Sources */ = {isa = PBXBuildFile; fileRef = A04AA2EF1C416AC100DB4A69 /* HPPY.m */; };
-		A04AA2F31C416ADE00DB4A69 /* HPPYCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04AA2F21C416ADE00DB4A69 /* HPPYCodeViewController.m */; };
 		A0554A021C78976F00817BCF /* HPPYMenuableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0554A011C78976F00817BCF /* HPPYMenuableViewController.m */; };
 		A0554A051C789A8C00817BCF /* HPPYMenuableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0554A041C789A8C00817BCF /* HPPYMenuableTableViewController.m */; };
 		A0554A081C789F2A00817BCF /* HPPYRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0554A071C789F2A00817BCF /* HPPYRevealViewController.m */; };
@@ -45,7 +51,6 @@
 		A076C0BE1CDB68EE008332DD /* HPPYStaticTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04A09461BF9F05C005F385B /* HPPYStaticTextViewController.m */; };
 		A076C0BF1CDB68EE008332DD /* HPPYSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A01369331C1DD6EE00F69C31 /* HPPYSettingsTableViewController.m */; };
 		A076C0C01CDB68EE008332DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D185001BF9CC0E0000B1F9 /* AppDelegate.m */; };
-		A076C0C11CDB68EE008332DD /* HPPYCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04AA2F21C416ADE00DB4A69 /* HPPYCodeViewController.m */; };
 		A076C0C21CDB68EE008332DD /* HPPYTaskSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00891681C77D91700C161F4 /* HPPYTaskSuccessViewController.m */; };
 		A076C0C31CDB68EE008332DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D184FD1BF9CC0E0000B1F9 /* main.m */; };
 		A076C0C41CDB68EE008332DD /* HPPY.m in Sources */ = {isa = PBXBuildFile; fileRef = A04AA2EF1C416AC100DB4A69 /* HPPY.m */; };
@@ -56,7 +61,6 @@
 		A076C0C91CDB68EE008332DD /* HPPYHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A098FC471C3FF2DD0007EBEF /* HPPYHeaderTableViewCell.m */; };
 		A076C0CA1CDB68EE008332DD /* HPPYAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A0913D3A1CB192AB00D6EE9F /* HPPYAudioPlayer.m */; };
 		A076C0CB1CDB68EE008332DD /* information.md in Sources */ = {isa = PBXBuildFile; fileRef = A0D2F74B1C9E24CE001F0898 /* information.md */; };
-		A076C0CD1CDB68EE008332DD /* libPods-Happy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB57B20CF21F172247699B93 /* libPods-Happy.a */; };
 		A076C0CF1CDB68EE008332DD /* information.md in Resources */ = {isa = PBXBuildFile; fileRef = A0D2F74B1C9E24CE001F0898 /* information.md */; };
 		A076C0D01CDB68EE008332DD /* hppyTasks.plist in Resources */ = {isa = PBXBuildFile; fileRef = A03DDAF81C79026400B9B70D /* hppyTasks.plist */; };
 		A076C0D11CDB68EE008332DD /* contact.md in Resources */ = {isa = PBXBuildFile; fileRef = A04A094D1BFA0259005F385B /* contact.md */; };
@@ -68,10 +72,11 @@
 		A076C0D71CDB68EE008332DD /* morgenuebung.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A0913D411CB1A3E400D6EE9F /* morgenuebung.mp3 */; };
 		A076C0D81CDB68EE008332DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A021D9C61C6FDA7F00B63A8D /* Assets.xcassets */; };
 		A076C0D91CDB68EE008332DD /* bodyScan.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A0913D3E1CB1A3E400D6EE9F /* bodyScan.mp3 */; };
-		A076C0DA1CDB68EE008332DD /* hppyCodes.plist in Resources */ = {isa = PBXBuildFile; fileRef = A03DDAF71C79026400B9B70D /* hppyCodes.plist */; };
 		A076C0DB1CDB68EE008332DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0D185051BF9CC0E0000B1F9 /* Main.storyboard */; };
 		A076C0DC1CDB68EE008332DD /* inneresLaecheln.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A0913D401CB1A3E400D6EE9F /* inneresLaecheln.mp3 */; };
 		A079FFFF1C13063700B387CC /* HPPYTaskController.m in Sources */ = {isa = PBXBuildFile; fileRef = A079FFFE1C13063700B387CC /* HPPYTaskController.m */; };
+		A084B2E11DCF43D900EC6011 /* HPPYTaskListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A084B2E01DCF43D900EC6011 /* HPPYTaskListCollectionViewCell.swift */; };
+		A084B2E21DCF43D900EC6011 /* HPPYTaskListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A084B2E01DCF43D900EC6011 /* HPPYTaskListCollectionViewCell.swift */; };
 		A0913D3B1CB192AB00D6EE9F /* HPPYAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A0913D3A1CB192AB00D6EE9F /* HPPYAudioPlayer.m */; };
 		A0913D421CB1A3E400D6EE9F /* atemuebung.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A0913D3D1CB1A3E400D6EE9F /* atemuebung.mp3 */; };
 		A0913D431CB1A3E400D6EE9F /* bodyScan.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A0913D3E1CB1A3E400D6EE9F /* bodyScan.mp3 */; };
@@ -90,7 +95,8 @@
 		A0D185171BF9CC0E0000B1F9 /* HappyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D185161BF9CC0E0000B1F9 /* HappyTests.m */; };
 		A0D185221BF9CC0F0000B1F9 /* HappyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D185211BF9CC0F0000B1F9 /* HappyUITests.m */; };
 		A0D2F7491C9E24CE001F0898 /* information.md in Sources */ = {isa = PBXBuildFile; fileRef = A0D2F74B1C9E24CE001F0898 /* information.md */; };
-		FFC158F9AC2BFC5FFFF2A6F6 /* libPods-Happy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB57B20CF21F172247699B93 /* libPods-Happy.a */; };
+		A376DA4D98CD5E30E4743E95 /* libPods-HappyTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 70FB7D934CECA2A5D08AFA42 /* libPods-HappyTests.a */; };
+		FC3688CBF2A9A3575384E077 /* libPods-HappyUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D33AF062FF15E80609236436 /* libPods-HappyUITests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,9 +117,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		867A161B6F9B16C9161B4089 /* Pods-Happy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Happy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Happy/Pods-Happy.debug.xcconfig"; sourceTree = "<group>"; };
+		14F42C0F14791ED85D8B6B73 /* libPods-Happy Hockey.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Happy Hockey.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		70FB7D934CECA2A5D08AFA42 /* libPods-HappyTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HappyTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		717850332842BEE371716B03 /* Pods-Happy Hockey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Happy Hockey.release.xcconfig"; path = "Pods/Target Support Files/Pods-Happy Hockey/Pods-Happy Hockey.release.xcconfig"; sourceTree = "<group>"; };
+		7E1B0E70ADCD423DF137CE1D /* libPods-Happy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Happy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8826D1A55DD04401C99E0E87 /* Pods-Happy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Happy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Happy/Pods-Happy.release.xcconfig"; sourceTree = "<group>"; };
+		9C2D6CCC6C9B9AEACAA1FC0B /* Pods-HappyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HappyTests/Pods-HappyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A00891671C77D91700C161F4 /* HPPYTaskSuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYTaskSuccessViewController.h; sourceTree = "<group>"; };
 		A00891681C77D91700C161F4 /* HPPYTaskSuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYTaskSuccessViewController.m; sourceTree = "<group>"; };
+		A00DE7391DD60F64004B05A1 /* HPPYTaskListHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPPYTaskListHeaderView.swift; sourceTree = "<group>"; };
 		A00E9AD91BFDF45C00C94ABA /* HPPYTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYTask.h; sourceTree = "<group>"; };
 		A00E9ADA1BFDF45C00C94ABA /* HPPYTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYTask.m; sourceTree = "<group>"; };
 		A01369321C1DD6EE00F69C31 /* HPPYSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYSettingsTableViewController.h; sourceTree = "<group>"; };
@@ -121,18 +133,20 @@
 		A01430AD1C9B4C0B00A283B5 /* HPPYTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYTutorialViewController.h; sourceTree = "<group>"; };
 		A01430AE1C9B4C0B00A283B5 /* HPPYTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYTutorialViewController.m; sourceTree = "<group>"; };
 		A021D9C61C6FDA7F00B63A8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A03DDAF71C79026400B9B70D /* hppyCodes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = hppyCodes.plist; path = private/hppyCodes.plist; sourceTree = "<group>"; };
 		A03DDAF81C79026400B9B70D /* hppyTasks.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = hppyTasks.plist; path = private/hppyTasks.plist; sourceTree = "<group>"; };
 		A03DDAFB1C79E28300B9B70D /* HPPYCountDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYCountDown.h; sourceTree = "<group>"; };
 		A03DDAFC1C79E28300B9B70D /* HPPYCountDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYCountDown.m; sourceTree = "<group>"; };
+		A040092F1DCBD47E00A6EAF4 /* Happy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Happy-Bridging-Header.h"; path = "Happy/Happy-Bridging-Header.h"; sourceTree = "<group>"; };
+		A04009301DCBD47E00A6EAF4 /* Happy Hockey-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Happy Hockey-Bridging-Header.h"; path = "Happy/Happy Hockey-Bridging-Header.h"; sourceTree = "<group>"; };
+		A04009311DCBD47F00A6EAF4 /* HPPYTaskListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPPYTaskListViewController.swift; sourceTree = "<group>"; };
+		A04009371DCBD7B700A6EAF4 /* HPPYTaskCardContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYTaskCardContainerViewController.h; sourceTree = "<group>"; };
+		A04009381DCBD7B700A6EAF4 /* HPPYTaskCardContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYTaskCardContainerViewController.m; sourceTree = "<group>"; };
 		A04A09441BF9EEA2005F385B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A04A09451BF9F05C005F385B /* HPPYStaticTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYStaticTextViewController.h; sourceTree = "<group>"; };
 		A04A09461BF9F05C005F385B /* HPPYStaticTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYStaticTextViewController.m; sourceTree = "<group>"; };
 		A04A094F1BFA0567005F385B /* de */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = de; path = de.lproj/contact.md; sourceTree = "<group>"; };
 		A04AA2EE1C416AC100DB4A69 /* HPPY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPY.h; sourceTree = "<group>"; };
 		A04AA2EF1C416AC100DB4A69 /* HPPY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPY.m; sourceTree = "<group>"; };
-		A04AA2F11C416ADE00DB4A69 /* HPPYCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYCodeViewController.h; sourceTree = "<group>"; };
-		A04AA2F21C416ADE00DB4A69 /* HPPYCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYCodeViewController.m; sourceTree = "<group>"; };
 		A0554A001C78976F00817BCF /* HPPYMenuableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYMenuableViewController.h; sourceTree = "<group>"; };
 		A0554A011C78976F00817BCF /* HPPYMenuableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYMenuableViewController.m; sourceTree = "<group>"; };
 		A0554A031C789A8C00817BCF /* HPPYMenuableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYMenuableTableViewController.h; sourceTree = "<group>"; };
@@ -152,6 +166,7 @@
 		A076C0E41CDB68EE008332DD /* Happy_Hockey_Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Happy_Hockey_Info.plist; path = /Users/limfinity/Developer/ios/Happy/repo/Happy_Hockey_Info.plist; sourceTree = "<absolute>"; };
 		A079FFFD1C13063700B387CC /* HPPYTaskController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYTaskController.h; sourceTree = "<group>"; };
 		A079FFFE1C13063700B387CC /* HPPYTaskController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYTaskController.m; sourceTree = "<group>"; };
+		A084B2E01DCF43D900EC6011 /* HPPYTaskListCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPPYTaskListCollectionViewCell.swift; sourceTree = "<group>"; };
 		A0913D391CB192AB00D6EE9F /* HPPYAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPPYAudioPlayer.h; sourceTree = "<group>"; };
 		A0913D3A1CB192AB00D6EE9F /* HPPYAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPPYAudioPlayer.m; sourceTree = "<group>"; };
 		A0913D3D1CB1A3E400D6EE9F /* atemuebung.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = atemuebung.mp3; path = private/atemuebung.mp3; sourceTree = "<group>"; };
@@ -181,10 +196,15 @@
 		A0D185211BF9CC0F0000B1F9 /* HappyUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HappyUITests.m; sourceTree = "<group>"; };
 		A0D185231BF9CC0F0000B1F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0D2F74A1C9E24CE001F0898 /* de */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = de; path = de.lproj/information.md; sourceTree = "<group>"; };
+		A0EFF6801DF75CEE0098F6FE /* libPods-Happy.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Happy.a"; path = "../../../../Library/Developer/Xcode/DerivedData/Happy-bxpkrlacebuzrnglbewjxukqvfsi/Build/Products/Debug-iphonesimulator/libPods-Happy.a"; sourceTree = "<group>"; };
 		A0F9C0A31C728488001B845E /* de */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = de; path = de.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A0F9C0A41C7284C1001B845E /* de */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = de; path = de.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		EB57B20CF21F172247699B93 /* libPods-Happy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Happy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F21E2FE5279E430BE94BDD7C /* Pods-Happy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Happy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Happy/Pods-Happy.release.xcconfig"; sourceTree = "<group>"; };
+		C0EAEE77B9C6F45EB88CEF21 /* Pods-HappyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HappyUITests/Pods-HappyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D33AF062FF15E80609236436 /* libPods-HappyUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HappyUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E98D2B8E86DE6F0B0B4900A6 /* Pods-HappyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HappyTests/Pods-HappyTests.release.xcconfig"; sourceTree = "<group>"; };
+		E9DC23A787E238AFEDF87BDA /* Pods-HappyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HappyUITests/Pods-HappyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F29186EE87ADEDC2DF6BBA7B /* Pods-Happy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Happy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Happy/Pods-Happy.debug.xcconfig"; sourceTree = "<group>"; };
+		F7B4F09634C68E54721E6B7F /* Pods-Happy Hockey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Happy Hockey.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Happy Hockey/Pods-Happy Hockey.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,7 +212,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A076C0CD1CDB68EE008332DD /* libPods-Happy.a in Frameworks */,
+				0809041E071D07B3763A8507 /* libPods-Happy Hockey.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,7 +220,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFC158F9AC2BFC5FFFF2A6F6 /* libPods-Happy.a in Frameworks */,
+				7810270E440311D664851416 /* libPods-Happy.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +228,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A376DA4D98CD5E30E4743E95 /* libPods-HappyTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,25 +236,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC3688CBF2A9A3575384E077 /* libPods-HappyUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1E45DEC50A5D65D5D4DC32EA /* Pods */ = {
+		6886F049E5EFCEC3A2BD5609 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				867A161B6F9B16C9161B4089 /* Pods-Happy.debug.xcconfig */,
-				F21E2FE5279E430BE94BDD7C /* Pods-Happy.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		9E7E096EBBD9F68D60A7EAFB /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				EB57B20CF21F172247699B93 /* libPods-Happy.a */,
+				A0EFF6801DF75CEE0098F6FE /* libPods-Happy.a */,
+				7E1B0E70ADCD423DF137CE1D /* libPods-Happy.a */,
+				70FB7D934CECA2A5D08AFA42 /* libPods-HappyTests.a */,
+				D33AF062FF15E80609236436 /* libPods-HappyUITests.a */,
+				14F42C0F14791ED85D8B6B73 /* libPods-Happy Hockey.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -266,8 +283,13 @@
 				A00E9ADA1BFDF45C00C94ABA /* HPPYTask.m */,
 				A079FFFD1C13063700B387CC /* HPPYTaskController.h */,
 				A079FFFE1C13063700B387CC /* HPPYTaskController.m */,
+				A04009311DCBD47F00A6EAF4 /* HPPYTaskListViewController.swift */,
+				A00DE7391DD60F64004B05A1 /* HPPYTaskListHeaderView.swift */,
+				A084B2E01DCF43D900EC6011 /* HPPYTaskListCollectionViewCell.swift */,
 				A0D185021BF9CC0E0000B1F9 /* HPPYTaskContainerViewController.h */,
 				A0D185031BF9CC0E0000B1F9 /* HPPYTaskContainerViewController.m */,
+				A04009371DCBD7B700A6EAF4 /* HPPYTaskCardContainerViewController.h */,
+				A04009381DCBD7B700A6EAF4 /* HPPYTaskCardContainerViewController.m */,
 				A05C6CB61C13309E00D1EF1A /* HPPYTaskCardViewController.h */,
 				A05C6CB71C13309E00D1EF1A /* HPPYTaskCardViewController.m */,
 				A0A0FE1D1C1AF1890008225E /* HPPYTaskDetailViewController.h */,
@@ -315,12 +337,14 @@
 		A0D184F01BF9CC0E0000B1F9 = {
 			isa = PBXGroup;
 			children = (
+				A040092F1DCBD47E00A6EAF4 /* Happy-Bridging-Header.h */,
+				A04009301DCBD47E00A6EAF4 /* Happy Hockey-Bridging-Header.h */,
 				A0D184FB1BF9CC0E0000B1F9 /* Happy */,
 				A0D185151BF9CC0E0000B1F9 /* HappyTests */,
 				A0D185201BF9CC0F0000B1F9 /* HappyUITests */,
 				A0D184FA1BF9CC0E0000B1F9 /* Products */,
-				1E45DEC50A5D65D5D4DC32EA /* Pods */,
-				9E7E096EBBD9F68D60A7EAFB /* Frameworks */,
+				B1F8ACAD14EF4756CA620DB6 /* Pods */,
+				6886F049E5EFCEC3A2BD5609 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -349,8 +373,6 @@
 				A0A02C541CBADDF9000B0A1B /* Tasks */,
 				A0A02C551CBADE3D000B0A1B /* Menu */,
 				A0A02C561CBADE5A000B0A1B /* Settings */,
-				A04AA2F11C416ADE00DB4A69 /* HPPYCodeViewController.h */,
-				A04AA2F21C416ADE00DB4A69 /* HPPYCodeViewController.m */,
 				A01430AD1C9B4C0B00A283B5 /* HPPYTutorialViewController.h */,
 				A01430AE1C9B4C0B00A283B5 /* HPPYTutorialViewController.m */,
 				A04A09451BF9F05C005F385B /* HPPYStaticTextViewController.h */,
@@ -373,7 +395,6 @@
 				A0D1850D1BF9CC0E0000B1F9 /* Info.plist */,
 				A076C0E41CDB68EE008332DD /* Happy_Hockey_Info.plist */,
 				A0D184FD1BF9CC0E0000B1F9 /* main.m */,
-				A03DDAF71C79026400B9B70D /* hppyCodes.plist */,
 				A03DDAF81C79026400B9B70D /* hppyTasks.plist */,
 			);
 			name = "Supporting Files";
@@ -397,6 +418,21 @@
 			path = HappyUITests;
 			sourceTree = "<group>";
 		};
+		B1F8ACAD14EF4756CA620DB6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F29186EE87ADEDC2DF6BBA7B /* Pods-Happy.debug.xcconfig */,
+				8826D1A55DD04401C99E0E87 /* Pods-Happy.release.xcconfig */,
+				9C2D6CCC6C9B9AEACAA1FC0B /* Pods-HappyTests.debug.xcconfig */,
+				E98D2B8E86DE6F0B0B4900A6 /* Pods-HappyTests.release.xcconfig */,
+				E9DC23A787E238AFEDF87BDA /* Pods-HappyUITests.debug.xcconfig */,
+				C0EAEE77B9C6F45EB88CEF21 /* Pods-HappyUITests.release.xcconfig */,
+				F7B4F09634C68E54721E6B7F /* Pods-Happy Hockey.debug.xcconfig */,
+				717850332842BEE371716B03 /* Pods-Happy Hockey.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -404,13 +440,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A076C0E01CDB68EE008332DD /* Build configuration list for PBXNativeTarget "Happy Hockey" */;
 			buildPhases = (
-				A076C0B01CDB68EE008332DD /* Check Pods Manifest.lock */,
+				845C1D905CB8EC809CAD6D8C /* [CP] Check Pods Manifest.lock */,
 				A076C0B11CDB68EE008332DD /* Sources */,
 				A076C0CC1CDB68EE008332DD /* Frameworks */,
 				A076C0CE1CDB68EE008332DD /* Resources */,
-				A076C0DD1CDB68EE008332DD /* Embed Pods Frameworks */,
-				A076C0DE1CDB68EE008332DD /* Copy Pods Resources */,
 				A076C0DF1CDB68EE008332DD /* ShellScript */,
+				9F945038ED9A7767C450A2F0 /* [CP] Embed Pods Frameworks */,
+				58D7F0BFA0FE45CDC102B8DA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -425,13 +461,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A0D185261BF9CC0F0000B1F9 /* Build configuration list for PBXNativeTarget "Happy" */;
 			buildPhases = (
-				0098295607486C4EB936E423 /* Check Pods Manifest.lock */,
+				2272E7B101DEBCBF398781EA /* [CP] Check Pods Manifest.lock */,
 				A0D184F51BF9CC0E0000B1F9 /* Sources */,
 				A0D184F61BF9CC0E0000B1F9 /* Frameworks */,
 				A0D184F71BF9CC0E0000B1F9 /* Resources */,
-				4ABB4319E582BBD10B35BD50 /* Embed Pods Frameworks */,
-				C97ACA09EFC158C4CF78A403 /* Copy Pods Resources */,
 				A01DBBF91C9EBF03003FC1FA /* ShellScript */,
+				8A7896EA68FA99B5D35FCA82 /* [CP] Embed Pods Frameworks */,
+				6027A042351B9AF0981C0744 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -446,9 +482,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A0D185291BF9CC0F0000B1F9 /* Build configuration list for PBXNativeTarget "HappyTests" */;
 			buildPhases = (
+				BD5E7AAB90944011C837A02B /* [CP] Check Pods Manifest.lock */,
 				A0D1850E1BF9CC0E0000B1F9 /* Sources */,
 				A0D1850F1BF9CC0E0000B1F9 /* Frameworks */,
 				A0D185101BF9CC0E0000B1F9 /* Resources */,
+				46E016851C305674812836AC /* [CP] Embed Pods Frameworks */,
+				257ECCCB5CF99E82C883497E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -464,9 +503,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A0D1852C1BF9CC0F0000B1F9 /* Build configuration list for PBXNativeTarget "HappyUITests" */;
 			buildPhases = (
+				717B7AAEC056303B1C13586E /* [CP] Check Pods Manifest.lock */,
 				A0D185191BF9CC0E0000B1F9 /* Sources */,
 				A0D1851A1BF9CC0E0000B1F9 /* Frameworks */,
 				A0D1851B1BF9CC0E0000B1F9 /* Resources */,
+				FC7EAC98130B69FB4E6B75AC /* [CP] Embed Pods Frameworks */,
+				B691D392EE99B4EA282C5F96 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -484,12 +526,17 @@
 		A0D184F11BF9CC0E0000B1F9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Peter Pult";
 				TargetAttributes = {
+					A076C0AF1CDB68EE008332DD = {
+						DevelopmentTeam = 3AV6KY2PRJ;
+						LastSwiftMigration = 0800;
+					};
 					A0D184F81BF9CC0E0000B1F9 = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = V47RS89Z27;
+						LastSwiftMigration = 0800;
 					};
 					A0D185111BF9CC0E0000B1F9 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -538,7 +585,6 @@
 				A076C0D71CDB68EE008332DD /* morgenuebung.mp3 in Resources */,
 				A076C0D81CDB68EE008332DD /* Assets.xcassets in Resources */,
 				A076C0D91CDB68EE008332DD /* bodyScan.mp3 in Resources */,
-				A076C0DA1CDB68EE008332DD /* hppyCodes.plist in Resources */,
 				A076C0DB1CDB68EE008332DD /* Main.storyboard in Resources */,
 				A076C0DC1CDB68EE008332DD /* inneresLaecheln.mp3 in Resources */,
 			);
@@ -559,7 +605,6 @@
 				A0913D461CB1A3E400D6EE9F /* morgenuebung.mp3 in Resources */,
 				A021D9C71C6FDA7F00B63A8D /* Assets.xcassets in Resources */,
 				A0913D431CB1A3E400D6EE9F /* bodyScan.mp3 in Resources */,
-				A03DDAF91C79026400B9B70D /* hppyCodes.plist in Resources */,
 				A0D185071BF9CC0E0000B1F9 /* Main.storyboard in Resources */,
 				A0913D451CB1A3E400D6EE9F /* inneresLaecheln.mp3 in Resources */,
 			);
@@ -582,34 +627,139 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0098295607486C4EB936E423 /* Check Pods Manifest.lock */ = {
+		2272E7B101DEBCBF398781EA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		4ABB4319E582BBD10B35BD50 /* Embed Pods Frameworks */ = {
+		257ECCCB5CF99E82C883497E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HappyTests/Pods-HappyTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		46E016851C305674812836AC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HappyTests/Pods-HappyTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		58D7F0BFA0FE45CDC102B8DA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Happy Hockey/Pods-Happy Hockey-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6027A042351B9AF0981C0744 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Happy/Pods-Happy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		717B7AAEC056303B1C13586E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		845C1D905CB8EC809CAD6D8C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8A7896EA68FA99B5D35FCA82 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Happy/Pods-Happy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F945038ED9A7767C450A2F0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Happy Hockey/Pods-Happy Hockey-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A01DBBF91C9EBF03003FC1FA /* ShellScript */ = {
@@ -625,51 +775,6 @@
 			shellPath = /bin/sh;
 			shellScript = "FILE=\"${SRCROOT}/HockeySDK-iOS/BuildAgent\"\nif [ -f \"$FILE\" ]; then\n\"$FILE\"\nfi";
 		};
-		A076C0B01CDB68EE008332DD /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		A076C0DD1CDB68EE008332DD /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Happy/Pods-Happy-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A076C0DE1CDB68EE008332DD /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Happy/Pods-Happy-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		A076C0DF1CDB68EE008332DD /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -683,19 +788,49 @@
 			shellPath = /bin/sh;
 			shellScript = "FILE=\"${SRCROOT}/HockeySDK-iOS/BuildAgent\"\nif [ -f \"$FILE\" ]; then\n\"$FILE\"\nfi";
 		};
-		C97ACA09EFC158C4CF78A403 /* Copy Pods Resources */ = {
+		B691D392EE99B4EA282C5F96 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Happy/Pods-Happy-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HappyUITests/Pods-HappyUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD5E7AAB90944011C837A02B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FC7EAC98130B69FB4E6B75AC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HappyUITests/Pods-HappyUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -712,20 +847,23 @@
 				A076C0B61CDB68EE008332DD /* HPPYReminderTableViewController.m in Sources */,
 				A076C0B71CDB68EE008332DD /* HPPYTask.m in Sources */,
 				A076C0B81CDB68EE008332DD /* HPPYTaskController.m in Sources */,
+				A040093A1DCBD7B700A6EAF4 /* HPPYTaskCardContainerViewController.m in Sources */,
 				A076C0B91CDB68EE008332DD /* contact.md in Sources */,
 				A076C0BA1CDB68EE008332DD /* HPPYTextInputTableViewCell.m in Sources */,
+				A084B2E21DCF43D900EC6011 /* HPPYTaskListCollectionViewCell.swift in Sources */,
 				A076C0BB1CDB68EE008332DD /* HPPYTaskDetailViewController.m in Sources */,
+				A04009331DCBD47F00A6EAF4 /* HPPYTaskListViewController.swift in Sources */,
 				A076C0BC1CDB68EE008332DD /* HPPYCountDown.m in Sources */,
 				A076C0BD1CDB68EE008332DD /* HPPYTaskContainerViewController.m in Sources */,
 				A076C0BE1CDB68EE008332DD /* HPPYStaticTextViewController.m in Sources */,
 				A076C0BF1CDB68EE008332DD /* HPPYSettingsTableViewController.m in Sources */,
 				A076C0C01CDB68EE008332DD /* AppDelegate.m in Sources */,
-				A076C0C11CDB68EE008332DD /* HPPYCodeViewController.m in Sources */,
 				A076C0C21CDB68EE008332DD /* HPPYTaskSuccessViewController.m in Sources */,
 				A076C0C31CDB68EE008332DD /* main.m in Sources */,
 				A076C0C41CDB68EE008332DD /* HPPY.m in Sources */,
 				A076C0C51CDB68EE008332DD /* HPPYTutorialViewController.m in Sources */,
 				A076C0C61CDB68EE008332DD /* HPPYTaskCardViewController.m in Sources */,
+				A00DE73B1DD60F67004B05A1 /* HPPYTaskListHeaderView.swift in Sources */,
 				A076C0C71CDB68EE008332DD /* HPPYMenuTableViewCell.m in Sources */,
 				A076C0C81CDB68EE008332DD /* HPPYRevealViewController.m in Sources */,
 				A076C0C91CDB68EE008332DD /* HPPYHeaderTableViewCell.m in Sources */,
@@ -745,20 +883,23 @@
 				A098FC4B1C4000840007EBEF /* HPPYReminderTableViewController.m in Sources */,
 				A00E9ADB1BFDF45C00C94ABA /* HPPYTask.m in Sources */,
 				A079FFFF1C13063700B387CC /* HPPYTaskController.m in Sources */,
+				A04009391DCBD7B700A6EAF4 /* HPPYTaskCardContainerViewController.m in Sources */,
 				A04A094B1BFA0259005F385B /* contact.md in Sources */,
 				A058D40B1C24236A00361186 /* HPPYTextInputTableViewCell.m in Sources */,
+				A084B2E11DCF43D900EC6011 /* HPPYTaskListCollectionViewCell.swift in Sources */,
 				A0A0FE1F1C1AF1890008225E /* HPPYTaskDetailViewController.m in Sources */,
+				A04009321DCBD47F00A6EAF4 /* HPPYTaskListViewController.swift in Sources */,
 				A03DDAFD1C79E28300B9B70D /* HPPYCountDown.m in Sources */,
 				A0D185041BF9CC0E0000B1F9 /* HPPYTaskContainerViewController.m in Sources */,
 				A04A09471BF9F05C005F385B /* HPPYStaticTextViewController.m in Sources */,
 				A01369341C1DD6EE00F69C31 /* HPPYSettingsTableViewController.m in Sources */,
 				A0D185011BF9CC0E0000B1F9 /* AppDelegate.m in Sources */,
-				A04AA2F31C416ADE00DB4A69 /* HPPYCodeViewController.m in Sources */,
 				A00891691C77D91700C161F4 /* HPPYTaskSuccessViewController.m in Sources */,
 				A0D184FE1BF9CC0E0000B1F9 /* main.m in Sources */,
 				A04AA2F01C416AC100DB4A69 /* HPPY.m in Sources */,
 				A01430AF1C9B4C0B00A283B5 /* HPPYTutorialViewController.m in Sources */,
 				A05C6CB81C13309E00D1EF1A /* HPPYTaskCardViewController.m in Sources */,
+				A00DE73A1DD60F64004B05A1 /* HPPYTaskListHeaderView.swift in Sources */,
 				A05558551BF9D8A30036E954 /* HPPYMenuTableViewCell.m in Sources */,
 				A0554A081C789F2A00817BCF /* HPPYRevealViewController.m in Sources */,
 				A098FC481C3FF2DD0007EBEF /* HPPYHeaderTableViewCell.m in Sources */,
@@ -844,25 +985,32 @@
 /* Begin XCBuildConfiguration section */
 		A076C0E11CDB68EE008332DD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 867A161B6F9B16C9161B4089 /* Pods-Happy.debug.xcconfig */;
+			baseConfigurationReference = F7B4F09634C68E54721E6B7F /* Pods-Happy Hockey.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Universität Bern";
+				DEVELOPMENT_TEAM = 3AV6KY2PRJ;
 				INFOPLIST_FILE = Happy_Hockey_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.hppy.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "01082e04-35fd-4985-b1f0-b79ade8a7d30";
+				PROVISIONING_PROFILE_SPECIFIER = "Happy In House";
+				SWIFT_OBJC_BRIDGING_HEADER = "Happy/Happy Hockey-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		A076C0E21CDB68EE008332DD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F21E2FE5279E430BE94BDD7C /* Pods-Happy.release.xcconfig */;
+			baseConfigurationReference = 717850332842BEE371716B03 /* Pods-Happy Hockey.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Universität Bern";
+				DEVELOPMENT_TEAM = 3AV6KY2PRJ;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"COCOAPODS=1",
@@ -873,7 +1021,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.hppy.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "01082e04-35fd-4985-b1f0-b79ade8a7d30";
+				PROVISIONING_PROFILE_SPECIFIER = "Happy In House";
+				SWIFT_OBJC_BRIDGING_HEADER = "Happy/Happy Hockey-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -957,15 +1107,17 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		A0D185271BF9CC0F0000B1F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 867A161B6F9B16C9161B4089 /* Pods-Happy.debug.xcconfig */;
+			baseConfigurationReference = F29186EE87ADEDC2DF6BBA7B /* Pods-Happy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Lilian Krasberg (34HW53WG7P)";
 				INFOPLIST_FILE = Happy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -973,14 +1125,18 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.hppy.ios.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "d3741b40-bf78-4e32-a3c5-b07739eab234";
+				SWIFT_OBJC_BRIDGING_HEADER = "Happy/Happy-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		A0D185281BF9CC0F0000B1F9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F21E2FE5279E430BE94BDD7C /* Pods-Happy.release.xcconfig */;
+			baseConfigurationReference = 8826D1A55DD04401C99E0E87 /* Pods-Happy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Lilian Krasberg (9QBJM7B83T)";
 				INFOPLIST_FILE = Happy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -988,11 +1144,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.hppy.ios.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "30a0af2f-21ed-4edc-b149-6bb65351bd0b";
+				SWIFT_OBJC_BRIDGING_HEADER = "Happy/Happy-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		A0D1852A1BF9CC0F0000B1F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C2D6CCC6C9B9AEACAA1FC0B /* Pods-HappyTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = HappyTests/Info.plist;
@@ -1005,6 +1164,7 @@
 		};
 		A0D1852B1BF9CC0F0000B1F9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E98D2B8E86DE6F0B0B4900A6 /* Pods-HappyTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = HappyTests/Info.plist;
@@ -1017,6 +1177,7 @@
 		};
 		A0D1852D1BF9CC0F0000B1F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9DC23A787E238AFEDF87BDA /* Pods-HappyUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = HappyUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1029,6 +1190,7 @@
 		};
 		A0D1852E1BF9CC0F0000B1F9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0EAEE77B9C6F45EB88CEF21 /* Pods-HappyUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = HappyUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

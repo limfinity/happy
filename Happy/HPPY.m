@@ -11,12 +11,8 @@
  * 
  * hppyStartedBefore BOOL
  * hppyName          NSString
- * hppyReminders     NSArray
  * hppyAllowTracking BOOL
  * hppyVersion       NSString
- * hppyUnlocked      BOOL
- * hppySkipsLeft     NSInteger
- * hppySkipLocked    Double
  * hppyCurrentTask   NSData -> HPPYTask
  * AppleLanguages    NSArray
  ******************************************* */

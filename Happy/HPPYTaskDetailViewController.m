@@ -50,7 +50,7 @@ typedef NS_ENUM(NSInteger, HPPYTaskState) {
     }
     [ARAnalytics event:@"Task Completed" withProperties:_task.trackingData];
     HPPYTaskController *taskController = [HPPYTaskController new];
-    [taskController completeTask:[HPPYTaskController currentTask]];
+    [taskController completeTask:_task];
     [self performSegueWithIdentifier:@"ShowTaskSuccess" sender:self];
 }
 
@@ -198,8 +198,7 @@ typedef NS_ENUM(NSInteger, HPPYTaskState) {
 
 // MARK: Interface change
 - (void)setTask:(HPPYTask *)task {
-    _task = task;
-    [HPPYTaskController startTask:_task];
+    _task = [HPPYTaskController startTask:task];
 }
 
 - (void)updateInterface {

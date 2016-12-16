@@ -6,7 +6,16 @@ target 'Happy' do
 pod 'SWRevealViewController'
 pod 'TSMarkdownParser'
 pod 'HockeySDK'
-pod 'ARAnalytics', :subspecs => ["Mixpanel", "GoogleAnalytics"]
+pod 'ARAnalytics', :subspecs => ["Mixpanel"]
+
+end
+
+target 'Happy Hockey' do
+
+pod 'SWRevealViewController'
+pod 'TSMarkdownParser'
+pod 'HockeySDK'
+pod 'ARAnalytics', :subspecs => ["Mixpanel"]
 
 end
 
