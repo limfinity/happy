@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0809041E071D07B3763A8507 /* libPods-Happy Hockey.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F42C0F14791ED85D8B6B73 /* libPods-Happy Hockey.a */; };
 		7810270E440311D664851416 /* libPods-Happy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E1B0E70ADCD423DF137CE1D /* libPods-Happy.a */; };
 		A00891691C77D91700C161F4 /* HPPYTaskSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A00891681C77D91700C161F4 /* HPPYTaskSuccessViewController.m */; };
 		A00DE73A1DD60F64004B05A1 /* HPPYTaskListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00DE7391DD60F64004B05A1 /* HPPYTaskListHeaderView.swift */; };
@@ -116,7 +117,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14F42C0F14791ED85D8B6B73 /* libPods-Happy Hockey.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Happy Hockey.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		70FB7D934CECA2A5D08AFA42 /* libPods-HappyTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HappyTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		717850332842BEE371716B03 /* Pods-Happy Hockey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Happy Hockey.release.xcconfig"; path = "Pods/Target Support Files/Pods-Happy Hockey/Pods-Happy Hockey.release.xcconfig"; sourceTree = "<group>"; };
 		7E1B0E70ADCD423DF137CE1D /* libPods-Happy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Happy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8826D1A55DD04401C99E0E87 /* Pods-Happy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Happy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Happy/Pods-Happy.release.xcconfig"; sourceTree = "<group>"; };
 		9C2D6CCC6C9B9AEACAA1FC0B /* Pods-HappyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HappyTests/Pods-HappyTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -201,6 +204,7 @@
 		E98D2B8E86DE6F0B0B4900A6 /* Pods-HappyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HappyTests/Pods-HappyTests.release.xcconfig"; sourceTree = "<group>"; };
 		E9DC23A787E238AFEDF87BDA /* Pods-HappyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HappyUITests/Pods-HappyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F29186EE87ADEDC2DF6BBA7B /* Pods-Happy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Happy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Happy/Pods-Happy.debug.xcconfig"; sourceTree = "<group>"; };
+		F7B4F09634C68E54721E6B7F /* Pods-Happy Hockey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Happy Hockey.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Happy Hockey/Pods-Happy Hockey.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +212,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0809041E071D07B3763A8507 /* libPods-Happy Hockey.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +250,7 @@
 				7E1B0E70ADCD423DF137CE1D /* libPods-Happy.a */,
 				70FB7D934CECA2A5D08AFA42 /* libPods-HappyTests.a */,
 				D33AF062FF15E80609236436 /* libPods-HappyUITests.a */,
+				14F42C0F14791ED85D8B6B73 /* libPods-Happy Hockey.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -421,6 +427,8 @@
 				E98D2B8E86DE6F0B0B4900A6 /* Pods-HappyTests.release.xcconfig */,
 				E9DC23A787E238AFEDF87BDA /* Pods-HappyUITests.debug.xcconfig */,
 				C0EAEE77B9C6F45EB88CEF21 /* Pods-HappyUITests.release.xcconfig */,
+				F7B4F09634C68E54721E6B7F /* Pods-Happy Hockey.debug.xcconfig */,
+				717850332842BEE371716B03 /* Pods-Happy Hockey.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -432,10 +440,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A076C0E01CDB68EE008332DD /* Build configuration list for PBXNativeTarget "Happy Hockey" */;
 			buildPhases = (
+				845C1D905CB8EC809CAD6D8C /* [CP] Check Pods Manifest.lock */,
 				A076C0B11CDB68EE008332DD /* Sources */,
 				A076C0CC1CDB68EE008332DD /* Frameworks */,
 				A076C0CE1CDB68EE008332DD /* Resources */,
 				A076C0DF1CDB68EE008332DD /* ShellScript */,
+				9F945038ED9A7767C450A2F0 /* [CP] Embed Pods Frameworks */,
+				58D7F0BFA0FE45CDC102B8DA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -661,6 +672,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HappyTests/Pods-HappyTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		58D7F0BFA0FE45CDC102B8DA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Happy Hockey/Pods-Happy Hockey-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6027A042351B9AF0981C0744 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -691,6 +717,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		845C1D905CB8EC809CAD6D8C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		8A7896EA68FA99B5D35FCA82 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -704,6 +745,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Happy/Pods-Happy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F945038ED9A7767C450A2F0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Happy Hockey/Pods-Happy Hockey-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A01DBBF91C9EBF03003FC1FA /* ShellScript */ = {
@@ -929,6 +985,7 @@
 /* Begin XCBuildConfiguration section */
 		A076C0E11CDB68EE008332DD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7B4F09634C68E54721E6B7F /* Pods-Happy Hockey.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -948,6 +1005,7 @@
 		};
 		A076C0E21CDB68EE008332DD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 717850332842BEE371716B03 /* Pods-Happy Hockey.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
